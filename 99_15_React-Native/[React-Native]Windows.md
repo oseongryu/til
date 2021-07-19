@@ -17,8 +17,8 @@ adb
 1. [cmd] init
 npx react-native init reactnative
 2. [cmd] Android Start
--Emulator: react-native run-android
--USB Debugging: npm run android
+- react-native run-android 
+- npm run android
 
 * [error] Failed to install the following Android SDK packages as some licences have not been accepted.
 SDK tools에 구글 라이센스 추가

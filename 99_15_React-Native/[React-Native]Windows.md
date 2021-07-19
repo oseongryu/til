@@ -13,13 +13,12 @@ C:\Users\{User}\AppData\Local\Android\Sdk\platform-tools
 adb
 
 ## Init React-Native
-
 1. [cmd] init
 npx react-native init reactnative
 2. [cmd] Android Start
-- react-native run-android 
+- react-native run-android
 - npm run android
 
 * [error] Failed to install the following Android SDK packages as some licences have not been accepted.
-SDK tools에 구글 라이센스 추가
+Add to Google licenses on SDK tools(at Android Studio)
 C:\Users\{User}\AppData\Local\Android\Sdk\licenses

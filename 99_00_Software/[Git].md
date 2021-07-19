@@ -33,6 +33,8 @@ git config --global user.email "이메일"
 git config --local user.name "사용자명"
 git config --local user.email "이메일"
 
+git config --list
+
 ## References
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved

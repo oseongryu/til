@@ -31,6 +31,9 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ## ERESOLVE unable to resolve dependency tree
 npm install react-project —save —legacy-peer-deps
 
+## Error: spawn ./gradlew EACCES
+chmod 755 android/gradlew 
+
 
 npm i @actbase/react-kakaosdk@0.9.11 -save -legacy-peer-deps
 

@@ -35,7 +35,20 @@ git config --local user.email "이메일"
 
 git config --list
 
+## git branch
+git checkout -b deploy/prod
+git push origin deploy/prod
+git branch --set-upstream-to origin/deploy/prod
+
+### branch 삭제
+git checkout amin
+git branch --delete deploy/prod
+git branch -D deploy/prod
+git push origin :deploy/prod
+
+
 ## References
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved
+https://trustyoo86.github.io/git/2017/11/28/git-remote-branch-create.html
 

@@ -22,3 +22,19 @@ npx react-native init reactnative
 * [error] Failed to install the following Android SDK packages as some licences have not been accepted.
 Add to Google licenses on SDK tools(at Android Studio)
 C:\Users\{User}\AppData\Local\Android\Sdk\licenses
+
+
+## module clean
+
+### package.json
+"build": "npm build",
+"clean": "rm -rf node_modules", 
+"reinstall": "npm run clean && npm install", 
+"rebuild": "npm run clean && npm install && npm run build",
+
+
+### npm 재인스톨 
+npm ci
+
+### npx npkill
+npx npkill

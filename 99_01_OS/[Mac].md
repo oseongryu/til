@@ -22,3 +22,12 @@ MySQL 여러개 관리
 ## 기본 단축키
 
 cmd + c 복사
+
+
+## References
+https://oddcode.tistory.com/126
+
+
+## 터미널에서 파인더 열기
+open .
+

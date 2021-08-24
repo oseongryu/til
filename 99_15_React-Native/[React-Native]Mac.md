@@ -15,11 +15,8 @@ brew install —-cask adoptopenjdk8
 
 예전 brew 설치로 에러 발생
 rm -fr $(brew --repo homebrew/core)
-ss
 
 /Users/${USER}/Library/Android/sdk
-
-
 
 # export ANDROID_HOME=$HOME/Library/Android/sdk
 export ANDROID_HOME=자신의 안드로이드SDK 위치/Android/sdk
@@ -31,12 +28,28 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 ## ERESOLVE unable to resolve dependency tree
 npm install react-project —save —legacy-peer-deps
 
-## Error: spawn ./gradlew EACCES
+## Error: spawn ./gradlew ACCESS
 chmod 755 android/gradlew 
 
-
-npm i @actbase/react-kakaosdk@0.9.11 -save -legacy-peer-deps
-
 cd /users/${USER}/desktop/dev/workspace
+
 ## local.properties
 sdk.dir = /users/${USER}/Library/Android/sdk
+
+
+## Clear
+ 1. Clear watchman watches: watchman watch-del-all
+ 2. Delete node_modules and run yarn install
+ 3. Reset Metro's cache: yarn start --reset-cache
+ 4. Remove the cache: rm -rf /tmp/metro-*
+
+rm -rf node_modules
+watchman wathch-del-all
+npm start --reset-cache
+
+* error: Error: Unable to resolve module @babel/runtime/helpers/interopRequireDefault from ~~
+npm add @babel/runtime
+
+## service kill
+lsof -i :19090
+kill -9 18731

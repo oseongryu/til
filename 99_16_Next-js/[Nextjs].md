@@ -81,3 +81,16 @@ export default Post
 
 ## next/link
 
+
+## nextjs deploy
+
+git clone
+cd next-web
+npm install
+npm run build
+pm2 list
+pm2 stop 0
+pm2 delete 0
+
+pm2 start server.js
+

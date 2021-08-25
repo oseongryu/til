@@ -38,10 +38,22 @@ sdk.dir = /users/${USER}/Library/Android/sdk
 
 
 ## Clear
- 1. Clear watchman watches: watchman watch-del-all
- 2. Delete node_modules and run yarn install
- 3. Reset Metro's cache: yarn start --reset-cache
- 4. Remove the cache: rm -rf /tmp/metro-*
+
+watchman watch-del-all
+rm -rf $TMPDIR/react-native-packager-cache-*
+rm -rf $TMPDIR/metro-bundler-cache-*
+rm -rf node_modules/
+npm cache clean --force
+npm install
+npm start -- --reset-cache
+
+cd android
+./gradlew cleanBuildCache
+
+1. Clear watchman watches: watchman watch-del-all
+2. Delete node_modules and run yarn install
+3. Reset Metro's cache: yarn start --reset-cache
+4. Remove the cache: rm -rf /tmp/metro-*
 
 rm -rf node_modules
 watchman wathch-del-all

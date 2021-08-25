@@ -8,6 +8,7 @@ yum install wget nano
 yum -y install glibc-locale-source glibc-langpack-en
 
 ## nodejs in centos
+sudo yum install -y gcc-c++ make
 curl -sL https://rpm.nodesource.com/setup_12.x | sudo bash -
 curl -sL https://rpm.nodesource.com/setup_12.x | bash -
 

@@ -31,3 +31,13 @@ https://oddcode.tistory.com/126
 ## 터미널에서 파인더 열기
 open .
 
+
+## macOS Sierra에서 원화(₩) 대신 백 쿼트(`) 입력하기
+
+~/Library 폴더로 이동해서 KeyBindings 폴더를 추가한다.
+~/Library/KeyBindings 폴더에 DefaultkeyBinding.dict 파일을 만든다.
+DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
+
+{
+    "₩" = ("insertText:", "`");
+}

@@ -38,3 +38,35 @@ npm ci
 
 ### npx npkill
 npx npkill
+
+
+
+
+### chocolatey 설정
+```
+1. PowerShell 
+Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
+
+2. CMD
+choco install -y nodejs.install
+choco install -y python2
+choco install -y jdk8
+
+3. 안드로이드 설정
+- 안드로이드 설치
+- SDK Manager 설정에서 licenses 관련 추가
+- 환경변수 ANDROID_HOME,Path에 SDK tools 설정
+- AVD Manger 또는 안드로이드 기계로 연결
+
+4. React-Native 설정
+npm install -g react-native-cli
+
+5. React-Native Init
+react-native init Test
+react-native run-android
+
+6. Android Build
+cd android
+gradlew assembleRelease	
+```
+

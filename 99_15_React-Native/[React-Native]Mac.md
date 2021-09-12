@@ -62,6 +62,13 @@ npm start --reset-cache
 * error: Error: Unable to resolve module @babel/runtime/helpers/interopRequireDefault from ~~
 npm add @babel/runtime
 
+## React-Native IOS 실기계 연결 
+- 안되는 경우 XCode에서 설정
+
+npm install -g ios-deploy 
+react-native run-ios --device 'DELL의 iPhone' --configuration Release
+react-native run-ios --scheme "happytoseeyou" --device 'oseongryu의 iPhone'
+
 ## service kill
 lsof -i :19090
 kill -9 18731

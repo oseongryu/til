@@ -94,3 +94,5 @@ pm2 delete 0
 
 pm2 start server.js
 
+## nextjs  
+pm2 start npm --name 'myserver' -- start -p 3000

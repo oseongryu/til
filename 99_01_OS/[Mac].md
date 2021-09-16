@@ -22,6 +22,8 @@ MySQL 여러개 관리
 
 ### 오토마타(Automator)를 사용
 
+- 등록한 서비스를 확인하는 위치는 ~/Library/services
+
 - VSCode 열기
 셀스크립트 열기
 현재수신하는작업흐름:파일 또는 폴더

@@ -28,6 +28,7 @@ MySQL 여러개 관리
 셀스크립트 열기
 현재수신하는작업흐름:파일 또는 폴더
 선택항목위치: Finder.app
+통과입력: 변수
 open -n -b "com.microsoft.VSCode" --args "$*"
 
 - Terminal 열기 

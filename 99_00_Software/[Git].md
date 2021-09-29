@@ -112,6 +112,7 @@ git remote set-url origin git@github.com-oseongryu:oseongryu/til.git
 ```
 
 ## References
+```
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved
 https://trustyoo86.github.io/git/2017/11/28/git-remote-branch-create.html
@@ -120,3 +121,5 @@ https://velog.io/@hwang-eunji/github-2%EA%B0%9C-%EA%B3%84%EC%A0%95-%EC%82%AC%EC%
 
 
 https://trustyoo86.github.io/git/2017/11/28/git-remote-branch-create.html
+https://beomseok95.tistory.com/167#google_vignette
+```

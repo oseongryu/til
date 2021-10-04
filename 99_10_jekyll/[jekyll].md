@@ -1,6 +1,18 @@
 # 사용법
 
 ## 1. 루비설치
+yum install ruby
+ruby -v
+
+* ruby update
+yum install curl gcc gcc-c++, readline-devel, zlib-devel, libyaml-devel, libffi-devel, openssl-devel, autoconf, automake, libtool, bison
+curl -L https://get.rvm.io | bash -s stable --ruby
+curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+
+source /etc/profile.d/rvm.sh
+rvm reload
+rvm install 2.2.4
+ruby -v
 
 ## 2. 지킬 (Jekyll) 설치하기
 
@@ -15,7 +27,7 @@ gem install tzinfo-data
 jekyll new my-awesome-site
 cd my-awesome-site
 bundle exec jekyll serve
-
+bundle add webrick
 
 ## 블로그 저장 폴더로 이동한다.
 ## 인코딩 에러 발생시 다음의 코드를 실행한다.
@@ -24,7 +36,9 @@ chcp 65001
 # 지킬 실행
 jekyll serve
 
-bundle exec jekyll serve --host 0.0.0.0 --port 4000
+bundle exec jekyll serve --host 0.0.0.0 --port 4000 > /dev/null 2>&1 &
+
+kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 
 # 테마변경
 
@@ -64,8 +78,34 @@ echo error
 pause
 
 
+## CentOS 방화벽
+- 방화벽 상태 확인
+firewall-cmd --state
+
+- 방화벽 설치
+sudo yum install firewalld 
+sudo systemctl enable firewalld 
+sudo systemctl start firewalld
+
+- 서비스로 방화벽 해제 / 제거
+sudo firewall-cmd --permanent --add-service=http 
+sudo firewall-cmd --permanent --add-service=https
+
+sudo firewall-cmd --permanent --remove-service=http 
+sudo firewall-cmd --permanent --remove-service=http
+
+- 특정 포트 방화벽 해제
+sudo firewall-cmd --permanent --add-port=8086/tcp
+sudo firewall-cmd --permanent --remove-port=8086/tcp
+
+sudo firewall-cmd --reload
+firewall-cmd --list-all
 
 ### reference
-
+```
 https://shryu8902.github.io/_posts/2018-06-22-jekyll-on-windows/
 https://min9nim.github.io/2018/07/jekyll-theme/
+백그라운드실행: https://taewooblog.tistory.com/152
+방화벽해제: https://ux.stories.pe.kr/162
+```
+

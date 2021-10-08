@@ -111,6 +111,34 @@ git remote add origin git@github.com-oseongryu:oseongryu/til.git
 git remote set-url origin git@github.com-oseongryu:oseongryu/til.git
 ```
 
+## 다른 맥으로 .ssh설정 옮기기
+```
+
+다른 맥에서 .ssh 파일만 옮겨올 경우 아래와 같은 에러가 나타날 수 있음
+private key의 permissions이 많이 되어 있어서 생기는 문제였음
+옮겨온 파일의 권한을 변경해서 처리 
+
+chmod 700 ~/.ssh
+chmod 600 ~/.ssh/id_rsa
+chmod 644 ~/.ssh/id_rsa.pub  
+chmod 644 ~/.ssh/authorized_keys
+chmod 644 ~/.ssh/known_hosts
+
+
+---
+Warning: Permanently added 'github.com,64:ff9b::344e:e76c' (RSA) to the list of known hosts.
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+@         WARNING: UNPROTECTED PRIVATE KEY FILE!          @
+@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@@
+Permissions 0644 for '/Users/oseongryu/.ssh/id_rsa_oseongryu' are too open.
+It is required that your private key files are NOT accessible by others.
+This private key will be ignored.
+Load key "/Users/oseongryu/.ssh/id_rsa_oseongryu": bad permissions
+---
+
+```
+
+
 ## References
 ```
 Git Portable Location

@@ -49,6 +49,21 @@ end run
 
 cmd + c 복사
 
+## Mac Command Line 명령어
+
+You can use ^+U to delete before Cursor
+
+You can use ^+K to delete after Cursor
+
+You can use ^+W to delete just a word.
+
+You can also use ^+C to cancel.
+
+You can also use ^+A to go to the beginning of the line.
+
+You can also use ^+E to go to the end of the line.
+
+
 
 ## References
 https://oddcode.tistory.com/126

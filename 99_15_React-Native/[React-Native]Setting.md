@@ -50,18 +50,30 @@ ifconfig |grep inet
 
 # 개발세팅
 ## 1. Homebrew
-      Homebrew란 ... 
-      Apple/Linus 시스템에서 제공하지 않는 유용한 패키지 관리자 설치
+```
+Homebrew란 ... 
+Apple/Linus 시스템에서 제공하지 않는 유용한 패키지 관리자 설치
 
-      /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 
-      brew --version
+brew --version
+
+### 관련 명령어
+brew install git
+brew remove git
+brew search git
+brew info git
+brew list
+brew search git
+```
 
 ## 2. Git setting
-      bash git 사용
-      1. bash 창 열기(바탕화면 클릭 > 이동 > 유틸리티 > 터미널 선택. 자주 사용하므로 Docker에 고정해놓기 )
-      2. git --version 깃 설치 여부 확인
-      3. brew install git 깃 설치
+```
+bash git 사용
+1. bash 창 열기(바탕화면 클릭 > 이동 > 유틸리티 > 터미널 선택. 자주 사용하므로 Docker에 고정해놓기 )
+2. git --version 깃 설치 여부 확인
+3. brew install git 깃 설치
+```
 
 ## 3. Git 사용
       cd /   
@@ -163,7 +175,7 @@ ifconfig |grep inet
       pod --version
 
       brew tab AdoptOpenJDK/openjdk
-      brew cask install adptopenjdk8
+      brew install cask adptopenjdk8
       java -version
 
       javac -version
@@ -195,6 +207,45 @@ ifconfig |grep inet
       rm -rf $(brew --repo homebrew/core)
 
       npm install --legacy-peer-deps
+
+## Android Studio 설치하지 않을경우
+
+### android-platform-tools
+```
+brew install android-platform-tools
+adb version
+
+* 실기기연결후 USB 디버깅이 안뜨는 경우
+adb kill-server
+adb devices
+```
+
+### android-sdk
+```
+brew install android-sdk
+
+export ANDROID_HOME=/usr/local/share/android-sdk
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+
+$ANDROID_HOME/tools/bin/sdkmanager --licenses
+```
+
+### apk 파일
+```
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle
+
+react-native bundle --platform android --dev false --entry-file index.js --bundle-output android/app/src/main/assets/index.android.bundle --assets-dest android/app/src/main/res/
+```
+
+### APK 생성 명령어
+``` 
+./gradlew assembleDebug 
+```
+
+### AAB 생성 명령어 
+```
+./gradlew bundleDebug
+```
 
 ## 16. Android Studio
       https://developer.android.com/studio?hl=ko
@@ -267,6 +318,7 @@ ifconfig |grep inet
 ## 마크다운
 https://gist.github.com/ihoneymon/652be052a0727ad59601#this-is-a-h5
 
+https://nicebam.tistory.com/25
 
 ## poor sql
 https://poorsql.com/ sql query문 열정리

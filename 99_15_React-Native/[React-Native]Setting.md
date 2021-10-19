@@ -246,6 +246,41 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 ```
 ./gradlew bundleDebug
 ```
+### Android Emulator with Homebrew
+```
+touch ~/.android/repositories.cfg 
+brew cask install caskroom/versions/java8
+brew cask install android-sdk
+brew cask install intel-haxm
+brew install qt
+export ANDROID_SDK_ROOT="/usr/local/share/android-sdk"
+sdkmanager "platform-tools" "platforms;android-28" "extras;intel;Hardware_Accelerated_Execution_Manager" "build-tools;28.0.0" "system-images;android-28;google_apis;x86_64" "emulator"
+avdmanager create avd -n test -k "system-images;android-28;google_apis;x86_64"
+emulator -avd test
+sudo /usr/local/share/android-sdk/emulator/emulator -avd test
+
+----
+I recommend adding these lines to: ~/.android/avd/generic_10.avd/config.ini
+
+skin.name=1080x1920        # proper screen size for emulator
+hw.lcd.density=480
+hw.keyboard=yes            # enables keys from your laptop to be sent to the emulator
+
+If you cannot do this, you can still pass -skin 1080x1920 as an argument when starting the emulator.
+
+https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae
+---
+
+
+
+export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
+export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools
+export PATH=$PATH:$ANDROID_SDK_ROOT/tools/bin
+export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
+PATH=$ANDROID_SDK_ROOT/emulator:$PATH
+```
+
 
 ## 16. Android Studio
       https://developer.android.com/studio?hl=ko

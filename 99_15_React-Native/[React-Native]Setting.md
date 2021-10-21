@@ -273,6 +273,7 @@ https://gist.github.com/mrk-han/66ac1a724456cadf1c93f4218c6060ae
 
 
 
+
 export ANDROID_SDK_ROOT=/usr/local/share/android-sdk
 export PATH=$PATH:$ANDROID_SDK_ROOT/emulator
 export PATH=$PATH:$ANDROID_SDK_ROOT/tools
@@ -281,6 +282,15 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 PATH=$ANDROID_SDK_ROOT/emulator:$PATH
 ```
 
+* Failed to install the app. Please accept all necessary Android SDK licenses using Android SDK Manager: 
+"$ANDROID_HOME/tools/bin/sdkmanager --licenses".
+
+./sdkmanager --licenses --sdk_root=#ANDROID_SDK_ROOT
+
+Caused by: java.lang.ClassNotFoundException: javax.xml.bind.annotation.XmlSchema
+
+* emulator start
+emulator -list-avds
 
 ## 16. Android Studio
       https://developer.android.com/studio?hl=ko

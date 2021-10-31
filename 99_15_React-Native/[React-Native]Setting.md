@@ -175,7 +175,7 @@ bash git 사용
       pod --version
 
       brew tab AdoptOpenJDK/openjdk
-      brew install cask adptopenjdk8
+      brew install cask adoptopenjdk8
       java -version
 
       javac -version

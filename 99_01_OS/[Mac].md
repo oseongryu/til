@@ -91,3 +91,9 @@ DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
 {
     "₩" = ("insertText:", "`");
 }
+
+## 맥 한글전환 Shift + space 변경
+
+1. 시스템 환경설정 > 키보드 > 단축키 > 입력소스 > 이전 입력 소스 선택의 단축키를 fn + shift + space 로 변경
+
+2. 1번이 안 될 경우 ~/Library/Preferences/com.apple.symbolichotkeys.plist 파일 안에서 60,61 둘 중에 하나를 선택하고 value의 값을 131072로 변경 후 재부팅

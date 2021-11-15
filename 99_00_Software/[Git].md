@@ -61,6 +61,18 @@ git branch -D deploy/prod
 git push origin :deploy/prod
 ```
 
+## git rebase
+```
+git branch
+git checkout master
+git push master
+
+git checkout my-branch
+git rebase master
+git checkout master
+git merge my-branch --ff
+```
+
 ## 맥에서 git 계정 2개 이상 사용 시 ssh 인증
 ```bash
 ### ssh-keygen 생성
@@ -150,4 +162,6 @@ https://velog.io/@hwang-eunji/github-2%EA%B0%9C-%EA%B3%84%EC%A0%95-%EC%82%AC%EC%
 
 https://trustyoo86.github.io/git/2017/11/28/git-remote-branch-create.html
 https://beomseok95.tistory.com/167#google_vignette
+git rebase: https://junlab.tistory.com/m/203
+
 ```

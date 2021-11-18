@@ -64,13 +64,13 @@ git push origin :deploy/prod
 ## git rebase
 ```
 git branch
-git checkout master
-git push master
+git checkout develop
+git push
 
-git checkout my-branch
-git rebase master
-git checkout master
-git merge my-branch --ff
+git checkout feature/test
+git rebase develop
+git checkout develop
+git merge feature/test --ff
 ```
 
 ## 맥에서 git 계정 2개 이상 사용 시 ssh 인증

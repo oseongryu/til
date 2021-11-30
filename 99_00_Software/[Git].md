@@ -151,6 +151,27 @@ Load key "/Users/oseongryu/.ssh/id_rsa_oseongryu": bad permissions
 ```
 
 
+## git Commit Message Structure
+
+```
+feat : 새로운 기능 추가
+fix : 버그 수정
+docs : 문서 수정
+style : 코드 포맷팅, 세미콜론 누락, 코드 변경이 없는 경우
+refactor : 코드 리펙토링
+test : 테스트 코드, 리펙토링 테스트 코드 추가
+chore : 빌드 업무 수정, 패키지 매니저 수정
+
+feat: (new feature for the user, not a new feature for build script)
+fix: (bug fix for the user, not a fix to a build script)
+docs: (changes to the documentation)
+style: (formatting, missing semi colons, etc; no production code change)
+refactor: (refactoring production code, eg. renaming a variable)
+test: (adding missing tests, refactoring tests; no production code change)
+chore: (updating grunt tasks etc; no production code change)
+```
+
+
 ## References
 ```
 Git Portable Location
@@ -163,5 +184,6 @@ https://velog.io/@hwang-eunji/github-2%EA%B0%9C-%EA%B3%84%EC%A0%95-%EC%82%AC%EC%
 https://trustyoo86.github.io/git/2017/11/28/git-remote-branch-create.html
 https://beomseok95.tistory.com/167#google_vignette
 git rebase: https://junlab.tistory.com/m/203
+https://doublesprogramming.tistory.com/256
 
 ```

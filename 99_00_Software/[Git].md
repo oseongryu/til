@@ -73,6 +73,20 @@ git checkout develop
 git merge feature/test --ff
 ```
 
+## git 원격 전부 가져오기
+```
+git branch -r
+git remote update
+```
+
+
+## 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)
+```
+Unable to create '/home/user/repo/.git/refs
+chown -R user:usergroup file/folder
+```
+
+
 ## 맥에서 git 계정 2개 이상 사용 시 ssh 인증
 ```bash
 ### ssh-keygen 생성

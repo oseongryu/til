@@ -73,10 +73,19 @@ git checkout develop
 git merge feature/test --ff
 ```
 
-## git 원격 전부 가져오기
+## git 로컬 내용 업데이트
 ```
 git branch -r
 git remote update
+
+git branch -a 
+```
+
+## git log
+```
+git log --oneline
+git log --pretty=format:"%h - %an, %ar : %s"
+git log --pretty=format:"%h %cd %an %s"
 ```
 
 

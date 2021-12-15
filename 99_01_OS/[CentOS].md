@@ -60,6 +60,8 @@ zip -r test.zip ./*
 unzip test.zip
 unzip test.zip -d /home/oseongryu
 
+### 폴더 복제 cp
+cp -R repo backup_repo
 
 ## References
 

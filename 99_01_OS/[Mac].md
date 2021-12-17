@@ -165,8 +165,41 @@ scp -P 22 root@127.0.0.1:/home/oseongryu/test.txt ~/dev
 scp -P 22 ~/dev/test.txt root@127.0.0.1:/home/oseongryu/
 ```
 
+## mac python pip ( zsh: command not found: pip)
+```bash
+### solution 1
+curl https://bootstrap.pypa.io/get-pip.py -o get-pip.py
+python3 get-pip.py
 
+### solution 2
+which pip
+which pip3
+alias pip=/usr/local/bin/pip3
+source ~/.zshrc
+
+```
+
+## Naver Cloud 
+```bash
+### python의 설치가 완료되어 있을 경우
+pip install awscli==1.15.85
+
+### aws의 configure는 Naver Cloud https://www.ncloud.com/mypage/manage/authkey 에서 확인
+aws configure
+
+### 설정 테스트
+aws --endpoint-url=https://kr.object.ncloudstorage.com s3 ls s3://my-object-storage
+
+### Object Storage의 버킷(폴더)의 모든 파일을 로컬에 동기화합니다.
+aws --endpoint-url=https://kr.object.ncloudstorage.com s3 sync s3://<bucket_name>[/<object_name>] <local_directory_name>
+
+### 로컬 디렉토리의 모든 파일을 Object Storage의 버킷(폴더)에 동기화합니다.
+aws --endpoint-url=https://kr.object.ncloudstorage.com s3 sync <local_directory_name> s3://<bucket_name>[/<object_name>]
+```
 ## References
 ```
 https://oddcode.tistory.com/126
+네이버클라우드 Object Storage CLI :
+https://cli.ncloud-docs.com/docs/guide-objectstorage
+https://cli-fin.ncloud-docs.com/docs/guide-objectstorage
 ```

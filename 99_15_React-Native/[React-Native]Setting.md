@@ -1,36 +1,4 @@
-# 맥 사용법
-## 1. 프로그램 종료
-      - 프로그램 종료 Cmd + q
-      - 한탭만 종료 Cmd + w
 
-## 2. 복사 붙여넣기   
-      - 한영 Caps lock   
-      - 복사 cmd + c   
-      - 붙여넣기 cmd + V   
-      - 경로복사 cmd + option + c   
-      - 잘라내기 cmd + C >>> cmd + option + V   
-      - 프로그램 종료 Cmd + q   
-      - 한탭만 종료   cmd + w
-
-## 3. 스크린샷   
-      - Shift + Command + 3 : 화면 그림을 파일로 저장   
-      - Control + Shift + Command + 3 : 화면 그림을 클립보드에 복사   
-      - Shift + Command + 4 : 선택한 영역 그림을 파일로 저장   
-      - Control + Shift + Command + 4 : 선택한 영역 그림을 클립보드에 복사
-
-## 4. 맥 터미널(bash) 사용
-      (Finder > 이동 > Utilities > 터미널)   
-      - ls : 디렉토리 파일, 폴더 보여주기      
-      - ls -la :         
-      - cd : change directory      
-      - clear :  clear screen.  화면 글씨 비워줌      
-      - cp : 지정된 디렉토리로 파일 복사      
-      - rm : 파일 삭제   
-
-## 5. 추가설정 
-      - 캡쳐시 옵션에서 미리보기썸네일제거
-      - 폴더선택후 터미널로 열기
-      - 오토마타 사용으로 VSCode로 열기 서비스 만들기
 
 # vscode
 cmd + d

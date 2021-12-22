@@ -163,6 +163,8 @@ Host prod
 scp -P 22 root@127.0.0.1:/home/oseongryu/test.txt ~/dev
 ### 로컬파일을 원격으로 업로드 
 scp -P 22 ~/dev/test.txt root@127.0.0.1:/home/oseongryu/
+
+scp -o 'ProxyJump sshconfig' root@127.0.0.1:/home/oseongryu/test.txt ~/dev
 ```
 
 ## mac python pip ( zsh: command not found: pip)

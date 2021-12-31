@@ -222,6 +222,23 @@ git config --add remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 ```
 
+### fetch github pr to local
+
+```
+git pull origin pull/35/head
+
+
+
+-- git config에 설정
+[alias]
+  pr  = "!f() { git fetch -fu ${2:-origin} refs/pull/$1/head:pr/$1 && git checkout pr/$1; }; f"
+  pr-clean = "!git for-each-ref refs/heads/pr/* --format='%(refname)' | while read ref ; do branch=${ref#refs/heads/} ; git branch -D $branch ; done"
+
+ git pr 35
+ git pr-clean
+
+```
+
 ## References
 
 ```
@@ -236,5 +253,6 @@ https://trustyoo86.github.io/git/2017/11/28/git-remote-branch-create.html
 https://beomseok95.tistory.com/167#google_vignette
 git rebase: https://junlab.tistory.com/m/203
 https://doublesprogramming.tistory.com/256
+git local pull request: https://blog.outsider.ne.kr/1204
 
 ```

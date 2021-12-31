@@ -1,4 +1,5 @@
 ## Git 사용방법
+
 ```bash
 git --version
 git config --global user.name "사용자명"
@@ -16,6 +17,7 @@ git push origin master
 ```
 
 ## Git Revert
+
 ```bash
 git log
 git reset --hard "원하는 HEAD"
@@ -23,6 +25,7 @@ git push -f origin master
 ```
 
 ## Git Reset
+
 ```bash
 git reset HEAD^ // 마지막 커밋 삭제
 git reset --hard HEAD // 마지막 커밋 상태로 되돌림
@@ -30,11 +33,13 @@ git reset HEAD * // 스테이징을 언스테이징으로 변경
 ```
 
 ## git 병합취소
+
 ```bash
 git merge --abort
 ```
 
 ## git config 설정시 저장 위치
+
 ```bash
 System	 <git-install-root>\mingw64\etc\gitconfig	 gitconfig
 Global	 C:\Users\username\.gitconfig	 .gitconfig
@@ -48,7 +53,9 @@ git config --local user.name "사용자명"
 git config --local user.email "이메일"
 git config --list
 ```
+
 ## git branch
+
 ```bash
 git checkout -b deploy/prod
 git push origin deploy/prod
@@ -62,6 +69,7 @@ git push origin :deploy/prod
 ```
 
 ## git rebase
+
 ```
 git branch
 git checkout develop
@@ -74,29 +82,31 @@ git merge feature/test --ff
 ```
 
 ## git 로컬 내용 업데이트
+
 ```
 git branch -r
 git remote update
 
-git branch -a 
+git branch -a
 ```
 
 ## git log
+
 ```
 git log --oneline
 git log --pretty=format:"%h - %an, %ar : %s"
 git log --pretty=format:"%h %cd %an %s"
 ```
 
-
 ## 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)
+
 ```
 Unable to create '/home/user/repo/.git/refs
 chown -R user:usergroup file/folder
 ```
 
-
 ## 맥에서 git 계정 2개 이상 사용 시 ssh 인증
+
 ```bash
 ### ssh-keygen 생성
 cd ~/.ssh or mkdir ~/.ssh
@@ -118,7 +128,7 @@ ssh-add ~/.ssh/id_rsa_oseongryu
 ssh-add -l
 
 * 삭제 후 다시 만들 필요가 있는 경우
-ssh-add -D 
+ssh-add -D
 
 touch ~/.ssh/config
 vi ~/.ssh/config
@@ -147,15 +157,16 @@ git remote set-url origin git@github.com-oseongryu:oseongryu/til.git
 ```
 
 ## 다른 맥으로 .ssh설정 옮기기
+
 ```
 
 다른 맥에서 .ssh 파일만 옮겨올 경우 아래와 같은 에러가 나타날 수 있음
 private key의 permissions이 많이 되어 있어서 생기는 문제였음
-옮겨온 파일의 권한을 변경해서 처리 
+옮겨온 파일의 권한을 변경해서 처리
 
 chmod 700 ~/.ssh
 chmod 600 ~/.ssh/id_rsa
-chmod 644 ~/.ssh/id_rsa.pub  
+chmod 644 ~/.ssh/id_rsa.pub
 chmod 644 ~/.ssh/authorized_keys
 chmod 644 ~/.ssh/known_hosts
 
@@ -172,7 +183,6 @@ Load key "/Users/oseongryu/.ssh/id_rsa_oseongryu": bad permissions
 ---
 
 ```
-
 
 ## git Commit Message Structure
 
@@ -194,8 +204,26 @@ test: (adding missing tests, refactoring tests; no production code change)
 chore: (updating grunt tasks etc; no production code change)
 ```
 
+### git local pull request
+
+```bash
+#### local get pull request
+git config --add remote.origin.fetch "+refs/pull/*/head:refs/remotes/origin/pr/*"
+git fetch origin
+git checkout -t origin/pr/35
+
+s#### config 추가
+git config --add remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+
+#### config 삭제
+git config --unset --local remote.origin.fetch
+git config --unset-all --local remote.origin.fetch
+git config --add remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
+
+```
 
 ## References
+
 ```
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved

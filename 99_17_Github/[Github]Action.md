@@ -1,3 +1,12 @@
+## Github Action
+
+- 소프트웨어 workflow 자동화 도구
+
+1. Workflow : 여러개의 Job로 구성되는 프로세스
+2. Event : Workflow를 실행하는 규칙 (특정시간 반복)
+3. Job : 여러 Step을 구성해서 실행
+4. Step : action을 실행 (ssh-action, scp-action 등)
+
 ## Repository에 Github Action 추가
 
 1. Github Repository > Actions > Java With Gradle > Configure
@@ -6,6 +15,94 @@
 3. GitAction Flow:
 
 - JDK Setup > Build > Upload Jar(upload-artifact) > Kill Service(ssh-action) > Download Jar(download-artifact) > Upload File to Server (scp-action) > Run Jar (ssh-action)
+
+- JDK Setup
+
+```
+    - uses: actions/checkout@v2
+    - name: Set up JDK 11
+      uses: actions/setup-java@v2
+      with:
+        java-version: '11'
+        distribution: 'adopt'
+```
+
+- Build
+
+```
+    - name: Build with Gradle
+      uses: gradle/gradle-build-action@4137be6a8bf7d7133955359dbd952c0ca73b1021
+      with:
+        arguments: build
+```
+
+- Upload Jar(upload-artifact)
+
+```
+    - name: Upload Jar
+      uses: actions/upload-artifact@v2
+      with:
+        name: spring-boot
+        path: build/libs/spring-0.0.1-SNAPSHOT.jar
+        retention-days: 1
+    - run: |
+        rm -f ~/.gradle/caches/modules-2/modules-2.lock
+        rm -f ~/.gradle/caches/modules-2/gc.properties
+      name: Cleanup Gradle Cache
+```
+
+- Kill Service(ssh-action)
+
+```
+    - uses: appleboy/ssh-action@v0.1.4
+      name: Kill Spring Boot Application
+      with:
+        host: ${{ secrets.SERV_HOST }}
+        username: ${{ secrets.SERV_USERNAME }}
+        password: ${{ secrets.SERV_KEY }}
+        script: |
+          if [ -e "pid.file" ]; then
+            kill $(cat ./pid.file)
+          fi
+```
+
+- Download Jar(download-artifact)
+
+```
+      - name: Download Jar
+        uses: actions/download-artifact@v2
+        with:
+          name: spring-boot
+```
+
+- Upload File to Server (scp-action)
+
+```
+      - name: SCP Files
+        uses: appleboy/scp-action@master
+        with:
+          host: ${{ secrets.SERV_HOST }}
+          username: ${{ secrets.SERV_USERNAME }}
+          password: ${{ secrets.SERV_KEY }}
+          source: "spring-0.0.1-SNAPSHOT.jar"
+          target: "build"
+          rm: true
+```
+
+- Run Jar (ssh-action)
+
+```
+      - uses: appleboy/ssh-action@v0.1.4
+        name: Run the application
+        with:
+          host: ${{ secrets.SERV_HOST }}
+          username: ${{ secrets.SERV_USERNAME }}
+          password: ${{ secrets.SERV_KEY }}
+          script: |
+            nohup java -jar build/spring-0.0.1-SNAPSHOT.jar > app.out 2> app.err < /dev/null &
+            nohup echo $! > ./pid.file &
+
+```
 
 4. secrets.SERV_HOST 등의 설정은 Github Repository > Settings > Secrets에서 추가 (workflow내에 설정이 가능하지만 보안문제가 있을 수 있음)
 

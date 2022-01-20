@@ -142,3 +142,14 @@ sudo /usr/bin/mysql -u root -p
    CREATE DATABASE testdb;
 
 9. 서버에 인바운드 포트 활성화
+
+10. mysql 외부접속 안될 때
+    netstat -ntlp | grep mysqld
+    sudo /usr/bin/mysql -u root -p
+    mysql> show variables like '%bind%';
+    exit
+    cd /etc/mysql/mysql.conf.d
+    vi mysqld.cnf
+    bind-address 변경 127.0.0.1 -> 0.0.0.0
+    systemctl restart mysql
+    systemctl status mysql

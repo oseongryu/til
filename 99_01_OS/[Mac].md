@@ -224,6 +224,21 @@ aws --endpoint-url=https://kr.object.ncloudstorage.com s3 sync s3://<bucket_name
 aws --endpoint-url=https://kr.object.ncloudstorage.com s3 sync <local_directory_name> s3://<bucket_name>[/<object_name>]
 ```
 
+## Azure Cli
+
+```bash
+brew install azure-cli
+az login
+
+npx express-generator myExpressApp --view pug
+cd myExpressApp
+npm install
+
+az webapp up --sku F1 --name <app-name>
+az webapp up --sku F1 --name myExpressApp
+npm start
+```
+
 ## References
 
 ```
@@ -231,4 +246,7 @@ https://oddcode.tistory.com/126
 네이버클라우드 Object Storage CLI :
 https://cli.ncloud-docs.com/docs/guide-objectstorage
 https://cli-fin.ncloud-docs.com/docs/guide-objectstorage
+AzureCli: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos
+AzureCli: https://docs.microsoft.com/ko-kr/cli/azure/get-started-with-azure-cli
+
 ```

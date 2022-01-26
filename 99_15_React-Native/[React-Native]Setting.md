@@ -314,6 +314,8 @@ emulator -list-avds
       appcenter apps list
       appcenter login
 
+      * appcenter를 global로 설정 시, 앱에 package.json의 appcenter, appcenter-analytics, appcenter-crashes와 버전 문제로 충돌이 발생할 수 있으므로 주의 (2022-01-26)
+      npm i 시 버전을 업데이트하는 형태로 해서 문제 해결
 ## 18. React-Native (IOS)
       https://apps.apple.com/us/app/xcode/id497799835?mt=12
 

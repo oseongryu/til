@@ -329,6 +329,24 @@ emulator -list-avds
       adb shell setprop debug.firebase.analytics.app kr.co.test.app
       adb shell setprop debug.firebase.analytics.app kr.co.test.app.dev
 
+## 20. Node 버전 관리
+```bash
+npm install -g n
+# lst 버전 설치
+n lts
+# 최신 버전 설치
+n latest
+# 특정 버전 설치
+sudo n 11
+
+# 설치한 버전 변경
+n
+
+# 설치한 버전 확인
+npm -v
+npm node-sass -v 
+```
+
 # 기타 참고하면 좋은 페이지
 ## 마크다운
 https://gist.github.com/ihoneymon/652be052a0727ad59601#this-is-a-h5

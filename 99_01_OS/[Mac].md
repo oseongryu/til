@@ -145,6 +145,8 @@ DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
 
 ```bash
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+.zshrc에서 ZSH_THEME="robbyrussell" => ZSH_THEME="simple"
 ```
 
 ## Terminal alias

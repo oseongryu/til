@@ -111,32 +111,41 @@
 ## Server (Ubuntu) 설정
 
 1. jdk 설치
-   sudo apt install openjdk-11-jdk
-   java -version
+```bash
+sudo apt install openjdk-11-jdk
+java -version
+```
 
 2. mysql 설치
-
+```bash
 sudo apt-get install mysql-server
+```
 
 3. 외부접속 기능 설정 (3306 port open)
-
+```bash
 sudo ufw allow mysql
+```
 
 4. mysql 실행
-
+```bash
 sudo systemctl start mysql
+```
 
 5. 서버 재시작시 자동 실행
-
+```bash
 sudo systemctl enable mysql
+```
 
 6. mysql 접속
-
+```bash
 sudo /usr/bin/mysql -u root -p
+```
 
 7. 비밀번호 설정
-   SET PASSWORD FOR 'root'@'localhost' = PASSWORD('1234');
-   ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+```bash
+SET PASSWORD FOR 'root'@'localhost' = PASSWORD('1234');
+ALTER USER 'root'@'localhost' IDENTIFIED WITH mysql_native_password BY '1234';
+```
 
 8. mysql schema 추가
    CREATE DATABASE testdb;
@@ -144,12 +153,27 @@ sudo /usr/bin/mysql -u root -p
 9. 서버에 인바운드 포트 활성화
 
 10. mysql 외부접속 안될 때
-    netstat -ntlp | grep mysqld
-    sudo /usr/bin/mysql -u root -p
-    mysql> show variables like '%bind%';
-    exit
-    cd /etc/mysql/mysql.conf.d
-    vi mysqld.cnf
-    bind-address 변경 127.0.0.1 -> 0.0.0.0
-    systemctl restart mysql
-    systemctl status mysql
+```bash
+netstat -ntlp | grep mysqld
+sudo /usr/bin/mysql -u root -p
+mysql> show variables like '%bind%';
+exit
+cd /etc/mysql/mysql.conf.d
+sudo vi mysqld.cnf
+bind-address 변경 127.0.0.1 -> 0.0.0.0
+systemctl restart mysql
+systemctl status mysql
+```
+
+11. mysql 제거
+
+```bash
+sudo apt-get remove --purge mysql
+dpkg -l | grep mysql
+
+sudo apt-get remove --purge mysql-apt-config
+
+sudo rm -rf /etc/mysql /var/lib/mysql
+sudo apt-get autoremove
+sudo apt-get autoclean
+```

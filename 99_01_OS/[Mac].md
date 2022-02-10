@@ -210,6 +210,10 @@ pbpaste > test.md
 ## Naver Cloud
 
 ```bash
+### 맥일 경우
+brew install awscli
+which aws
+
 ### python의 설치가 완료되어 있을 경우
 pip install awscli==1.15.85
 

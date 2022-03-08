@@ -28,6 +28,24 @@ GRANT CREATE ANY TABLE TO drawing;
 2. 재시작 시 실행명령어 docker run --shm-size=1g -d daggerok/oracle
 ```
 
+### Oracle
+
+docker pull truevoly/oracle-12c
+docker run -d -p 1521:1521 truevoly/oracle-12c
+docker ps -a
+docker logs ead93e0f514e
+docker exec -it ead93e0f514e bash
+
+netstat -nlpt
+su oracle
+cd $ORACLE_HOME
+bin/sqlplus / as sysdba
+SELECT status FROM v$instance;
+
+
+create user user1 identified by password;
+grant dba to user1 with admin option;
+
 ## Docker Volume
 ```bash
 1. docker volume 생성

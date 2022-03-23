@@ -239,6 +239,14 @@ git pull origin pull/35/head
 
 ```
 
+### SSL certificate problem: self signed certificate in certificate chain
+
+```
+git config --global http.sslVerify false
+
+```
+
+
 ## References
 
 ```

@@ -68,13 +68,35 @@ nvm 노드 버전
 
 ### API 서버 실행 및 확인
 
+```
+node -v
+npm i
+npm run dev
+
+http://localhost:3000/api/docs/
+```
+
 ### 데이터 베이스 연결 안내
 
 ### MongoDB 클라우드 사이트 소개 및 가입 안내
 
+```
+https://www.mongodb.com/ko-kr/cloud
+```
+
 ### MongoDB 클라우드 인스턴스 생성 및 설정
 
+```
+프로젝트생성
+클러스터생성
+```
+
 ### MongoDB 연결 확인
+
+```
+mongodb+srv://test:test@cluster0.reddd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+useUnifiedTopology: true,
+```
 
 ### API 문서 보는 법과 사용하는 방법
 
@@ -82,7 +104,56 @@ nvm 노드 버전
 
 ### Vue CLI로 프로젝트 생성
 
+```
+https://cli.vuejs.org/guide/installation.html
+
+*뷰 CLI 버전 4.5.x 이상 설치시 선택
+Default ([Vue 2] babel, eslint)
+
+프로젝트 설치 옵션
+Manually select features
+Babel, Linter, Unit
+2.x <-- Vue 2로 하시는게 중요합니다. 아직 Vue 3는 상용 서비스에 적용하기에는 무리가 있습니다.
+Prettier
+Lint on Save
+Jest
+In dedicated config files
+n
+
+
+npm install -g @vue/cli
+vue --version
+vue create vue-til
+
+Manually select features
+- Babel, Linter / Formatter, Unit Testing
+- ESLint + Prettier
+- Lint on save
+- Jest
+- In dedicated config files
+
+Please pick a preset: Manually select features
+Check the features needed for your project: Babel, Linter, Unit
+Choose a version of Vue.js that you want to start the project with 2.x
+Pick a linter / formatter config: Prettier
+Pick additional lint features: Lint on save
+Pick a unit testing solution: Jest
+Where do you prefer placing config for Babel, ESLint, etc.? In dedicated config files
+
+npm run serve
+```
+
 ### Vue 프로젝트 구조 설명 및 ESLint 에러 확인
+
+```
+.browserslistrc
+.eslintrc.js
+babel.config.js
+
+https://github.com/vuejs/vue-devtools
+https://devtools.vuejs.org/
+
+```
 
 ### ESLint 에러가 화면에 표시되지 않게 하는 방법
 

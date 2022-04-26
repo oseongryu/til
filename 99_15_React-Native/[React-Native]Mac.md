@@ -29,25 +29,25 @@ export PATH=$PATH:$ANDROID_HOME/platform-tools
 
 ## ERESOLVE unable to resolve dependency tree
 
-bash```
+```
 npm install react-project —save —legacy-peer-deps
 
-````
+```
 ## Error: spawn ./gradlew ACCESS
 
-bash```
+```
 chmod 755 android/gradlew
 
 cd /users/${USER}/desktop/dev/workspace
 
-````
+```
 
 ## local.properties
 
-bash```
+```
 sdk.dir = /users/${USER}/Library/Android/sdk
 
-````
+```
 
 ## Clear
 
@@ -95,6 +95,23 @@ kill -9 18731
 ## vscode Prettier settings.json
 
 ```
+Windows Path:
+./data/user-data/User (Portable)
+%AppData%/Roaming/Code/User/settings.json (Excute)
+
+Mac Path:
+~/Library/Application Support/Code/User/settings.json (Excute)
+
+-- default
+{
+  "workbench.startupEditor": "none",
+  "editor.minimap.enabled": false,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.iconTheme": "material-icon-theme",
+  "terminal.integrated.defaultProfile.windows": "Git Bash"
+}
+
+-- custom
 {
   "workbench.colorTheme": "Material Theme Darker",
   "editor.formatOnSave": true,
@@ -122,6 +139,4 @@ kill -9 18731
     "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
   }
 }
-
 ```
-````

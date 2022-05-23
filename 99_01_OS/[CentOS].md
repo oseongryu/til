@@ -94,6 +94,22 @@ cat /etc/passwd | grep testuser
 ll /home | grep testuser
 ```
 
+### linux Embeded Tomcat SSL
+```
+keytool -genkeypair -alias tomcat-localhost -storetype jks -keyalg RSA -keysize 2048 -validity 3650 -keystore <your project path>/<your project class path>/keystore.jks
+
+server:
+  port: 8443
+  ssl:
+    enabled: true
+    key-alias: tomcat-localhost
+    key-password: <your key password>
+    key-store: classpath:keystore.jks
+    key-store-type: PKCS12
+    key-store-password: <your store key password>
+    key-store-provider: SUN
+```
+
 ## References
 
 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84_%EC%97%B4%EB%A6%B0_%ED%8F%AC%ED%8A%B8_%ED%99%95%EC%9D%B8

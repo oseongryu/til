@@ -1,6 +1,7 @@
 # 사용법
 
 ## 1. 루비설치
+```bash
 yum install ruby
 ruby -v
 
@@ -13,17 +14,19 @@ source /etc/profile.d/rvm.sh
 rvm reload
 rvm install 2.2.4
 ruby -v
+```
 
 ## 2. 지킬 (Jekyll) 설치하기
-
+```bash
 gem install jekyll
 gem install minima
 gem install bundler
 gem install jekyll-feed
 gem install tzinfo-data
+```
 
 ## 3. 로컬에서 블로그 생성하기
-
+```bash
 jekyll new my-awesome-site
 cd my-awesome-site
 bundle exec jekyll serve
@@ -76,30 +79,37 @@ bundle exec jekyll serve --skip-initial-build --host 0.0.0.0 --port 4000
 :ERROR
 echo error
 pause
+```
 
-
-## CentOS 방화벽
-- 방화벽 상태 확인
+### CentOS 방화벽
+```bash
+#### 방화벽 상태 확인
 firewall-cmd --state
 
-- 방화벽 설치
+#### 방화벽 설치
 sudo yum install firewalld 
 sudo systemctl enable firewalld 
 sudo systemctl start firewalld
 
-- 서비스로 방화벽 해제 / 제거
+#### 서비스로 방화벽 해제 / 제거
 sudo firewall-cmd --permanent --add-service=http 
 sudo firewall-cmd --permanent --add-service=https
 
 sudo firewall-cmd --permanent --remove-service=http 
 sudo firewall-cmd --permanent --remove-service=http
 
-- 특정 포트 방화벽 해제
-sudo firewall-cmd --permanent --add-port=8086/tcp
-sudo firewall-cmd --permanent --remove-port=8086/tcp
+#### 특정 포트 방화벽 해제
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --permanent --remove-port=8080/tcp
 
+#### 방화벽설정이후 reload 필요
 sudo firewall-cmd --reload
 firewall-cmd --list-all
+
+systemctl stop firewalld
+systemctl start firewalld
+systemctl status firewalld
+```
 
 ### reference
 ```

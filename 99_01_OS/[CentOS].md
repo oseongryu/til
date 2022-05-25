@@ -110,6 +110,40 @@ server:
     key-store-provider: SUN
 ```
 
+### CentOS Default 설정
+```bash
+### 1. 계정 생성
+useradd testuser
+passwd testuser
+
+### 2. 일반계정 SUDO 사용 
+* sudoers 설정 파일에 없습니다.
+su
+visudo -f /etc/sudoers
+
+* Allow root to run any commands anywhere
+root    ALL=(ALL)       ALL
+test ALL=(ALL)     ALL
+
+### 3. Setting
+
+sudo yum update
+sudo yum install wget -y
+sudo yum install vim -y
+sudo yum install java-1.8.0-openjdk-devel.x86_64 -y
+
+sudo yum install git
+sudo yum install net-tools
+netstat -tnlp
+sudo yum install curl
+
+
+### 4. firewalld 설정
+sudo firewall-cmd --permanent --add-port=8080/tcp
+sudo firewall-cmd --reload
+
+```
+
 ### UTC, KST
 ```bash
 sudo ln -sf /usr/share/zoneinfo/UTC /etc/localtime

@@ -206,3 +206,13 @@ netsh wlan show profile "profile이름" key=clear
 
 키 콘텐츠의 값이 비밀번호
 ```
+
+### 네트워크 경로추적
+```
+Windows: tracert 8.8.8.8
+Linux: traceroute 8.8.8.8
+CentOS: 
+sudo yum install traceroute
+sudo yum install bind-utils
+traceroute  8.8.8.8
+```

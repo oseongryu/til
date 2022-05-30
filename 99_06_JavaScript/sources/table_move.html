@@ -1,0 +1,175 @@
+<script>
+$(document).ready(function() {
+
+    fn_fsMoveImp('moveTest');
+    
+    });
+    
+     
+    
+    
+    function fn_fsMoveImp(id){
+     if( id.indexOf("#") == -1 ){
+      id = "#"+id;
+     }
+     $(id).find("input:text, input:radio, input:checkbox, select").keyup(function(e){
+      var ths = $(this);
+      fn_fsMoveCmn(e.keyCode,ths);
+     }); 
+    }
+    
+    /*37: ←, 38: ↑, 39: →, 40: ↓ */
+    function fn_fsMoveCmn(key,ths){
+     var tName = $(ths).prop("tagName").toLowerCase();
+     if (key == 37) {
+      leftFsCmn(ths);
+     }
+     if (key == 38 && tName.indexOf("select") == -1) {
+      upFsCmn(ths);
+     }
+     if (key == 39) {
+      rightFsCmn(ths);
+     }
+     if (key == 40 && tName.indexOf("select") == -1) {
+      downFsCmn(ths);
+     }
+    }
+    
+    /*왼쪽으로 이동*/
+    function leftFsCmn(ths){
+     var tdObj = ths.parents("td").eq(0);
+     if( tdObj.prev().children("input[type=text]").length > 0 ){
+      tdObj.prev().children("input[type=text]").eq(0).select();
+      return;
+     }
+     if( tdObj.prev().children("input[type=checkbox]").length > 0 ){
+      tdObj.prev().children("input[type=checkbox]").eq(0).focus();
+      return;
+     }
+     if( tdObj.prev().children("select").length > 0 ){
+      tdObj.prev().children("select").eq(0).focus();
+      return;
+     }
+     if( tdObj.prev().prev().children("input[type=text]").length > 0 ){
+      tdObj.prev().prev().children("input[type=text]").eq(0).select();
+      return;
+     }
+     if( tdObj.prev().prev().children("input[type=checkbox]").length > 0 ){
+      tdObj.prev().prev().children("input[type=checkbox]").eq(0).focus();
+      return;
+     }
+     if( tdObj.prev().prev().children("select").length > 0 ){
+      tdObj.prev().prev().children("select").eq(0).focus();
+      return;
+     }
+    }
+    
+    /*오른쪽으로 이동*/
+    function rightFsCmn(ths){
+     var tdObj = ths.parents("td").eq(0);
+     if( tdObj.next().children("input[type=text]").length > 0 ){
+      tdObj.next().children("input[type=text]").eq(0).select();
+      return;
+     }
+     if( tdObj.next().children("input[type=checkbox]").length > 0 ){
+      tdObj.next().children("input[type=checkbox]").eq(0).focus();
+      return;
+     }
+     if( tdObj.next().children("select").length > 0 ){
+      tdObj.next().children("select").eq(0).focus();
+      return;
+     }
+     if( tdObj.next().next().children("input[type=text]").length > 0 ){
+      tdObj.next().next().children("input[type=text]").eq(0).select();
+      return;
+     }
+     if( tdObj.next().next().children("input[type=checkbox]").length > 0 ){
+      tdObj.next().next().children("input[type=checkbox]").eq(0).focus();
+      return;
+     }
+     if( tdObj.next().next().children("select").length > 0 ){
+      tdObj.next().next().children("select").eq(0).focus();
+      return;
+     }
+    }
+    
+    /*위로 이동*/
+    function upFsCmn(ths){
+     var tdObj = ths.parents("td").eq(0);
+     var tdIdx = tdObj.index();
+     var trObj = tdObj.parents("tr").eq(0);
+     var trIdx = trObj.index();
+     if( trIdx > 0 ){
+      var ptdObj = trObj.prev().children("td").eq(tdIdx);
+      if( ptdObj.children("input[type=text]").length > 0 ){
+       ptdObj.children("input[type=text]").eq(0).select();
+       return;
+      }
+      if( ptdObj.children("input[type=checkbox]").length > 0 ){
+       ptdObj.children("input[type=checkbox]").eq(0).focus();
+       return;
+      }
+     }
+    }
+    
+    /*아래로 이동*/
+    function downFsCmn(ths){
+     var tdObj = ths.parents("td").eq(0);
+     var tdIdx = tdObj.index();
+     var trObj = tdObj.parents("tr").eq(0);
+     var trIdx = Number(trObj.index())+1;
+     if( trIdx < $("#fsMove").children("tr").length ){
+      var ntdObj = trObj.next().children("td").eq(tdIdx);
+      if( ntdObj.children("input[type=text]").length > 0 ){
+       ntdObj.children("input[type=text]").eq(0).select();
+       return;
+      }
+      if( ntdObj.children("input[type=checkbox]").length > 0 ){
+       ntdObj.children("input[type=checkbox]").eq(0).focus();
+       return;
+      }
+     }
+    }
+</script>    
+     
+    
+     
+    
+     
+    
+    <table>
+    <tbody id="moveTest">
+     <tr>
+      <th>test1</th>
+      <th>test2</th>
+      <th>test3</th>
+      <th>test4</th>
+      <th>test5</th>
+      <th>test6</th>
+     </tr>
+     <tr>
+      <td>방향키 탭이동1</td>
+      <td><input type="text" size="10"/></td>
+      <td><select><option>test1</option><option>test2</option></select></td>
+      <td><input type="text" size="10"/></td>
+      <td>건너뛰기1</td>
+      <td><input type="text" size="10"/></td>
+     </tr>
+     <tr>
+      <td>방향키 탭이동2</td>
+      <td><input type="text" size="10"/></td>
+      <td><select><option>test1</option><option>test2</option></select></td>
+      <td><input type="text" size="10"/></td>
+      <td>건너뛰기2</td>
+      <td><input type="text" size="10"/></td>
+     </tr>
+     <tr>
+      <td>방향키 탭이동3</td>
+      <td><input type="text" size="10"/></td>
+      <td><select><option>test1</option><option>test2</option></select></td>
+      <td><input type="text" size="10"/></td>
+      <td>건너뛰기3</td>
+      <td><input type="text" size="10"/></td>
+     </tr>
+    </tbody>
+    </table> 

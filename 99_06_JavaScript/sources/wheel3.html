@@ -1,0 +1,55 @@
+<script>
+    console.log('start');
+    function handle(delta) {
+        console.log(delta)
+        if (delta < 0){
+            //down
+            var rowCnt = $("#analysisTable").prop('rows').length;
+            for (var rowIdx = 0; rowIdx < rowCnt; rowIdx++){
+                if($("#analysisTable").prop('rows')[rowIdx].classList.length > 0 && rowIdx+1 < rowCnt) {
+                    $($("#analysisTable").prop('rows')[rowIdx]).removeClass('before_searched');
+                    $($("#analysisTable").prop('rows')[rowIdx+1]).addClass('selected').siblings().removeClass('selected');
+                    var details_json=$($("#analysisTable").prop('rows')[rowIdx+1]).find('td:nth-child(5)').find('div').html();
+                    clickTableRow(details_json);
+                    $("#analysisTable").prop('rows')[rowIdx+1].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+                    break;
+                }
+            }
+            console.log('down')
+        }
+        else {
+            //up
+            var rowCnt = $("#analysisTable").prop('rows').length;
+            for (var rowIdx = 0; rowIdx < rowCnt; rowIdx++){
+                if($("#analysisTable").prop('rows')[rowIdx].classList.length > 0 && rowIdx-1 > 0) {
+                    $($("#analysisTable").prop('rows')[rowIdx-1]).removeClass('before_searched');
+                    $($("#analysisTable").prop('rows')[rowIdx-1]).addClass('selected').siblings().removeClass('selected');
+                    var details_json=$($("#analysisTable").prop('rows')[rowIdx-1]).find('td:nth-child(5)').find('div').html();
+                    clickTableRow(details_json);
+                    $("#analysisTable").prop('rows')[rowIdx-1].scrollIntoView({behavior: "smooth", block: "end", inline: "nearest"})
+                    break;
+                }
+            }
+            console.log('up')
+        }
+    }
+    function wheel(event){
+        if (event.shiftKey && event.wheelDelta) {
+            var delta = 0;
+            if (!event) event = window.event;
+            if (event.wheelDelta) {
+                console.log('aa')
+                delta = event.wheelDelta/120;
+                if (window.opera) delta = -delta;
+            } else if (event.detail) {
+                delta = -event.detail/3;
+            }
+            if (delta)
+                handle(delta);
+        }
+    }
+
+    if (window.addEventListener)
+        window.addEventListener('DOMMouseScroll', wheel, false);
+    window.onmousewheel = document.onmousewheel = wheel;
+</script>

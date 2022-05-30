@@ -1,0 +1,42 @@
+
+<script type="text/javascript">
+        var g_navigtaion_list = [
+            { index: "1", exp: /1/i, name: "1" },
+            { index: "2", exp: /2.do/i, name: "2" },
+            { index: "3", exp: /3.do/i, name: "3" },
+            { index: "4", exp: /4.do/i, name: "4" },
+            { index: "5", exp: /5/i, name: "5" }
+        ];
+
+        // g_navigtaion_list.map(element => console.log(element.index));
+
+        g_navigtaion_list.map(function (item) {
+             console.log(item.exp);
+        });
+
+
+    var exp = /testUser/i;
+    if(exp.test('/testUser')){
+        console.log('aaa');
+    } else{
+        console.log('bbb');
+    }
+</script>
+
+<table>
+    <tr>
+      <th style="overflow: hidden; text-overflow: ellipsis; width: 50px; height:10px">Company</th>
+      <th>Contact</th>
+      <th>Country</th>
+    </tr>
+    <tr>
+      <td style="overflow: hidden; text-overflow: ellipsis; width: 50px; height:10px">Alfreds Futterkiste</td>
+      <td>Maria Anders</td>
+      <td>Germany</td>
+    </tr>
+    <tr>
+      <td><div style="overflow: hidden; text-overflow: ellipsis; width: 50px; height:10px">Centro comercial Moctezuma</div></td>
+      <td>Francisco Chang</td>
+      <td>Mexico</td>
+    </tr>
+  </table>

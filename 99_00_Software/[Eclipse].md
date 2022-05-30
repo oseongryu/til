@@ -1,4 +1,17 @@
-## Eclipse using external Editor
+### eclipse shortcut
+```
+ctrl + d 한줄 삭제
+ctrl shift f 전체정렬
+ctrl i    한줄정렬
+ctrl z 앞으로
+ctrl y 뒤로
+ctrl shift o 자동임포트
+
+```
+
+
+
+### Eclipse using external Editor
 
 ```
 
@@ -10,7 +23,7 @@ File types click > Add Associated editors & Default
 
 ```
 
-## Setting 
+### Setting 
 
 ```
 1. Maven > User Settings  
@@ -55,4 +68,10 @@ File types click > Add Associated editors & Default
 ### eclipse init
 ```
 \.metadata\.plugins\org.eclipse.core.runtime\.settings 하위 파일 전체 삭제
+```
+
+
+### References
+```
+http://success206.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4Eclipse-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%98%84%EC%83%81
 ```

@@ -1,13 +1,24 @@
 
-#원격 실행
-## 원격 http://lab.gamecodi.com/board/zboard.php?id=GAMECODILAB_QnA_etc&no=5258&z=
-## 원격관련 오류 참조https://m.blog.naver.com/PostView.nhn?blogId=sung487&logNo=221042683798&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+## 원격 실행
+### 원격 
 
-###원격 PowerShell :
+```
+http://lab.gamecodi.com/board/zboard.php?id=GAMECODILAB_QnA_etc&no=5258&z=
+```
+
+### 원격관련 오류 참조
+```
+https://m.blog.naver.com/PostView.nhn?blogId=sung487&logNo=221042683798&proxyReferer=https%3A%2F%2Fwww.google.com%2F
+```
+
+### 원격 PowerShell :
+```
 1) Enable-PSRemoting
 2)Azure와 원격방화벽의 인바운드 포트 5985,5986 개방
+```
 
-###로컬 PowerShell:
+### 로컬 PowerShell:
+```
 1)winrm quickconfig --force
 
 2)winrm get winrm/config/client
@@ -34,10 +45,6 @@ Enter-PSSession -ComputerName "52.141.18.204" -Credential $MyCredential
 Invoke-Command -ComputerName "52.141.18.204" -credential $MyCredential -ErrorAction Stop -ScriptBlock {Invoke-Expression -Command:"cmd.exe /c 'taskkill /im node.exe /f'"}
 Invoke-Command -ComputerName "52.141.18.204" -credential "f5074" -ErrorAction Stop -ScriptBlock {Invoke-Expression -Command:"cmd.exe /c 'C:\inetpub\ftproot\stop_sv.bat'"}
 
-
-
-
-
 --Commit&Push git
 Invoke-Command -ComputerName "52.141.18.204" -credential "f5074" -ErrorAction Stop -ScriptBlock {Invoke-Expression -Command:"cmd.exe /c 'C:\inetpub\ftproot\start_commit_git.bat'"}
 
@@ -53,6 +60,21 @@ Invoke-Command -ComputerName "52.141.18.204" -credential "f5074" -ErrorAction St
 
 -- 확인
 f5074.koreacentral.cloudapp.azure.com:4200
+```
+
+### 보안 그룹 규칙에 의해 차단된 네트워크 연결: DefaultRule_DenyAllInBound
+```
+Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
+```
+
+
+
+### references
+```
+https://community.spiceworks.com/topic/2242211-azure-nsg-rdp
+
+https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-5.9.0
+```
 
 
 

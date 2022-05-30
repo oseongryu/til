@@ -170,8 +170,15 @@ nc -v 127.0.0.1 8080
 
 ```
 
+### telnet
+```bash
+sudo yum install telnet
+telnet 127.0.0.1 8080
+```
+
 ## References
 
 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84_%EC%97%B4%EB%A6%B0_%ED%8F%AC%ED%8A%B8_%ED%99%95%EC%9D%B8
+https://woonizzooni.tistory.com/entry/tcping-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B2%95
 
 

@@ -22,7 +22,7 @@ File types click > Add Associated editors & Default
 3. Java > Installed JREs
 
 4. General > Content Types > Text
-   Default encoding: Update
+   Default encoding: UTF-8 > Update
 
 5. General > Workspace
    Text file encoding: UTF-8
@@ -50,4 +50,9 @@ File types click > Add Associated editors & Default
 7. Team > Git > Configuration > Add Entry
    user.email
    user.name
+```
+
+### eclipse init
+```
+\.metadata\.plugins\org.eclipse.core.runtime\.settings 하위 파일 전체 삭제
 ```

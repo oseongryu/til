@@ -36,6 +36,22 @@ public UpdateMemberResponse updateMemberV2(@PathVariable("id") Long id, @Request
 }
 ```
 ### 회원 조회 API
+```java
+// Entity를 @JSonIgnore를 하는 형태로도 가능하지만 절대하지 않기
+// Entity의 값을 변경시 api의 Spec이 변경되면 안됨
+// Spec 확장을 고려해서 data에 Array를 넣는 형태로 진행
+@GetMapping("/api/v2/members")
+public Result membersV2() {
+
+    List<Member> findMembers = memberService.findMembers();
+    //엔티티 -> DTO 변환
+    List<MemberDto> collect = findMembers.stream()
+            .map(m -> new MemberDto(m.getName()))
+            .collect(Collectors.toList());
+    return new Result(collect);
+}
+
+```
 
 ## API 개발 고급 - 준비
 ### API 개발 고급 소개

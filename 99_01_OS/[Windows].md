@@ -1,4 +1,4 @@
-## WinServer2012R2원격데스크톱연결
+### WinServer2012R2원격데스크톱연결
 ```
 *윈 서버2012 원격 데스크톱 활성화 및 포트 변경
 http://t2t2tt.tistory.com/12
@@ -10,25 +10,22 @@ http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%
  http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%B2%A9&uid=7384
 ```
 
-
-## IIS 서버 로깅
+### IIS 서버 로깅
 ```
 https://technet.microsoft.com/ko-kr/library/hh831775(v=ws.11).aspx
 
 
 ```
-## Win10 Evaluation Center
+### Win10 Evaluation Center
 ```
 https://www.microsoft.com/ko-kr/evalcenter/evaluate-windows-10-enterprise
 ```
 
-## Hyper-V가 실행이 안될경우
+### Hyper-V가 실행이 안될경우
 ```
 bcdedit /set hypervisorlaunchtype auto
-
-
 ```
-## psexec 사용
+### psexec 사용
 ```
 psexec \\joker21.iptime.org -u <uesr> -p <pass> /c notepad
 psexec \\112.186.198.40 -u administrator cmd.exe
@@ -39,7 +36,7 @@ Enable-PSRemoting
 
 
 
-## 윈도우 서비스 등록,삭제
+### 윈도우 서비스 등록,삭제
 ```
 https://openeidos.tistory.com/3912
 
@@ -61,17 +58,17 @@ sc delete [Service Name]
 종료 : sc stop [Service Name]
 ```
 
-## 로컬 컴퓨터 에서 서비스 를 시작 하지 못했습니다 오류 1053
+### 로컬 컴퓨터 에서 서비스 를 시작 하지 못했습니다 오류 1053
 https://skql.tistory.com/518
 http://urhelper.com/zb41_urhelper/zb_urhelper.php?id=cho_computers_progs&no=103
 
-## C# 윈도우 서비스 만들기
+### C# 윈도우 서비스 만들기
 ```
 https://nowprogramming.tistory.com/34
 ```
 
 
-## 장치추가 제거
+### 장치추가 제거
 ```
 http://forensic-proof.com/archives/5945
 
@@ -81,7 +78,7 @@ http://forensic-proof.com/archives/5945
 
 
 
-## Windows 단축키
+### Windows 단축키
 ```
 시작-실행  윈 + R
 
@@ -160,7 +157,7 @@ C:\WINDOWS\system32\Com\comexp.msc : 구성요소서비스
 C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\mscorcfg.msc : .NET Configuration 1.1
 ```
 
-## 단축키
+### 단축키
 ```
 로컬보안정책 명령어 https://www.snoopybox.co.kr/1561
 단축키 https://www.clien.net/service/board/lecture/13621530?od=T31&po=0&category=&groupCd=
@@ -191,13 +188,13 @@ control userpasswords2
 http://127.0.0.1
 %appdata%
 ```
-## Windows 원격접속이 안될 떄 (오라클 수정암호화)
+### Windows 원격접속이 안될 떄 (오라클 수정암호화)
 ```
 http://prolite.tistory.com/743
 
 microsoft.com/fwlink/?linkid=866660
 ```
-## IP 공격
+### IP 공격
 
 ### Windows Wifi 비밀번호 확인
 ```bash
@@ -215,4 +212,47 @@ CentOS:
 sudo yum install traceroute
 sudo yum install bind-utils
 traceroute  8.8.8.8
+```
+
+### Windows telnet
+```
+cmd > appwiz.cpl > Windows 기능 켜기/끄기 > 텔넷 클라이언트 체크
+telnet IP PORT
+telnet 127.0.0.1 8080
+```
+
+### cmd
+```
+ipconfig /?
+
+
+F1 : 마지막으로 사용 된 문자 당 붙여 넣기 명령
+F2 : 마지막으로 사용한 명령을 지정된 명령 문자에만 붙여 넣습니다.
+F3 : 붙여 넣기 마지막으로 사용한 명령
+F4 : 지정된 명령 문자로만 명령 삭제
+F5 : 사이클링없이 마지막으로 사용한 명령 붙여 넣기
+F6 : 붙여 넣기 ^ Z
+F7 : 이미 사용 된 명령 목록을 제공합니다 (선택 가능).
+F : 8 사이클 가능 명령 붙여 넣기
+F9 : 최근에 사용한 명령 목록에서 명령을 붙여 넣을 수있게합니다.
+
+
+ipconfig > ./test.txt
+
+nslookup www.google.com
+
+ipconfig && dir
+
+assoc
+
+driverquery
+
+sfc / scannow
+
+```
+
+### References
+```
+https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know
+
 ```

@@ -157,13 +157,35 @@ https://devtools.vuejs.org/
 
 ### ESLint 에러가 화면에 표시되지 않게 하는 방법
 
+```
+https://joshua1988.github.io/webpack-guide/devtools/webpack-dev-server.html
+```
 ### ESLint 설정 파일 안내
 
 ### Prettier 소개 및 ESLint와 같이 사용해야 하는 이유
 
 ### ESLint에 Prettier 규칙 적용
 
+```
+https://joshua1988.github.io/web-development/vuejs/boost-productivity/
+```
+
 ### ESLint 플러그인 설치 및 설정 변경
+
+```
+https://github.com/joshua1988/vue-til/blob/complete/settings.json
+
+Open Settings(settings.json)에 아래 내용 추가
+{
+  "editor.codeActionsOnSave": {
+    "source.fixAll.eslint": true
+  },
+  "eslint.workingDirectories": [
+    {"mode": "auto"}
+  ],
+}
+
+```
 
 ### Prettier 플러그인 확인 및 설정할 때 주의 사항
 
@@ -173,25 +195,61 @@ https://devtools.vuejs.org/
 
 ### 파일을 절대 경로로 찾기 설정
 
+```
+https://github.com/joshua1988/vue-til/blob/complete/jsconfig.json
+https://code.visualstudio.com/docs/languages/jsconfig
+
+```
+
 ### 애플리케이션 코딩 컨벤션 및 뷰 스타일 가이드 소개
+
+```
+https://kr.vuejs.org/v2/style-guide/index.html
+```
 
 ## 4. 라우터 & 컴포넌트 설계
 
 ### 깃헙 리포지토리 안내 및 클론
 
+```
+https://github.com/joshua1988/vue-til
+```
+
 ### 뷰 라우터 설치 및 연결
 
+```
+22년 2월 7일부터 뷰 라우터를 NPM으로 설치할 때 버전을 꼭 명시해 주셔야 강의에서 다루는 Vue 2 버전과 호환됩니다.
+npm i vue-router@3.5.3
+
+https://joshua1988.github.io/web-development/vuejs/vue3-as-default/
+```
 ### 페이지 컴포넌트 생성 및 연결
 
 ### 라우팅 동작 확인
 
 ### 코드 스플리팅 소개 및 적용
 
+```
+https://developer.mozilla.org/en-US/docs/Web/API/Window/history
+
+https://webpack.js.org/guides/code-splitting/
+
+https://vuejs.org/guide/built-ins/keep-alive.html
+```
+
 ### 초기 진입 페이지 설정
+
+```
+https://github.com/vuejs/vue-router
+```
 
 ### 없는 페이지를 접근할 때의 라우터 처리
 
 ### history mode 설정 및 싱글 페이지 애플리케이션 배포할 때 주의 사항
+
+```
+https://router.vuejs.org/guide/essentials/history-mode.html
+```
 
 ## 5. 회원 가입 페이지 개발
 

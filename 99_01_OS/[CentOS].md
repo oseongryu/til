@@ -176,6 +176,32 @@ sudo yum install telnet
 telnet 127.0.0.1 8080
 ```
 
+### crontab
+
+```
+1. script
+---
+#!/bin/bash
+# Config Option
+log_path="/home/user/logs"
+expire_day=7
+
+# Execute
+find ${log_path}/* -type f -mtime +${expire_day} -exec rm -f {} \;
+find /home/user/logs/* -type f -mtime +7 -exec rm -f {} \;
+---
+
+2. crontab
+crontab -l
+crontab -e
+
+0 0 * * * /home/user/script_crontab_log.sh
+
+3. crontab log
+ /var/log/cron
+
+```
+
 ## References
 
 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84_%EC%97%B4%EB%A6%B0_%ED%8F%AC%ED%8A%B8_%ED%99%95%EC%9D%B8

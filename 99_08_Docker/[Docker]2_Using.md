@@ -47,6 +47,7 @@ create user user1 identified by password;
 grant dba to user1 with admin option;
 
 ## Docker Volume
+
 ```bash
 1. docker volume 생성
 docker volume create vol-mysql
@@ -54,6 +55,18 @@ docker volume ls
 docker volume inspect vol-mysql
 ```
 
+## Docker Excute
+
+```bash
+### 1. container 리스트 확인
+docker ps -a
+
+### 2. 해당 컨테이너 실행
+docker exec -it [CONTAINER ID] bash
+docker exec -it [NAMES] bash
+
+docker exec -it 1174feb7c6f4 bash
+```
 
 ### Reference
 ```

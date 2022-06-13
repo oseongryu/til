@@ -1,3 +1,6 @@
+### Setting(Node)
+
+```
 curl -sL https://deb.nodesource.com/setup_12.x | sudo -E bash -
 
 sudo apt-get install -y nodejs
@@ -172,4 +175,50 @@ sudo service nginx reload
 cd /
 cd opt/
 rm -rf myproject/*
+```
+
+### Setting(SpringBoot)
+
+
+#### 1. EC2 CentOS 7 인스턴스 생성
+
+```
+chmod 400 awskey.pem
+ssh -i "awskey.pem" centos@ec2-000-000-000-000.ap-northeast-2.compute.amazonaws.com
+```
+
+#### 2. pem key 없이 접속
+
+```
+sudo adduser testuser
+sudo passwd testuser
+
+sudo chmod u+w /etc/sudoers # 파일 권한 변경
+
+sudo vi /etc/sudoers # 파일 접근
+
+--- sudoers 설정 추가
+"유저명" ALL=(ALL:ALL) ALL
+---
+
+sudo vi /etc/ssh/sshd_config
+
+--- sshd_config 설정 변경
+PasswordAuthentication yes
+---
+
+sudo service sshd restart
+
+
+ssh "유저명"@"IP"
+ssh testuser@000.000.000.000
+
+```
+
+### References
+
+```
+https://wooono.tistory.com/371
+
+```
 

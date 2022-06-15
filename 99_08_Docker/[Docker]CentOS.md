@@ -66,10 +66,19 @@ docker stop centos-my
 docker commit centos-my centos-my2
 docker run -p 80:80 -d centos-my2
 
+## CentoOS 7.9 버전
+
+```
+docker pull centos:7.9.2009
+docker run -it --name centos-my -p 8080:8080 centos:7.9.2009
+```
 
 ## References
+
+```
 https://firework-ham.tistory.com/78
 https://help.iwinv.kr/manual/read.html?idx=548
 
 포트 추가 
 https://medium.com/sjk5766/%EC%8B%A4%ED%96%89%EC%A4%91%EC%9D%B8-container%EC%97%90-port-or-volume-%EC%B6%94%EA%B0%80-ae8889344c68
+```

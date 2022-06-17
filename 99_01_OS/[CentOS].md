@@ -204,7 +204,14 @@ crontab -e
 
 ## References
 
+```
 https://zetawiki.com/wiki/%EB%A6%AC%EB%88%85%EC%8A%A4_%EB%A1%9C%EC%BB%AC%EC%84%9C%EB%B2%84_%EC%97%B4%EB%A6%B0_%ED%8F%AC%ED%8A%B8_%ED%99%95%EC%9D%B8
 https://woonizzooni.tistory.com/entry/tcping-%EC%84%A4%EC%B9%98-%EB%B0%8F-%EC%82%AC%EC%9A%A9%EB%B2%95
-
+https://bkjeon1614.tistory.com/658
+https://unix.stackexchange.com/questions/242782/centos-7-systemd-active-failed-result-start-limit
+https://unix.stackexchange.com/questions/484431/allowing-non-root-users-to-manage-systemd-service-is-not-working
+https://askubuntu.com/questions/692701/allowing-user-to-run-systemctl-systemd-services-without-password
+https://sleeplessbeastie.eu/2021/03/03/how-to-manage-systemd-services-remotely/
+https://serverfault.com/questions/841306/authentication-is-required-to-manage-system-services-or-units
+```
 

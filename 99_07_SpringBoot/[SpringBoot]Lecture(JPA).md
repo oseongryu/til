@@ -117,6 +117,31 @@ for (Order order : all) {
 
 ```
 ### 간단한 주문 조회 V2: 엔티티를 DTO로 변환
+
+```
+#  org.hibernate.type: trace
+
+@ManyToOne(fetch = EAGER) 하면 안되는 이유 
+@ManyToOne(fetch = LAZY)를 사용
+
+엔티티를 DTO로 변환하는 일반적인 방법
+쿼리가 총 1 + N + N번 실행된다. (v1과 쿼리수 결과는 같다.)
+
+```
+```java
+@GetMapping("/api/v2/simple-orders")
+public List<SimpleOrderDto> ordersV2() {
+    // ORDER 2개
+    // N + 1 -> 1 + 회원 N + 배송 N
+    List<Order> orders = orderRepository.findAll();
+    List<SimpleOrderDto> result = orders.stream()
+            .map(o -> new SimpleOrderDto(o))
+            .collect(toList());
+
+    return result;
+}
+```
+
 ### 간단한 주문 조회 V3: 엔티티를 DTO로 변환 - 페치 조인 최적화
 ### 간단한 주문 조회 V4: JPA에서 DTO로 바로 조회
 

@@ -1,4 +1,5 @@
 ## OS 확인
+```
 uname -a 
 
 cat /etc/issue
@@ -6,19 +7,26 @@ cat /etc/redhat-release
 cat /etc/*release*
 
 rpm --query centos-release
-
+```
 ### OS bit 확인
+```
 getconf LONG_BIT
-
+```
 ## 설치된 패키지 확인
+```
 rpm -qa
+```
 
 ## 열린 포트 확인
+```
 netstat -tnlp
+```
 
 ### list open files
+```
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 nmap localhost
+```
 
 ## nginx 사용여부 확인
 systemctl status ngin bx
@@ -180,6 +188,10 @@ telnet 127.0.0.1 8080
 
 ```
 1. script
+
+touch script_crontab_log.sh
+chmod +x script_crontab_log.sh
+
 ---
 #!/bin/bash
 # Config Option
@@ -194,8 +206,16 @@ find /home/user/logs/* -type f -mtime +7 -exec rm -f {} \;
 2. crontab
 crontab -l
 crontab -e
-
+---
+SHELL=/bin/bash
 0 0 * * * /home/user/script_crontab_log.sh
+---
+
+//매분
+* * * * * /home/user/script_crontab_log.sh
+
+// 매분 + 로그
+* * * * * /home/user/script_crontab_log.sh > /home/user/cron/cron.log 2>&1
 
 3. crontab log
  /var/log/cron

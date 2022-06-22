@@ -73,3 +73,11 @@ Name: Vue VSCode Snippets
 Id: sdras.vue-vscode-snippets
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
 ```
+
+### Live Server
+```
+Using Publishing 
+Name: Live Server
+Id: ritwickdey.LiveServer
+VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer
+```

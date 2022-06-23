@@ -222,6 +222,28 @@ SHELL=/bin/bash
 
 ```
 
+### ssh connect
+
+```
+1. Client
+ssh-keygen -t rsa
+ssh-copy-id user@192.168.0.1
+
+~/.ssh/config
+---
+Host rootserv
+    HostName 192.168.0.1
+    Port 22
+    IdentityFile ~/.ssh/id_rsa_root
+    User root
+---
+
+2. Server
+systemctl restart sshd
+chmod 0700 ~/.ssh
+chmod 0600 ~/.ssh/authorized_keys
+```
+
 ## References
 
 ```

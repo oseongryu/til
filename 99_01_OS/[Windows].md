@@ -251,6 +251,11 @@ sfc / scannow
 
 ```
 
+### dir list
+```
+dir/b > list.txt
+```
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

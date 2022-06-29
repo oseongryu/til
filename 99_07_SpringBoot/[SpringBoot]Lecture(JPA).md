@@ -154,6 +154,41 @@ public List<SimpleOrderDto> ordersV2() {
 ### 주문 조회 V4: JPA에서 DTO 직접 조회
 ### 주문 조회 V5: JPA에서 DTO 직접 조회 - 컬렉션 조회 최적화
 ### 주문 조회 V6: JPA에서 DTO로 직접 조회, 플랫 데이터 최적화
+```
+한번의 쿼리로 실행이 가능
+```
+
+```java
+
+// OrderQueryRepository
+public List<OrderFlatDto> findAllByDto_flat() {
+    return em.createQuery(
+            "select new jpabook.jpashop.repository.order.query.OrderFlatDto(o.id, m.name, o.orderDate, o.status, d.address, i.name, oi.orderPrice, oi.count)" +
+                    " from Order o" +
+                    " join o.member m" +
+                    " join o.delivery d" +
+                    " join o.orderItems oi" +
+                    " join oi.item i", OrderFlatDto.class)
+            .getResultList();
+}
+
+// OrderApiController
+@GetMapping("/api/v6/orders")
+public List<OrderQueryDto> ordersV6() {
+    List<OrderFlatDto> flats = orderQueryRepository.findAllByDto_flat();
+
+    return flats.stream()
+            .collect(groupingBy(o -> new OrderQueryDto(o.getOrderId(), o.getName(), o.getOrderDate(), o.getOrderStatus(), o.getAddress()),
+                    mapping(o -> new OrderItemQueryDto(o.getOrderId(), o.getItemName(), o.getOrderPrice(), o.getCount()), toList())
+            )).entrySet().stream()
+            .map(e -> new OrderQueryDto(e.getKey().getOrderId(), e.getKey().getName(), e.getKey().getOrderDate(), e.getKey().getOrderStatus(), e.getKey().getAddress(), e.getValue()))
+            .collect(toList());
+}
+
+// OrderQueryDto
+@EqualsAndHashCode(of = "orderId")
+```
+
 ### API 개발 고급 정리
 
 

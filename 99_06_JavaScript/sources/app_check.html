@@ -1,0 +1,46 @@
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+
+<script>
+	// 앱 스키마 uri
+	var launchAppUrl = 'myAppScheme://'; // 앱 스키마
+
+	var timer;	// 타이머
+	var schInterval; // 인터벌
+
+	// 인터벌, 타이머 삭제
+	function clearTimer() {
+		clearInterval(schInterval);
+		clearTimeout(timer);
+	}
+
+	// 인터벌 마다 동작할 기능
+	function intervalSch() {
+		// 매 인터벌 마다 웹뷰가 활성화 인지 체크
+		if (document.webkitHidden || document.hidden) {// 웹뷰 비활성화
+			clearTimer();// 앱이 설치되어있을 경우 타이머 제거
+			alert("앱이 설치 되어 있습니다.");
+		} else {	// 웹뷰 활성화
+			console.log("타이머 동작");
+		}
+	}
+	$(document).ready(function () {
+		$("button").click(function () {
+
+			// 앱 실행(iOS인 경우)
+			location.href = launchAppUrl;
+
+			// 앱이 설치 되어있는지 체크
+			schInterval = setInterval(intervalSch, 500);
+
+			timer = setTimeout(function () {
+				alert('앱이 설치되어있지 않습니다.');
+				clearInterval(schInterval);
+			}, 2000);
+
+		});
+	});
+</script>
+
+<body>
+	<button>button</button>
+</body>

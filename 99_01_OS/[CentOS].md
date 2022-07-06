@@ -244,6 +244,54 @@ chmod 0700 ~/.ssh
 chmod 0600 ~/.ssh/authorized_keys
 ```
 
+### systemd
+
+
+
+```bash
+0. 실행 스크립트 chmod
+chmod +x start_server.sh
+chmod +x stop_server.sh
+
+
+1. systemd에 서비스 파일 생성
+
+sudo vi /usr/lib/systemd/system/api_service.service
+sudo vi /usr/lib/systemd/system/api_service.service
+---
+[Unit]
+// systemctl status 명령어에 표시되는 상세 설명
+Description=api_service
+// 유닛이 시작되는 순서를 조정하여 After에 지정된 유닛이 실행된 이후 시작된다.
+After=network.target
+
+[Service]
+// ExecStart에 영향을 주는 유닛 프로세스가 시작되며, simple, forking, oeshot, idle 등이 있다.
+Type=forking
+User=serviceadmin
+Group=serviceadmin
+// syslog에서 구분하기 위한 이름
+SyslogIdentifier=api_service
+// 실행된 프로세스의 작업 디렉토리를 설정
+WorkingDirectory=/home/serviceadmin
+// systemctl 명령어로 인한 중지를 제외하고 프로세스가 종료된 후 재시작한다.
+Restart=always
+// Restart 옵션과 연결되어 몇 초에 실행할지 결정
+RestartSec=0s
+// 서비스가 시작될 때 실행할 명령어 또는 스크립트 작성
+ExecStart=/home/serviceadmin/start_server.sh start
+// 서비스가 정지될 때 실행할 명령어 또는 스크립트 작성
+ExecStop=/home/serviceadmin/stop_server.sh stop
+
+[Install]
+// 서비스가 실행될 타겟 설정
+WantedBy=multi-user.target
+---
+
+
+
+```
+
 ## References
 
 ```

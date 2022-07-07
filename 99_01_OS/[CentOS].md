@@ -288,7 +288,22 @@ ExecStop=/home/serviceadmin/stop_server.sh stop
 WantedBy=multi-user.target
 ---
 
+2. systemd 적용을 위해 재시작
+sudo systemctl daemon-reload
 
+3. use
+sudo systemctl start api_service.service
+sudo systemctl stop api_service.service
+sudo systemctl restart api_service.service
+sudo systemctl status api_service.service
+
+* 에러발생시
+sudo systemctl reset-failed api_service.service
+sudo systemd-analyze verify api_service.service
+
+4. 서버 재부팅시 서비스 실행
+sudo systemctl enable api_service.service
+systemctl status api_service.service
 
 ```
 

@@ -83,7 +83,7 @@ docker rm [ContainerID]
 docker images
 
 2. 이미지 삭제
-docekr rmi [ImageID]
+docker rmi [ImageID]
 
 ### Reference
 

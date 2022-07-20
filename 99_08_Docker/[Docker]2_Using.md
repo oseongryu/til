@@ -2,12 +2,28 @@
 
 ### 오라클 사용법
 ```bash
-0. docker version
-1. daggerok/oracle 설치
-2. docker run -d --rm --name oracle-xe --shm-size=1g -p 1521:1521 -e ORACLE_PWD=password daggerok/oracle
-3. docker 재시작
-4. oracle 접속
+# docker version
+docker version
 
+#이미지 검색하기
+docker search oracle-xe 
+
+# 이미지 가져오기
+docker pull oracleinanutshell/oracle-xe-11g
+
+# 당겨온 이미지로 컨테이너 실행하기
+docker run --name oracle11g -d -p 8080:8080 -p 1521:1521 oracleinanutshell/oracle-xe-11g
+
+docker ps
+
+# 실행
+docker run -d --rm --name oracle-xe --shm-size=1g -p 1521:1521 -e ORACLE_PWD=password daggerok/oracle
+
+
+docker 재시작
+oracle 접속
+
+---
 127.0.0.1:1521
 SID: XE
 user: sys
@@ -20,7 +36,9 @@ grant connect, resource to drawing;
 
 GRANT CREATE SESSION TO drawing;
 GRANT CREATE ANY TABLE TO drawing;
+---
 ```
+
 ### Oracle 초기화 방지 사용법
 ```bash
 1. docker run --name oracle11g --shm-size=1g -d -p 1521:1521 -v /oracle11g-data/:/u01/app/oracle/oradata/oracle11g-data/ -e ORACLE_ALLOW_REMOTE=true -e ORACLE_PWD=password --restart=always daggerok/oracle
@@ -29,7 +47,7 @@ GRANT CREATE ANY TABLE TO drawing;
 ```
 
 ### Oracle
-
+```
 docker pull truevoly/oracle-12c
 docker run -d -p 1521:1521 truevoly/oracle-12c
 docker ps -a
@@ -45,8 +63,8 @@ SELECT status FROM v$instance;
 
 create user user1 identified by password;
 grant dba to user1 with admin option;
-
-## Docker Volume
+```
+### Docker Volume
 
 ```bash
 1. docker volume 생성
@@ -55,7 +73,7 @@ docker volume ls
 docker volume inspect vol-mysql
 ```
 
-## Docker Excute
+### Docker Excute
 
 ```bash
 ### 1. container 리스트 확인
@@ -68,12 +86,10 @@ docker exec -it [NAMES] bash
 docker exec -it 1174feb7c6f4 bash
 ```
 
-### Reference
+### References
 ```
 https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html
-
 오라클 관련 https://github.com/daggerok/oracle/releases
-
 docker oracle11g 재시작시 데이터 저장시키기 https://sangmoo.tistory.com/225
 ```
 

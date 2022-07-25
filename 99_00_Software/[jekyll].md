@@ -15,6 +15,23 @@ rvm reload
 rvm install 2.2.4
 ruby -v
 ```
+## rbenv
+```bash
+# rbenv 설치
+yum install rbenv ruby-build
+# rbenv 설치 확인
+rbenv versions
+# 버전
+rbenv install -l
+
+rbenv install 2.2.4
+rbenv global 2.2.4
+ruby -v
+
+yum install -y libssl-dev
+
+```
+
 
 ## 2. 지킬 (Jekyll) 설치하기
 ```bash

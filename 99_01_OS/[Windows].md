@@ -256,6 +256,33 @@ sfc / scannow
 dir/b > list.txt
 ```
 
+### Windows 10 Ubuntu
+```bash
+appwiz.cpl > Windows 기능 켜기/끄기 > Linux용 Windows 하위 시스템 (체크)
+Microsoft Store > ubuntu 검색 > 설치 > 실행
+new UNIX username: osryu
+password: 1234
+
+# 업데이트 검사 명령 실행
+sudo apt-get update
+
+# 업그레이드 명령
+sudo apt-get upgrade
+
+---
+윈10에서 우분투 리눅스 디렉토리 접근
+C:\Users\{user}\AppData\Local\Packages\CanonicalGroupLimited.Ubuntu_79rhkp1fndgsc\LocalState
+
+우분투 리눅스에서 윈10 디렉토리 접근
+cd /mnt/c
+---
+```
+
+### Windows Font 설치
+```
+C:\Windows\Fonts에 설치할 폰트 넣기
+```
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

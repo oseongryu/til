@@ -8,11 +8,11 @@ ruby -v
 * ruby update
 yum install curl gcc gcc-c++, readline-devel, zlib-devel, libyaml-devel, libffi-devel, openssl-devel, autoconf, automake, libtool, bison
 curl -L https://get.rvm.io | bash -s stable --ruby
-curl -L https://get.rvm.io | bash -s stable --ruby=1.9.3
+curl -L https://get.rvm.io | bash -s stable --ruby=2.6.10
 
 source /etc/profile.d/rvm.sh
 rvm reload
-rvm install 2.2.4
+rvm install 2.6.10
 ruby -v
 ```
 ## rbenv
@@ -25,7 +25,7 @@ rbenv versions
 rbenv install -l
 
 rbenv install 2.2.4
-rbenv global 2.2.4
+rbenv global 2.6.10
 ruby -v
 
 yum install -y libssl-dev

@@ -70,8 +70,12 @@ docker run -p 80:80 -d centos-my2
 
 ```
 docker pull centos:7.9.2009
-docker run -it --name centos-my -p 8080:8080 centos:7.9.2009
+docker run -it --name centos-my -p 8080:8080 -p 8081:8081 centos:7.9.2009
 ```
+
+* the input device is not a TTY
+winpty docker run -it --name centos-my -p 8080:8080 -p 8081:8081 centos:7.9.2009
+docker run -t --name centos-my -p 8080:8080 -p 8081:8081 centos:7.9.2009
 
 ## References
 

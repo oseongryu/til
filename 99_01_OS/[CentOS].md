@@ -307,6 +307,54 @@ systemctl status api_service.service
 
 ```
 
+### connect: Network is unreachable
+```
+ping 8.8.8.8
+```
+
+### 내부망 설치
+
+```bash
+# YUM이용시 다운로드만 받을 수 있는 프로그램 설치 (이미 설치되어있었음)
+yum -y install yum-plugin-downloadonly
+# 레포데이터 만들어주는 프로그램 설치
+yum -y install createrepo
+# repository 디렉토리 생성
+mkdir /test
+# 필요한 RPM을 다운로드
+vi /etc/yum.repos.d/MariaDB.repo
+---
+[mariadb]
+name = MariaDB
+baseurl = http://yum.mariadb.org/10.1/centos7-amd64
+gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+gpgcheck=1
+---
+
+# yum downloadonly의 경우 다운로드받을 프로그램이 설치되어있으면 다운로드 받아지지않음
+# 다운로드 받으려는 프로그램을 삭제하고나 다른환경에서 다운로드 받아야함
+yum -y install [설치할 프로그램명] --downloadonly --downloaddir=/test
+yum -y install MariaDB-server --downloadonly --downloaddir=/test
+
+# Repo MetaData를 생성한다
+createrepo /test
+---
+[mariadb]
+name = MariaDB
+baseurl = file:///test/
+enabled=1
+gpgcheck=0
+---
+
+# 외부망에서 진행한 /test 디렉토리를 내부망 서버 /test에 복사
+vi /etc/yum.repo.d/MaraiDB.repo
+# yum 저장소를 잘 읽어오는지 확인
+yum repolist
+# MariaDB YUM설치 실행
+yum -y install MariaDB
+
+```
+
 ## References
 
 ```

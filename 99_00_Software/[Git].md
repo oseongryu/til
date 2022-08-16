@@ -247,6 +247,35 @@ git config --global http.sslVerify false
 ```
 
 
+### git remote origin 
+```bash
+git config --local --list
+git remote add origin git@github.com:oseongryu/til.git
+
+git remote remove origin
+git config --local --list
+
+git remote add origin git@github.com:oseongryu/til.git
+git push -u origin master
+
+```
+
+### git merge option
+```bash
+git merge [branch] --strategy-option ours
+git merge [branch] --strategy-option theirs
+
+#### fast-forward 관계에 있으면 commit을 생성하지 않고 현재 브랜치의 참조 값 만 변경(default)
+git merge --ff [branch]
+
+#### fast-forward 관계에 있어도 merged commit 생성
+git merge --no-ff [branch]
+
+#### fast-forward 관계에 있어도 merged commit 생성, merging 브랜치 정보 생략
+git merge --squash [branch]
+
+```
+
 ## References
 
 ```

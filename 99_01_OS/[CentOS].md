@@ -355,6 +355,57 @@ yum -y install MariaDB
 
 ```
 
+### SFTP 설정
+```bash
+#### 1. SFTP를 위한 SSH설치
+rpm -qa|grep ssh
+
+#### 2. SFTP 구성하기 (SFTP 권한을 얻을 user와 group만들기)
+sudo mkdir -p /data/sftp
+sudo chmod 701 /data
+
+#### 3. 그룹 및 유저 생성
+3-1. 그룹명 sftpgroup 생성
+sudo groupadd sftpgroup
+
+3-2. 유저 생성
+-g : 그룹 sftpgroup 포함시킴
+-d : 유저가  /upload 디렉터리에 있도록 설정, (/data/sftpgroup/upload)
+-s : 유저(sftpuser01)가 ssh 프로토콜이 아니고, sftp 프로토콜만 사용하도록 제한
+ 
+useradd -g sftpgroup -s /sbin/nologin sftpuser01
+passwd sftpuser01
+
+#### 4. upload 디렉터리 만들고, 권한 설정하기
+mkdir -P : 경로에 디렉터리를 없으면 만들고 있으면 냅둠
+chown -R : 경로 하위 파일을 모두 권한 변경
+
+mkdir -p /data/sftpuser01/upload
+chown -R root:sftpgroup /data/sftpuser01
+chown -R sftpuser01:sftpgroup /data/sftpuser01/upload
+
+#### 5. SSH Configure파일 수정하기
+vi /etc/ssh/sshd_config
+
+---
+Match Group sftpgroup
+ChrootDirectory /data/%u
+ForceCommand internal-sftp
+---
+#### 6. SSH 서비스 상태 확인 및 재시작
+service sshd status
+service sshd restart
+
+#### 7. SFTP 작동 테스트 
+yum list nmap
+yum install nmap -y
+nmap -n 192.168.0.1
+
+#### 8. 원격에서 접속 테스트
+ssh sftpdev01@192.168.0.1
+sftp -oPort=22 -i ~/.ssh/id_rsa_sftpdev01 sftpdev01@192.168.0.1
+```
+
 ## References
 
 ```

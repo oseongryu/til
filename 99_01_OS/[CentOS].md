@@ -406,6 +406,20 @@ ssh sftpdev01@192.168.0.1
 sftp -oPort=22 -i ~/.ssh/id_rsa_sftpdev01 sftpdev01@192.168.0.1
 ```
 
+### 서버 재시작, 서버 종료
+```bash
+#### 10분 뒤 종료 (halt)
+shutdown -h +10
+#### 13시 재가동 (reboot)
+shutdown -r 13:00
+#### 즉시 재가동
+shutdown -r now
+
+#### 재부팅
+reboot
+
+```
+
 ## References
 
 ```

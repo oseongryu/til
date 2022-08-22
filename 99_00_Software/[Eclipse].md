@@ -9,6 +9,12 @@ ctrl shift o 자동임포트
 
 ```
 
+### eclipse line number
+```
+
+1. Windows > Preferences > General > Editors > Text Editors
+Show line numbers (Check)
+```
 
 
 ### Eclipse using external Editor

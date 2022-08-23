@@ -257,7 +257,7 @@ chmod +x stop_server.sh
 1. systemd에 서비스 파일 생성
 
 sudo vi /usr/lib/systemd/system/api_service.service
-sudo vi /usr/lib/systemd/system/api_service.service
+
 ---
 [Unit]
 // systemctl status 명령어에 표시되는 상세 설명

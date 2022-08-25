@@ -12,7 +12,7 @@ docker search oracle-xe
 docker pull oracleinanutshell/oracle-xe-11g
 
 # 당겨온 이미지로 컨테이너 실행하기
-docker run --name oracle11g -d -p 8080:8080 -p 1521:1521 oracleinanutshell/oracle-xe-11g
+docker run --name oracle11g -d -p 1521:1521 oracleinanutshell/oracle-xe-11g
 
 docker ps
 

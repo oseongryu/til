@@ -96,6 +96,7 @@ git branch -a
 git log --oneline
 git log --pretty=format:"%h - %an, %ar : %s"
 git log --pretty=format:"%h %cd %an %s"
+git log --stat
 ```
 
 ## 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)
@@ -276,8 +277,13 @@ git merge --squash [branch]
 
 ```
 
-## References
+### git remove specific file on all commit 
+```bash
+git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 파일명' --prune-empty --tag-name-filter cat -- --all
+git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch 99_00_Software/[IntelliJ].md' --prune-empty --tag-name-filter cat -- --all
+```
 
+### References
 ```
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved

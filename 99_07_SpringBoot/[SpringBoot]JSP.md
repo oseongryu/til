@@ -1,4 +1,5 @@
-## Spring profiles Change
+#### Spring profiles Change
+```js
 Github등 open된 곳에서 소스를 관리할 경우 DB 정보와 같은 중요정보는 Parameter를 사용해서 실행하도록 하면, 정보 보호가 가능함 
 * 적용방법(bootRun 시 VM 세팅에 추가)
 -Dspring.profiles.active=prod -Dspring.datasource.username=test  -Dspring.datasource.password=test -Dvariables.ip=127.0.0.1 -Dvariables.sid=XE
@@ -31,9 +32,10 @@ spring:
 variables:
   ip: localhost
   sid: xe
+```
 
-## JSP 세팅
-
+#### JSP 세팅
+```js
 1. build.gradle
 implementation 'javax.servlet:jstl'
 implementation 'org.apache.tomcat.embed:tomcat-embed-jasper'
@@ -48,10 +50,11 @@ spring:
 
 3. src/main/webapp/WEB-INF/views/index.jsp
 해당경로에 설정해줘야 jsp 페이지가 적용됨
+```
 
 
-
-## jar 배치 실행 시 JSP가 열리지 않는 부분
+#### jar 배치 실행 시 JSP가 열리지 않는 부분
+```js
 jar를 war로 변경해서 배포할 경우 가능
 
 1. build.gradle
@@ -90,8 +93,26 @@ spring:
   resources:
     static-locations: classpath:/static/
     add-mappings: true
+```
 
+#### batch file
+```bash
+vi start_server.sh
 
-## 서버 실행용 batch
+---
+#!/bin/sh -
+nohup java -Dfile.encoding=UTF-8 -jar ./build/drawing-app.war --server.port=8081 > ./drawing-app/app.out 2> ./drawing-app/app.err < /dev/null & nohup echo $! > ./drawing-app/pid.file &
+---
 
-java -jar ../build/libs/spring_boot.war --spring.profiles.active=prod --spring.datasource.username=test  --spring.datasource.password=test --variables.ip=localhost --variables.sid=XE
+vi stop_server.sh
+---
+#!/bin/sh -
+kill $(cat ./drawing-app/pid.file)
+---
+```
+
+#### Run Configurations
+```js
+Environment variables: 
+-spring.profiles.active=stage;-spring.datasource.url=jdbc:log4jdbc:oracle:thin:@127.0.0.1:1521/XE
+```

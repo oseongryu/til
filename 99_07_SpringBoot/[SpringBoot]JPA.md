@@ -1,6 +1,6 @@
-# SpringBoot JPA
+### SpringBoot JPA
 
-## SpringBoot 설정
+#### SpringBoot 설정
 
 1. spring initalizr
 - https://start.spring.io/
@@ -13,7 +13,7 @@
 
 3. Run > Run 'spring' 실행 후 WebBrowser에서 localhost:8080/ 에 접속
 
-### Spring restTemplate UrlEncoding
+#### Spring restTemplate UrlEncoding
 ```java
 
 String url = CommonUtils.relayURL(apiUrl, initRequestParameters(map));

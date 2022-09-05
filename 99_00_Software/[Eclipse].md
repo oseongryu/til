@@ -9,11 +9,14 @@ ctrl shift o 자동임포트
 
 ```
 
-### eclipse line number
+### eclipse line number, show whitespace
 ```
 
 1. Windows > Preferences > General > Editors > Text Editors
 Show line numbers (Check)
+
+2. 1. Windows > Preferences > General > Editors > Text Editors
+Show whitespace characters (Check)
 ```
 
 

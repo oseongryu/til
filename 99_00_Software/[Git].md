@@ -1,5 +1,4 @@
-## Git 사용방법
-
+#### Git 사용방법
 ```bash
 git --version
 git config --global user.name "사용자명"
@@ -16,7 +15,7 @@ git remote add origin https://github.com/f5074/sample.git
 git push origin master
 ```
 
-## Git Revert
+#### Git Revert
 
 ```bash
 git log
@@ -24,7 +23,7 @@ git reset --hard "원하는 HEAD"
 git push -f origin master
 ```
 
-## Git Reset
+#### Git Reset
 
 ```bash
 git reset HEAD^ // 마지막 커밋 삭제
@@ -32,13 +31,13 @@ git reset --hard HEAD // 마지막 커밋 상태로 되돌림
 git reset HEAD * // 스테이징을 언스테이징으로 변경
 ```
 
-## git 병합취소
+#### git 병합취소
 
 ```bash
 git merge --abort
 ```
 
-## git config 설정시 저장 위치
+#### git config 설정시 저장 위치
 
 ```bash
 System	 <git-install-root>\mingw64\etc\gitconfig	 gitconfig
@@ -54,7 +53,7 @@ git config --local user.email "이메일"
 git config --list
 ```
 
-## git branch
+#### git branch
 
 ```bash
 git checkout -b deploy/prod
@@ -68,7 +67,7 @@ git branch -D deploy/prod
 git push origin :deploy/prod
 ```
 
-## git rebase
+#### git rebase
 
 ```
 git branch
@@ -81,7 +80,7 @@ git checkout develop
 git merge feature/test --ff
 ```
 
-## git 로컬 내용 업데이트
+#### git 로컬 내용 업데이트
 
 ```
 git branch -r
@@ -90,7 +89,7 @@ git remote update
 git branch -a
 ```
 
-## git log
+#### git log
 
 ```
 git log --oneline
@@ -99,14 +98,14 @@ git log --pretty=format:"%h %cd %an %s"
 git log --stat
 ```
 
-## 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)
+#### 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)
 
 ```
 Unable to create '/home/user/repo/.git/refs
 chown -R user:usergroup file/folder
 ```
 
-## 맥에서 git 계정 2개 이상 사용 시 ssh 인증
+#### 맥에서 git 계정 2개 이상 사용 시 ssh 인증
 
 ```bash
 ### ssh-keygen 생성
@@ -157,7 +156,7 @@ git remote add origin git@github.com-oseongryu:oseongryu/til.git
 git remote set-url origin git@github.com-oseongryu:oseongryu/til.git
 ```
 
-## 다른 맥으로 .ssh설정 옮기기
+#### 다른 맥으로 .ssh설정 옮기기
 
 ```
 
@@ -185,7 +184,7 @@ Load key "/Users/oseongryu/.ssh/id_rsa_oseongryu": bad permissions
 
 ```
 
-## git Commit Message Structure
+#### git Commit Message Structure
 
 ```
 feat : 새로운 기능 추가
@@ -205,7 +204,7 @@ test: (adding missing tests, refactoring tests; no production code change)
 chore: (updating grunt tasks etc; no production code change)
 ```
 
-### git local pull request
+#### git local pull request
 
 ```bash
 #### local get pull request
@@ -223,7 +222,7 @@ git config --add remote.origin.fetch "+refs/heads/*:refs/remotes/origin/*"
 
 ```
 
-### fetch github pr to local
+#### fetch github pr to local
 
 ```
 git pull origin pull/35/head
@@ -240,7 +239,7 @@ git pull origin pull/35/head
 
 ```
 
-### SSL certificate problem: self signed certificate in certificate chain
+#### SSL certificate problem: self signed certificate in certificate chain
 
 ```
 git config --global http.sslVerify false
@@ -248,7 +247,7 @@ git config --global http.sslVerify false
 ```
 
 
-### git remote origin 
+#### git remote origin 
 ```bash
 git config --local --list
 git remote add origin git@github.com:oseongryu/til.git
@@ -261,7 +260,7 @@ git push -u origin master
 
 ```
 
-### git merge option
+#### git merge option
 ```bash
 git merge [branch] --strategy-option ours
 git merge [branch] --strategy-option theirs
@@ -277,13 +276,48 @@ git merge --squash [branch]
 
 ```
 
-### git remove specific file on all commit 
+#### git remove specific file on all commit 
 ```bash
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 파일명' --prune-empty --tag-name-filter cat -- --all
 git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch 99_00_Software/[IntelliJ].md' --prune-empty --tag-name-filter cat -- --all
 ```
 
-### References
+#### git Directory 계정설정
+```
+git config --list --show-origin
+
+.gitconfig(제외)
+---
+[user]
+    email = oseongryu@gmail.com
+    name = oseongryu
+---
+
+.gitconfig(추가)
+---
+[includeIf "gitdir:~/git/personal/"]
+    path = .gitconfig-personal
+[includeIf "gitdir:~/git/professional/"]
+    path = .gitconfig-professional
+---
+
+.gitconfig-personal(추가)
+---
+[user]
+    email = oseongryu@gmail.com
+    name = oseongryu
+---
+
+.gitconfig-professional(추가)
+---
+[user]
+    email = osryu@gmail.com
+    name = osryu
+---
+
+```
+
+#### References
 ```
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved

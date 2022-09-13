@@ -1,6 +1,11 @@
-## Git
+#### VSCode Show Whitespace
+```
+File > Preperences > Settings > Users Tab > Text Editor > Render Whitespace > all (selection)
+```
 
-### GitLens
+### Extension
+
+#### GitLens
 ```
 Name: GitLens — Git supercharged
 Id: eamodio.gitlens
@@ -14,7 +19,7 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=eamodio
 
 ```
 
-### Git History
+#### Git History
 ```
 Name: Git History
 Id: donjayamanne.githistory
@@ -24,7 +29,7 @@ Publisher: Don Jayamanne
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
 ```
 
-### Git Graph
+#### Git Graph
 ```
 Name: Git Graph
 Id: mhutchie.git-graph
@@ -34,9 +39,8 @@ Publisher: mhutchie
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
 ```
 
-## MarkDown
 
-### Markdown Preview Enhanced
+#### Markdown Preview Enhanced
 ```
 Name: Markdown Preview Enhanced
 Id: shd101wyy.markdown-preview-enhanced
@@ -46,7 +50,7 @@ Publisher: Yiyi Wang
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced
 ```
 
-### Markdown PDF
+#### Markdown PDF
 ```
 Name: Markdown PDF
 Id: yzane.markdown-pdf
@@ -57,7 +61,7 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=yzane.m
 ```
 
 
-### JavaScript (ES6) code snippets
+#### JavaScript (ES6) code snippets
 ```
 Name: JavaScript (ES6) code snippets
 Id: xabikos.JavaScriptSnippets
@@ -67,9 +71,8 @@ Publisher: charalampos karypidis
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets
 ```
 
-## Vue.JS Extension
 
-### Vetur
+#### Vetur
 ```
 Name: Vetur
 Id: octref.vetur
@@ -79,7 +82,7 @@ Publisher: Pine Wu
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=octref.vetur
 ```
 
-### Vue VSCode Snippets
+#### Vue VSCode Snippets
 ```
 Name: Vue VSCode Snippets
 Id: sdras.vue-vscode-snippets
@@ -89,7 +92,7 @@ Publisher: sarah.drasner
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
 ```
 
-### Live Server (Using Publishing)
+#### Live Server (Using Publishing)
 ```
 Name: Live Server (Five Server)
 Id: yandeu.five-server
@@ -99,7 +102,7 @@ Publisher: Yannick
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=yandeu.five-server
 ```
 
-### vscode-base64
+#### vscode-base64
 ```
 Name: vscode-base64
 Id: adamhartford.vscode-base64
@@ -109,9 +112,7 @@ Publisher: Adam Hartford
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64
 ```
 
-## Others
-
-### Material Icon Theme
+#### Material Icon Theme
 ```
 Name: Material Icon Theme
 Id: PKief.material-icon-theme
@@ -121,7 +122,7 @@ Publisher: Philipp Kief
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
 ```
 
-### open in browser
+#### open in browser
 ```
 Name: open in browser
 Id: techer.open-in-browser

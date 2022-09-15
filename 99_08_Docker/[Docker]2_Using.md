@@ -47,9 +47,10 @@ GRANT CREATE ANY TABLE TO drawing;
 ```
 
 ### Oracle
-```
-docker pull truevoly/oracle-12c
-docker run -d -p 1521:1521 truevoly/oracle-12c
+```bash
+##### 오라클의 경우 테이블 생성시 30자 제한이 있어서 12.1 버전이 아닌 12.2 버전에서 30자 제한이 없음
+docker pull ashimjk/oracle-ee-12c
+docker run -d -p 1521:1521 ashimjk/oracle-ee-12c
 docker ps -a
 docker logs ead93e0f514e
 docker exec -it ead93e0f514e bash

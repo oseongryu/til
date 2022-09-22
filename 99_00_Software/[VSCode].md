@@ -3,6 +3,12 @@
 File > Preperences > Settings > Users Tab > Text Editor > Render Whitespace > all (selection)
 ```
 
+#### VSCode Trim Trailing Whitespace
+```
+File > Preperences > Settings > Users Tab > Text Editor > Files > Trim Trailing Whitespace(Check)
+
+```
+
 ### Extension
 
 #### GitLens

@@ -9,6 +9,13 @@ File > Preperences > Settings > Users Tab > Text Editor > Files > Trim Trailing 
 
 ```
 
+#### Tab or Space
+```
+우측 하단 Tab Size, Spaces 선택 후 변경
+Indent Using Spaces
+Indent Using Tabs
+```
+
 ### Extension
 
 #### GitLens

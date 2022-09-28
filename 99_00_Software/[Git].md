@@ -282,6 +282,17 @@ git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 파�
 git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch 99_00_Software/[IntelliJ].md' --prune-empty --tag-name-filter cat -- --all
 ```
 
+#### git stage to unstage
+```bash
+git reset HEAD -- .
+```
+
+### git discard change
+```bash
+git restore .
+git reset --hard
+```
+
 #### git Directory 계정설정
 ```
 git config --list --show-origin

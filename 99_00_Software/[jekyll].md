@@ -7,12 +7,19 @@ ruby -v
 
 * ruby update
 yum install curl gcc gcc-c++, readline-devel, zlib-devel, libyaml-devel, libffi-devel, openssl-devel, autoconf, automake, libtool, bison
+curl -sSL https://rvm.io/mpapis.asc | gpg2 --import -
+curl -sSL https://rvm.io/pkuczynski.asc | gpg2 --import -
+
 curl -L https://get.rvm.io | bash -s stable --ruby
 curl -L https://get.rvm.io | bash -s stable --ruby=2.6.10
 
+
 source /etc/profile.d/rvm.sh
+or source /home/azureadmin/.rvm/scripts/rvm
+
 rvm reload
 rvm install 2.6.10
+rvm reinstall ruby-2.6.10
 ruby -v
 ```
 ## rbenv

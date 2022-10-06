@@ -184,6 +184,12 @@ Load key "/Users/oseongryu/.ssh/id_rsa_oseongryu": bad permissions
 
 ```
 
+#### 원격에서 ssh설정시
+```bash
+chown $USER ~/.ssh/config
+chmod 644 ~/.ssh/config
+```
+
 #### git Commit Message Structure
 
 ```

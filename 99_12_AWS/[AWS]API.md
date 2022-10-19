@@ -3,26 +3,60 @@
 
 ## Lambda
 
+### ARN
+arn:aws:iam::{계정명}:role/apigateway-dynamodb-role
 
+
+### GetItem
+```json
 { 
-    "TableName": "dev",
-    "Item": {
-        "date": {
-            "S": "$context.requestTime.substring(0,11)"
-        },
-        "epoch_uuid": {
-            "S": "$context.requestTimeEpoch,$context.requestId"
-        },
-        "details": {
-            "S": "$util.base64Encode("$input.body")"
-        },
-        "epoch": {
-            "S": "$context.requestTimeEpoch"
+    "TableName": "table1",
+    "Key": {
+        "test_id": {
+            "S": "$input.params('test_id')"
         }
     }
 }
+```
 
-## CloudWatch 로그 역할 ARN
+### PutItem
+```json
+{ 
+  "TableName": "table1",
+  "Item": {
+    "test_id": { 
+      "S": "$input.params('test_id')"
+    }
+  }
+}
+```
+### UpdateItem
+```json
+{
+  "TableName": "table1",
+  "Key": {
+      "test_id": {
+          "S": "$input.params('test_id')"
+      }
+  },
+  "UpdateExpression": "set value = :val1",
+  "ExpressionAttributeValues": {
+      ":val1": {"S": "$input.path('$.value')"}
+  },
+  "ReturnValues": "ALL_NEW"
+}
+```
+### DeleteItem
+```json
+{ 
+  "TableName": "table1",
+  "Key": {
+    "test_id": { 
+      "S": "$input.params('test_id')"
+    }
+  }
+}
+```
 
 
 ## References

@@ -58,7 +58,67 @@ arn:aws:iam::{계정명}:role/apigateway-dynamodb-role
 }
 ```
 
+### PutItem
+    date=date1&epoch_uuid=epoch_uuid1
+
+```json
+{ 
+  "TableName": "tb_dev",
+  "Item": {
+    "date": { 
+      "S": "$input.params('date')"
+    },
+    "epoch_uuid": { 
+      "S": "$input.params('epoch_uuid')"
+    }
+  }
+}
+```
+### PutItem
+    date=date1&epoch_uuid=epoch_uuid1&details=details1&epoch=epoch1
+
+```json
+{ 
+  "TableName": "tb_dev",
+  "Item": {
+    "date": { 
+      "S": "$input.params('date')"
+    },
+    "epoch_uuid": { 
+      "S": "$input.params('epoch_uuid')"
+    },
+    "details": {
+        "S": "$input.params('details')"
+    },
+    "epoch": {
+        "S": "$input.params('epoch')"
+    }
+  }
+}
+```
+
+### PutItem
+```json
+{ 
+  "TableName": "tb_dev",
+  "Item": {
+    "date": { 
+      "S": "$context.requestTime.substring(0,11)"
+    },
+    "epoch_uuid": { 
+      "S": "$context.requestTimeEpoch,$context.requestId"
+    },
+    "details": {
+        "S": "$util.base64Encode("$input.body")"
+    },
+    "epoch": {
+        "S": "$context.requestTimeEpoch"
+    }
+  }
+}
+```
+
 
 ## References
 
-https://labs.brandi.co.kr/2018/07/31/kwakjs.html
+    https://labs.brandi.co.kr/2018/07/31/kwakjs.html

@@ -241,6 +241,13 @@ FROM DUAL
 (o) AND REGISTER_DATE BETWEEN TO_DATE('20220901'||'000000', 'YYYYMMDDHH24MISS') AND TO_DATE('20220901'||'235959', 'YYYYMMDDHH24MISS')
 ```
 
+#### 권한관련
+```sql
+SELECT * 
+FROM DBA_TAB_PRIVS
+WHERE 1 = 1
+ AND GRANTEE = 'TEST'
+```
 
 ## Reference
 https://m.cafe.daum.net/oraclesqltuning/8ACn/28

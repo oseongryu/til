@@ -334,6 +334,17 @@ git config --list --show-origin
 
 ```
 
+
+#### 리모트 브랜치 참조 업데이트
+```bash
+# 리모트 브랜치의 더 이상 유효하지 않은 참조를 깨끗이 지우는 명령어
+git remote prune origin
+git remote update --prune
+
+# 로컬 저장소를 최신 정보로 갱신(리모트 저장소와 동기화)하며 자동적으로 더이상 유효하지 않은 참조를 제거
+git fetch -p
+```
+
 #### References
 ```
 Git Portable Location

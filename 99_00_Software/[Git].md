@@ -345,6 +345,12 @@ git remote update --prune
 git fetch -p
 ```
 
+#### 실수로 삭제한 브랜치 복구하기
+```bash
+git reflog
+git checkout -b 'temp' HEAD@{1}
+```
+
 #### References
 ```
 Git Portable Location

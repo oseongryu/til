@@ -7,7 +7,7 @@ vue vscode snippets
 
 https://github.com/joshua1988/vue-til-server
 
-- 버전
+- **버전**
   Node.js 이전 릴리즈 다운로드 페이지
   https://nodejs.org/ko/download/releases/
   OS 별로 아래 파일을 다운로드 받으시면 됩니다 :)
@@ -39,3 +39,10 @@ source ~/.bash_profile
 
 nvm install 12.14.0
 nvm install 10.16.3
+
+
+### vue click async
+https://stackoverflow.com/questions/64883186/basic-async-call-on-click-event-in-template-vuejs
+
+### vue computed
+https://velog.io/@jinsu6688/vuejs-computed

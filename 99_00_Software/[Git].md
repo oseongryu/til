@@ -351,6 +351,11 @@ git reflog
 git checkout -b 'temp' HEAD@{1}
 ```
 
+#### 원격 브랜치 삭제
+```bash
+git push origin --delete feature/oseongryu
+```
+
 #### References
 ```
 Git Portable Location

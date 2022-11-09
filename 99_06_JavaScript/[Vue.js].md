@@ -46,3 +46,15 @@ https://stackoverflow.com/questions/64883186/basic-async-call-on-click-event-in-
 
 ### vue computed
 https://velog.io/@jinsu6688/vuejs-computed
+
+### vue dx-grid row
+
+https://stackoverflow.com/questions/5497073/how-to-differentiate-single-click-event-and-double-click-event
+
+
+### vue smart editor2 image upload
+
+https://javafactory.tistory.com/1259
+http://naver.github.io/smarteditor2/user_guide/2_install/download.html
+https://zero-gravity.tistory.com/171
+https://github.com/naver/smarteditor2/releases/tag/v2.8.2.3

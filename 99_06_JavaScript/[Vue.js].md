@@ -109,3 +109,45 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/FloatingActionButton/Overvie
 ### devextreme customstore remove
 https://js.devexpress.com/Documentation/ApiReference/Data_Layer/CustomStore/
 
+
+### devextreme popup
+```js
+    <!-- 팝업시작 -->
+    <h3 class="hy-h3 required">팝업</h3>
+    <div class="row-box mgt-20">
+      <dx-button class="btn--input" height="34" text="팝업오픈" @click="popupOpen()" />
+    </div>
+    <dx-popup :visible.sync="show" width="600" title="팝업가이드">
+      <div class="sub-head">
+        서브 헤더 영역
+      </div>
+      <!-- 스크롤이 필요 없을 경우 삭제 -->
+      <DxScrollView class="scrollview" ref="scrollViewWidget">
+        <!-- popup -->
+        <div class="hy-popup">
+          팝업 콘텐츠 영역...
+    
+          <div class="btn-wrap center">
+            <!-- 좌우 정렬 span.left 사용 -->
+            <!-- <span class="left">
+                              <dx-button class="btn--base" width="120" height="40" text="취소" />
+                            </span> -->
+            <dx-button class="btn--base" width="120" height="40" text="취소" @click="popupClose" />
+            <dx-button class="btn--solid" width="120" height="40" text="승인요청" />
+          </div>
+        </div>
+      </DxScrollView>
+    </dx-popup>
+    <!-- 팝업 종료 -->
+  show: boolean = false
+
+  popupOpen() {
+    console.log('open')
+    this.show = true
+  }
+
+  popupClose() {
+    console.log('close')
+    this.show = false
+  }
+```

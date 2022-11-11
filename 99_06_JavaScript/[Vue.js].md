@@ -58,3 +58,54 @@ https://javafactory.tistory.com/1259
 http://naver.github.io/smarteditor2/user_guide/2_install/download.html
 https://zero-gravity.tistory.com/171
 https://github.com/naver/smarteditor2/releases/tag/v2.8.2.3
+http://webprogramer.kr/blog/P000000364/post.do
+http://www.todayhumor.co.kr/board/view.php?table=programmer&no=11347
+https://holybell87.tistory.com/12
+
+
+```js
+* 사용버전 : 2.8.2.12056
+1. /SE2.8.2.O12056/sample/js/plugin/hp_SE2M_AttachQuickPhoto.js
+var sPopupUrl = "이미지 업로드 팝업창 표시URL"; 로 수정
+
+2. 이미지 업로드 팝업창을 통해, 업로드 한 후
+   Smart Editor에 이미지 업로드 결과를 반영하기 위해 만든 function을 호출하는 부분에서
+window.opener.parent.function이름(); 요론식으로 호출해야 한다.
+ 
+
+Smart Editor가 iFrame으로 생성되니...
+
+이미지 업로드 기능을 만들어 놓지 않았다면
+요기로 가면, JSP로 만들어 놓은 분이 계시다.
+
+http://zero-gravity.tistory.com/171
+```
+
+https://lilymate.tistory.com/476
+
+
+### vue grid addrow
+
+
+
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/FloatingActionButton/Overview/Vue/Light/
+
+
+```js
+<dx-button class="btn--input" width="68" height="34" text="추가" @click="addNewRow" />
+<dx-button class="btn--input" width="68" height="34" text="완료" @click="saveGridInstance" />
+
+  saveGridInstance() {
+    console.log('aaaa')
+    // debugger
+    // this.grid.instance.beginUpdate()
+    // this.grid.instance.closeEditCell()
+    this.grid.instance.saveEditData()
+    // this.grid.instance.refresh()
+    console.log('bbb')
+  }
+```
+
+### devextreme customstore remove
+https://js.devexpress.com/Documentation/ApiReference/Data_Layer/CustomStore/
+

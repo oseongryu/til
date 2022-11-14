@@ -151,3 +151,12 @@ https://js.devexpress.com/Documentation/ApiReference/Data_Layer/CustomStore/
     this.show = false
   }
 ```
+
+### devextreme textbox showclearbutton
+```js
+<dx-text-box v-model="searchCondition.id" :show-clear-button="true" />
+```
+
+https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxTextBox/Configuration/#showClearButton
+
+

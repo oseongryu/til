@@ -112,11 +112,11 @@ https://js.devexpress.com/Documentation/ApiReference/Data_Layer/CustomStore/
 
 ### devextreme popup
 ```js
-    <!-- 팝업시작 -->
     <h3 class="hy-h3 required">팝업</h3>
     <div class="row-box mgt-20">
       <dx-button class="btn--input" height="34" text="팝업오픈" @click="popupOpen()" />
     </div>
+    <!-- 팝업시작 -->
     <dx-popup :visible.sync="show" width="600" title="팝업가이드">
       <div class="sub-head">
         서브 헤더 영역
@@ -158,5 +158,12 @@ https://js.devexpress.com/Documentation/ApiReference/Data_Layer/CustomStore/
 ```
 
 https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxTextBox/Configuration/#showClearButton
+
+### vue style 적용
+```js
+<div v-show="!!text4" :style="{ display: !!text4? 'inline-block' :'none' }"> </div>
+```
+
+
 
 

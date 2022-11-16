@@ -164,6 +164,138 @@ https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxTextBox/Con
 <div v-show="!!text4" :style="{ display: !!text4? 'inline-block' :'none' }"> </div>
 ```
 
+### devextreme excel upload
+```js
+  <u-file-upload-box
+    v-model="result2"
+    file-grp-id="file4"
+    select-button-text="엑셀파일 업로드"
+    upload-type="convert"
+    converted-file-type="excel"
+    model-class-name="com.test.FileExcelSampleModel"
+    :stop-on-error="true"
+    :saveable="false"
+    :editable="true"
+  />
+```
+
+### devextreme image upload
+```js
+
+https://codesandbox.io/s/jgpcd2?file=/App.vue
+https://codesandbox.io/s/jgpcd2?file=/App.vue:334-345
+```
+
+### vue import alias
+```js
+import { DxToolbar, DxItem, DxSelection, DxEditing, DxDataGrid } from 'devextreme-vue/data-grid'
+import { DxToolbar as DxToolbar2, DxItem as DxItem2, DxSelection as DxSelection2, DxEditing as DxEditing2, DxDataGrid as DxDataGrid2 } from 'devextreme-vue/data-grid'
+```
+
+### vue error
+```
+https://nodejs.org/download/release/v16.17.1/
+
+
+internal/modules/cjs/loader.js:818
+  throw err;
+  ^
+Error: Cannot find module 'node:fs'
+
+
+node_modules/rc9/dist/index.cjs
+rc9/dist/index.cjs
+
+https://cocoon1787.tistory.com/851
+https://cocoon1787.tistory.com/851
+https://medium.com/@su_bak/cannot-find-module-fs-promises-%E1%84%8B%E1%85%A6%E1%84%85%E1%85%A5-%E1%84%92%E1%85%A2%E1%84%80%E1%85%A7%E1%86%AF-%E1%84%87%E1%85%A1%E1%86%BC%E1%84%87%E1%85%A5%E1%86%B8-a344921bd430
+```
+
+### vue prop
+prop설정후에는 f5 진행후 하기
+
+  // @Prop({ default: '' }) fileId: string
+  @Prop() fileId: string = '' (x)
+Avoid mutating a prop directly since the value will be overwritten whenever the parent component re-renders. Instead, use a data or computed property based on the prop's value. Prop being mutated: "fileId"
+
+
+### devextreme grid link
+https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Configuration/columns/#cellTemplate
+
+### vue grid focused-row-changing
+```js
+      <dx-data-grid ref="grid" :data-source="gridData" width="100%" height="100%" @focused-row-changing="onFocusedRowChanging" @focused-row-enabled="true" key-expr="regDttm">
+        <dx-column alignment="center" width="100%" data-field="rownum" caption="번호" />
+        <dx-column alignment="center" width="100%" data-field="regUsrId" caption="작성ID" />
+        <dx-column alignment="center" width="100%" data-field="regDttm" caption="작성일" :calculate-cell-value="data => formatters.datetime(data.regDttm)" />
+        <dx-column alignment="center" width="100%" data-field="updUsrId" caption="수정ID" />
+        <dx-column alignment="center" width="100%" data-field="updDttm" caption="수정일" :calculate-cell-value="data => formatters.datetime(data.regDttm)" />
+      </dx-data-grid>
+
+// onSelectionChanged({ selectedRowsData }) {
+  //   debugger
+  //   const data = selectedRowsData[0]
+  //   alert('ss')
+  // }
+
+  clickTimer: any
+  lastRowCLickedId: any
+  onFocusedRowChanging(e) {
+    //OBTAIN YOUR GRID DATA HERE
+    console.log('test')
+    if (this.clickTimer && this.lastRowCLickedId === e.rowIndex) {
+      console.log('aaaa')
+      clearTimeout(this.clickTimer)
+      this.clickTimer = null
+      this.lastRowCLickedId = e.rowIndex
+
+      const key = e.event && e.event.key
+      if (e.event.detail === 2) {
+        // alert('test')
+      }
+      //YOUR DOUBLE CLICK EVENT HERE
+      // if (typeof dblClickFunc == 'function') {
+      // }
+    } else {
+      this.clickTimer = setTimeout(function () {}, 250)
+    }
+    this.lastRowCLickedId = e.rowIndex
+  }
+
+  // const pageSize = e.component.pageSize()
+  // const pageIndex = e.component.pageIndex()
+  // const isLoading = e.component.getController('data').isLoading()
+  // const key = e.event && e.event.key
+  // if (!isLoading) {
+  //   if (key && e.prevRowIndex === e.newRowIndex) {
+  //     if (e.newRowIndex === pageSize - 1) {
+  //       e.component.pageIndex(pageIndex + 1).done(() => {
+  //         e.component.option('focusedRowIndex', 0)
+  //       })
+  //     } else if (e.newRowIndex === 0) {
+  //       e.component.pageIndex(pageIndex - 1).done(() => {
+  //         e.component.option('focusedRowIndex', pageSize - 1)
+  //       })
+  //     }
+  //   }
+  // }
+  // }
+```
+
+###
+#### 방법1 node 재설치
+1. node 12버전 삭제 
+2. 재설치
+https://nodejs.org/download/release/v16.17.1/
+
+#### 방법2 nvm 사용시
+1. nvm install 16.17.1
+2. nvm use 16.17.1
+3. nvm alias default 16.17.1
+
+
+### references
+https://junior-datalist.tistory.com/236
 
 
 

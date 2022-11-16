@@ -144,3 +144,10 @@ Version: 2.0.0
 Publisher: TechER
 VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser
 ```
+
+#### OpenActive File in New Window
+
+```
+View > Commnad Palette > File:OpenActive File in New Window 
+단축키등록
+```

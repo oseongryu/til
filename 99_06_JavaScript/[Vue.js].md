@@ -84,6 +84,10 @@ http://zero-gravity.tistory.com/171
 https://lilymate.tistory.com/476
 
 
+### vue grid edit
+https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Editing/#User_Interaction/Row_Mode
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/RowEditingAndEditingEvents/Vue/Light/
+
 ### vue grid addrow
 
 
@@ -292,6 +296,145 @@ https://nodejs.org/download/release/v16.17.1/
 1. nvm install 16.17.1
 2. nvm use 16.17.1
 3. nvm alias default 16.17.1
+
+### vue grid
+```js
+    this.gridDataSource = new DataSource({
+      store: new CustomStore({
+        load: async loadOptions => {
+          const paginationRequest = createPagingParameter(loadOptions)
+          const result = await orderConsignmentListService.getOrderConsignmentList(paginationRequest.header, this.params)
+          this.gridData = result.body
+          this.totalCount = result.header.totalRecords
+          return {
+            data: this.gridData,
+            totalCount: result.header.totalRecords,
+          }
+        },
+      }),
+    })
+
+
+    this.gridDataSource = new DataSource({
+      store: this.gridData
+    });
+
+```
+
+#### databindiing
+https://js.devexpress.com/Documentation/Guide/UI_Components/PivotGrid/Data_Binding/
+
+##### CustomStore
+https://supportcenter.devexpress.com/ticket/details/t428982/customstore-how-to-process-load-options-provided-by-dxdatagrid
+
+### vue grid paging
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/RecordPaging/Vue/Light/
+
+```js
+<dx-scrolling 
+  mode="standard"
+  column-rendering-mode="virtual"
+  :use-native="false"
+  />
+<dx-paging
+  :enabled="true"
+  :page-size="10"
+  :page-index="0" />
+<dx-pager 
+  :show-page-size-selector="true"
+  :show-info="true"
+  info-text="현재 페이지 {0}. 전체항목: {2}개" />
+```
+
+```js
+<DxScrolling row-rendering-mode="virtual"/>
+<DxPaging :page-size="10"/>
+<DxPager
+  :visible="true"
+  :allowed-page-sizes="pageSizes"
+  :display-mode="displayMode"
+  :show-page-size-selector="showPageSizeSelector"
+  :show-info="showInfo"
+  :show-navigation-buttons="showNavButtons"
+/>
+```
+
+```js
+  displayMode:string =  'full'
+  pageSizes: any[] = [5, 10, 'all']
+  showPageSizeSelector: boolean =true
+  showInfo: boolean=true
+  showNavButtons: boolean=  true
+```
+
+### vue style
+
+style="visibility: hidden"
+style="display: none"
+
+
+### vue dx-list
+
+```js
+<div class="col">
+  <strong>대분류</strong>
+  <dx-list
+    v-model="fstCtgValue"
+    :data-source="fstCtgIds" 
+    display-expr="codeNm"
+    :height="175"
+    selection-mode="single"
+    page-load-mode="scrollBottom"
+    :search-enabled="true"
+    search-mode="contains"
+    search-expr="codeNm"
+    @selection-changed=selectionChangedFirst($event)
+    />
+</div>
+<div class="col">
+  <strong>중분류</strong>
+  <dx-list 
+    v-model="scdCtgValue"
+    :data-source="scdCtgIds"
+    :height="175"
+    selection-mode="single"
+    page-load-mode="scrollBottom"
+    :search-enabled="true"
+    search-mode="contains"
+    search-expr="codeNm"
+    @selection-changed=selectionChangedSecond($event)
+    >
+    <template #item="{ data: data, index: index }">
+      {{ data.codeNm}}
+    </template>  
+  </dx-list>
+
+</div>
+
+
+<dx-list 
+  v-model="scdCtgValue"
+  :data-source="scdCtgIds"
+  :height="175"
+  selection-mode="single"
+  @selection-changed=selectionChangedSecond($event)
+>
+  <template #item="{ data: row, index: index }">
+    <!-- <ul class="temp" style='display: none'> -->
+    <ul class="temp" v-if='index== 2'>
+      <li>
+          {{ index }}
+          {{ row.code}}
+      </li> 
+    </ul>
+  </template>  
+</dx-list>
+```
+
+### vue dom 사용
+
+https://bono915.tistory.com/entry/VueJS-refs%EC%9C%BC%EB%A1%9C-Dom%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
+
 
 
 ### references

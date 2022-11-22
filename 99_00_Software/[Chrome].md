@@ -22,3 +22,11 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 
     설정 > 개인정보 및 보안 > 보안
     데이터 유출로 인해 비밀번호가 노출된 경우 알림 (해제)
+
+
+### 모바일 크롬 라이브페이지 설정
+
+    chrome://flags
+    검색창에 Paint Preview Startup를 입력합니다.
+    속성값을 Default에서 Disabled로 변경합니다.
+    하단의 Rerunch를 탭 합니다.

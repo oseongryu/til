@@ -249,6 +249,12 @@ WHERE 1 = 1
  AND GRANTEE = 'TEST'
 ```
 
+
+#### 테이블 컬럼찾기
+
+/*테이블 내 컬럼 찾기*/
+SELECT * FROM USER_TAB_COLUMNS WHERE COLUMN_NAME LIKE '%ATT_FL_GRP_ID%';
+
 ## Reference
 https://m.cafe.daum.net/oraclesqltuning/8ACn/28
 https://lawmin.tistory.com/58

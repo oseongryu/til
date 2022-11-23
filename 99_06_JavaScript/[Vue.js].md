@@ -436,6 +436,24 @@ style="display: none"
 https://bono915.tistory.com/entry/VueJS-refs%EC%9C%BC%EB%A1%9C-Dom%EC%97%90-%EC%A0%91%EA%B7%BC%ED%95%98%EB%8A%94-%EB%B0%A9%EB%B2%95
 
 
+### vue for
+```js
+    <template v-for="(item, index) in fileInfo" >
+      <template>
+        <dd class="hy-attch" v-bind:key="item.fileName" >
+            <a href= "javascript:;" @click="()=>{download(item.fileGrpId, item.fileId, item.fileNo, '', 1)}">{{ item.orgName }}</a>
+        </dd>
+      </template>
+    </template>
+```
+
+### File chooser dialog can only be shown with a user activation.
+```js
+
+```
+
+
+
 
 ### references
 https://junior-datalist.tistory.com/236

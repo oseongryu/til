@@ -452,7 +452,34 @@ https://bono915.tistory.com/entry/VueJS-refs%EC%9C%BC%EB%A1%9C-Dom%EC%97%90-%EC%
 
 ```
 
+### vue emit and model
+```js
+// parent -emit 방식
+<editor-product-regist @value="changeDatass"/>
+  changeDatass(data: string) {
+    console.log('my!!!', data)
+  }
 
+// parent - 모델방식
+<editor-product-regist v-model="changeData"/>
+
+  changeData: string = ''
+
+  @Watch('changeData')
+  changeData() {
+    console.log(this.changeData)
+  }
+
+// child
+
+  @Model('value', { default: null }) readonly value
+
+  @Watch('content', { immediate: true })
+  changeContent() {
+    this.$emit('value', this.content)
+  }
+
+```
 
 
 ### references

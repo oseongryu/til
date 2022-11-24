@@ -151,3 +151,26 @@ VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=techer.
 View > Commnad Palette > File:OpenActive File in New Window 
 단축키등록
 ```
+
+#### vscode extension export
+```
+code --list-extensions | % { "code --install-extension $_" }
+```
+
+
+#### vscode vue extension
+```
+code --install-extension alefragnani.project-manager
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension donjayamanne.githistory        
+code --install-extension esbenp.prettier-vscode
+code --install-extension hollowtree.vue-snippets        
+code --install-extension jasonnutter.search-node-modules
+code --install-extension mhutchie.git-graph
+code --install-extension octref.vetur
+code --install-extension PKief.material-icon-theme
+code --install-extension sdras.vue-vscode-snippets
+code --install-extension Tobermory.es6-string-html
+code --install-extension Vue.volar
+code --install-extension yzhang.markdown-all-in-one
+```

@@ -173,4 +173,15 @@ code --install-extension sdras.vue-vscode-snippets
 code --install-extension Tobermory.es6-string-html
 code --install-extension Vue.volar
 code --install-extension yzhang.markdown-all-in-one
+
+
+code --install-extension codezombiech.gitignore
+code --install-extension donjayamanne.git-extension-pack
+code --install-extension eamodio.gitlens
+code --install-extension hollowtree.vue-snippets
+code --install-extension huizhou.githd
+code --install-extension ms-vsliveshare.vsliveshare
+code --install-extension ziyasal.vscode-open-in-github
 ```
+
+

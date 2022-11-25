@@ -481,6 +481,136 @@ https://bono915.tistory.com/entry/VueJS-refs%EC%9C%BC%EB%A1%9C-Dom%EC%97%90-%EC%
 
 ```
 
+### vue paging
+```js
+<dx-scrolling 
+  mode="standard"
+  column-rendering-mode="virtual"
+  :use-native="false"
+  />
+<dx-paging
+  :enabled="true"
+  :page-size="10"
+  :page-index="0" />
+<dx-pager 
+  :visible="true"
+  :show-page-size-selector="true"
+  :show-info="true"
+  info-text="현재 페이지 {0}. 전체항목: {2}개" 
+  />
+
+  @Ref() readonly grid: DxDataGrid
+  gridData: OrderConsignmentList[] = []
+  loadParam: any
+
+  async loadData() {
+    this.loadParam = {
+      "currentPage": 1,
+      "pageSize": 10,
+      "orders": []
+    }
+    const paginationRequest = createPagingParameter(this.loadParam)
+    const result = await testService.getSelect(paginationRequest.header, this.params)
+    this.gridData = result.body
+    this.totalCount = result.header.totalRecords
+  }
+
+  async search(params) {
+    this.params = params
+    this.loadData()
+  }
+
+```
+
+### vue promise
+```js
+.catch(error => alert(error.message));
+
+.then(response => response.json())
+```
+
+
+
+### vue devextreme grid insert
+```js
+this.gridDataSource = this.grid.instance.getDataSource()
+this.gridDataSource.store().push([{ type: 'insert', data: newDeliveryFee }])
+```
+
+### vue devextreme grid checkbox
+```js
+:selection="{ mode: 'multiple', showCheckBoxesMode: 'onClick' }"
+      @selection-changed="onListSelectionChanged"
+
+onListSelectionChanged(e) {
+    alert('temp')
+    if (e.selectedRowsData && e.selectedRowsData.length > 0) {
+      // this.disableRemoveButton = false
+    } else {
+      // this.disableRemoveButton = true
+    }
+  }
+```
+
+### vue devextreme theme
+```js
+https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Icons/
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/Button/Icons/Vue/Light/
+```
+
+### vue se2
+```js
+https://junesker.tistory.com/16
+https://m.blog.naver.com/hiizero/221639344451
+http://naver.github.io/smarteditor2/user_guide/4_photouploader/intro.html
+http://naver.github.io/smarteditor2/user_guide/
+```
+
+### vue devextreme data-period-box
+```js
+<dx-date-period-box v-model="dateInput5" :width="150" mode="datetime" />
+```
+
+### vue window postmessgae
+    http://guide.ustraframework.kro.kr/ref-doc/03/5wtYKOTfWycqrQuucpyn
+
+
+### vue grid option
+```js
+<dx-data-grid
+  :data-source="gridDataSource"
+  :show-borders="true"
+  :allowColumnReordering="true"       // <===== 그리드 컬럼 위치 변경 가능 여부
+  :allowColumnResizing="true"
+  :row-alternation-enabled="false"
+  :show-row-lines="true"
+  :column-min-width="80"
+>
+:allowColumnReordering="true"       // <===== 그리드 컬럼 위치 변경 가능 여부
+:allowColumnResizing="true"         // <===== 그리그 컬럼 사이즈 변경 가능 여부
+<dx-selection mode="single" /> // <==== multiple 체크박스, single 선택한 라인 보이기, none 아무것도 없음
+<pager.infoText>
+{0} - 현재 선택한 페이지 (shows the current page number.)
+{1} - 전체 페이지 (shows the total page count.)
+{2} - 전체 행 개수 (shows the total row count.)
+```
+
+### vue devextreme grid template
+```js
+<dx-data-grid ref="grid" :data-source="gridData" width="100%" height="100%">
+   <dx-column alignment="center" width="100%" data-field="postId" caption="번호" />
+   <dx-column :width="100" :allow-sorting="false" data-field="Picture" cell-template="cellTemplate"/>
+   <template #cellTemplate>
+      <img src="http://localhost/image.png">
+   </template>
+</dx-data-grid>
+https://codesandbox.io/s/ixjl38?file=/App.vue
+https://supportcenter.devexpress.com/ticket/details/t657515/how-to-show-an-image-in-datagrid-column
+https://js.devexpress.com/Documentation/Guide/UI_Components/DataGrid/Columns/Customize_Cells/#Customize_the_Appearance
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ColumnTemplate/Knockout/Light/
+```
+
+
 
 ### references
 https://junior-datalist.tistory.com/236

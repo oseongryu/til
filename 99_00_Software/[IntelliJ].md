@@ -66,3 +66,7 @@
 
 ### jdbc drivers location
     C:\Users\${user}\AppData\Roaming\JetBrains\IntelliJIdea2022.1\jdbc-drivers\Oracle
+
+### plugin Database Navigator
+
+    File > Settings > Plugins > Database Navigator

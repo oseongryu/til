@@ -128,3 +128,19 @@ C:\Temp\tomcat\conf
 ```
 http://skmagic.tistory.com/220
 ```
+
+### tomcat manager
+
+```
+The page you tried to access (/manager/loginPw) does not exist.
+The Manager application has been re-structured for Tomcat 7 onwards and some of URLs have changed. All URLs used to access the Manager application should now start with one of the following options:
+/manager/html for the HTML GUI
+/manager/text for the text interface
+/manager/jmxproxy for the JMX proxy
+/manager/status for the status pages
+Note that the URL for the text interface has changed from "/manager" to "/manager/text".
+You probably need to adjust the URL you are using to access the Manager application. However, there is always a chance you have found a bug in the Manager application. If you are sure you have found a bug, and that the bug has not already been reported, please report it to the Apache Tomcat team.
+
+https://stackoverflow.com/questions/36462764/accessing-tomcat-manager-throws-404
+https://okky.kr/article/441163
+```

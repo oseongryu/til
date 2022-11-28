@@ -611,6 +611,18 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ColumnTemplate/Knoc
 ```
 
 
+### vue addEvent
+```
+https://stackoverflow.com/questions/55067565/vue-js-add-event-listener-inside-instance
+```
+
+### vue devextreme exprot xlsx, pdf
+```
+https://shiftkey.tistory.com/28
+https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Configuration/export/
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ExcelJSOverview/Vue/Light/
+```
+
 
 ### references
 https://junior-datalist.tistory.com/236

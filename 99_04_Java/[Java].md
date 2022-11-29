@@ -144,3 +144,8 @@ You probably need to adjust the URL you are using to access the Manager applicat
 https://stackoverflow.com/questions/36462764/accessing-tomcat-manager-throws-404
 https://okky.kr/article/441163
 ```
+
+### eclipse tomcat build 위치
+```
+\.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\{appName}
+```

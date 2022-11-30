@@ -1,3 +1,12 @@
+### vscode setting
+```
+Explorer > TIMELIE > Filter TimeLine
+Local History 제외 또는 추가 (커밋내용으로만 찾고싶을경우 해제)
+
+Source Control > Views and More Actions > View & Sort > View as Tree (Check)
+
+```
+
 #### VSCode Show Whitespace
 ```
 File > Preperences > Settings > Users Tab > Text Editor > Render Whitespace > all (selection)

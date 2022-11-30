@@ -691,6 +691,17 @@ getUploadList() {
 
 ```
 
+### vue typeof 와 instanceof의 차이, 타입 또는 클래스 구분하기
+
+https://unikys.tistory.com/260
+
+### vue arr인지 확인
+```
+Array.isArray()
+
+https://hianna.tistory.com/402
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

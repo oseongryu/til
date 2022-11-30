@@ -661,6 +661,35 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ExcelJSOverview/Vue
   }    
 ```
 
+### vue model add
+```js
+import { ProofFile } from '@/models/data-model'
+
+getUploadList() {
+  var fileIdList = [{ etpsCd: 'a100', fileId: 'aaaaa', fileTpCd: 'F100' }, { etpsCd: 'b100', fileId: 'bbbbb', fileTpCd: 'F200' }]
+  var updateList = []
+  fileIdList.map(row => {
+    let proofFile: ProofFile = {
+      fileId: row.fileId,
+      etpsCd: row.etpsCd,
+      fileTpCd: row.fileTpCd,
+      fileNo: 1,
+    }
+    updateList.push(proofFile)
+  })
+}
+
+```
+
+### vue refs 사용
+```js
+<file-upload-product-regist fileGrpId="default-file-group" ref = "refFileUpload" />
+  getFileList() {
+    const val = (this.$refs['refFileUpload'] as FileUpload).getUploadList()
+    val.map(test => { console.dir(test) })
+  }
+
+```
 
 ### references
 https://junior-datalist.tistory.com/236

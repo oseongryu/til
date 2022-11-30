@@ -623,6 +623,44 @@ https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Co
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ExcelJSOverview/Vue/Light/
 ```
 
+### vue devextreme grid cell change
+```js
+  <dx-data-grid id="sampleGrid" ref="grid" :data-source="gridData" width="100%" height="600"
+    :selected-row-keys="selectedItemKeys" :show-borders="true" @editorPreparing="onEditorPreparing"
+    @editingStart="onEditingStart($event)">
+
+  onEditingStart(e) {
+    // e.column.allowEditing = true
+    // console.dir(e.column.name)
+    // // debugger
+    // console.dir(e.key.postId == 43)
+    // if (e.column.name == "isChecked") {
+    //   if (e.key.isChecked == true) {
+    //     e.cancel = true;
+
+    //     console.log('testa')
+    //   }
+    // }
+
+    // }
+    // console.dir()
+    // if (info.key == 2) {
+    // info.cancel = true;
+    // }
+  }
+
+  onEditorPreparing(e) {
+    // console.dir(e.row.isSelected)
+    // console.log('onEditorPreparing')
+    if (e.parentType === 'dataRow' && e.dataField === 'isChecked' && e.row.isSelected == true) {
+      console.log('test')
+
+      e.row.isSelected = true
+      // e.editorOptions.disabled = true
+    }
+  }    
+```
+
 
 ### references
 https://junior-datalist.tistory.com/236

@@ -160,11 +160,13 @@ code --list-extensions | % { "code --install-extension $_" }
 
 #### vscode vue extension
 ```
+
+code --install-extension alefragnani.Bookmarks
 code --install-extension alefragnani.project-manager
 code --install-extension dbaeumer.vscode-eslint
 code --install-extension donjayamanne.githistory        
 code --install-extension esbenp.prettier-vscode
-code --install-extension hollowtree.vue-snippets        
+code --install-extension hollowtree.vue-snippets
 code --install-extension jasonnutter.search-node-modules
 code --install-extension mhutchie.git-graph
 code --install-extension octref.vetur

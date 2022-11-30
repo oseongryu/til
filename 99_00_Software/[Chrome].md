@@ -30,3 +30,9 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
     검색창에 Paint Preview Startup를 입력합니다.
     속성값을 Default에서 Disabled로 변경합니다.
     하단의 Rerunch를 탭 합니다.
+
+### chrome DevTools
+
+    팝업 개발자 모드창 사용 시 F12를 누를 경우 다시 뜸
+    개발자모드창 오른쪽일 경우 폰트 사이즈를 75%로 줄이고 1920을 맞추서 사용가능
+    Toggle Device Toolbar 사용시 Response에서 1920x1080으로 맞춰서 사용가능

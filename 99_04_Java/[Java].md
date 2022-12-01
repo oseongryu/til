@@ -145,6 +145,15 @@ https://stackoverflow.com/questions/36462764/accessing-tomcat-manager-throws-404
 https://okky.kr/article/441163
 ```
 
+### CompletableFuture
+```java
+CompletableFuture.runAsync -> {
+
+CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(() -> {
+
+// https://umanking.github.io/2020/10/15/java-completable-future/
+```
+
 ### eclipse tomcat build 위치
 ```
 \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\{appName}

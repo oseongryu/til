@@ -702,6 +702,46 @@ Array.isArray()
 https://hianna.tistory.com/402
 ```
 
+### vue tap index
+```js
+<dx-tab-panel :selected-index.sync="tabIndex2" :data-source="tab2" height="100%" :width:="500"
+  @selection-changed="tab2IndexChanged">
+  <template #title="{ data }">
+    <span>{{ data.name }}</span>
+  </template>
+  <template #tab1>
+    <!-- <sub-tab ref="grid1" /> -->
+  </template>
+  <template #tab2>
+    <!-- <sub-tab ref="grid2" /> -->
+  </template>
+  <template #tab3>
+    <!-- <sub-tab ref="grid3" /> -->
+  </template>
+</dx-tab-panel>
+
+  tabIndex2 = 0
+
+  tab2 = [
+    { name: '결제건수', template: 'tab1', disabled: false },
+    { name: '결제자수', template: 'tab2', disabled: false },
+    { name: '결제금액', template: 'tab3', disabled: false },
+  ]
+
+  tab2IndexChanged() {
+    if (this.tabIndex2 === 0) {
+      // @ts-ignore
+      // this.$refs.grid1.loadData()
+    } else if (this.tabIndex2 === 1) {
+      // @ts-ignore
+      // this.$refs.grid2.loadData()
+    } else if (this.tabIndex2 === 2) {
+      // @ts-ignore
+      // this.$refs.grid3.loadData()
+    }
+  }
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

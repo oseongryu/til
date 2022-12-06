@@ -742,6 +742,24 @@ https://hianna.tistory.com/402
   }
 ```
 
+### vue config, querystring
+```
+@Component({
+  config: {
+    auth: {
+      required: false
+    }
+  },
+})
+
+  created() {
+    console.log('created')
+    console.dir(this.$route.query)
+  }
+
+```
+
+
 ### references
 https://junior-datalist.tistory.com/236
 

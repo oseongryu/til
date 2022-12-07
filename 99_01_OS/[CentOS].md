@@ -420,6 +420,24 @@ reboot
 
 ```
 
+###  CentOS 서버 설정 확인
+```bash
+# 
+ip addr show
+
+# 
+echo > /dev/tcp/127.0.0.1/22
+echo $?
+
+ping 127.0.0.1
+curl 127.0.0.1:80
+
+telnet 127.0.0.1 80
+traceroute 127.0.0.1 -p 80
+
+```
+
+
 ## References
 
 ```

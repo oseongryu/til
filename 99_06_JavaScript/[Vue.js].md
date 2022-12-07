@@ -743,7 +743,7 @@ https://hianna.tistory.com/402
 ```
 
 ### vue config, querystring
-```
+```js
 @Component({
   config: {
     auth: {
@@ -759,6 +759,11 @@ https://hianna.tistory.com/402
 
 ```
 
+### vue notion
+```js
+https://www.npmjs.com/package/vue-notion?activeTab=readme
+
+```
 
 ### references
 https://junior-datalist.tistory.com/236

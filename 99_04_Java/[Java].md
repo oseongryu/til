@@ -154,6 +154,12 @@ CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(()
 // https://umanking.github.io/2020/10/15/java-completable-future/
 ```
 
+### spring context-security.xml
+```
+<security:intercept-url pattern="/api/test/**" filters="none"/>
+
+```
+
 ### eclipse tomcat build 위치
 ```
 \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\{appName}

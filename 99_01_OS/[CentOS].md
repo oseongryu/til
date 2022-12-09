@@ -437,6 +437,41 @@ traceroute 127.0.0.1 -p 80
 
 ```
 
+### oracle 과 Locale 맞추기
+```bash
+SELECT * FROM nls_session_parameters WHERE PARAMETER LIKE '%DATE%' OR PARAMETER LIKE '%LANG%';
+
+
+# 현재 언어셋확인
+locale
+cat /etc/locale.conf
+sudo vi /etc/locale.conf
+# centos6
+sudo vi /etc/sysconfig/i18n
+
+# 사용가능 언어셋확인
+localectl list-locales | grep -i ko_kr
+# localectl list-locales | grep -i en_us
+
+
+# 언어셋변경
+sudo localectl set-locale LANG=ko_KR.utf8
+# sudo localectl set-locale LANG=en_US.utf8
+cat /etc/locale.conf
+
+# 변경완료 후 reboot
+sudo reboot
+
+# reboot 후 확인
+locale
+date
+
+
+# timezone 변경
+sudo rm /etc/localtime
+sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
+
+```
 
 ## References
 

@@ -765,6 +765,54 @@ https://www.npmjs.com/package/vue-notion?activeTab=readme
 
 ```
 
+### vue querystring
+
+```js
+  funcQueryString(data: any) {
+    var keys = []
+    for (var number in data) {
+      if (data.hasOwnProperty(number)) keys.push(number)
+    }
+    var querysting = ''
+    keys.map((row, index) => {
+      if (index == 0) querysting += `?${row}=${data[row]}`
+      else querysting += `&${row}=${data[row]}`
+    })
+    return querysting
+  }
+```
+
+### vue devextreme floating action button
+```js
+
+    <DxSpeedDialAction :index="1" icon="" label="전체 탭 닫기" :on-click="() => success= true" />
+
+
+import config from 'devextreme/core/config';
+import FloatingActionButtonDirection from 'devextreme/core/config';
+import repaintFloatingActionButton from 'devextreme/ui/speed_dial_action/repaint_floating_action_button';~~~~
+import DxSpeedDialAction from 'devextreme-vue/speed-dial-action';
+
+    config({
+      floatingActionButtonConfig: {
+        icon: 'rowfield',
+        shading: true,
+        direction: 'down',
+        position: {
+          of: '.dx-datagrid-rowsview',
+          my: 'right top',
+          at: 'right top',
+          offset: '-20 90',
+        },
+      },
+    });
+
+    repaintFloatingActionButton();
+
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/FloatingActionButton/Overview/Vue/Light/
+```
+
+
 ### references
 https://junior-datalist.tistory.com/236
 

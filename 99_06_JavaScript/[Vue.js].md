@@ -812,6 +812,13 @@ import DxSpeedDialAction from 'devextreme-vue/speed-dial-action';
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/FloatingActionButton/Overview/Vue/Light/
 ```
 
+### vue devextreme icon
+```js
+<dx-button icon="deletetable" v-if="menu.text == 'Home'" @click="clickCloseAllTab()" />
+
+https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Icons/
+```
+
 
 ### references
 https://junior-datalist.tistory.com/236

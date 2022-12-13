@@ -819,6 +819,12 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/FloatingActionButton/Overvie
 https://js.devexpress.com/Documentation/Guide/Themes_and_Styles/Icons/
 ```
 
+### vue devextreme validator
+```js
+https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxValidator/Validation_Rules/PatternRule/
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/Validation/Overview/Vue/Light/
+```
+
 
 ### references
 https://junior-datalist.tistory.com/236

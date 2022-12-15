@@ -825,6 +825,25 @@ https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxValidator/V
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/Validation/Overview/Vue/Light/
 ```
 
+### vue devextreme textbox mode 오류
+```js
+// dx-text-box가 password를 누른 상태에서 다른 텍스트 박스를 누를경우 모드가 기존에 클릭한 mode로 되는 현상
+<dx-text-box ref="refTextBox" class="side-search-input" v-model="searchText" mode="search"
+        placeholder="입력" value-change-event="input" :readOnly="!isFocused" @focusIn="focusIn()"
+        @focusOut="focusOut()" />
+
+@Ref() refTextBox: DxTextBox
+  focusIn() {
+    this.isFocused = true
+    this.refTextBox.mode = "text"
+  }
+  focusOut() {
+    this.isFocused = false
+    this.refTextBox.mode = "text"
+  }
+
+
+```
 
 ### references
 https://junior-datalist.tistory.com/236

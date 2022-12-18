@@ -164,3 +164,64 @@ CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(()
 ```
 \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\{appName}
 ```
+
+### byte to image
+
+```java
+	@SuppressWarnings("unchecked")
+	private String restAPI(String url) {
+		
+		UriComponents uriComponents = UriComponentsBuilder.fromUriString(url).build();
+
+		String changeString = "";
+		try {
+			HttpHeaders headers = new HttpHeaders();
+	    	headers.setContentType(MediaType.APPLICATION_JSON);
+	    	RestTemplate restTemplate = new RestTemplate();
+	    	ResponseEntity<byte[]> response = restTemplate.getForEntity(url,  byte[].class);
+	    	HttpHeaders httpHeaders = response.getHeaders();
+	    	String fileName = httpHeaders.get("Content-Disposition").get(0);
+	    	String orgFileName = fileName.replace("attachement;filename=", "");
+	    	MediaType contentType = httpHeaders.getContentType();
+	    	byte[] body = response.getBody();
+
+	    	
+	    	Path data = Files.write(Paths.get(orgFileName), body);
+	    	
+
+	    	
+	        FileInputStream fis = new FileInputStream(data.toFile().getAbsolutePath());
+	        try {
+				try (ByteArrayOutputStream byteOutStream = new ByteArrayOutputStream()) {
+					int len = 0;
+					byte[] buf = new byte[1024];
+					while ((len = fis.read(buf)) != -1) {
+						byteOutStream.write(buf, 0, len);
+					}
+					byte[] fileArray = byteOutStream.toByteArray();
+					String imageString = new String(Base64.encodeBase64(fileArray));
+					changeString = "data:"+contentType+";base64," + imageString;
+				}
+			} catch (Exception e) {
+			} finally {
+				fis.close();
+			}
+
+		} catch(Exception e) {
+			logger.error("Error : " + uriComponents.toString() + "Message - [" + e + "]");
+		}
+		return changeString;
+	}
+```
+
+### spring message convert
+```
+메시지 컨버터를 별도로 선언하지 않으면 Spring 에서 등록하는 디폴트 메시지 컨버터는 다음과 같다.
+
+ByteArrayHttpMessageConverter
+, StringHttpMessageConverter
+, FormHttpMessageConverter
+, SourceHttpMessageConverter
+
+https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=moonv11&logNo=220139179955
+```

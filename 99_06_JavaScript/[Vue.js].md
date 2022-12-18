@@ -845,6 +845,15 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/Validation/Overview/Vue/Ligh
 
 ```
 
+### vue file upload download
+```js
+https://stackoverflow.com/questions/41803925/download-octet-stream-via-jquery
+https://kyounghwan01.github.io/blog/JS/JSbasic/Blob-url/
+https://stackoverflow.com/questions/37510801/convert-octet-stream-to-image
+
+
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

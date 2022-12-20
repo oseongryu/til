@@ -57,3 +57,80 @@ public ResponseEntity<String> partnerImagePreview( @RequestBody Map<String, Obje
 }
 
 ```
+
+
+### spring file download
+```js
+$(function () {
+
+    $("#btnTest").bind("click", function () {
+        alert('7');
+        searchDashboard()
+    });
+
+    var searchDashboard = function () {
+        $.ajax({
+            url: "<c:url value='/rest/file-attach.do'/>"
+            , type: "post"
+            , contentType: 'application/json;charset=utf-8'
+            , dataType: "json"
+            , data: JSON.stringify({
+                "fileId": 'aaaa',
+                "fileNo": '1',
+                "attachmentFileName": '',
+                "attach": '1',
+                "fileGrpId": 'default-file-group'
+            })
+            , complete: function(response){
+                let link=document.createElement('a');
+                link.href= JSON.parse(response.responseText).responseText
+                link.download = JSON.parse(response.responseText).fileName;
+                debugger
+                link.click();
+                
+/* 					
+                let link=document.createElement('a');
+                const mimeType = "application/pdf";
+                link.href=`data:${mimeType};base64,${base64Str}`;
+                link.download="myFileName.pdf";
+                link.click(); */
+            }
+            , exception: function (responses) {
+                alert(responses.message);
+            }
+        });
+    };
+
+});
+```
+
+### image preview
+```js
+$.ajax({
+    url : "<c:url value='/rest/file-attach.do'/>"
+    ,type : "post"
+    , contentType: "application/json; charset=UTF-8"
+    , dataType: "json"
+    , async: true
+    , data: JSON.stringify({
+        "fileId": FILE_ID,
+        "fileNo": '1',
+        "attachmentFileName": '',
+        "attach": '1',
+        "fileGrpId": 'default-file-group'
+    })
+    , complete : function(response) {	
+        debugger
+        $(ID).append(
+                $("<div class='image-item'></div>")
+                        .append($("<div />").html(""))
+                        .append($("<image class='product-image' />").attr("src", JSON.parse(response.responseText).responseText))
+        );
+    }
+    ,exception : function(response) {
+        alert(response.message);
+    }
+});
+```
+
+<security:intercept-url pattern="/rest/**" filters="none"/>        <!-- | 파트너사 첨부파일 | 2022-12-16 | -->

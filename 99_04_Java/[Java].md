@@ -225,3 +225,47 @@ ByteArrayHttpMessageConverter
 
 https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=moonv11&logNo=220139179955
 ```
+
+### Current request is not of type [org.springframework.web.multipart.MultipartHttpServletRequest]
+```java
+// 해결
+MultipartHttpServletRequest => HttpServletRequest로 변경해서 처리
+
+((HeaderWriterFilter.HeaderWriterRequest) ((HttpServlet3RequestFactory.Servlet3SecurityContextHolderAwareRequestWrapper) document).request).getHeaders("Content-Length")
+
+// 일반적인 방법
+// 1. spring 설정에서 multipartResolver가 bean으로 주입이 되었는지,
+// ex)<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
+// 
+// 2. form에서 enctype이 multipart/form-data 으로 되었는지,
+// ex)<form id="fileupload" method="post" enctype="multipart/form-data">
+// 
+// 3. Controller에서 Request 를 MultipartHttpServletRequest 로 받고 있는지 확인합니다.
+// 올려주신 내용만으로는 해당오류의 원인을 파악하기 힘드나, 보통 form 태그에 enctype="multipart/form-data" 지정되지 않은 경우이거나, form tag가 여러 개 있는지, post로 호출하는 부분들을 재 점검해보시기 바랍니다.
+// 아니면 함수의 파라미터로 MultipartHttpServetRequest를 넣지 않고 HttpServletRequest 객체로 받아 함수 안에서 캐스팅을 하는 형태로 처리해 보시기 바랍니다.
+
+
+https://www.egovframe.go.kr/home/qainfo/qainfoRead.do?menuNo=69&qaId=QA_00000000000013994
+```
+
+```js
+<form
+  id="editor_upimage"
+  name="editor_upimage"
+  method="post"
+  enctype="multipart/form-data"
+  onSubmit="return false;"
+>
+  <div id="pop_content2">
+    <input type="file" class="upload" id="uploadInputBox" name="Filedata" />
+    <p class="dsc" id="info">
+      <strong>10MB</strong>이하의 이미지 파일만 등록할 수 있습니다.
+      <br />
+      (JPG, GIF, PNG, BMP)
+    </p>
+  </div>
+</form>
+
+
+https://dalili.tistory.com/168
+```

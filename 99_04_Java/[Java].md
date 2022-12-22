@@ -269,3 +269,9 @@ https://www.egovframe.go.kr/home/qainfo/qainfoRead.do?menuNo=69&qaId=QA_00000000
 
 https://dalili.tistory.com/168
 ```
+
+### inputstream to multifile
+```
+https://ksabs.tistory.com/152
+https://dev.umejintan.com/9
+```

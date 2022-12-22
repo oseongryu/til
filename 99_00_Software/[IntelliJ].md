@@ -70,3 +70,11 @@
 ### plugin Database Navigator
 
     File > Settings > Plugins > Database Navigator
+
+
+### mapper 구현체로 이동
+    ctrl + alt + b
+
+### 구현체 제외 
+    검색시 ctrl + shift + n 사용 (모두를 할경우 전부 나옴)
+    https://open-markethq.slack.com/archives/D046SBS6MDZ/p1671686662885729

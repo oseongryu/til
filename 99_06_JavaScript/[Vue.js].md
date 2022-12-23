@@ -853,6 +853,29 @@ https://stackoverflow.com/questions/37510801/convert-octet-stream-to-image
 
 
 ```
+### nuxt gitlab [error] Couldn't find any versions for
+```js
+원인: gitlab에서 nexus에 패키지의 특정 버전이 삭제되면서 발생한 오류
+
+점검1: gitlab에서 빌드를 진행하는 cd /app/gitlab-runner/builds/aaa/0/aaa
+=> .npmrc 확인, yarn install 가능한지 확인, yarn관련 파일 삭제후 진행 등
+
+점검2: gitlab-ci.yml
+=> 스크립트 확인
+
+점검3: nexus 이동후 점검 Browser
+=> 해당 패키지또는 라이브러리 확인
+
+git-runner 
+.npmrc
+
+
+Run yarn again.
+Run yarn --force.
+If it still does not help, you can wipe yarn.lock and run yarn again.
+```
+
+
 
 ### references
 https://junior-datalist.tistory.com/236

@@ -305,3 +305,14 @@ https://dalili.tistory.com/168
 https://ksabs.tistory.com/152
 https://dev.umejintan.com/9
 ```
+### autowired 에러 관련
+양쪽 @Component컴포넌트에서 서로에 @Autowired를 거는 경우 오류 발생가능 주의 (빌드에서는 문제가 없을 수 도 있음. 개발자들에게 주의주기!!)
+또는 lazy를 거는형태로 사용
+
+```
+ Application run failed
+org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'returnBsl':
+ Bean with name 'returnBsl' has been injected into other beans [orderBsl] in its raw version as part of a circular reference, 
+ but has eventually been wrapped. This means that said other beans do not use the final version of the bean. 
+ This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example
+```

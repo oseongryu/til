@@ -271,7 +271,37 @@ https://dalili.tistory.com/168
 ```
 
 ### inputstream to multifile
-```
+```java
+			File file; 
+            InputStream input = new FileInputStream(file);
+            OutputStream os = fileItem.getOutputStream();
+            IOUtils.copy(input, os);
+
+//            String defaultPath = request.getSession().getServletContext().getRealPath("/");
+//            String filePath = defaultPath + "img" + File.separator + "smarteditor2" + File.separator;
+//            File file = new File(filePath);
+//            if (!file.exists()) file.mkdirs();
+//
+//            String autoFileName = UUID.randomUUID().toString() + fileName.substring(fileName.lastIndexOf("."));
+//            String rFileName = filePath + autoFileName;
+//            InputStream is = request.getInputStream();
+//            OutputStream os = new FileOutputStream(rFileName);
+//            int num;
+//            byte b[] = new byte[Integer.parseInt(request.getHeader("file-size"))];
+//            HyFileUtils.copyInputStreamToFile(is, new File(filePath + fileName));
+//            if (is != null) is.close();
+//            os.flush();
+//            os.close();
+
+//            byte b[] = new byte[Integer.parseInt(request.getHeader("file-size"))];
+//            while((num = is.read(b,0,b.length)) != -1){
+//                os.write(b,0,num);
+//            }
+//            if(is != null) is.close();
+//            os.flush();
+//            os.close();
+
+
 https://ksabs.tistory.com/152
 https://dev.umejintan.com/9
 ```

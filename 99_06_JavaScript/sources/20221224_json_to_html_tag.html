@@ -81,6 +81,15 @@
     })
 
 
+    var img = new Image();
+    // 'load' event
+    $(img).on('load', function () {
+        console.log('loaded')
+    });
+    img.src = "http://localhost:8080/aaa.png";
+    console.log(img.width)
+
+
   </script>
 </body>
 </html>

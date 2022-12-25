@@ -168,8 +168,7 @@ code --list-extensions | % { "code --install-extension $_" }
 
 
 #### vscode vue extension
-```
-
+```bash
 code --install-extension alefragnani.Bookmarks
 code --install-extension alefragnani.project-manager
 code --install-extension dbaeumer.vscode-eslint
@@ -187,6 +186,16 @@ code --install-extension yzhang.markdown-all-in-one
 code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension techer.open-in-browser
 
+##### java + springboot (Extension Pack for Java, Spring Boot Extension Pack)
+code --install-extension redhat.java
+code --install-extension VisualStudioExptTeam.intellicode-api-usage-examples
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+
 
 code --install-extension codezombiech.gitignore
 code --install-extension donjayamanne.git-extension-pack
@@ -197,4 +206,31 @@ code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension ziyasal.vscode-open-in-github
 ```
 
+### vscode spring boot 설정
+```
 
+code --install-extension alefragnani.Bookmarks
+code --install-extension alefragnani.project-manager
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension donjayamanne.githistory
+code --install-extension esbenp.prettier-vscode
+code --install-extension hollowtree.vue-snippets
+code --install-extension jasonnutter.search-node-modules
+code --install-extension mhutchie.git-graph
+code --install-extension octref.vetur
+code --install-extension PKief.material-icon-theme
+code --install-extension redhat.java
+code --install-extension sdras.vue-vscode-snippets
+code --install-extension shd101wyy.markdown-preview-enhanced
+code --install-extension techer.open-in-browser
+code --install-extension Tobermory.es6-string-html
+code --install-extension VisualStudioExptTeam.intellicode-api-usage-examples
+code --install-extension VisualStudioExptTeam.vscodeintellicode
+code --install-extension vscjava.vscode-java-debug
+code --install-extension vscjava.vscode-java-dependency
+code --install-extension vscjava.vscode-java-pack
+code --install-extension vscjava.vscode-java-test
+code --install-extension vscjava.vscode-maven
+code --install-extension Vue.volar
+code --install-extension yzhang.markdown-all-in-one
+```

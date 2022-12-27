@@ -9,6 +9,11 @@
 
 =A2&"'___'"&B2&"____"&C2
 
+## excel  
+
+=VLOOKUP(A5,E:E,1,FALSE)
+=",'"&A6&"'"
+
 
 ## [PowerPoint] 표 테두리 선 색 변경
 

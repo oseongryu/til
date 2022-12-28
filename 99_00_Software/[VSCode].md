@@ -22,6 +22,18 @@ File > Preperences > Settings > Users Tab > Text Editor > Render Whitespace > al
 File > Preperences > Settings > Users Tab > Text Editor > Files > Trim Trailing Whitespace(Check)
 
 ```
+
+
+### vscode 상단 타이틀 바에 경로 표시하기
+```
+File > Preperences > Settings > window.title 
+
+default: ${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}
+
+${dirty}${rootName}${separator}${folderPath}
+```
+
+
 #### vscode settings.json
 ```
 Windows Path:

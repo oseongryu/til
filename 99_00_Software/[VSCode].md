@@ -1,3 +1,8 @@
+### vscode 노트용과 개발용 분리해서 사용하기
+```
+vscode 와 vscode-insider를 사용
+```
+
 ### vscode setting
 ```
 Explorer > TIMELIE > Filter TimeLine
@@ -242,6 +247,10 @@ code --install-extension hollowtree.vue-snippets
 code --install-extension huizhou.githd
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension ziyasal.vscode-open-in-github
+
+#### note
+vsnotes
+
 ```
 
 ### vscode camel

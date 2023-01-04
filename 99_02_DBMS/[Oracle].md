@@ -249,6 +249,18 @@ WHERE 1 = 1
  AND GRANTEE = 'TEST'
 ```
 
+#### ROWNUM 역순
+```sql
+SELECT  NUM
+  FROM (
+	SELECT ROW_NUMBER() OVER (ORDER BY PK_KEY DESC) AS NUM
+	FROM TEMP
+)
+WHERE 1 = 1
+ AND NUM <= 1
+```
+
+
 
 #### 테이블 컬럼찾기
 

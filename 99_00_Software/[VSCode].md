@@ -1,3 +1,10 @@
+### theme
+```
+Community Material Theme
+Github Plus Theme
+One Dark Pro
+Panda Theme
+```
 ### vscode 노트용과 개발용 분리해서 사용하기
 ```
 vscode 와 vscode-insider를 사용
@@ -8,6 +15,12 @@ vscode 와 vscode-insider를 사용
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 choco install vscodium
+choco uninstall vscodium
+
+choco install vscodium.portable
+choco uninstall vscodium.portable
+
+choco list --localonly
 ```
 
 ### vscode setting

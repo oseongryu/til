@@ -876,9 +876,14 @@ If it still does not help, you can wipe yarn.lock and run yarn again.
 ```
 
 
+### vue security
+```
+import VueSanitize from "vue-sanitize";
+Vue.use(VueSanitize);
+
+https://dev.grapecity.co.kr/bbs/board.php?bo_table=Insight&wr_id=118
+```
 
 ### references
 https://junior-datalist.tistory.com/236
-
-
 

@@ -24,6 +24,11 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 <img width="800" src="../static/img/99_17_jenkins/003.png"/>
 <img width="800" src="../static/img/99_17_jenkins/004.png"/>
 <img width="800" src="../static/img/99_17_jenkins/005.png"/>
+<img width="800" src="../static/img/99_17_jenkins/006.png"/>
+<img width="800" src="../static/img/99_17_jenkins/007.png"/>
+<img width="800" src="../static/img/99_17_jenkins/008.png"/>
+<img width="800" src="../static/img/99_17_jenkins/009.png"/>
+<img width="800" src="../static/img/99_17_jenkins/010.png"/>
 
 
 ### jenkins 에러 (젠킨스 업데이트 이후 에러가 발생해서 실행이 안됨)

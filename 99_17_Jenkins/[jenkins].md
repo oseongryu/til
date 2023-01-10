@@ -1,3 +1,31 @@
+## jenkins
+
+### jenkins setup
+```bash
+sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate
+sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
+sudo yum upgrade
+# Add required dependencies for the jenkins package
+sudo yum install java-11-openjdk
+sudo yum install jenkins
+sudo systemctl daemon-reload
+
+sudo systemctl start jenkins
+sudo systemctl status jenkins
+systemctl reset-failed jenkins.service
+```
+
+### jenkins start
+```bash
+sudo cat /var/lib/jenkins/secrets/initialAdminPassword
+```
+<img width="800" src="../static/img/99_17_jenkins/001.png"/>
+<img width="500" src="../static/img/99_17_jenkins/002.png"/>
+<img width="800" src="../static/img/99_17_jenkins/003.png"/>
+<img width="800" src="../static/img/99_17_jenkins/004.png"/>
+<img width="800" src="../static/img/99_17_jenkins/005.png"/>
+
+
 ### jenkins 에러 (젠킨스 업데이트 이후 에러가 발생해서 실행이 안됨)
 ```bash
 
@@ -48,22 +76,6 @@ systemctl start jenkins
 
 ```
 
-
-
-## jenkins setup
-```bash
-sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate
-sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
-sudo yum upgrade
-# Add required dependencies for the jenkins package
-sudo yum install java-11-openjdk
-sudo yum install jenkins
-sudo systemctl daemon-reload
-
-sudo systemctl start jenkins
-sudo systemctl status jenkins
-systemctl reset-failed jenkins.service
-```
 
 ## references
 https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos

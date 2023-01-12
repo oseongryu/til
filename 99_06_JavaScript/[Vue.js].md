@@ -884,6 +884,49 @@ Vue.use(VueSanitize);
 https://dev.grapecity.co.kr/bbs/board.php?bo_table=Insight&wr_id=118
 ```
 
+### vue cell color change
+```js
+
+vm.statusData = [];
+vm.statusData = [
+    {
+        "iStatus": 1,
+        "sName": "No Work",
+        "sDesc": "No Work Done",
+        "dPercentComplete": 0,
+        "sColor": "Red"
+    },
+    {
+        "iStatus": 2,
+        "sName": "WIP",
+        "sDesc": "Work In Progress",
+        "dPercentComplete": 50,
+        "sColor": "Yellow"
+    },
+    {
+        "iStatus": 3,
+        "sName": "Complete",
+        "sDesc": "Work Complete",
+        "dPercentComplete": 100,
+        "sColor": "Green"
+    }
+];
+
+onCellPrepared: function(e) {
+  if (e.rowType != "data" || e.columnIndex != 1)
+    return;
+  
+  // debugger;  
+  var color = e.column.lookup.items[e.value - 1].sColor  
+  e.cellElement.css('backgroundColor', color);
+
+},
+
+https://supportcenter.devexpress.com/ticket/details/t571121/dxdatagrid-how-to-set-a-custom-cell-color-based-on-a-lookup-value
+https://plnkr.co/edit/Cr8UZvI1hxRY60CBDxX3?p=preview&preview
+
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

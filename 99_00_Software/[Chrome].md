@@ -36,3 +36,8 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
     팝업 개발자 모드창 사용 시 F12를 누를 경우 다시 뜸
     개발자모드창 오른쪽일 경우 폰트 사이즈를 75%로 줄이고 1920을 맞추서 사용가능
     Toggle Device Toolbar 사용시 Response에서 1920x1080으로 맞춰서 사용가능
+
+### chrome Responsive 설정
+
+chrome Responsive 우측 ... 클릭  Add device Type 클릭 
+설정항목에서 Desktop으로 변경

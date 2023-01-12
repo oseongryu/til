@@ -39,5 +39,5 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 
 ### chrome Responsive 설정
 
-chrome Responsive 우측 ... 클릭  Add device Type 클릭 
-설정항목에서 Desktop으로 변경
+    chrome Responsive 우측 ... 클릭  Add device Type 클릭 
+    설정항목에서 Desktop으로 변경

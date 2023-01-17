@@ -389,8 +389,8 @@ vi /etc/ssh/sshd_config
 
 ---
 Match Group sftpgroup
-ChrootDirectory /data/%u
-ForceCommand internal-sftp
+    ChrootDirectory /data/%u
+    ForceCommand internal-sftp
 ---
 #### 6. SSH 서비스 상태 확인 및 재시작
 service sshd status
@@ -473,6 +473,17 @@ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 
 ```
 
+### sshfs
+```bash
+sudo yum install -y epel-release
+sudo yum install -y fuse-sshfs
+
+
+mkdir /upload
+sudo chmod -R 777 /upload
+sudo sshfs devuser@192.168.0.1:/data/upload /upload -o allow_other 
+```
+
 ## References
 
 ```
@@ -484,5 +495,6 @@ https://unix.stackexchange.com/questions/484431/allowing-non-root-users-to-manag
 https://askubuntu.com/questions/692701/allowing-user-to-run-systemctl-systemd-services-without-password
 https://sleeplessbeastie.eu/2021/03/03/how-to-manage-systemd-services-remotely/
 https://serverfault.com/questions/841306/authentication-is-required-to-manage-system-services-or-units
+sshfs: https://blog.sonim1.com/226
 ```
 

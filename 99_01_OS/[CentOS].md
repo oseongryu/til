@@ -484,6 +484,11 @@ sudo chmod -R 777 /upload
 sudo sshfs devuser@192.168.0.1:/data/upload /upload -o allow_other 
 ```
 
+### nfs
+```bash
+https://it-serial.tistory.com/entry/Linux-NFS-%EC%84%9C%EB%B2%84-%EA%B0%9C%EB%85%90-%EA%B5%AC%EC%B6%95%EC%84%A4%EC%B9%98
+```
+
 ## References
 
 ```
@@ -496,5 +501,7 @@ https://askubuntu.com/questions/692701/allowing-user-to-run-systemctl-systemd-se
 https://sleeplessbeastie.eu/2021/03/03/how-to-manage-systemd-services-remotely/
 https://serverfault.com/questions/841306/authentication-is-required-to-manage-system-services-or-units
 sshfs: https://blog.sonim1.com/226
+nfs: https://it-serial.tistory.com/entry/Linux-NFS-%EC%84%9C%EB%B2%84-%EA%B0%9C%EB%85%90-%EA%B5%AC%EC%B6%95%EC%84%A4%EC%B9%98
+
 ```
 

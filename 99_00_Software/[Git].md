@@ -96,6 +96,10 @@ git log --oneline
 git log --pretty=format:"%h - %an, %ar : %s"
 git log --pretty=format:"%h %cd %an %s"
 git log --stat
+
+git log --pretty=format:"%h %cd %an %s" --since="2022-11-01" --until="2022-11-30" --committer=aaaa --committer=bbbb --committer=cccc
+git log --pretty=format:"%h %cd %an %s" --since="2022-12-01" --until="2022-12-31" --committer=aaaa --committer=bbbb --committer=cccc
+git log --pretty=format:"%h %cd %an %s" --since="2023-01-01" --until="2023-01-31" --committer=aaaa --committer=bbbb --committer=cccc
 ```
 
 #### 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)
@@ -354,6 +358,20 @@ git checkout -b 'temp' HEAD@{1}
 #### 원격 브랜치 삭제
 ```bash
 git push origin --delete feature/oseongryu
+```
+
+#### git  커밋이 잘못되어 복구하는 방법
+```js
+// 1. 방법 
+1. 로그로 특정 부분 헤더 확인
+git log --pretty=format:"%h %cd %an %s" --since="2022-11-01" --until="2022-11-30" --committer=aaaa --committer=bbbb --committer=cccc
+git log --pretty=format:"%h %cd %an %s" --since="2022-12-01" --until="2022-12-31" --committer=aaaa --committer=bbbb --committer=cccc
+git log --pretty=format:"%h %cd %an %s" --since="2023-01-01" --until="2023-01-31" --committer=aaaa --committer=bbbb --committer=cccc
+2. cherry-pick를 사용해서 통합
+
+// 2. 간편 방법
+최초 돌릴 부분으로 git reset --soft [HEAD명] 으로 돌린후
+git status로 수정한 파일에서 자신이 수정한 파일목록 확인
 ```
 
 #### References

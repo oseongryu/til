@@ -107,6 +107,13 @@ apply plugin: 'com.android.library'
 
 ```
 
+### android webview chrome debugger
+```js
+1. PC에 USB 연결
+2. chrome://inspect/#devices
+3. 연결시 USB 디버깅 등 확인
+```
+
 ### Android Decompile
 ```
 http://woowabros.github.io/experience/2017/07/17/resume.html

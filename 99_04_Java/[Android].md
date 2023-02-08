@@ -114,6 +114,18 @@ apply plugin: 'com.android.library'
 3. 연결시 USB 디버깅 등 확인
 ```
 
+
+### [ERROR] please retry with version 2021.2.1 or newer
+
+Unrecognized Android Studio (or Android Support plugin for IntelliJ IDEA) version , please retry with version 20XX.X.X or newer.
+
+File > Help > Check for Updates
+<img width="800" src="../static/img/android/001.png"/>
+<img width="400" src="../static/img/android/002.png"/>
+<img width="600" src="../static/img/android/003.png"/>
+
+
+
 ### Android Decompile
 ```
 http://woowabros.github.io/experience/2017/07/17/resume.html

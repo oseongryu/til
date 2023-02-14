@@ -260,6 +260,18 @@ WHERE 1 = 1
  AND NUM <= 1
 ```
 
+#### oracle function
+
+PLS-00306: 'TEST_OBJ' 호출 시 인수의 갯수나 유형이 잘못되었습니다
+function에서 object의 값을 추가할때 types에 선언된 object의 값을 같이 추가해줘야함
+```sql
+CREATE OR REPLACE TYPE TEST_OBJ AS OBJECT
+(
+    TEST_A VARCHAR2(15),
+    TEST_B VARCHAR2(7)
+);
+
+```
 
 
 #### 테이블 컬럼찾기

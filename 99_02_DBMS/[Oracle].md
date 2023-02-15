@@ -188,7 +188,7 @@ END;
 
 #### Oracle sequence
 ```sql
-CREATE SEQUENCE CCIP.SQ_ID INCREMENT BY 1 MINVALUE 1 MAXVALUE 999999999999999 CYCLE NOCACHE NOORDER;
+CREATE SEQUENCE TEST.SQ_ID INCREMENT BY 1 MINVALUE 1 MAXVALUE 999999999999999 CYCLE NOCACHE NOORDER;
 
 -- 시퀀스 현재값 변경-1
 DROP SEQUENCE SEQ_X;
@@ -273,6 +273,59 @@ CREATE OR REPLACE TYPE TEST_OBJ AS OBJECT
 
 ```
 
+#### oracle package
+```sql
+CREATE OR REPLACE PACKAGE TEST.PACKAGE_TEST
+AS
+	-- 패키지에 들어올 프로시저, 함수 정의
+	PROCEDURE PROC_TEST;
+
+	PROCEDURE PROC_TEST2(NAME IN VARCHAR2, AGE IN NUMBER);
+
+	FUNCTION examFunc(getGender IN VARCHAR2) RETURN VARCHAR2;
+
+END PACKAGE_TEST;
+
+
+
+
+
+
+
+-- 패키지 바디 부분
+CREATE OR REPLACE PACKAGE BODY TEST.PACKAGE_TEST
+AS
+	 -- 패키지 내 프로시저, 함수 내용 정의
+     PROCEDURE PROC_TEST
+	 IS
+	 BEGIN
+	 	 INSERT INTO TABLE_TEST(COL1,COL2) VALUES('TEST', 1);
+     END PROC_TEST;
+    
+     PROCEDURE PROC_TEST2(NAME IN VARCHAR2, AGE IN NUMBER)
+	 IS
+	 BEGIN
+	 	 INSERT INTO TABLE_TEST(COL1,COL2) VALUES(NAME, AGE);
+     END PROC_TEST2;  
+    
+	 FUNCTION examFunc -- 함수명
+	 (getGender IN VARCHAR2) -- 함수 호출시 받아올 파라미터 정의
+	 RETURN VARCHAR2 -- 함수 수행 시 반환할 데이터 타입
+	 IS -- 사용할 변수 정의
+	 	setGender VARCHAR2(100);
+	 BEGIN -- 변수를 가지고 함수 수행
+	     IF getGender = '남' THEN setGender := '남자';
+	     ELSIF getGender = '여' THEN setGender := '여자';
+	     ELSE setGender := '오류'; 
+	     END IF;
+	 RETURN setGender; -- 반환
+	 END examFunc;    
+    
+END PACKAGE_TEST;
+```
+
+
+
 
 #### 테이블 컬럼찾기
 
@@ -286,4 +339,4 @@ https://lawmin.tistory.com/58
 ORA-01000최대 열기 커서 수를 초과했습니다.
 https://serendipity.tistory.com/65
 
-
+oracle package: https://wakestand.tistory.com/173

@@ -91,7 +91,7 @@ git branch -a
 
 #### git log
 
-```
+```bash
 git log --oneline
 git log --pretty=format:"%h - %an, %ar : %s"
 git log --pretty=format:"%h %cd %an %s"
@@ -100,6 +100,9 @@ git log --stat
 git log --pretty=format:"%h %cd %an %s" --since="2022-11-01" --until="2022-11-30" --committer=aaaa --committer=bbbb --committer=cccc
 git log --pretty=format:"%h %cd %an %s" --since="2022-12-01" --until="2022-12-31" --committer=aaaa --committer=bbbb --committer=cccc
 git log --pretty=format:"%h %cd %an %s" --since="2023-01-01" --until="2023-01-31" --committer=aaaa --committer=bbbb --committer=cccc
+
+# 파일목록 추가확인
+git log --name-only --pretty=format:"%h %cd %an %s" --since="2022-11-01" --committer=aaaa
 ```
 
 #### 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)

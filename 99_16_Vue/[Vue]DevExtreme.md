@@ -34,9 +34,7 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ColumnCustomization
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/BatchEditing/Vue/Light/
 
 
-
-
-
+```js
 <template>
   <dx-data-grid 
     ref="grid" 
@@ -120,4 +118,26 @@ export default class {
     this.selectedItemKeys = data.selectedRowKeys;
     console.log('selectionChanged')
   }
+```
 
+### grid summary
+summary type - "sum","min","max","avg","count","custom"
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/RecalculateWhileEditing/jQuery/Light/
+https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Configuration/summary/totalItems/#summaryType
+```js
+$(() => {
+  $('#gridContainer').dxDataGrid({
+    summary: {
+      recalculateWhileEditing: true,
+      totalItems: [{
+        column: 'OrderNumber',
+        summaryType: 'count',
+      }, {
+        column: 'SaleAmount',
+        summaryType: 'avg',
+        valueFormat: 'currency',
+      }],
+    },
+  });
+});
+```

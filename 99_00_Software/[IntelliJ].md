@@ -71,6 +71,10 @@
 
     File > Settings > Plugins > Database Navigator
 
+### Data Source와 SQL Dialect 옵션 해제, 배경색 제외
+
+File > Settings(Ctrl + Alt + S) > Editor > Inspections > SQL - No data sources configured, SQL dialect detection 체크 해제
+File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injected language fragment - Background 체크 해제
 
 ### mapper 구현체로 이동
     ctrl + alt + b

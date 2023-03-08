@@ -316,3 +316,33 @@ org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creati
  but has eventually been wrapped. This means that said other beans do not use the final version of the bean. 
  This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example
 ```
+
+
+### substring
+
+```java
+public static String splitLength(String text, int length){
+	int maxLength = length;
+	int textLen = text.length();
+	String resultText = "";
+	if(textLen > length) {
+		resultText = text.substring(0, maxLength);
+	} else {
+		resultText = text;
+	}
+	return resultText;
+}
+
+public static String relaxSubString(String src, int beginIndex, int endIndex) {
+	if(DataUtils.isEmpty(src)) {
+		return src;
+	}
+	if(src.length() < beginIndex) {
+		return "";
+	}
+	if(src.length() < endIndex) {
+		return src.substring(beginIndex, src.length());
+	}
+	return src.substring(beginIndex, endIndex);
+}
+```

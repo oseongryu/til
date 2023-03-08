@@ -927,6 +927,11 @@ https://plnkr.co/edit/Cr8UZvI1hxRY60CBDxX3?p=preview&preview
 
 ```
 
+### volar
+```
+"volar.inlayHints.eventArgumentInInlineHandlers": true
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

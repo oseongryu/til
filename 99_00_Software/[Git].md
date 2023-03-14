@@ -103,6 +103,9 @@ git log --pretty=format:"%h %cd %an %s" --since="2023-01-01" --until="2023-01-31
 
 # 파일목록 추가확인
 git log --name-only --pretty=format:"%h %cd %an %s" --since="2022-11-01" --committer=aaaa
+
+# 파일목록 정렬 및 하나로 통합
+git log --name-only --pretty=format: --since="2022-02-01" --committer=aaa | sort | uniq
 ```
 
 #### 리눅스 권한 문제 관련이 있을 경우 (.git의 폴더에서 확인)

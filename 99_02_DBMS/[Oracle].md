@@ -332,6 +332,12 @@ END PACKAGE_TEST;
 /*테이블 내 컬럼 찾기*/
 SELECT * FROM USER_TAB_COLUMNS WHERE COLUMN_NAME LIKE '%ATT_FL_GRP_ID%';
 
+
+#### 오라클
+```sql
+SELECT * FROM DBA_OBJECTS WHERE OWNER = 'CCIP' AND OBJECT_TYPE = 'TABLE' AND OBJECT_NAME LIKE '%MBSH%';
+```
+
 ## Reference
 https://m.cafe.daum.net/oraclesqltuning/8ACn/28
 https://lawmin.tistory.com/58

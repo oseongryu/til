@@ -96,3 +96,7 @@ pm2 start server.js
 
 ## nextjs  
 pm2 start npm --name 'myserver' -- start -p 3000
+
+
+## 문자열 끝 공백
+http://mwultong.blogspot.com/2007/02/cr-lf-enter-key-match-regex.html

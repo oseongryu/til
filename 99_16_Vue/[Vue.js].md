@@ -953,6 +953,16 @@ https://plnkr.co/edit/Cr8UZvI1hxRY60CBDxX3?p=preview&preview
 </html>
 ```
 
+### 중복체크
+```js
+// 확인할 값
+const checkedList = this.refProductDxDataGrid.instance.getSelectedRowsData()
+
+this.gridData.map(row => { if (row.testId.lastIndexOf(checkedList[0].testId) > -1) flag = true })
+
+this.gridData.some(row => row.testId === checkedList[0].testId)
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

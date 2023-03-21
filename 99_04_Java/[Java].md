@@ -417,3 +417,21 @@ public class Temp {
 }
 
 ```
+
+### Date
+```java
+Date date = java.sql.Timestamp.valueOf(ordDate);
+ordDateFormat.format(new Date()).substring(0,4);
+
+Calendar pCal = Calendar.getInstance();
+pCal.add(Calendar.YEAR, -1);
+String pDate = ordDateFormat.format(pCal.getTime()).substring(0,4);
+
+Calendar cCal = Calendar.getInstance();
+String cDate = ordDateFormat.format(cCal.getTime()).substring(0,4);
+
+Calendar nCal = Calendar.getInstance();
+pCal.add(Calendar.YEAR, 1);
+String nDate = ordDateFormat.format(nCal.getTime()).substring(0,4);
+String orderDate = ordDateFormat.format(date);
+```

@@ -380,6 +380,32 @@ git log --pretty=format:"%h %cd %an %s" --since="2023-01-01" --until="2023-01-31
 git status로 수정한 파일에서 자신이 수정한 파일목록 확인
 ```
 
+#### ssh config (github, gitblit, gitlab)
+```bash
+# 2022.09.23. github oseongryu
+Host github.com
+    HostName github.com
+    Port 22
+    IdentityFile ~/.ssh/id_rsa_oseongryu
+    User oseongryu
+
+# 2022.09.23. gitlab osryu
+Host corporation.gitlab.com
+    HostName corporation.gitlab.com
+    # Port 22
+    IdentityFile ~/.ssh/id_rsa
+    User osryu
+
+# 2022.09.23. gitblit osryu
+Host corporation.gitblit.com
+    HostName corp.gitblit.com
+    Port 29418
+    IdentityFile ~/.ssh/id_rsa
+    User osryu
+    PubkeyAcceptedAlgorithms +ssh-rsa
+    HostKeyAlgorithms +ssh-rsa
+```
+
 #### References
 ```
 Git Portable Location

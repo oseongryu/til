@@ -963,6 +963,17 @@ this.gridData.map(row => { if (row.testId.lastIndexOf(checkedList[0].testId) > -
 this.gridData.some(row => row.testId === checkedList[0].testId)
 ```
 
+### isEmpty
+```js
+isEmpty(val) {
+  var result = false
+  if (val != null && val != 'undefined' && val != '') {
+    result = true
+  }
+  return result
+}
+```
+
 ### references
 https://junior-datalist.tistory.com/236
 

@@ -215,6 +215,15 @@ ssh testuser@000.000.000.000
 
 ```
 
+### AWS EC2 접근 console에서 접근
+원하는 인스턴스 선택 > 우측마우스 > 연결 클릭 > Session Manager에서 연결 클릭
+```bash
+sh-4.2$ sudo su
+```
+<img width="400" src="../static/img/aws/001.png"/>
+<img width="700" src="../static/img/aws/002.png"/>
+
+
 ### References
 
 ```

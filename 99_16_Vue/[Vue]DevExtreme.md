@@ -1,3 +1,13 @@
+## devextreme 가이드
+```
+https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/
+
+검색을 사용해서 찾기
+```
+<img width="700" src="../static/img/devextreme/001.png"/>
+
+
+
 ## grid checkbox
 
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/MultipleRecordSelectionModes/Vue/Light/

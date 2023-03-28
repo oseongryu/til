@@ -41,3 +41,14 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 
     chrome Responsive 우측 ... 클릭  Add device Type 클릭 
     설정항목에서 Desktop으로 변경
+
+### chrome debugger
+
+    Application > Storage > Session Storage
+    Network > Fetch/XHR
+    Network > Fetch/XHR > Response (하단 {}클릭)
+
+<img width="800" src="../static/img/chrome/001.png"/>
+<img width="800" src="../static/img/chrome/002.png"/>
+<img width="800" src="../static/img/chrome/003.png"/>
+<img width="800" src="../static/img/chrome/004.png"/>

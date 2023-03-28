@@ -118,6 +118,14 @@ arn:aws:iam::{계정명}:role/apigateway-dynamodb-role
 }
 ```
 
+### AWS API, DynamoDB create
+<img width="700" src="../static/img/aws_api/001.png"/>
+<img width="700" src="../static/img/aws_api/002.png"/>
+<img width="700" src="../static/img/aws_api/003.png"/>
+<img width="700" src="../static/img/aws_api/004.png"/>
+<img width="700" src="../static/img/aws_api/005.png"/>
+<img width="700" src="../static/img/aws_api/006.png"/>
+
 
 ## References
 

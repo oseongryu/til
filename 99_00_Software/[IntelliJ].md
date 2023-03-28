@@ -81,4 +81,25 @@ File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injec
 
 ### 구현체 제외 
     검색시 ctrl + shift + n 사용 (모두를 할경우 전부 나옴)
-    https://open-markethq.slack.com/archives/D046SBS6MDZ/p1671686662885729
+
+### Maven Project Setting
+    File > Project Structure 
+    Project Settings > Project > SDK > 선택 > Apply
+    Platform Settings > SDKs > + > Add JDK
+
+    File > Settings
+    Build, Execution, Deployment > Build Tools > Maven
+    Use settings from .mvn/maven.config 체크해제 > User settings file에서 선택 > Apply
+
+    Run > Edit Configurations
+    + > Tomcat Server > local
+    
+    Deployment Tab > + > Artifact > Select Artifacts to Deploy에서 project명:war exploded 선택
+    Application context 설정 /
+
+    Server Tab
+    Application server > Tomcat Server > Tomcat Home 설정 > 원하는 톰캣 선택 후 확인
+    VM options: -Dfile.encoding=UTF-8
+    JRE: 1.7
+    Tomcat Server Settings : HTTP port: 8080
+

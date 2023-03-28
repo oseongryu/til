@@ -99,6 +99,8 @@ File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injec
 
     Server Tab
     Application server > Tomcat Server > Tomcat Home 설정 > 원하는 톰캣 선택 후 확인
+    On 'Update' action: Update classes and resources (핫 리로드옵션 project명:war exploded여야함)
+    On frame deactivation: Update classes and resources (핫 리로드옵션 project명:war exploded여야함)
     VM options: -Dfile.encoding=UTF-8
     JRE: 1.7
     Tomcat Server Settings : HTTP port: 8080

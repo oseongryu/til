@@ -105,3 +105,13 @@ File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injec
     JRE: 1.7
     Tomcat Server Settings : HTTP port: 8080
 
+### Mybatis Setting
+    노란줄이 나타나는 경우
+    File > Settings > Languages & Frameworks > SQL Dialects
+    Global SQL Dialect: Oracle (자주 사용하는 설정으로)
+    Project SQL Dialect: Oracle
+
+
+### Database
+    Database탭 > + > Oracle 선택
+    설정 후 Test Connection > Driver 다운로드

@@ -224,6 +224,11 @@ sh-4.2$ sudo su
 <img width="700" src="../static/img/aws/002.png"/>
 
 
+### Access Key, Secret Key 생성
+```
+IAM > 사용자 > S3AccessKeyOnly > 엑세스 키 만들기
+```
+
 ### References
 
 ```

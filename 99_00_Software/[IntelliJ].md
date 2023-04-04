@@ -73,8 +73,8 @@
 
 ### Data Source와 SQL Dialect 옵션 해제, 배경색 제외
 
-File > Settings(Ctrl + Alt + S) > Editor > Inspections > SQL - No data sources configured, SQL dialect detection 체크 해제
-File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injected language fragment - Background 체크 해제
+    File > Settings(Ctrl + Alt + S) > Editor > Inspections > SQL - No data sources configured, SQL dialect detection 체크 해제
+    File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injected language fragment - Background 체크 해제
 
 ### mapper 구현체로 이동
     ctrl + alt + b
@@ -115,3 +115,32 @@ File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injec
 ### Database
     Database탭 > + > Oracle 선택
     설정 후 Test Connection > Driver 다운로드
+
+
+
+### IntelliJ Community Tomcat 설정
+
+    1. smart tomcat 플러그인 추가
+    2. Java 설정
+        File > Project Structure 
+        Project Settings > Project > SDK > 선택 > Apply
+        Platform Settings > SDKs > + > Add JDK
+    2. Maven 설정
+        File > Settings
+        Build, Execution, Deployment > Build Tools > Maven
+        Use settings from .mvn/maven.config 체크해제 > User settings file에서 선택 > Apply
+    3. Edit Configurations
+        Run > Edit Configurations
+        + > Smart Tomcat
+
+        Tomcat Server: 톰캣 추가
+        Deployment directory: ~/project/src/main/webapp
+        Use classpath of module: project
+        Context path: /
+
+
+<img width="800" src="../static/img/intellij/001.png"/>
+
+
+#### intellij Could not initialize class oracle.jdbc.driver.OracleDriver
+    ~/project/src/main/webapp/WEB-INF/lib 로 ojdbc6.jar 파일을 넣어서 처리

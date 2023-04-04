@@ -10,6 +10,35 @@ Panda Theme
 vscode 와 vscode-insider를 사용
 ```
 
+
+### vscode color theme
+```
+  "workbench.colorCustomizations": {
+    // vscdoe 전체 전경 색
+    "editor.background": "#1f242b",
+    // 맨 왼쪽 activityBar
+    "activityBar.background": "#1f242b",
+    // 사이드바(파일,폴더) 배경 색
+    "sideBar.background": "#1f242b",
+    // 그룹 헤더 전체 배경 색
+    "editorGroupHeader.tabsBackground": "#1f242b",
+    // 선택된 탭 배경색
+    "tab.activeBackground": "#225348",
+    // 비활성인 탭 배경색
+    "tab.inactiveBackground": "#1f242b",
+    // 상단 타이틀 배경색
+    "titleBar.activeBackground": "#0c3f46",
+    // 상단 타이틀 글자색
+    "titleBar.activeForeground": "#fff",
+    // 하단 상태 배경색
+    "statusBar.background": "#225348",
+    // 사이드바 목록 선택 배경색 글자색
+    "list.hoverBackground": "#535353",
+    "list.activeSelectionBackground": "#04897c",
+    "list.activeSelectionForeground": "#fff",
+  },
+```
+
 ### vscodium
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -304,3 +333,5 @@ bootRun {
 }
 
 ```
+
+

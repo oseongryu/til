@@ -283,6 +283,17 @@ cd /mnt/c
 C:\Windows\Fonts에 설치할 폰트 넣기
 ```
 
+### 윈도우 색인기능
+
+     파일 우측에 파란색 표시가 색인기능이 적용된 부분
+     드라이브 > 속성 
+     이 드라이브를 압축하여 디스크 공간 절약 체크해제
+     이 드라이브의 파일 속성 및 내용 색인 허용 체크해제
+
+<img width="100" src="../static/img/windows/001.png"/>
+
+
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

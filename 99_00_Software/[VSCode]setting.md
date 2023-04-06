@@ -59,11 +59,11 @@ settings.json
     // 그룹 헤더 전체 배경 색
     "editorGroupHeader.tabsBackground": "#1f242b",
     // 선택된 탭 배경색
-    "tab.activeBackground": "#225348",
+    "tab.activeBackground": "#23433c",
     // 비활성인 탭 배경색
     "tab.inactiveBackground": "#1f242b",
     // 상단 타이틀 배경색
-    "titleBar.activeBackground": "#0c3f46",
+    "titleBar.activeBackground": "#225348",
     // 상단 타이틀 글자색
     "titleBar.activeForeground": "#fff",
     // 하단 상태 배경색

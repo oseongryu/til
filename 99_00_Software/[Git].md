@@ -406,6 +406,22 @@ Host corporation.gitblit.com
     HostKeyAlgorithms +ssh-rsa
 ```
 
+#### git stash
+```
+git stash
+git stash save
+
+git stash list
+
+git stash apply
+git stash apply stash@{0}
+
+git stash drop stash@{0}
+
+git stash pop
+
+``` 
+
 #### References
 ```
 Git Portable Location

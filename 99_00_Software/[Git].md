@@ -422,6 +422,43 @@ git stash pop
 
 ``` 
 
+#### gitlab
+```
+데이터이관
+https://trytoso.tistory.com/1313
+
+일부 파일만 Merge
+git checkout -p [가져올 파일이 있는 branch명] [가져올 파일의 경로]
+# 현재 작업중인(checkout) 브랜치는 feature/devMain으로 가정
+$ git checkout -p feature/pubMain \client\components\pages\common\NavTab.vue
+
+y - stage this hunk → 페이지 단위 승인
+n - do not stage this hunk
+q - quit; do not stage this hunk nor any of the remaining ones
+a - stage this hunk and all later hunks in the file → 일괄 승인
+d - do not stage this hunk nor any of the later hunks in the file
+g - select a hunk to go to
+/ - search for a hunk matching the given regex
+j - leave this hunk undecided, see next undecided hunk
+J - leave this hunk undecided, see next hunk
+k - leave this hunk undecided, see previous undecided hunk
+K - leave this hunk undecided, see previous hunk
+s - split the current hunk into smaller hunks
+e - manually edit the current hunk
+? - print help
+
+Origin/main의 소스로 강제 적용
+# 아무것도 병합하거나 리베이스 하지 않고 원격지에서 최신 커밋 정보를 다운로드
+$ git fetch --all
+# 현재 작업중인 것을 백업 브랜치로 분기(필요시)
+$ git branch backup-master
+# 강제로 내려받고자 하는 브랜치로 리셋
+# --hard 옵션은 로컬에 충돌 가능한 수정사항이 있어도 무시하고 내려받음
+$ git reset --hard origin/master
+$ git reset --hard origin/<branch_name>
+
+```
+
 #### References
 ```
 Git Portable Location

@@ -52,6 +52,7 @@ GRANT CREATE ANY TABLE TO drawing;
 docker pull ashimjk/oracle-ee-12c
 # docker run -d -p 1521:1521 ashimjk/oracle-ee-12c
 docker run --name oracle12c --shm-size=1g -d -p 1521:1521  --restart=always ashimjk/oracle-ee-12c
+docker run --name oracle12c --shm-size=1g -d -p 1521:1521 -v /oracle12c-data/:/u01/app/oracle/oradata/oracle12c-data/ --restart=always ashimjk/oracle-ee-12c 
 
 docker ps -a
 docker logs oracle12c

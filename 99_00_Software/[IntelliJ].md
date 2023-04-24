@@ -31,6 +31,8 @@
     * 설치시 Edit Custom VM Options 경로
     C:\Users\{user}\AppData\Roaming\JetBrains\IdeaIC2022.1\idea64.exe.vmoptions
 
+### Font
+    File > Settings > Editor > Font > Consolas
 
 ### 한글Encoding 설정
     CTRL + ALT + S 로 IntelliJ Settings 메뉴 호출

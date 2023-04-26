@@ -18,6 +18,13 @@ choco install bandizip --version=6.24
 
 choco uninstall bandizip
 choco uninstall -yf bandizip
+
+```
+
+##  
+```bash
+choco install vscodium
+choco install bandizip --version=6.24
 ```
 
 ## references

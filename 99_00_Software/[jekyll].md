@@ -61,6 +61,7 @@ bundle add webrick
 chcp 65001
 
 # 지킬 실행
+bundle install
 jekyll serve
 
 bundle exec jekyll serve --host 0.0.0.0 --port 4000 > /dev/null 2>&1 &
@@ -85,7 +86,7 @@ bundle install
 # Azure에서 Jekyll을 bat로 실행하기
 Azure에 Jekyll 설정을 완료하고, 원격에서 실행하려면 host를 0.0.0.0로 세팅해야 하지만,
 Azure의 가상환경의 경우 DNS주소로 host를 설정할 수 없을 때, _site는 DNS주소로 생성하고
-실행 시에는 원격에서 실행하는 형태로하고 build를 하지 않도록 해서 처리함  
+실행 시에는 원격에서 실행하는 형태로하고 build를 하지 않도록 해서 처리함
 
 
 cd C:\DEV\workspace\f5074.github.io
@@ -111,15 +112,15 @@ pause
 firewall-cmd --state
 
 #### 방화벽 설치
-sudo yum install firewalld 
-sudo systemctl enable firewalld 
+sudo yum install firewalld
+sudo systemctl enable firewalld
 sudo systemctl start firewalld
 
 #### 서비스로 방화벽 해제 / 제거
-sudo firewall-cmd --permanent --add-service=http 
+sudo firewall-cmd --permanent --add-service=http
 sudo firewall-cmd --permanent --add-service=https
 
-sudo firewall-cmd --permanent --remove-service=http 
+sudo firewall-cmd --permanent --remove-service=http
 sudo firewall-cmd --permanent --remove-service=http
 
 #### 특정 포트 방화벽 해제

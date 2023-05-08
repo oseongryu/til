@@ -1,3 +1,25 @@
+##
+
+```bash
+// Generate a Vue 2 application
+npx devextreme-cli new vue-app app-name
+
+// Generate a Vue 3 application
+npx devextreme-cli new vue-app app-name --version=3
+
+cd app-name
+npm run serve
+
+
+devextreme add devextreme-vue
+```
+
+##
+```bash
+npx -p devextreme-cli devextreme add devextreme-vue
+npm install devextreme@22.2 devextreme-vue@22.2 --save --save-exact
+```
+
 ## devextreme 가이드
 ```
 https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/
@@ -5,7 +27,6 @@ https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/
 검색을 사용해서 찾기
 ```
 <img width="700" src="../static/img/devextreme/001.png"/>
-
 
 
 ## grid checkbox
@@ -46,9 +67,9 @@ https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/BatchEditing/Vue/Li
 
 ```js
 <template>
-  <dx-data-grid 
-    ref="grid" 
-    :data-source="gridData" width="100%" height="600" 
+  <dx-data-grid
+    ref="grid"
+    :data-source="gridData" width="100%" height="600"
     :selected-row-keys="selectedItemKeys"
     :show-borders="true"
     @selection-changed="selectionChanged"

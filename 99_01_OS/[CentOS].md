@@ -1,6 +1,6 @@
 ## OS 확인
 ```
-uname -a 
+uname -a
 
 cat /etc/issue
 cat /etc/redhat-release
@@ -59,7 +59,7 @@ lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 nmap localhost
 
 ### 디렉토리 용량확인
-``` 
+```
 du -a directory
 ```
 
@@ -124,7 +124,7 @@ server:
 useradd testuser
 passwd testuser
 
-### 2. 일반계정 SUDO 사용 
+### 2. 일반계정 SUDO 사용
 * sudoers 설정 파일에 없습니다.
 su
 visudo -f /etc/sudoers
@@ -224,12 +224,15 @@ SHELL=/bin/bash
 
 ### ssh connect
 
-```
-1. Client
+```bash
+# 1. Client
 ssh-keygen -t rsa
 ssh-copy-id user@192.168.0.1
 
-~/.ssh/config
+# 특정 ssh-copy
+ssh-copy-id -i ~/.ssh/id_rsa.pub user@192.168.0.1
+
+# ~/.ssh/config
 ---
 Host rootserv
     HostName 192.168.0.1
@@ -396,7 +399,7 @@ Match Group sftpgroup
 service sshd status
 service sshd restart
 
-#### 7. SFTP 작동 테스트 
+#### 7. SFTP 작동 테스트
 yum list nmap
 yum install nmap -y
 nmap -n 192.168.0.1
@@ -422,10 +425,10 @@ reboot
 
 ###  CentOS 서버 설정 확인
 ```bash
-# 
+#
 ip addr show
 
-# 
+#
 echo > /dev/tcp/127.0.0.1/22
 echo $?
 
@@ -481,7 +484,7 @@ sudo yum install -y fuse-sshfs
 
 mkdir /upload
 sudo chmod -R 777 /upload
-sudo sshfs devuser@192.168.0.1:/data/upload /upload -o allow_other 
+sudo sshfs devuser@192.168.0.1:/data/upload /upload -o allow_other
 ```
 
 ### nfs

@@ -500,6 +500,11 @@ sudo yum install fontconfig -y
 sudo yum install freetype fontconfig -y
 ```
 
+### mem check
+```bash
+cat /proc/meminfo | grep Mem
+```
+
 ## References
 
 ```

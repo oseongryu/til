@@ -55,6 +55,8 @@ cd C:\Python\Python37\Scripts\z_venv\Scripts
 activate.bat
 
 # requirements.txt 내에 명시된 라이브러리들을 한 번에 설치하기
+pip freeze > requirements.txt
+
 pip install --requirement requirements.txt
 # 혹은
 pip install -r requirements.txt

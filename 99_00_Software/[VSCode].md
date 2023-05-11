@@ -51,7 +51,7 @@ File > Preperences > Settings > Users Tab > Text Editor > Files > Trim Trailing 
 
 ### vscode 상단 타이틀 바에 경로 표시하기
 ```
-File > Preperences > Settings > window.title 
+File > Preperences > Settings > window.title
 
 default: ${dirty}${activeEditorShort}${separator}${rootName}${separator}${appName}
 
@@ -77,139 +77,10 @@ Indent Using Spaces
 Indent Using Tabs
 ```
 
-### Extension
-
-#### GitLens
-```
-Name: GitLens — Git supercharged
-Id: eamodio.gitlens
-Description: Supercharge Git within VS Code — Visualize code authorship at a glance via Git blame annotations and CodeLens, seamlessly navigate and explore Git repositories, gain valuable insights via rich visualizations and powerful comparison commands, and so much more
-Version: 12.1.2
-Publisher: GitKraken
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens
-
-"gitlens.codeLens.enabled": false
-"gitlens.codeLens.authors.enabled": false
-
-```
-
-#### Git History
-```
-Name: Git History
-Id: donjayamanne.githistory
-Description: View git log, file history, compare branches or commits
-Version: 0.6.19
-Publisher: Don Jayamanne
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=donjayamanne.githistory
-```
-
-#### Git Graph
-```
-Name: Git Graph
-Id: mhutchie.git-graph
-Description: View a Git Graph of your repository, and perform Git actions from the graph.
-Version: 1.30.0
-Publisher: mhutchie
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=mhutchie.git-graph
-```
-
-
-#### Markdown Preview Enhanced
-```
-Name: Markdown Preview Enhanced
-Id: shd101wyy.markdown-preview-enhanced
-Description: Markdown Preview Enhanced ported to vscode
-Version: 0.6.3
-Publisher: Yiyi Wang
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=shd101wyy.markdown-preview-enhanced
-```
-
-#### Markdown PDF
-```
-Name: Markdown PDF
-Id: yzane.markdown-pdf
-Description: Convert Markdown to PDF
-Version: 1.4.4
-Publisher: yzane
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=yzane.markdown-pdf
-```
-
-
-#### JavaScript (ES6) code snippets
-```
-Name: JavaScript (ES6) code snippets
-Id: xabikos.JavaScriptSnippets
-Description: Code snippets for JavaScript in ES6 syntax
-Version: 1.8.0
-Publisher: charalampos karypidis
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=xabikos.JavaScriptSnippets
-```
-
-
-#### Vetur
-```
-Name: Vetur
-Id: octref.vetur
-Description: Vue tooling for VS Code
-Version: 0.35.0
-Publisher: Pine Wu
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=octref.vetur
-```
-
-#### Vue VSCode Snippets
-```
-Name: Vue VSCode Snippets
-Id: sdras.vue-vscode-snippets
-Description: Snippets that will supercharge your Vue workflow
-Version: 3.1.1
-Publisher: sarah.drasner
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=sdras.vue-vscode-snippets
-```
-
-#### Live Server (Using Publishing)
-```
-Name: Live Server (Five Server)
-Id: yandeu.five-server
-Description: A better Live Server with instant updates, highlights and PHP support.
-Version: 0.1.5
-Publisher: Yannick
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=yandeu.five-server
-```
-
-#### vscode-base64
-```
-Name: vscode-base64
-Id: adamhartford.vscode-base64
-Description: Base64 encode/decode the current selections.
-Version: 0.1.0
-Publisher: Adam Hartford
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=adamhartford.vscode-base64
-```
-
-#### Material Icon Theme
-```
-Name: Material Icon Theme
-Id: PKief.material-icon-theme
-Description: Material Design Icons for Visual Studio Code
-Version: 4.19.0
-Publisher: Philipp Kief
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=PKief.material-icon-theme
-```
-
-#### open in browser
-```
-Name: open in browser
-Id: techer.open-in-browser
-Description: This allows you to open the current file in your default browser or application.
-Version: 2.0.0
-Publisher: TechER
-VS Marketplace Link: https://marketplace.visualstudio.com/items?itemName=techer.open-in-browser
-```
-
 #### OpenActive File in New Window
 
 ```
-View > Commnad Palette > File:OpenActive File in New Window 
+View > Commnad Palette > File:OpenActive File in New Window
 단축키등록
 ```
 
@@ -218,25 +89,28 @@ View > Commnad Palette > File:OpenActive File in New Window
 code --list-extensions | % { "code --install-extension $_" }
 ```
 
-
 #### vscode vue extension
 ```bash
 code --install-extension alefragnani.Bookmarks
 code --install-extension alefragnani.project-manager
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension donjayamanne.githistory    
+code --install-extension donjayamanne.githistory
+code --install-extension mhutchie.git-graph
+code --install-extension PKief.material-icon-theme
+code --install-extension yzane.markdown-pdf
+code --install-extension yzhang.markdown-all-in-one
+code --install-extension shd101wyy.markdown-preview-enhanced
+
+#### javascript, vue
+code --install-extension techer.open-in-browser
+code --install-extension xabikos.JavaScriptSnippets
 code --install-extension esbenp.prettier-vscode
 code --install-extension hollowtree.vue-snippets
-code --install-extension jasonnutter.search-node-modules
-code --install-extension mhutchie.git-graph
-code --install-extension octref.vetur
-code --install-extension PKief.material-icon-theme
 code --install-extension sdras.vue-vscode-snippets
 code --install-extension Tobermory.es6-string-html
 code --install-extension Vue.volar
-code --install-extension yzhang.markdown-all-in-one
-code --install-extension shd101wyy.markdown-preview-enhanced
-code --install-extension techer.open-in-browser
+code --install-extension octref.vetur
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension jasonnutter.search-node-modules
 
 ##### java + springboot (Extension Pack for Java, Spring Boot Extension Pack)
 code --install-extension redhat.java
@@ -248,7 +122,7 @@ code --install-extension vscjava.vscode-java-pack
 code --install-extension vscjava.vscode-java-test
 code --install-extension vscjava.vscode-maven
 
-code --install-extension Pivotal.vscode-boot-dev-pack       
+code --install-extension Pivotal.vscode-boot-dev-pack
 code --install-extension Pivotal.vscode-spring-boot
 code --install-extension vscjava.vscode-spring-boot-dashboard
 code --install-extension vscjava.vscode-spring-initializr
@@ -267,6 +141,8 @@ code --install-extension hollowtree.vue-snippets
 code --install-extension huizhou.githd
 code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension ziyasal.vscode-open-in-github
+code --install-extension yandeu.five-server
+code --install-extension adamhartford.vscode-base64
 
 #### note
 vsnotes
@@ -291,7 +167,7 @@ vsnotes
 
 ### vscode spring boot 설정
 ```
-.\gradlew 
+.\gradlew
 .\gradlew bootRun
 
 .\gradlew bootRun -PjvmArgs="-Dspring.profiles.active=local"

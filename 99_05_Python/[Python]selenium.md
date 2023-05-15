@@ -79,6 +79,13 @@ https://junistory.blogspot.com/2017/08/phantomjs-casperjs.html
 https://stackoverflow.com/questions/9246438/how-to-submit-a-form-using-phantomjs
 
 
+##
+```bash
+cd ~
+python -m venv venv
+pip install -r requirements.txt
 
+pip uninstall -r requirements.txt -y
+```
 
 

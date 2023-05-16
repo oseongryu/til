@@ -1,7 +1,19 @@
 ## Setting
+
 1. [cmd] react-native-cli
+```bash
+yarn global remove react-native
+yarn global remove react-native-cli
+npm uninstall -g react-native
+npm uninstall -g react-native-cli
+
+yarn global list
+npm -g list
+
+npm install -g react-native
 npm install -g react-native-cli
 npx react-native --version
+```
 
 2. [EnvironmentVariable] ANDROID_HOME
 C:\Users\{User}\AppData\Local\Android\Sdk\
@@ -10,14 +22,21 @@ C:\Users\{User}\AppData\Local\Android\Sdk\
 C:\Users\{User}\AppData\Local\Android\Sdk\platform-tools
 
 4. [cmd]
+```bash
 adb
+```
 
 ## Init React-Native
 1. [cmd] init
-npx react-native init reactnative
+```bash
+# npx react-native init reactnative
+npx react-native init reactnative --version 0.68.2
+```
 2. [cmd] Android Start
-- react-native run-android
-- npm run android
+```bash
+react-native run-android
+npm run android
+```
 
 * [error] Failed to install the following Android SDK packages as some licences have not been accepted.
 Add to Google licenses on SDK tools(at Android Studio)
@@ -28,12 +47,12 @@ C:\Users\{User}\AppData\Local\Android\Sdk\licenses
 
 ### package.json
 "build": "npm build",
-"clean": "rm -rf node_modules", 
-"reinstall": "npm run clean && npm install", 
+"clean": "rm -rf node_modules",
+"reinstall": "npm run clean && npm install",
 "rebuild": "npm run clean && npm install && npm run build",
 
 
-### npm 재인스톨 
+### npm 재인스톨
 npm ci
 
 ### npx npkill
@@ -44,7 +63,7 @@ npx npkill
 
 ### chocolatey 설정
 ```
-1. PowerShell 
+1. PowerShell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
 2. CMD
@@ -67,6 +86,6 @@ react-native run-android
 
 6. Android Build
 cd android
-gradlew assembleRelease	
+gradlew assembleRelease
 ```
 

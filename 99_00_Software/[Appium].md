@@ -12,3 +12,6 @@
 npm install -g appium
 npm install appium-doctor -g
 ```
+
+## references
+https://life-with-coding.tistory.com/474

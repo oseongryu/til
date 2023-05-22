@@ -39,7 +39,7 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 
 ### chrome Responsive 설정
 
-    chrome Responsive 우측 ... 클릭  Add device Type 클릭 
+    chrome Responsive 우측 ... 클릭  Add device Type 클릭
     설정항목에서 Desktop으로 변경
 
 ### chrome debugger
@@ -52,3 +52,9 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 <img width="800" src="../static/img/chrome/002.png"/>
 <img width="800" src="../static/img/chrome/003.png"/>
 <img width="800" src="../static/img/chrome/004.png"/>
+
+
+### chrome android debugger
+    1. PC에 USB 연결
+    2. chrome://inspect/#devices
+    3. 연결시 USB 디버깅 등 확인

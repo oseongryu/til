@@ -19,7 +19,7 @@ File > Setting > Editor > General > Auto Import
 Add unabiguous imports on the fly
 Optimize imports on the fly (for current project)
 
-File > Settings > Tools > Android Emulator > Launch in a tool window 체크
+File > Settings > Tools > Emulator > Launch in a tool window 체크해제
 
 ```
 
@@ -157,5 +157,3 @@ https://m.blog.naver.com/PostView.nhn?blogId=coogi21c&logNo=220990437650&categor
 <img width="400" src="../static/img/android/build/002.png"/>
 
 
-
-C:\\Users\\osryu\\AppData\\Local\\Android\\Sdk

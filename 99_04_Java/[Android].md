@@ -18,6 +18,9 @@ File > Setting > Editor > General > Auto Import
 
 Add unabiguous imports on the fly
 Optimize imports on the fly (for current project)
+
+File > Settings > Tools > Android Emulator > Launch in a tool window 체크
+
 ```
 
 
@@ -52,7 +55,7 @@ https://www.inflearn.com/course/%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-%E
 ```
 * AOS(Android)
 https://play.google.com/store/apps/details?id=com.dki.spb_android
-* iOS 
+* iOS
 https://itunes.apple.com/us/app/keynote/id1037272004?mt=8
 ```
 
@@ -63,7 +66,7 @@ https://itunes.apple.com/us/app/keynote/id1037272004?mt=8
 http://layers7.tistory.com/7?category=724470
 ```
 
-### 폰갭 설치 
+### 폰갭 설치
 
 ```
 https://build.phonegap.com/
@@ -145,3 +148,14 @@ https://m.blog.naver.com/PostView.nhn?blogId=coogi21c&logNo=220990437650&categor
 ```
 
 
+## Android build
+
+### Clean Project
+<img width="400" src="../static/img/android/build/001.png"/>
+
+### Build Variants
+<img width="400" src="../static/img/android/build/002.png"/>
+
+
+
+C:\\Users\\osryu\\AppData\\Local\\Android\\Sdk

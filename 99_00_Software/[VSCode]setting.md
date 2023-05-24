@@ -26,9 +26,16 @@ settings.json
   "editor.formatOnType": false,
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
+  "editor.unicodeHighlight.nonBasicASCII": false,
   "files.trimTrailingWhitespace": true,
+  "git.enableSmartCommit": true,
+  "security.workspace.trust.untrustedFiles": "open",
+  "volar.inlayHints.eventArgumentInInlineHandlers": false,
+
   "window.title": "${dirty}${rootName}",
   "window.zoomLevel": -1,
+  "liveServer.settings.donotShowInfoMsg": true,
+  "diffEditor.ignoreTrimWhitespace": false,
   "camelgobrr.cases": [
     "camelCase",
     "SNAKE_CASE"
@@ -45,6 +52,9 @@ settings.json
   },
   "[javascript][typescript]": {
     "editor.maxTokenizationLineLength": 2500
+  },
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features"
   },
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.authors.enabled": false,

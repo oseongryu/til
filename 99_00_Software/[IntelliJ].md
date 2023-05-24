@@ -2,7 +2,7 @@
 
     Project Structure창 (단축키 : SHIFT+CTRL+ALT+S)
     * Project
-    1) SDK 변경                      
+    1) SDK 변경
     2) Language Level 변경
     * Module
     3) Language Level 변경
@@ -13,7 +13,7 @@
     * Build,Execution,Deployment  -> Build Tools -> Gradle
     5) Gradle JVM 변경
     * Build,Execution,Deployment  -> Compiler -> Java Compiler
-    6) Project bytecode version 변경  
+    6) Project bytecode version 변경
 
 
 ### Java SDK 설정
@@ -49,7 +49,7 @@
 
     Application Settings > Shell path > 변경후 > OK > IntelliJ 재시작
 
-    변경전 : powershell.exe 
+    변경전 : powershell.exe
     변경후 : "C:\Program Files\Git\bin\sh.exe" -login -i
 
 ### Inlay Hints
@@ -64,6 +64,11 @@
 ### Font SizeLine Number
 
     File > Settings > Editor > General > Change font size with Ctrl + Mouse Wheel (Check)
+
+
+### Diff & Merge
+    FIle > Settings > Editor > Color Scheme > Diff & Merge > Change
+    385570, 43698D  => 294436, 447152
 
 
 ### jdbc drivers location
@@ -81,11 +86,11 @@
 ### mapper 구현체로 이동
     ctrl + alt + b
 
-### 구현체 제외 
+### 구현체 제외
     검색시 ctrl + shift + n 사용 (모두를 할경우 전부 나옴)
 
 ### Maven Project Setting
-    File > Project Structure 
+    File > Project Structure
     Project Settings > Project > SDK > 선택 > Apply
     Platform Settings > SDKs > + > Add JDK
 
@@ -95,7 +100,7 @@
 
     Run > Edit Configurations
     + > Tomcat Server > local
-    
+
     Deployment Tab > + > Artifact > Select Artifacts to Deploy에서 project명:war exploded 선택
     Application context 설정 /
 
@@ -124,7 +129,7 @@
 
     1. smart tomcat 플러그인 추가
     2. Java 설정
-        File > Project Structure 
+        File > Project Structure
         Project Settings > Project > SDK > 선택 > Apply
         Platform Settings > SDKs > + > Add JDK
     2. Maven 설정

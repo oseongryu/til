@@ -232,6 +232,13 @@ ssh-copy-id user@192.168.0.1
 # 특정 ssh-copy
 ssh-copy-id -i ~/.ssh/id_rsa.pub user@192.168.0.1
 
+# ssh-copy-id 수동
+ssh 연결할 서버의 .ssh 폴더에서
+touch authorized_keys
+chmod 600 authorized_keys
+vi authorized_keys
+클라이언트에서 생성한 id_rsa.pub의 텍스트 복사해서 붙여넣기후 저장
+
 # ~/.ssh/config
 ---
 Host rootserv

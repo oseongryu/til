@@ -100,8 +100,47 @@ keybindings.json
     "key": "ctrl+k o",
     "command": "-workbench.action.files.showOpenedFileInNewWindow",
     "when": "emptyWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+shift+alt+8",
+    "command": "casegobrr.caseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "-casegobrr.caseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+9",
+    "command": "casegobrr.repeatCaseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-casegobrr.repeatCaseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+u",
+    "command": "editor.action.transformToUppercase"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "editor.action.transformToSnakecase"
   }
 ]
+
 ```
 
 

@@ -392,6 +392,30 @@ public class TestCode {
 }
 ```
 
+### oracle merge문 관련
+데이터가 null인경우 성립하지 않음 이 경우 NVL 처리로 null이 아니도록 변경
+t.DTL_ADDR = s.DTL_ADDR => and nvl(t.DTL_ADDR, '1') = nvl(s.DTL_ADDR, '1')
+
+```sql
+MERGE INTO TABLE1 T
+USING (
+	SELECT  ALLN_ORD_MST_ID
+		  , ALLN_ORD_ID
+	FROM TEMP1
+	WHERE INST_ID = I_INTG_MEM_ID
+	AND ALLN_ORD_MST_ID = I_ALLN_ORD_MST_ID
+) S
+ON (    T.ALLN_ORD_MST_ID = S.ALLN_ORD_MST_ID
+	AND NVL(T.DTL_ADDR, '1') = NVL(S.DTL_ADDR, '1')
+)
+WHEN MATCHED THEN
+UPDATE
+SET   T.MDF_DTM = SYSDATE
+	, T.MDF_ID = S.INST_ID
+WHERE T.FAIL_RSN IS NULL
+```
+
+
 
 ## Reference
 https://m.cafe.daum.net/oraclesqltuning/8ACn/28

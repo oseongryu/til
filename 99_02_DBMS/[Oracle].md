@@ -1,8 +1,8 @@
-#### ORACLE 18C XE 접속방법 
+#### ORACLE 18C XE 접속방법
 ```
 (나의 경우 회사 네트워크에서 127.0.0.1이 아니라 정확한 ip를 입력해서 됨)
 https://www.youtube.com/watch?v=jMzhxbiFXtM
- 
+
 sqlplus / as sysdba
 SELECT name, open_mode, cdb FROM v$database;
 show pdbs;
@@ -12,7 +12,7 @@ lsnrctl status (오라클의 ServiceName확인하기)
 
 services.msc oracle이 켜져있는지 확인하기
 
-C:\app\f5074\product\18.0.0\dbhomeXE\network\admin\tnsnames.ora  SERVICE_NAME확인하기 
+C:\app\f5074\product\18.0.0\dbhomeXE\network\admin\tnsnames.ora  SERVICE_NAME확인하기
 ```
 
 
@@ -62,7 +62,7 @@ WITH TB_DATE AS (
 )
 SELECT TD.DUM_DAYS, TC.GENE_CD_DESC
   FROM TB_DATE TD, TB_CODE TC
-ORDER BY DUM_DAYS  
+ORDER BY DUM_DAYS
 ```
 
 #### 설비데이터
@@ -171,7 +171,7 @@ CREATE OR REPLACE PROCEDURE EX_PROC
 )
 IS
 	RETURN_MESSAGE VARCHAR2(100) := 'test';
-	RETURN_MESSAGE2 VARCHAR2(100) := 'test'; 
+	RETURN_MESSAGE2 VARCHAR2(100) := 'test';
 BEGIN
 	dbms_output.put_line(RETURN_MESSAGE);
 	INSERT INTO TABLE3 (COLUMN1, COLUMN2) VALUES(PARA1, PARA2);
@@ -208,7 +208,7 @@ INSERT INTO TABLE1 (
 VALUES (
 	  (SELECT NVL(MAX(TO_NUMBER(SEQ)) + 1, 1) AS SEQ FROM TABLE1)
 	, SYSDATE
-)   
+)
 
 
 <selectKey resultType="java.lang.String" keyProperty="SEQ" order="BEFORE">
@@ -228,7 +228,7 @@ VALUES (
 
 #### 날짜관련
 ```sql
-SELECT 
+SELECT
 	TO_DATE('20220901'||'235959', 'YYYYMMDDHH24MISS')
 	, TO_DATE('20220901', 'YYYYMMDD') - 0.99999
 	, TO_DATE('20220901', 'YYYYMMDD') - 0.00001
@@ -243,7 +243,7 @@ FROM DUAL
 
 #### 권한관련
 ```sql
-SELECT * 
+SELECT *
 FROM DBA_TAB_PRIVS
 WHERE 1 = 1
  AND GRANTEE = 'TEST'
@@ -301,13 +301,13 @@ AS
 	 BEGIN
 	 	 INSERT INTO TABLE_TEST(COL1,COL2) VALUES('TEST', 1);
      END PROC_TEST;
-    
+
      PROCEDURE PROC_TEST2(NAME IN VARCHAR2, AGE IN NUMBER)
 	 IS
 	 BEGIN
 	 	 INSERT INTO TABLE_TEST(COL1,COL2) VALUES(NAME, AGE);
-     END PROC_TEST2;  
-    
+     END PROC_TEST2;
+
 	 FUNCTION examFunc -- 함수명
 	 (getGender IN VARCHAR2) -- 함수 호출시 받아올 파라미터 정의
 	 RETURN VARCHAR2 -- 함수 수행 시 반환할 데이터 타입
@@ -316,11 +316,11 @@ AS
 	 BEGIN -- 변수를 가지고 함수 수행
 	     IF getGender = '남' THEN setGender := '남자';
 	     ELSIF getGender = '여' THEN setGender := '여자';
-	     ELSE setGender := '오류'; 
+	     ELSE setGender := '오류';
 	     END IF;
 	 RETURN setGender; -- 반환
-	 END examFunc;    
-    
+	 END examFunc;
+
 END PACKAGE_TEST;
 ```
 
@@ -337,6 +337,61 @@ SELECT * FROM USER_TAB_COLUMNS WHERE COLUMN_NAME LIKE '%ATT_FL_GRP_ID%';
 ```sql
 SELECT * FROM DBA_OBJECTS WHERE OWNER = 'CCIP' AND OBJECT_TYPE = 'TABLE' AND OBJECT_NAME LIKE '%MBSH%';
 ```
+
+#### oracle charset to java
+```
+
+SELECT LENGTHB(LTRIM(RTRIM('똠방각하햬썊'))) AS A11
+  FROM DUAL
+;
+
+SELECT *
+FROM NLS_DATABASE_PARAMETERS
+WHERE PARAMETER = 'NLS_CHARACTERSET'
+;
+
+
+import java.io.UnsupportedEncodingException;
+
+public class TestCode {
+
+    public static void main(String[] args) throws UnsupportedEncodingException{
+
+        String charset;
+        String test;
+        int length;
+
+        test = "[ 30%할인! ]셀티아라 프리스틴 앰플 수분크림, 안티에이징, 보습 탄력, 줄기세포 배양액 화장품 (50ml X 1ea)";
+
+        charset = "MS949";
+        length = test.getBytes(charset).length;
+        System.out.println(charset + " length : " + length + " Bytes");
+
+        charset = "UTF-8";
+        length = test.getBytes(charset).length;
+        System.out.println(charset + " length : " + length + " Bytes");
+
+        charset = "euc-kr";
+        length = test.getBytes(charset).length;
+        System.out.println(charset +" length : " + length + " Bytes");
+
+        test = "똠방각하햬썊";
+
+        charset = "MS949";
+        length = test.getBytes(charset).length;
+        System.out.println(charset + " length : " + length + " Bytes");
+
+        charset = "UTF-8";
+        length = test.getBytes(charset).length;
+        System.out.println(charset + " length : " + length + " Bytes");
+
+        charset = "euc-kr";
+        length = test.getBytes(charset).length;
+        System.out.println(charset + " length : " + length + " Bytes");
+    }
+}
+```
+
 
 ## Reference
 https://m.cafe.daum.net/oraclesqltuning/8ACn/28

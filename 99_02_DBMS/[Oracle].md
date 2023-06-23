@@ -210,6 +210,9 @@ VALUES (
 	, SYSDATE
 )
 
+-- 연도 추가후 NEXTVAL
+TO_CHAR(SYSDATE,'YYYY') || LPAD((SELECT NVL(TO_NUMBER( SUBSTR(MAX(SEQ), 5) + 1), 1) AS SEQ FROM TABLE1), 5,'0')
+
 
 <selectKey resultType="java.lang.String" keyProperty="SEQ" order="BEFORE">
 	SELECT SQ_ID.NEXTVAL AS SEQ FROM DUAL

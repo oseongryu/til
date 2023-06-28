@@ -3,6 +3,8 @@
 git --version
 git config --global user.name "사용자명"
 git config --global user.email "이메일"
+git config --global init.defaultBranch main
+
 git config --list
 
 cd C:\Temp\sample
@@ -12,7 +14,7 @@ git commit -m "설명"
 git status
 
 git remote add origin https://github.com/f5074/sample.git
-git push origin master
+git push origin main
 ```
 
 #### Git Revert
@@ -20,7 +22,7 @@ git push origin master
 ```bash
 git log
 git reset --hard "원하는 HEAD"
-git push -f origin master
+git push -f origin main
 ```
 
 #### Git Reset
@@ -263,7 +265,7 @@ git config --global http.sslVerify false
 ```
 
 
-#### git remote origin 
+#### git remote origin
 ```bash
 git config --local --list
 git remote add origin git@github.com:oseongryu/til.git
@@ -272,7 +274,7 @@ git remote remove origin
 git config --local --list
 
 git remote add origin git@github.com:oseongryu/til.git
-git push -u origin master
+git push -u origin main
 
 ```
 
@@ -292,7 +294,7 @@ git merge --squash [branch]
 
 ```
 
-#### git remove specific file on all commit 
+#### git remove specific file on all commit
 ```bash
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 파일명' --prune-empty --tag-name-filter cat -- --all
 git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch 99_00_Software/[IntelliJ].md' --prune-empty --tag-name-filter cat -- --all
@@ -368,7 +370,7 @@ git push origin --delete feature/oseongryu
 
 #### git  커밋이 잘못되어 복구하는 방법
 ```js
-// 1. 방법 
+// 1. 방법
 1. 로그로 특정 부분 헤더 확인
 git log --pretty=format:"%h %cd %an %s" --since="2022-11-01" --until="2022-11-30" --committer=aaaa --committer=bbbb --committer=cccc
 git log --pretty=format:"%h %cd %an %s" --since="2022-12-01" --until="2022-12-31" --committer=aaaa --committer=bbbb --committer=cccc
@@ -420,7 +422,7 @@ git stash drop stash@{0}
 
 git stash pop
 
-``` 
+```
 
 #### gitlab
 ```
@@ -451,10 +453,10 @@ Origin/main의 소스로 강제 적용
 # 아무것도 병합하거나 리베이스 하지 않고 원격지에서 최신 커밋 정보를 다운로드
 $ git fetch --all
 # 현재 작업중인 것을 백업 브랜치로 분기(필요시)
-$ git branch backup-master
+$ git branch backup-main
 # 강제로 내려받고자 하는 브랜치로 리셋
 # --hard 옵션은 로컬에 충돌 가능한 수정사항이 있어도 무시하고 내려받음
-$ git reset --hard origin/master
+$ git reset --hard origin/main
 $ git reset --hard origin/<branch_name>
 
 ```

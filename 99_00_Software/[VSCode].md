@@ -181,4 +181,9 @@ bootRun {
 
 ```
 
+### vscode shortcut
+```
+ctrl + d
+ctrl + shift + l
 
+```

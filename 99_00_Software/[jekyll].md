@@ -136,6 +136,44 @@ systemctl start firewalld
 systemctl status firewalld
 ```
 
+### jekyll setting on docker
+    yum install ruby
+    ruby -v
+    yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel
+    gem install jekyll
+    yum install which
+    curl -L https://get.rvm.io | bash -s stable --ruby
+    curl -L https://get.rvm.io | bash -s stable --ruby=2.6.10
+    yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel
+    git clone https://github.com/sstephenson/rbenv.git .rbenvcd
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    exec $SHELL
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
+    exec $SHELL
+    yum install which
+    curl -L https://get.rvm.io | bash -s stable --ruby
+    curl -L https://get.rvm.io | bash -s stable --ruby=2.6.10
+    source /etc/profile.d/rvm.sh
+    rvm install 2.6.10
+    cd ~
+    ls -al
+    git clone https://github.com/sstephenson/rbenv.git .rbenvcd
+    echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
+    echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
+    exec $SHELL
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    git clone https://github.com/sstephenson/ruby-build.git ~/.rbenv/plugins/ruby-build
+    echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profile
+    exec $SHELL
+    ll
+    netstat -tnlp
+    i
+    bundle exec jekyll serve --skip-initial-build --host 0.0.0.0 --port 8088 > /dev/null 2>&1 &
+
+
+
 ### reference
 ```
 https://shryu8902.github.io/_posts/2018-06-22-jekyll-on-windows/

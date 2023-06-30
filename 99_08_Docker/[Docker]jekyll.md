@@ -6,7 +6,7 @@ docker run -it --name centos-jekyll -p 8088:8088 centos:7.9.2009
 docker exec -it centos-jekyll /bin/bash
 
 
-### 
+###
 ```bash
 yum install ruby
 ruby -v
@@ -14,13 +14,13 @@ ruby -v
 ```
 
 
-### 
+###
 ```bash
 yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel
 
 
 cd ~
-git clone https://github.com/sstephenson/rbenv.git .rbenvcd 
+git clone https://github.com/sstephenson/rbenv.git .rbenvcd
 echo 'export PATH="$HOME/.rbenv/bin:$PATH"' >> ~/.bash_profile
 echo 'eval "$(rbenv init -)"' >> ~/.bash_profile
 exec $SHELL
@@ -71,7 +71,7 @@ bundle exec jekyll serve --skip-initial-build --host 0.0.0.0 --port 8088 > /dev/
 
 kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 
-yum install net-tools 
+yum install net-tools
 netstat -tnlp
 ```
 ### docker-cp

@@ -486,6 +486,22 @@ git submodule init
 git submodule update
 ```
 
+### git bash zip
+
+C:\Program Files\Git\mingw64\bin
+https://stackoverflow.com/questions/38782928/how-to-add-man-and-zip-to-git-bash-installation-on-windows
+
+
+1. [Navigate to this sourceforge page](https://sourceforge.net/projects/gnuwin32/files/zip/3.0/)
+2. Download zip-3.0-bin.zip
+3. In the zipped file, in the bin folder, find the file zip.exe.
+4. Extract the file zip.exe to your mingw64 bin folder (for me: C:\Program Files\Git\mingw64\bin)
+5. [Navigate to to this sourceforge page](https://sourceforge.net/projects/gnuwin32/files/bzip2/1.0.5/)
+6. Download bzip2-1.0.5-bin.zip
+7. In the zipped file, in the bin folder, find the file bzip2.dll
+8. Extract bzip2.dll to your mingw64\bin folder (same folder as above: C:\Program Files\Git\mingw64\bin)
+
+
 #### References
 ```
 Git Portable Location

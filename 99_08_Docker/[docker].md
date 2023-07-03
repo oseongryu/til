@@ -154,11 +154,65 @@ sudo docker cp /home/azureadmin/.ssh/id_rsa centos-jekyll:/root/.ssh/
 sudo docker cp /home/azureadmin/.ssh/id_rsa.pub centos-jekyll:/root/.ssh/
 
 
+### vue
+docker pull centos:7.9.2009
+docker run -it -d -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
+docker exec -it centos-vue bash
+
+docker commit centos-vue oseongryu/centos-vue:0.0.1
+docker run -it -d -p 9911:9911 -p 9901:9901 --restart=always --name centos-vue2 oseongryu/centos-vue:0.0.1
+
+
+#### 배포PC
+cd /c/Users/osryu/git-personal/back/root/bo/src/main/resources/static
+zip -r static.zip *
+docker cp /c/Users/osryu/git-personal/back/root/bo/src/main/resources/static/static.zip centos-vue:/root/
+
+yum install unzip
+mkdir /app /app/webapp /app/webapp/partner
+unzip /root/static.zip -d /app/webapp/partner/
+
 ### springboot
 docker pull centos:7.9.2009
-docker run -it -d -p 8089:8089 --restart=always --name centos-spring-boot centos:7.9.2009
-docker exec -it centos-spring-boot bash
+docker run -it -d -p 9901:9901 --restart=always --name centos-spring centos:7.9.2009
 
 
+docker exec -it centos-spring bash
 
+yum install yum-utils
+yum install net-tools
+yum install nginx
+
+#### PC
+docker cp /c/Users/osryu/git-personal/ustraframework-sample/back/root/bo/build/libs/bo-0.0.1-SNAPSHOT.jar centos-spring:/root/
+
+nohup /app/java/jdk-8u212-ojdkbuild-linux-x64/bin/java -jar /root/bo-0.0.1-SNAPSHOT.jar 1>/dev/null 2>&1 &
+
+
+mkdir /app /app/java /app/wasapp /app/nginx-conf
+docker cp /c/Users/osryu/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
+unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
+
+
+### docker network
+
+docker network ls
+
+docker network create our-net
+
+docker network inspect our-net
+docker network inspect bridge
+
+docker network connect our-net centos-vue
+docker network disconnect bridge centos-vue
+
+docker network connect our-net centos-spring
+docker network disconnect bridge centos-spring
+
+docker exec centos-vue ping centos-spring
+docker exec centos-spring ping centos-vue
+
+
+docker network rm our-net
+docker stop centos-vue centos-spring
 

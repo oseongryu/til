@@ -159,8 +159,7 @@ docker pull centos:7.9.2009
 docker run -it -d -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
 docker exec -it centos-vue bash
 
-docker commit centos-vue oseongryu/centos-vue:0.0.1
-docker run -it -d -p 9911:9911 -p 9901:9901 --restart=always --name centos-vue2 oseongryu/centos-vue:0.0.1
+docker run -it -d -p 9911:9911 --restart=always --name centos-vue oseongryu/centos-vue:0.0.1
 
 
 #### 배포PC
@@ -176,6 +175,7 @@ unzip /root/static.zip -d /app/webapp/partner/
 docker pull centos:7.9.2009
 docker run -it -d -p 9901:9901 --restart=always --name centos-spring centos:7.9.2009
 
+docker run -it -d -p 9901:9901 --restart=always --name centos-spring oseongryu/centos-spring:0.0.1
 
 docker exec -it centos-spring bash
 
@@ -192,6 +192,7 @@ nohup /app/java/jdk-8u212-ojdkbuild-linux-x64/bin/java -jar /root/bo-0.0.1-SNAPS
 mkdir /app /app/java /app/wasapp /app/nginx-conf
 docker cp /c/Users/osryu/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
 unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
+
 
 
 ### docker network
@@ -215,4 +216,15 @@ docker exec centos-spring ping centos-vue
 
 docker network rm our-net
 docker stop centos-vue centos-spring
+
+### docker commit
+docker commit centos-vue oseongryu/centos-vue:0.0.1
+docker push oseongryu/centos-vue:0.0.1
+
+docker commit centos-spring oseongryu/centos-spring:0.0.1
+docker push oseongryu/centos-spring:0.0.1
+
+
+docker pull oseongryu/centos-vue:0.0.1
+docker pull oseongryu/centos-spring:0.0.1
 

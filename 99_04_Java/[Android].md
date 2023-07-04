@@ -157,3 +157,51 @@ https://m.blog.naver.com/PostView.nhn?blogId=coogi21c&logNo=220990437650&categor
 <img width="400" src="../static/img/android/build/002.png"/>
 
 
+### Android icon
+    1. https://www.appicon.co/
+    2. android/app/src/main/res 기본 아이콘 경로로 변경
+
+    1.  res - New - Image Asset
+    2.  manifest.xml application icon과 roundIcon 변경
+
+### Android decompile
+```
+1. Dex2Jar
+apk이미지를 jar파일로 변환해 줍니다.
+
+URL : http://sourceforge.net/projects/dex2jar
+Download : http://sourceforge.net/projects/dex2jar/files
+2. jd-gui
+jar 파일의 내용(소스코드)보여 주는 툴
+
+URL : https://github.com/pxb1988/dex2jar
+Download : https://github.com/java-decompiler/jd-gui/releases
+3. Apk Studio
+안드로이 리소스를 쉽게 풀어 줍니다.
+
+URL : http://www.vaibhavpandey.com/apkstudio/
+Download : https://bintray.com/vaibhavpandeyvpz/generic/apkstudio/view
+
+
+dex2jar.zip 파일의 압축을 풀고, cmd 에서 아래와 같이 실행하면 됩니다.
+
+d2j-dex2jar.bat -f -o [파일명].jar [APK 파일명].apk
+
+facebook apk를 예제로 풀어 보면, 아래와 같습니다.
+
+d2j-dex2jar.bat -f -o sample.jar com.chbreeze.jikbang4a.apk
+
+jar의 내용 보기 : jd-gui
+jd-gui를 실행해서 파일 열기위로 위에서 변환했던 jar 선택하면, 소스를 볼 수 있습니다.
+
+apk-studio로 실행해서 보시면 됩니다.
+안드로이드 아이콘으로 apk 파일을 선택하시면, 안에 있는 파일을 풀고 조회가 가능 합니다.
+```
+
+
+C:\DEV\tools\dex2jar-2.0\d2j-dex2jar.bat -f -o C:\DEV\tools\dex2jar-2.0\test.jar C:\DEV\tools\dex2jar-2.0\test.apk
+
+
+apktool d C:\Users\f5074\Downloads\tester.apk
+
+C:\Users\f5074\AppData\Local\apktool\framework\

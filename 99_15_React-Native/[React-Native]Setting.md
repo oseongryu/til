@@ -23,7 +23,7 @@ ifconfig |grep inet
 ## 1. Homebrew
 
 ```bash
-Homebrew란 ... 
+Homebrew란 ...
 Apple/Linus 시스템에서 제공하지 않는 유용한 패키지 관리자 설치
 
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
@@ -50,39 +50,39 @@ bash git 사용
 
 ## 3. Git 사용
 ```bash
-cd /   
-ls -la   
-cd users   
-cd ${USER}   
-cd desktop   
-cd dev   
-cd     
+cd /
+ls -la
+cd users
+cd ${USER}
+cd desktop
+cd dev
+cd
 
-cd /users/${USER}/desktop/dev/workspace   
+cd /users/${USER}/desktop/dev/workspace
 cd /users/${USER}/desktop/dev/downloads/apache-tomcat-9.0.50
 ```
 
-## 4. Dbeaver 
+## 4. Dbeaver
 
 database tool로 Dbeaver 사용
 
 
 ```bash
-brew install --cask dbeaver-community or dmg 파일 다운로드    
+brew install --cask dbeaver-community or dmg 파일 다운로드
 https://dbeaver.io/
 ```
-## 5. Visual Studio Code 
+## 5. Visual Studio Code
 https://code.visualstudio.com/download
 
 
-## 6. Intellij 
-Community version으로 설치   
+## 6. Intellij
+Community version으로 설치
 https://www.jetbrains.com/ko-kr/idea/download/#section=mac
 
 ## 7. Tomcat
 
 ```bash
-1. brew update 
+1. brew update
 2. brew list
 3. brew install tomcat@9
 4. 설치후 brew list로 설치 확인
@@ -93,33 +93,33 @@ https://www.jetbrains.com/ko-kr/idea/download/#section=mac
 * 직접 파일 다운후 설치 방법
 ```bash
 1. sudo mv /users/${USER}/desktop/dev/downloads/apache-tomcat-9.0.50 /usr/local
-2. sudo chown -R ${USER} /Library/Tomcat 
+2. sudo chown -R ${USER} /Library/Tomcat
 3. sudo chmod +x /Library/Tomcat/bin/*.sh
 ```
 
 ## 8. SSH 연결
-```bash 
-cd /home/${USER}    
-cat init-server.sh   
+```bash
+cd /home/${USER}
+cat init-server.sh
 ssh root@localhost -p 22
 ```
 
 ## war 배포용 만들기
 경로로 이동
 ./gradlew clean
-      
-## 9. RESTful API    
-* Building a RESTful Web Service   
-https://spring.io/guides/gs/rest-service/   
-* Consuming a RESTful Web Service   
-https://spring.io/guides/gs/consuming-rest/   
-* Social Service Tutorial   
+
+## 9. RESTful API
+* Building a RESTful Web Service
+https://spring.io/guides/gs/rest-service/
+* Consuming a RESTful Web Service
+https://spring.io/guides/gs/consuming-rest/
+* Social Service Tutorial
 https://www.kindsonthegenius.com/spring-boot16-spring-boot-crud-operation-with-jpa-repository/
 * Spring boot
 https://start.spring.io/
 
 ## 10. SQL
-SELECT ... FROM   
+SELECT ... FROM
 WHERE ... LIKE
 
 ERD(Entity Relationship Diagram)
@@ -127,16 +127,16 @@ ERD(Entity Relationship Diagram)
 ANSI 쿼리 사용
 
 * 항상 먼저 WHERE문으로 선택된 데이터 확인하고 update하기
-* 데이터 임의로 입력한 경우 
-alter table lesson auto_increment=66; 
+* 데이터 임의로 입력한 경우
+alter table lesson auto_increment=66;
 
 
 ## 11. Swagger
 Tutorial :
 https://memostack.tistory.com/17
 
-* 2.9.2버전으로 dependency설정    
-implementation 'io.springfox:springfox-swagger-ui:2.9.2'   
+* 2.9.2버전으로 dependency설정
+implementation 'io.springfox:springfox-swagger-ui:2.9.2'
 implementation 'io.springfox:springfox-swagger2:2.9.2'
 
 ## 12. React Native
@@ -145,6 +145,12 @@ brew --version
 brew install node
 node --version
 npm --version
+
+# nvm 사용시
+brew install yarn --without-node
+brew install yarn
+
+
 brew install watchman
 watchman -version
 npm install -g react-native-cli
@@ -170,7 +176,7 @@ npm -v
 ```
 
 ## 14. Next.JS 설정
-node 설치 후 
+node 설치 후
 npx create-next-app 폴더명
 First, run the development server:
 ```bash
@@ -179,7 +185,7 @@ npm run dev
 yarn dev
 ```
 
-## 15. React-Native 
+## 15. React-Native
 
 ```bash
 brew install watchman
@@ -228,10 +234,10 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 ### APK 생성 명령어
 
 ```bash
-./gradlew assembleDebug 
+./gradlew assembleDebug
 ```
 
-### AAB 생성 명령어 
+### AAB 생성 명령어
 
 ```bash
 ./gradlew bundleDebug
@@ -239,7 +245,7 @@ react-native bundle --platform android --dev false --entry-file index.js --bundl
 ### Android Emulator with Homebrew
 
 ```bash
-touch ~/.android/repositories.cfg 
+touch ~/.android/repositories.cfg
 brew cask install caskroom/versions/java8
 brew cask install android-sdk
 brew cask install intel-haxm
@@ -273,7 +279,7 @@ export PATH=$PATH:$ANDROID_SDK_ROOT/platform-tools
 PATH=$ANDROID_SDK_ROOT/emulator:$PATH
 ```
 
-* Failed to install the app. Please accept all necessary Android SDK licenses using Android SDK Manager: 
+* Failed to install the app. Please accept all necessary Android SDK licenses using Android SDK Manager:
 "$ANDROID_HOME/tools/bin/sdkmanager --licenses".
 
 ./sdkmanager --licenses --sdk_root=#ANDROID_SDK_ROOT
@@ -288,7 +294,7 @@ https://developer.android.com/studio?hl=ko
 
 sdk 설정
 cd ~
-touch .bash_profile 
+touch .bash_profile
 
 export ANDROID_PATH=/Users/${USER}/Library/Android
 export PATH=$PATH:$ANDROID_PATH/sdk/platform-tools
@@ -324,13 +330,13 @@ sudo port install scrcpy
 
 vi ~/.zshrc
 
---- 
+---
 scpy(){
 scrcpy -m 1024 -b 2M --max-fps 30 --always-on-top --disable-screensaver $@
 }
 ---
 
-## 18. codepush 
+## 18. codepush
 
 ```bash
 npm run codepush-all-prod
@@ -371,7 +377,7 @@ n
 
 # 설치한 버전 확인
 npm -v
-npm node-sass -v 
+npm node-sass -v
 ```
 
 # 기타 참고하면 좋은 페이지

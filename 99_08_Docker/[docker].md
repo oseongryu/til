@@ -161,6 +161,8 @@ docker exec -it centos-vue bash
 
 docker run -it -d -p 9911:9911 --restart=always --name centos-vue oseongryu/centos-vue:0.0.1
 
+#### Failed to get D-Bus connection: Operation not permitted
+docker run -it -d -p 9911:9911 -p 80:80 --privileged --restart=always --name centos-vue oseongryu/centos-vue:0.0.2
 
 #### 배포PC
 cd /c/Users/osryu/git-personal/back/root/bo/src/main/resources/static
@@ -211,7 +213,6 @@ docker network connect our-net centos-spring
 docker network disconnect bridge centos-spring
 
 docker exec centos-vue ping centos-spring
-docker exec centos-spring ping centos-vue
 
 
 docker network rm our-net
@@ -228,3 +229,6 @@ docker push oseongryu/centos-spring:0.0.1
 docker pull oseongryu/centos-vue:0.0.1
 docker pull oseongryu/centos-spring:0.0.1
 
+
+docker cp ~/git-personal/til/99_08_Docker/static/vue/default.conf centos-vue:/etc/nginx/conf.d
+docker cp centos-vue:/etc/nginx/conf.d/default.conf ~/git-personal/til/99_08_Docker/static/vue

@@ -59,8 +59,6 @@ docker pull oseongryu/ustra-oracle12c:0.01
 docker run --name ustra-oracle12c --shm-size=1g -d -p 1521:1521 --restart=always oseongryu/ustra-oracle12c:0.01
 docker exec -it ustra-oracle12c bash
 ```
-
-
 ### 2번째
 ```
 ## docker pull
@@ -156,22 +154,13 @@ sudo docker cp /home/azureadmin/.ssh/id_rsa.pub centos-jekyll:/root/.ssh/
 
 ### vue
 docker pull centos:7.9.2009
-docker run -it -d -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
+docker run -it -d -p 80:80 -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
 docker exec -it centos-vue bash
 
-docker run -it -d -p 9911:9911 --restart=always --name centos-vue oseongryu/centos-vue:0.0.1
 
 #### Failed to get D-Bus connection: Operation not permitted
-docker run -it -d -p 9911:9911 -p 80:80 --privileged --restart=always --name centos-vue oseongryu/centos-vue:0.0.2
+docker run -it -d -p 80:80 -p 9911:9911 --privileged --restart=always --name centos-vue oseongryu/centos-vue:0.0.1 /sbin/init
 
-#### 배포PC
-cd /c/Users/osryu/git-personal/back/root/bo/src/main/resources/static
-zip -r static.zip *
-docker cp /c/Users/osryu/git-personal/back/root/bo/src/main/resources/static/static.zip centos-vue:/root/
-
-yum install unzip
-mkdir /app /app/webapp /app/webapp/partner
-unzip /root/static.zip -d /app/webapp/partner/
 
 ### springboot
 docker pull centos:7.9.2009
@@ -179,21 +168,14 @@ docker run -it -d -p 9901:9901 --restart=always --name centos-spring centos:7.9.
 
 docker run -it -d -p 9901:9901 --restart=always --name centos-spring oseongryu/centos-spring:0.0.1
 
+#### Failed to get D-Bus connection: Operation not permitted
+docker run -it -d -p 9901:9901 --privileged --restart=always --name centos-spring oseongryu/centos-spring:0.0.1 /sbin/init
+
 docker exec -it centos-spring bash
 
 yum install yum-utils
 yum install net-tools
 yum install nginx
-
-#### PC
-docker cp /c/Users/osryu/git-personal/ustraframework-sample/back/root/bo/build/libs/bo-0.0.1-SNAPSHOT.jar centos-spring:/root/
-
-nohup /app/java/jdk-8u212-ojdkbuild-linux-x64/bin/java -jar /root/bo-0.0.1-SNAPSHOT.jar 1>/dev/null 2>&1 &
-
-
-mkdir /app /app/java /app/wasapp /app/nginx-conf
-docker cp /c/Users/osryu/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
-unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
 
 
 
@@ -229,6 +211,66 @@ docker push oseongryu/centos-spring:0.0.1
 docker pull oseongryu/centos-vue:0.0.1
 docker pull oseongryu/centos-spring:0.0.1
 
+### upload
+#### WEB
+docker cp ~/git-personal/til/99_08_Docker/static/vue/default.conf centos-vue:/etc/nginx/conf.d
+docker cp ~/git-personal/back/root/bo/src/main/resources/static/static.zip centos-vue:/root/
+
 
 docker cp ~/git-personal/til/99_08_Docker/static/vue/default.conf centos-vue:/etc/nginx/conf.d
+nginx -t
+nginx -s stop
+nginx -s reload
+
+
+cd ~/git-personal/back/root/bo/src/main/resources/static
+zip -r static.zip *
+docker cp~/git-personal/back/root/bo/src/main/resources/static/static.zip centos-vue:/root/
+
+yum install unzip
+mkdir /app /app/webapp /app/webapp/partner
+unzip /root/static.zip -d /app/webapp/partner/
+
+#### WAS
+docker cp ~/git-personal/til/99_08_Docker/static/spring/default.conf centos-spring:/etc/nginx/conf.d
+docker cp ~/git-personal/ustraframework-sample/back/root/bo/build/libs/bo-0.0.1-SNAPSHOT.jar centos-spring:/root/
+docker cp ~/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
+
+
+
+docker cp ~/git-personal/ustraframework-sample/back/root/bo/build/libs/bo-0.0.1-SNAPSHOT.jar centos-spring:/root/
+nohup /app/java/jdk-8u212-ojdkbuild-linux-x64/bin/java -jar /root/bo-0.0.1-SNAPSHOT.jar 1>/dev/null 2>&1 &
+
+mkdir /app /app/java /app/wasapp /app/nginx-conf
+docker cp ~/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
+unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
+
+### backup
 docker cp centos-vue:/etc/nginx/conf.d/default.conf ~/git-personal/til/99_08_Docker/static/vue
+docker cp centos-vue:/etc/nginx/nginx.conf ~/git-personal/til/99_08_Docker/static/vue
+
+
+### centos default setting
+```bash
+# 필요 툴 설치
+yum install net-tools
+yum install vim
+yum install wget
+yum install glibc-locale-source glibc-langpack-en #언어팩
+
+# 시간변경
+# 사용 가능한 타임존 확인
+timedatectl list-timezones | grep Seoul
+# 타임존 변경
+timedatectl set-timezone Asia/Seoul
+# 타임존 확인
+date
+
+# system locale 설정 변경
+localectl set-locale LANG=en_US.UTF-8
+
+```
+
+(주의사항 bash에서 말고 cmd에서 실행해야 함)
+docker run -itd -p 80:80 -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
+docker run -it -d -p 80:80 -p 9911:9911 --privileged --restart=always --name centos-vue centos:7.9.2009 /sbin/init

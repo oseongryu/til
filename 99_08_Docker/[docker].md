@@ -159,7 +159,7 @@ docker exec -it centos-vue bash
 
 
 #### Failed to get D-Bus connection: Operation not permitted
-docker run -it -d -p 80:80 -p 9911:9911 --privileged --restart=always --name centos-vue oseongryu/centos-vue:0.0.1 /sbin/init
+docker run -it -d -p 80:80 --privileged --restart=always --name centos-vue oseongryu/centos-vue:0.0.4 /sbin/init
 
 
 ### springboot
@@ -169,7 +169,7 @@ docker run -it -d -p 9901:9901 --restart=always --name centos-spring centos:7.9.
 docker run -it -d -p 9901:9901 --restart=always --name centos-spring oseongryu/centos-spring:0.0.1
 
 #### Failed to get D-Bus connection: Operation not permitted
-docker run -it -d -p 9901:9901 --privileged --restart=always --name centos-spring oseongryu/centos-spring:0.0.1 /sbin/init
+docker run -it -d -p 10100:10100 -p 10200:10200 --privileged --restart=always --name centos-spring oseongryu/centos-spring:0.0.4 /sbin/init
 
 docker exec -it centos-spring bash
 
@@ -225,7 +225,7 @@ nginx -s reload
 
 cd ~/git-personal/back/root/bo/src/main/resources/static
 zip -r static.zip *
-docker cp~/git-personal/back/root/bo/src/main/resources/static/static.zip centos-vue:/root/
+docker cp ~/git-personal/back/root/bo/src/main/resources/static/static.zip centos-vue:/root/
 
 yum install unzip
 mkdir /app /app/webapp /app/webapp/partner
@@ -235,6 +235,8 @@ unzip /root/static.zip -d /app/webapp/partner/
 docker cp ~/git-personal/til/99_08_Docker/static/spring/default.conf centos-spring:/etc/nginx/conf.d
 docker cp ~/git-personal/ustraframework-sample/back/root/bo/build/libs/bo-0.0.1-SNAPSHOT.jar centos-spring:/root/
 docker cp ~/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
+
+nohup /app/java/jdk-8u212-ojdkbuild-linux-x64/bin/java -jar -Dserver.port=10100 /root/bo-0.0.1-SNAPSHOT.jar 1>/dev/null 2>&1 &
 
 
 
@@ -274,3 +276,5 @@ localectl set-locale LANG=en_US.UTF-8
 (주의사항 bash에서 말고 cmd에서 실행해야 함)
 docker run -itd -p 80:80 -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
 docker run -it -d -p 80:80 -p 9911:9911 --privileged --restart=always --name centos-vue centos:7.9.2009 /sbin/init
+
+

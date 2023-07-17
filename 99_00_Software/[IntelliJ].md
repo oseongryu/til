@@ -70,6 +70,14 @@
     FIle > Settings > Editor > Color Scheme > Diff & Merge > Change
     385570, 43698D  => 294436, 447152
 
+### IntelliJ 복사 붙여넣기 시 들여쓰기가 유지되지 않을 경우
+    File > Settings > Editor > General > Smart Keys >
+    Reformat on paste 설정 None 또는 Indent block로 변경
+
+
+<img width="800" src="../static/img/intellij/setting/001.png"/>
+<img width="800" src="../static/img/intellij/setting/002.png"/>
+
 
 ### jdbc drivers location
     C:\Users\${user}\AppData\Roaming\JetBrains\IntelliJIdea2022.1\jdbc-drivers\Oracle

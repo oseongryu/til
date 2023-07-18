@@ -201,6 +201,7 @@ expire_day=7
 # Execute
 find ${log_path}/* -type f -mtime +${expire_day} -exec rm -f {} \;
 find /home/user/logs/* -type f -mtime +7 -exec rm -f {} \;
+find /home/user/logs/* -name "filename*"
 ---
 
 2. crontab
@@ -511,6 +512,26 @@ sudo yum install freetype fontconfig -y
 ```bash
 cat /proc/meminfo | grep Mem
 ```
+
+### 톰캣 구동중 catalina.out 삭제
+
+```bash
+# 톰캣 구동중 catalina.out 삭제 시 톰캣 재기동 전까지 생성되지 않음
+cd tomcatsetupfolder/logs
+cat /dev/null > catalina.out
+```
+
+### find
+```bash
+# 7일 전 파일 목록 확인
+find /home/user/logs/* -type f -mtime +7
+# 7일 전 파일 목록 확인 후 삭제
+find /home/user/logs/* -type f -mtime +7 -exec rm -f {} \;
+# 특정이름 들어간 파일 목록 확인
+find /home/user/logs/* -name "filename*"
+```
+
+
 
 ## References
 

@@ -434,6 +434,21 @@ START WITH UPR_GRP_ID IS NULL
 CONNECT BY PRIOR GRP_ID = UPR_GRP_ID
 ```
 
+### declare begin end
+```sql
+-- 1. declare begin end - PL/SQL 기본으로 쿼리, 문법을 실행할 수 있습니다
+-- 2. declare [선언부] - 변수, 상수를 선언할 수 있습니다
+-- 3. begin [실행부] - 제어, 반복문, 함수 등 다양한 로직 기술을 실행합니다
+-- 4. end [종료부] - 실행된 로직의 종료를 선언합니다
+-- 5. 실행한 결과는 DBMS_OUTPUT에서 확인할 수 있습니다
+DECLARE
+    TEST_NAME VARCHAR2(50); --초기 변수 선언
+    BEGIN
+       TEST_NAME := '테스트'; --변수에 값 대입 실시
+       DBMS_OUTPUT.PUT_LINE('TEST_NAME : ' || TEST_NAME); -- 결과 출력
+    END;
+```
+
 
 ## Reference
 https://m.cafe.daum.net/oraclesqltuning/8ACn/28

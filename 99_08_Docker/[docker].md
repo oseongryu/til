@@ -135,11 +135,11 @@ docker exec -it oracle12c bash -c "cat /home/oracle/.bashrc"
 
 
 docker commit centos-jekyll oseongryu/centos-jekyll:0.0.1
-docker push oseongryu/centos-jekyll:0.0.1
+docker push oseongryu/centos-jekyll:0.0.3
 
 sudo docker pull oseongryu/centos-jekyll:0.0.1
 
-sudo docker run -it -d --name centos-jekyll -p 8088:8088 oseongryu/centos-jekyll:0.0.1
+sudo docker run -it -d --name centos-jekyll -p 8088:8088 oseongryu/centos-jekyll:0.0.3
 sudo docker exec -it centos-jekyll /bin/bash
 sudo docker restart centos-jekyll
 bundle exec jekyll serve --skip-initial-build --host 0.0.0.0 --port 8088 > /dev/null 2>&1 &
@@ -207,9 +207,12 @@ docker push oseongryu/centos-vue:0.0.1
 docker commit centos-spring oseongryu/centos-spring:0.0.1
 docker push oseongryu/centos-spring:0.0.1
 
+docker commit centos-jekyll oseongryu/centos-jekyll:0.0.3
+docker push oseongryu/centos-jekyll:0.0.3
 
 docker pull oseongryu/centos-vue:0.0.1
 docker pull oseongryu/centos-spring:0.0.1
+docker pull oseongryu/centos-jekyll:0.0.3
 
 ### upload
 #### WEB

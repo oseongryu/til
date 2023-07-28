@@ -27,7 +27,7 @@ settings.json
   "editor.minimap.enabled": false,
   "editor.renderWhitespace": "all",
   "editor.unicodeHighlight.nonBasicASCII": false,
-  "files.trimTrailingWhitespace": true,
+  // "files.trimTrailingWhitespace": true,
   "git.enableSmartCommit": true,
   "security.workspace.trust.untrustedFiles": "open",
   "volar.inlayHints.eventArgumentInInlineHandlers": false,

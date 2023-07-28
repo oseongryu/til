@@ -7,87 +7,192 @@
 SOURCE_PATH=/c/Users/osryu/git
 SOURCE_PATH_FREDIT_WEB=($(echo $SOURCE_PATH)/hy-fredit-web)
 SOURCE_PATH_FREDIT_WAS=($(echo $SOURCE_PATH)/hy-fredit-was)
+SOURCE_PATH_HYP_BATCH=($(echo $SOURCE_PATH)/hyp_batch)
 SOURCE_PATH_FACTORY_FO=($(echo $SOURCE_PATH)/hyfactorium)
 SOURCE_PATH_FACTORY_BO=($(echo $SOURCE_PATH)/hyfactoriumBO)
 
 SETTING_PATH=/c/DEV/tools/setting
 SETTING_PATH_FREDIT_WEB=($(echo $SETTING_PATH)/hy-fredit-web)
 SETTING_PATH_FREDIT_WAS=($(echo $SETTING_PATH)/hy-fredit-was)
+SETTING_PATH_HYP_BATCH=($(echo $SETTING_PATH)/hyp_batch)
 SETTING_PATH_FACTORY_FO=($(echo $SETTING_PATH)/hyfactorium)
 SETTING_PATH_FACTORY_BO=($(echo $SETTING_PATH)/hyfactoriumBO)
 
 FILE_NAME_LIST_FREDIT_WEB=(nuxt.config.ts)
 FILE_NAME_LIST_FREDIT_WAS=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
+FILE_NAME_LIST_HYP_BATCH=(src/main/java/com/hy/base/quartz/MainTask.java)
+FILE_NAME_LIST_FACTORY_FO=(src/main/resources-dev/db.properties src/main/resources-local/db.properties)
+FILE_NAME_LIST_FACTORY_BO=(src/main/java/egovframework/application/apply/ApplyController.java src/main/resources-dev/db.properties src/main/resources-local/db.properties)
 
-arraysourcepaths=($SOURCE_PATH_FREDIT_WEB $SOURCE_PATH_FREDIT_WAS)
-arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS)
+#!/bin/bash
 
-if [[ $1 == "backup" ]]; then
-    for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+# echo "파라미터 개수 : $#"
+# echo "첫 번째 파라미터: $1"
+# echo "모든 파라미터 내용 : $@"
+
+SOURCE_PATH=/c/Users/osryu/git
+SOURCE_PATH_FREDIT_WEB=($(echo $SOURCE_PATH)/hy-fredit-web)
+SOURCE_PATH_FREDIT_WAS=($(echo $SOURCE_PATH)/hy-fredit-was)
+SOURCE_PATH_HYP_BATCH=($(echo $SOURCE_PATH)/hyp_batch)
+SOURCE_PATH_FACTORY_FO=($(echo $SOURCE_PATH)/hyfactorium)
+SOURCE_PATH_FACTORY_BO=($(echo $SOURCE_PATH)/hyfactoriumBO)
+
+SETTING_PATH=/c/DEV/tools/setting
+SETTING_PATH_FREDIT_WEB=($(echo $SETTING_PATH)/hy-fredit-web)
+SETTING_PATH_FREDIT_WAS=($(echo $SETTING_PATH)/hy-fredit-was)
+SETTING_PATH_HYP_BATCH=($(echo $SETTING_PATH)/hyp_batch)
+SETTING_PATH_FACTORY_FO=($(echo $SETTING_PATH)/hyfactorium)
+SETTING_PATH_FACTORY_BO=($(echo $SETTING_PATH)/hyfactoriumBO)
+
+FILE_NAME_LIST_FREDIT_WEB=(nuxt.config.ts)
+FILE_NAME_LIST_FREDIT_WAS=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
+FILE_NAME_LIST_HYP_BATCH=(src/main/java/com/hy/base/quartz/MainTask.java)
+FILE_NAME_LIST_FACTORY_FO=(src/main/resources-dev/db.properties src/main/resources-local/db.properties)
+FILE_NAME_LIST_FACTORY_BO=(src/main/java/egovframework/application/apply/ApplyController.java src/main/resources-dev/db.properties src/main/resources-local/db.properties)
+
+arraysourcepaths=($SOURCE_PATH_FREDIT_WEB $SOURCE_PATH_FREDIT_WAS $SOURCE_PATH_HYP_BATCH $SOURCE_PATH_FACTORY_FO $SOURCE_PATH_FACTORY_BO)
+arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_HYP_BATCH $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
+
+for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+do
+    echo "backup"
+    varsettingpath=${arraysettingpaths[$index]}
+    varsourcepath=${arraysourcepaths[$index]}
+    varfilenamelist=()
+    if [ $index == 0 ]; then
+        echo ""
+        varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
+    elif [[ $index == 1 ]]; then
+        echo ""
+        varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
+    elif [[ $index == 2 ]]; then
+        echo ""
+        varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})
+    elif [[ $index == 3 ]]; then
+        echo ""
+        # varfilenamelist=(${FILE_NAME_LIST_FACTORY_FO[@]})
+    elif [[ $index == 4 ]]; then
+        echo ""
+        # varfilenamelist=(${FILE_NAME_LIST_FACTORY_BO[@]})
+    fi
+
+    for (( indexA = 0 ; indexA < ${#varfilenamelist[@]} ; indexA++ ))
     do
-        echo "backup"
-        variablesettingpath=${arraysettingpaths[$index]}
-        variablesourcepath=${arraysourcepaths[$index]}
-        variablefilenamelist=()
-        if [ $index == 0 ]; then 
-            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
-        elif [[ $index == 1 ]]; then
-            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
-        fi
-
-        for (( indexA = 0 ; indexA < ${#variablefilenamelist[@]} ; indexA++ ))
+        str=(${varfilenamelist[$indexA]})
+        str_split=($(echo $str | tr "/" "\n"))
+        filename=''
+        # 파일이름 찾기
+        for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
         do
-            str=(${variablefilenamelist[$indexA]})
-            str_split=($(echo $str | tr "/" "\n"))
-            filename=''
-            replace=''
-            # 파일이름 찾기
-            for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
-            do
-                if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-                    filename=(${str_split[$indexB]})
-                fi
-            done
+            if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+                filename=(${str_split[$indexB]})
+            fi
+        done
+        if [[ $1 == "backup" ]]; then
             # 파일이름 제외 폴더생성
-            echo "mkdir -p" $variablesettingpath/${str/$filename/''}
-            mkdir -p $variablesettingpath/${str/$filename/''}
-
+            echo "mkdir -p" $varsettingpath/${str/$filename/''}
+            mkdir -p $varsettingpath/${str/$filename/''}
             # 파일이름 경로에 파일넣기
-            echo "cp" $variablesourcepath/${variablefilenamelist[$indexA]} $variablesettingpath/${str/$filename/''}
-            cp $variablesourcepath/${variablefilenamelist[$indexA]} $variablesettingpath/${str/$filename/''}
-        done
-    done
-
-else
-    for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
-    do
-        echo "init"
-        variablesettingpath=${arraysettingpaths[$index]}
-        variablesourcepath=${arraysourcepaths[$index]}
-        variablefilenamelist=()
-        if [ $index == 0 ]; then 
-            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
-        elif [[ $index == 1 ]]; then
-            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
+            echo "cp" $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
+            cp $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
+        else
+            echo "cp" $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
+            cp $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
         fi
-
-        for (( indexA = 0 ; indexA < ${#variablefilenamelist[@]} ; indexA++ ))
-        do
-            str=(${variablefilenamelist[$i]})
-            str_split=($(echo $str | tr "/" "\n"))
-            filename=''
-            # 파일이름 찾기
-            for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
-            do
-                if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-                    filename=(${str_split[$indexB]})
-                fi
-            done
-            echo "cp" $variablesettingpath/${variablefilenamelist[$indexA]} $variablesourcepath/${variablefilenamelist[$indexA]}
-            cp $variablesettingpath/${variablefilenamelist[$indexA]} $variablesourcepath/${variablefilenamelist[$indexA]}
-        done
     done
-fi
+done
+
+# arraysourcepaths=($SOURCE_PATH_FREDIT_WEB $SOURCE_PATH_FREDIT_WAS $SOURCE_PATH_HYP_BATCH $SOURCE_PATH_FACTORY_FO $SOURCE_PATH_FACTORY_BO)
+# arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_HYP_BATCH $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
+
+# if [[ $1 == "backup" ]]; then
+#     for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+#     do
+#         echo "backup"
+#         varsettingpath=${arraysettingpaths[$index]}
+#         varsourcepath=${arraysourcepaths[$index]}
+#         varfilenamelist=()
+#         if [ $index == 0 ]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
+#         elif [[ $index == 1 ]]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
+#         elif [[ $index == 2 ]]; then
+#             echo ""
+#             varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})
+#         elif [[ $index == 3 ]]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_FO[@]})
+#         elif [[ $index == 4 ]]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_BO[@]})
+#         fi
+
+#         for (( indexA = 0 ; indexA < ${#varfilenamelist[@]} ; indexA++ ))
+#         do
+#             str=(${varfilenamelist[$indexA]})
+#             str_split=($(echo $str | tr "/" "\n"))
+#             filename=''
+#             replace=''
+#             # 파일이름 찾기
+#             for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#             do
+#                 if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+#                     filename=(${str_split[$indexB]})
+#                 fi
+#             done
+#             # 파일이름 제외 폴더생성
+#             echo "mkdir -p" $varsettingpath/${str/$filename/''}
+#             mkdir -p $varsettingpath/${str/$filename/''}
+
+#             # 파일이름 경로에 파일넣기
+#             echo "cp" $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
+#             cp $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
+#         done
+#     done
+
+# else
+#     for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+#     do
+#         echo "init"
+#         varsettingpath=${arraysettingpaths[$index]}
+#         varsourcepath=${arraysourcepaths[$index]}
+#         varfilenamelist=()
+#         if [ $index == 0 ]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
+#         elif [[ $index == 1 ]]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
+#         elif [[ $index == 2 ]]; then
+#             echo ""
+#             varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})
+#         elif [[ $index == 3 ]]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_FO[@]})
+#         elif [[ $index == 4 ]]; then
+#             echo ""
+#             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_BO[@]})
+#         fi
+
+#         for (( indexA = 0 ; indexA < ${#varfilenamelist[@]} ; indexA++ ))
+#         do
+#             str=(${varfilenamelist[$i]})
+#             str_split=($(echo $str | tr "/" "\n"))
+#             filename=''
+#             # 파일이름 찾기
+#             for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#             do
+#                 if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+#                     filename=(${str_split[$indexB]})
+#                 fi
+#             done
+#             echo "cp" $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
+#             cp $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
+#         done
+#     done
+# fi
 
 # if [[ $1 == "backup" ]]; then
 #     # 4

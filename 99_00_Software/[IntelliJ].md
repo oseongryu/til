@@ -15,6 +15,14 @@
     * Build,Execution,Deployment  -> Compiler -> Java Compiler
     6) Project bytecode version 변경
 
+### vmoptions
+사용자 옵션 변경 C:\Users\{user}\AppData\Roaming\JetBrains\IntelliJIdea2022.2\idea64.exe.vmoptions
+전체 옵션 변경  C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin\idea65.exe.vmoptions
+
+    -Xmx2028m
+    -Dfile.encoding=UTF-8
+    -Dconsole.encoding=UTF-8
+
 
 ### Java SDK 설정
     File > Project Structure 선택

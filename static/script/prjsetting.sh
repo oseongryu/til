@@ -1,10 +1,14 @@
 #!/bin/bash
-# echo "1.backup web"
-PATH_FREDIT_WEB=/c/Users/osryu/git/hy-fredit-web
-PATH_FREDIT_WAS=/c/Users/osryu/git/hy-fredit-was
-PATH_FACTORY_FO=/c/Users/osryu/git/hyfactorium
-PATH_FACTORY_BO=/c/Users/osryu/git/hyfactoriumBO
 
+# echo "파라미터 개수 : $#"
+# echo "첫 번째 파라미터: $1"
+# echo "모든 파라미터 내용 : $@"
+
+SOURCE_PATH=/c/Users/osryu/git
+SOURCE_PATH_FREDIT_WEB=($(echo $SOURCE_PATH)/hy-fredit-web)
+SOURCE_PATH_FREDIT_WAS=($(echo $SOURCE_PATH)/hy-fredit-was)
+SOURCE_PATH_FACTORY_FO=($(echo $SOURCE_PATH)/hyfactorium)
+SOURCE_PATH_FACTORY_BO=($(echo $SOURCE_PATH)/hyfactoriumBO)
 
 SETTING_PATH=/c/DEV/tools/setting
 SETTING_PATH_FREDIT_WEB=($(echo $SETTING_PATH)/hy-fredit-web)
@@ -12,35 +16,194 @@ SETTING_PATH_FREDIT_WAS=($(echo $SETTING_PATH)/hy-fredit-was)
 SETTING_PATH_FACTORY_FO=($(echo $SETTING_PATH)/hyfactorium)
 SETTING_PATH_FACTORY_BO=($(echo $SETTING_PATH)/hyfactoriumBO)
 
-arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
-for (( i = 0 ; i < ${#arraysettingpaths[@]} ; i++ ))
-do
-    if [ ! -d arraysettingpaths[$i] ]; then
-        mkdir -p ${arraysettingpaths[$i]}
-    fi
-done
+FILE_NAME_LIST_FREDIT_WEB=(nuxt.config.ts)
+FILE_NAME_LIST_FREDIT_WAS=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
 
-# 4
-echo "was setting backup"
-originfilename=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
-for (( i = 0 ; i < ${#originfilename[@]} ; i++ ))
-do
-    str=(${originfilename[$i]})
-    str_split=($(echo $str | tr "/" "\n"))
-    filename=''
-    replace=''
-    # 파일이름 찾기
-    for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+arraysourcepaths=($SOURCE_PATH_FREDIT_WEB $SOURCE_PATH_FREDIT_WAS)
+arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS)
+
+if [[ $1 == "backup" ]]; then
+    for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
     do
-        if [ $index == $(expr ${#str_split[@]} - 1) ]; then
-            filename=(${str_split[$index]})
+        echo "backup"
+        variablesettingpath=${arraysettingpaths[$index]}
+        variablesourcepath=${arraysourcepaths[$index]}
+        variablefilenamelist=()
+        if [ $index == 0 ]; then 
+            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
+        elif [[ $index == 1 ]]; then
+            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
         fi
-    done
-    # 파일이름 제외 폴더생성
-    echo $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
-    mkdir -p $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
-done
 
+        for (( indexA = 0 ; indexA < ${#variablefilenamelist[@]} ; indexA++ ))
+        do
+            str=(${variablefilenamelist[$indexA]})
+            str_split=($(echo $str | tr "/" "\n"))
+            filename=''
+            replace=''
+            # 파일이름 찾기
+            for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+            do
+                if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+                    filename=(${str_split[$indexB]})
+                fi
+            done
+            # 파일이름 제외 폴더생성
+            echo "mkdir -p" $variablesettingpath/${str/$filename/''}
+            mkdir -p $variablesettingpath/${str/$filename/''}
+
+            # 파일이름 경로에 파일넣기
+            echo "cp" $variablesourcepath/${variablefilenamelist[$indexA]} $variablesettingpath/${str/$filename/''}
+            cp $variablesourcepath/${variablefilenamelist[$indexA]} $variablesettingpath/${str/$filename/''}
+        done
+    done
+
+else
+    for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+    do
+        echo "init"
+        variablesettingpath=${arraysettingpaths[$index]}
+        variablesourcepath=${arraysourcepaths[$index]}
+        variablefilenamelist=()
+        if [ $index == 0 ]; then 
+            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
+        elif [[ $index == 1 ]]; then
+            variablefilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
+        fi
+
+        for (( indexA = 0 ; indexA < ${#variablefilenamelist[@]} ; indexA++ ))
+        do
+            str=(${variablefilenamelist[$i]})
+            str_split=($(echo $str | tr "/" "\n"))
+            filename=''
+            # 파일이름 찾기
+            for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+            do
+                if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+                    filename=(${str_split[$indexB]})
+                fi
+            done
+            echo "cp" $variablesettingpath/${variablefilenamelist[$indexA]} $variablesourcepath/${variablefilenamelist[$indexA]}
+            cp $variablesettingpath/${variablefilenamelist[$indexA]} $variablesourcepath/${variablefilenamelist[$indexA]}
+        done
+    done
+fi
+
+# if [[ $1 == "backup" ]]; then
+#     # 4
+#     echo "web setting backup"
+#     originfilename=(nuxt.config.ts)
+#     for (( indexA = 0 ; indexA < ${#originfilename[@]} ; indexA++ ))
+#     do
+#         str=(${originfilename[$indexA]})
+#         str_split=($(echo $str | tr "/" "\n"))
+#         filename=''
+#         replace=''
+#         # 파일이름 찾기
+#         for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#         do
+#             if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+#                 filename=(${str_split[$indexB]})
+#             fi
+#         done
+#         # 파일이름 제외 폴더생성
+#         echo "mkdir -p" $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#         mkdir -p $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+
+#         # 파일이름 경로에 파일넣기
+#         echo "cp" $PATH_FREDIT_WEB/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#         cp $PATH_FREDIT_WEB/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#     done
+#     echo "was setting backup"
+#     originfilename=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
+#     for (( indexA = 0 ; indexA < ${#originfilename[@]} ; indexA++ ))
+#     do
+#         str=(${originfilename[$indexA]})
+#         str_split=($(echo $str | tr "/" "\n"))
+#         filename=''
+#         replace=''
+#         # 파일이름 찾기
+#         for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#         do
+#             if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
+#                 filename=(${str_split[$indexB]})
+#             fi
+#         done
+#         # 파일이름 제외 폴더생성
+#         echo "mkdir -p" $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#         mkdir -p $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+
+#         # 파일이름 경로에 파일넣기
+#         echo "cp" $PATH_FREDIT_WAS/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#         cp $PATH_FREDIT_WAS/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#     done
+# else
+#     echo "init"
+# fi
+
+
+
+# arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
+# for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+# do
+#     if [ ! -d arraysettingpaths[$index] ]; then
+#         mkdir -p ${arraysettingpaths[$index]}
+#     fi
+# done
+
+# # 4
+# echo "web setting backup"
+# originfilename=(nuxt.config.ts)
+# for (( i = 0 ; i < ${#originfilename[@]} ; i++ ))
+# do
+#     str=(${originfilename[$i]})
+#     str_split=($(echo $str | tr "/" "\n"))
+#     filename=''
+#     replace=''
+#     # 파일이름 찾기
+#     for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+#     do
+#         if [ $index == $(expr ${#str_split[@]} - 1) ]; then
+#             filename=(${str_split[$index]})
+#         fi
+#     done
+#     # # 파일이름 제외 폴더생성
+#     # echo $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#     # mkdir -p $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+
+#     # # 파일이름 경로에 파일넣기
+#     # echo $PATH_FREDIT_WAS/${originfilename[$i]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#     # cp $PATH_FREDIT_WAS/${originfilename[$i]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+
+#     echo $PATH_FREDIT_WEB/${originfilename[$i]} $SETTING_PATH_FREDIT_WEB
+#     cp $PATH_FREDIT_WEB/${originfilename[$i]} $SETTING_PATH_FREDIT_WEB
+# done
+# echo "was setting backup"
+# originfilename=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
+# for (( i = 0 ; i < ${#originfilename[@]} ; i++ ))
+# do
+#     str=(${originfilename[$i]})
+#     str_split=($(echo $str | tr "/" "\n"))
+#     filename=''
+#     replace=''
+#     # 파일이름 찾기
+#     for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+#     do
+#         if [ $index == $(expr ${#str_split[@]} - 1) ]; then
+#             filename=(${str_split[$index]})
+#         fi
+#     done
+#     # # 파일이름 제외 폴더생성
+#     # echo $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#     # mkdir -p $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+
+#     # # 파일이름 경로에 파일넣기
+#     # echo $PATH_FREDIT_WAS/${originfilename[$i]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#     # cp $PATH_FREDIT_WAS/${originfilename[$i]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+
+#     echo $PATH_FREDIT_WAS/${originfilename[$i]} $SETTING_PATH_FREDIT_WAS
+#     cp $PATH_FREDIT_WAS/${originfilename[$i]} $SETTING_PATH_FREDIT_WAS
+# done
 
 # # 3
 # echo "web setting init"
@@ -57,8 +220,8 @@ done
 #             filename=(${str_split[$index]})
 #         fi
 #     done
-#     echo $SETTING_PATH_FREDIT_WEB/$filename $PATH_FREDIT_WEB/${originfilename[$i]}
-#     # cp $SETTING_PATH_FREDIT_WEB/$filename $PATH_FREDIT_WEB/${originfilename[$i]}
+#     echo $SETTING_PATH_FREDIT_WEB/${originfilename[$i]} $PATH_FREDIT_WEB/${originfilename[$i]}
+#     cp $SETTING_PATH_FREDIT_WEB/${originfilename[$i]} $PATH_FREDIT_WEB/${originfilename[$i]}
 # done
 # echo "was setting init"
 # originfilename=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
@@ -74,12 +237,9 @@ done
 #             filename=(${str_split[$index]})
 #         fi
 #     done
-#     echo $SETTING_PATH_FREDIT_WAS/$filename $PATH_FREDIT_WAS/${originfilename[$i]}
-#     # cp $SETTING_PATH_FREDIT_WAS/$filename $PATH_FREDIT_WAS/${originfilename[$i]}
+#     echo $SETTING_PATH_FREDIT_WAS/${originfilename[$i]} $PATH_FREDIT_WAS/${originfilename[$i]}
+#     cp $SETTING_PATH_FREDIT_WAS/${originfilename[$i]} $PATH_FREDIT_WAS/${originfilename[$i]}
 # done
-
-
-
 
 # # 1
 # cp $PATH_FREDIT_WEB/nuxt.config.ts $SETTING_PATH_FREDIT_WEB

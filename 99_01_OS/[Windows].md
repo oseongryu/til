@@ -125,7 +125,7 @@ nwc.cpl : 네트워크 게이트웨이
 odbccp32.cpl : ODBC데이터원본 관리자
 powercfg.cpl :  전원옵션 등록정보
 sysdm.cpl : 시스템등록정보
-telephon.cpl : 전화및모뎀 옵션  
+telephon.cpl : 전화및모뎀 옵션
 timedate.cpl : 날짜 및 시간 등록정보
 wscui.cpl : Windows보안센터
 wuaucpl.cpl : 자동업데이트
@@ -208,7 +208,7 @@ netsh wlan show profile "profile이름" key=clear
 ```
 Windows: tracert 8.8.8.8
 Linux: traceroute 8.8.8.8
-CentOS: 
+CentOS:
 sudo yum install traceroute
 sudo yum install bind-utils
 traceroute  8.8.8.8
@@ -286,13 +286,17 @@ C:\Windows\Fonts에 설치할 폰트 넣기
 ### 윈도우 색인기능
 
      파일 우측에 파란색 표시가 색인기능이 적용된 부분
-     드라이브 > 속성 
+     드라이브 > 속성
      이 드라이브를 압축하여 디스크 공간 절약 체크해제
      이 드라이브의 파일 속성 및 내용 색인 허용 체크해제
 
 <img width="100" src="../static/img/windows/001.png"/>
 
 
+###  이미지 파일 우클릭 시 오른쪽으로 회전, 왼쪽으로 회전 삭제 및 복구
+
+     RemoveRotateImageContextMenuWin10.reg
+     RestoreRotateImageContextMenuWin10.reg
 
 ### References
 ```

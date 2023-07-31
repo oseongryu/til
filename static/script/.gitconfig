@@ -1,0 +1,10 @@
+[includeIf "gitdir:~/git-personal/"]
+	path = .gitconfig-personal
+
+[includeIf "gitdir:~/git/"]
+	path = .gitconfig-professional
+
+[init]
+	defaultBranch = main
+[http]
+	sslVerify = false

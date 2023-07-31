@@ -53,39 +53,39 @@ FILE_NAME_LIST_FACTORY_BO=(src/main/java/egovframework/application/apply/ApplyCo
 arraysourcepaths=($SOURCE_PATH_FREDIT_WEB $SOURCE_PATH_FREDIT_WAS $SOURCE_PATH_HYP_BATCH $SOURCE_PATH_FACTORY_FO $SOURCE_PATH_FACTORY_BO)
 arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_HYP_BATCH $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
 
-for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+for (( projectidx = 0 ; projectidx < ${#arraysettingpaths[@]} ; projectidx++ ))
 do
     echo "backup"
-    varsettingpath=${arraysettingpaths[$index]}
-    varsourcepath=${arraysourcepaths[$index]}
+    varsettingpath=${arraysettingpaths[$projectidx]}
+    varsourcepath=${arraysourcepaths[$projectidx]}
     varfilenamelist=()
-    if [ $index == 0 ]; then
+    if [ $projectidx == 0 ]; then
         echo ""
         varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
-    elif [[ $index == 1 ]]; then
+    elif [[ $projectidx == 1 ]]; then
         echo ""
         varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
-    elif [[ $index == 2 ]]; then
+    elif [[ $projectidx == 2 ]]; then
         echo ""
         varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})
-    elif [[ $index == 3 ]]; then
+    elif [[ $projectidx == 3 ]]; then
         echo ""
         # varfilenamelist=(${FILE_NAME_LIST_FACTORY_FO[@]})
-    elif [[ $index == 4 ]]; then
+    elif [[ $projectidx == 4 ]]; then
         echo ""
         # varfilenamelist=(${FILE_NAME_LIST_FACTORY_BO[@]})
     fi
 
-    for (( indexA = 0 ; indexA < ${#varfilenamelist[@]} ; indexA++ ))
+    for (( filepathidx = 0 ; filepathidx < ${#varfilenamelist[@]} ; filepathidx++ ))
     do
-        str=(${varfilenamelist[$indexA]})
+        str=(${varfilenamelist[$filepathidx]})
         str_split=($(echo $str | tr "/" "\n"))
         filename=''
         # 파일이름 찾기
-        for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+        for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
         do
-            if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-                filename=(${str_split[$indexB]})
+            if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
+                filename=(${str_split[$filestridx]})
             fi
         done
         if [[ $1 == "backup" ]]; then
@@ -93,11 +93,11 @@ do
             echo "mkdir -p" $varsettingpath/${str/$filename/''}
             mkdir -p $varsettingpath/${str/$filename/''}
             # 파일이름 경로에 파일넣기
-            echo "cp" $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
-            cp $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
+            echo "cp" $varsourcepath/${varfilenamelist[$filepathidx]} $varsettingpath/${str/$filename/''}
+            cp $varsourcepath/${varfilenamelist[$filepathidx]} $varsettingpath/${str/$filename/''}
         else
-            echo "cp" $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
-            cp $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
+            echo "cp" $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
+            cp $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
         fi
     done
 done
@@ -106,40 +106,40 @@ done
 # arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_HYP_BATCH $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
 
 # if [[ $1 == "backup" ]]; then
-#     for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+#     for (( projectidx = 0 ; projectidx < ${#arraysettingpaths[@]} ; projectidx++ ))
 #     do
 #         echo "backup"
-#         varsettingpath=${arraysettingpaths[$index]}
-#         varsourcepath=${arraysourcepaths[$index]}
+#         varsettingpath=${arraysettingpaths[$projectidx]}
+#         varsourcepath=${arraysourcepaths[$projectidx]}
 #         varfilenamelist=()
-#         if [ $index == 0 ]; then
+#         if [ $projectidx == 0 ]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
-#         elif [[ $index == 1 ]]; then
+#         elif [[ $projectidx == 1 ]]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
-#         elif [[ $index == 2 ]]; then
+#         elif [[ $projectidx == 2 ]]; then
 #             echo ""
 #             varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})
-#         elif [[ $index == 3 ]]; then
+#         elif [[ $projectidx == 3 ]]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_FO[@]})
-#         elif [[ $index == 4 ]]; then
+#         elif [[ $projectidx == 4 ]]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_BO[@]})
 #         fi
 
-#         for (( indexA = 0 ; indexA < ${#varfilenamelist[@]} ; indexA++ ))
+#         for (( filepathidx = 0 ; filepathidx < ${#varfilenamelist[@]} ; filepathidx++ ))
 #         do
-#             str=(${varfilenamelist[$indexA]})
+#             str=(${varfilenamelist[$filepathidx]})
 #             str_split=($(echo $str | tr "/" "\n"))
 #             filename=''
 #             replace=''
 #             # 파일이름 찾기
-#             for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#             for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
 #             do
-#                 if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-#                     filename=(${str_split[$indexB]})
+#                 if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
+#                     filename=(${str_split[$filestridx]})
 #                 fi
 #             done
 #             # 파일이름 제외 폴더생성
@@ -147,49 +147,49 @@ done
 #             mkdir -p $varsettingpath/${str/$filename/''}
 
 #             # 파일이름 경로에 파일넣기
-#             echo "cp" $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
-#             cp $varsourcepath/${varfilenamelist[$indexA]} $varsettingpath/${str/$filename/''}
+#             echo "cp" $varsourcepath/${varfilenamelist[$filepathidx]} $varsettingpath/${str/$filename/''}
+#             cp $varsourcepath/${varfilenamelist[$filepathidx]} $varsettingpath/${str/$filename/''}
 #         done
 #     done
 
 # else
-#     for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+#     for (( projectidx = 0 ; projectidx < ${#arraysettingpaths[@]} ; projectidx++ ))
 #     do
 #         echo "init"
-#         varsettingpath=${arraysettingpaths[$index]}
-#         varsourcepath=${arraysourcepaths[$index]}
+#         varsettingpath=${arraysettingpaths[$projectidx]}
+#         varsourcepath=${arraysourcepaths[$projectidx]}
 #         varfilenamelist=()
-#         if [ $index == 0 ]; then
+#         if [ $projectidx == 0 ]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
-#         elif [[ $index == 1 ]]; then
+#         elif [[ $projectidx == 1 ]]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
-#         elif [[ $index == 2 ]]; then
+#         elif [[ $projectidx == 2 ]]; then
 #             echo ""
 #             varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})
-#         elif [[ $index == 3 ]]; then
+#         elif [[ $projectidx == 3 ]]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_FO[@]})
-#         elif [[ $index == 4 ]]; then
+#         elif [[ $projectidx == 4 ]]; then
 #             echo ""
 #             # varfilenamelist=(${FILE_NAME_LIST_FACTORY_BO[@]})
 #         fi
 
-#         for (( indexA = 0 ; indexA < ${#varfilenamelist[@]} ; indexA++ ))
+#         for (( filepathidx = 0 ; filepathidx < ${#varfilenamelist[@]} ; filepathidx++ ))
 #         do
 #             str=(${varfilenamelist[$i]})
 #             str_split=($(echo $str | tr "/" "\n"))
 #             filename=''
 #             # 파일이름 찾기
-#             for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#             for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
 #             do
-#                 if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-#                     filename=(${str_split[$indexB]})
+#                 if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
+#                     filename=(${str_split[$filestridx]})
 #                 fi
 #             done
-#             echo "cp" $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
-#             cp $varsettingpath/${varfilenamelist[$indexA]} $varsourcepath/${varfilenamelist[$indexA]}
+#             echo "cp" $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
+#             cp $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
 #         done
 #     done
 # fi
@@ -198,17 +198,17 @@ done
 #     # 4
 #     echo "web setting backup"
 #     originfilename=(nuxt.config.ts)
-#     for (( indexA = 0 ; indexA < ${#originfilename[@]} ; indexA++ ))
+#     for (( filepathidx = 0 ; filepathidx < ${#originfilename[@]} ; filepathidx++ ))
 #     do
-#         str=(${originfilename[$indexA]})
+#         str=(${originfilename[$filepathidx]})
 #         str_split=($(echo $str | tr "/" "\n"))
 #         filename=''
 #         replace=''
 #         # 파일이름 찾기
-#         for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#         for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
 #         do
-#             if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-#                 filename=(${str_split[$indexB]})
+#             if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
+#                 filename=(${str_split[$filestridx]})
 #             fi
 #         done
 #         # 파일이름 제외 폴더생성
@@ -216,22 +216,22 @@ done
 #         mkdir -p $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
 
 #         # 파일이름 경로에 파일넣기
-#         echo "cp" $PATH_FREDIT_WEB/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
-#         cp $PATH_FREDIT_WEB/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#         echo "cp" $PATH_FREDIT_WEB/${originfilename[$filepathidx]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
+#         cp $PATH_FREDIT_WEB/${originfilename[$filepathidx]} $SETTING_PATH_FREDIT_WEB/${str/$filename/''}
 #     done
 #     echo "was setting backup"
 #     originfilename=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
-#     for (( indexA = 0 ; indexA < ${#originfilename[@]} ; indexA++ ))
+#     for (( filepathidx = 0 ; filepathidx < ${#originfilename[@]} ; filepathidx++ ))
 #     do
-#         str=(${originfilename[$indexA]})
+#         str=(${originfilename[$filepathidx]})
 #         str_split=($(echo $str | tr "/" "\n"))
 #         filename=''
 #         replace=''
 #         # 파일이름 찾기
-#         for (( indexB = 0 ; indexB < ${#str_split[@]} ; indexB++ ))
+#         for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
 #         do
-#             if [ $indexB == $(expr ${#str_split[@]} - 1) ]; then
-#                 filename=(${str_split[$indexB]})
+#             if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
+#                 filename=(${str_split[$filestridx]})
 #             fi
 #         done
 #         # 파일이름 제외 폴더생성
@@ -239,8 +239,8 @@ done
 #         mkdir -p $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
 
 #         # 파일이름 경로에 파일넣기
-#         echo "cp" $PATH_FREDIT_WAS/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
-#         cp $PATH_FREDIT_WAS/${originfilename[$indexA]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#         echo "cp" $PATH_FREDIT_WAS/${originfilename[$filepathidx]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
+#         cp $PATH_FREDIT_WAS/${originfilename[$filepathidx]} $SETTING_PATH_FREDIT_WAS/${str/$filename/''}
 #     done
 # else
 #     echo "init"
@@ -249,10 +249,10 @@ done
 
 
 # arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PATH_FACTORY_FO $SETTING_PATH_FACTORY_BO)
-# for (( index = 0 ; index < ${#arraysettingpaths[@]} ; index++ ))
+# for (( projectidx = 0 ; projectidx < ${#arraysettingpaths[@]} ; projectidx++ ))
 # do
-#     if [ ! -d arraysettingpaths[$index] ]; then
-#         mkdir -p ${arraysettingpaths[$index]}
+#     if [ ! -d arraysettingpaths[$projectidx] ]; then
+#         mkdir -p ${arraysettingpaths[$projectidx]}
 #     fi
 # done
 
@@ -266,10 +266,10 @@ done
 #     filename=''
 #     replace=''
 #     # 파일이름 찾기
-#     for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+#     for (( projectidx = 0 ; projectidx < ${#str_split[@]} ; projectidx++ ))
 #     do
-#         if [ $index == $(expr ${#str_split[@]} - 1) ]; then
-#             filename=(${str_split[$index]})
+#         if [ $projectidx == $(expr ${#str_split[@]} - 1) ]; then
+#             filename=(${str_split[$projectidx]})
 #         fi
 #     done
 #     # # 파일이름 제외 폴더생성
@@ -292,10 +292,10 @@ done
 #     filename=''
 #     replace=''
 #     # 파일이름 찾기
-#     for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+#     for (( projectidx = 0 ; projectidx < ${#str_split[@]} ; projectidx++ ))
 #     do
-#         if [ $index == $(expr ${#str_split[@]} - 1) ]; then
-#             filename=(${str_split[$index]})
+#         if [ $projectidx == $(expr ${#str_split[@]} - 1) ]; then
+#             filename=(${str_split[$projectidx]})
 #         fi
 #     done
 #     # # 파일이름 제외 폴더생성
@@ -319,10 +319,10 @@ done
 #     str_split=($(echo $str | tr "/" "\n"))
 #     filename=''
 #     # 파일이름 찾기
-#     for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+#     for (( projectidx = 0 ; projectidx < ${#str_split[@]} ; projectidx++ ))
 #     do
-#         if [ $index == $(expr ${#str_split[@]} - 1) ]; then
-#             filename=(${str_split[$index]})
+#         if [ $projectidx == $(expr ${#str_split[@]} - 1) ]; then
+#             filename=(${str_split[$projectidx]})
 #         fi
 #     done
 #     echo $SETTING_PATH_FREDIT_WEB/${originfilename[$i]} $PATH_FREDIT_WEB/${originfilename[$i]}
@@ -336,10 +336,10 @@ done
 #     str_split=($(echo $str | tr "/" "\n"))
 #     filename=''
 #     # 파일이름 찾기
-#     for (( index = 0 ; index < ${#str_split[@]} ; index++ ))
+#     for (( projectidx = 0 ; projectidx < ${#str_split[@]} ; projectidx++ ))
 #     do
-#         if [ $index == $(expr ${#str_split[@]} - 1) ]; then
-#             filename=(${str_split[$index]})
+#         if [ $projectidx == $(expr ${#str_split[@]} - 1) ]; then
+#             filename=(${str_split[$projectidx]})
 #         fi
 #     done
 #     echo $SETTING_PATH_FREDIT_WAS/${originfilename[$i]} $PATH_FREDIT_WAS/${originfilename[$i]}

@@ -5,7 +5,7 @@
 # echo "모든 파라미터 내용 : $@"
 
 SOURCE_PATH=/c/Users/$(whoami)/git
-SETTING_PATH=/c/Users/$(whoami)/Documents/setting
+SETTING_PATH=/c/Users/$(whoami)/setting_files
 
 # setting folder 생성
 mkdir -p $SETTING_PATH

@@ -4,40 +4,14 @@
 # echo "첫 번째 파라미터: $1"
 # echo "모든 파라미터 내용 : $@"
 
-SOURCE_PATH=/c/Users/osryu/git
+SOURCE_PATH=/c/Users/$(whoami)/git
 SOURCE_PATH_FREDIT_WEB=($(echo $SOURCE_PATH)/hy-fredit-web)
 SOURCE_PATH_FREDIT_WAS=($(echo $SOURCE_PATH)/hy-fredit-was)
 SOURCE_PATH_HYP_BATCH=($(echo $SOURCE_PATH)/hyp_batch)
 SOURCE_PATH_FACTORY_FO=($(echo $SOURCE_PATH)/hyfactorium)
 SOURCE_PATH_FACTORY_BO=($(echo $SOURCE_PATH)/hyfactoriumBO)
 
-SETTING_PATH=/c/DEV/tools/setting
-SETTING_PATH_FREDIT_WEB=($(echo $SETTING_PATH)/hy-fredit-web)
-SETTING_PATH_FREDIT_WAS=($(echo $SETTING_PATH)/hy-fredit-was)
-SETTING_PATH_HYP_BATCH=($(echo $SETTING_PATH)/hyp_batch)
-SETTING_PATH_FACTORY_FO=($(echo $SETTING_PATH)/hyfactorium)
-SETTING_PATH_FACTORY_BO=($(echo $SETTING_PATH)/hyfactoriumBO)
-
-FILE_NAME_LIST_FREDIT_WEB=(nuxt.config.ts)
-FILE_NAME_LIST_FREDIT_WAS=(fo/src/main/resources/properties/local/application.yml fo/src/main/resources/properties/local/system.yml)
-FILE_NAME_LIST_HYP_BATCH=(src/main/java/com/hy/base/quartz/MainTask.java)
-FILE_NAME_LIST_FACTORY_FO=(src/main/resources-dev/db.properties src/main/resources-local/db.properties)
-FILE_NAME_LIST_FACTORY_BO=(src/main/java/egovframework/application/apply/ApplyController.java src/main/resources-dev/db.properties src/main/resources-local/db.properties)
-
-#!/bin/bash
-
-# echo "파라미터 개수 : $#"
-# echo "첫 번째 파라미터: $1"
-# echo "모든 파라미터 내용 : $@"
-
-SOURCE_PATH=/c/Users/osryu/git
-SOURCE_PATH_FREDIT_WEB=($(echo $SOURCE_PATH)/hy-fredit-web)
-SOURCE_PATH_FREDIT_WAS=($(echo $SOURCE_PATH)/hy-fredit-was)
-SOURCE_PATH_HYP_BATCH=($(echo $SOURCE_PATH)/hyp_batch)
-SOURCE_PATH_FACTORY_FO=($(echo $SOURCE_PATH)/hyfactorium)
-SOURCE_PATH_FACTORY_BO=($(echo $SOURCE_PATH)/hyfactoriumBO)
-
-SETTING_PATH=/c/DEV/tools/setting
+SETTING_PATH=/c/Users/$(whoami)/setting_files
 SETTING_PATH_FREDIT_WEB=($(echo $SETTING_PATH)/hy-fredit-web)
 SETTING_PATH_FREDIT_WAS=($(echo $SETTING_PATH)/hy-fredit-was)
 SETTING_PATH_HYP_BATCH=($(echo $SETTING_PATH)/hyp_batch)
@@ -55,16 +29,16 @@ arraysettingpaths=($SETTING_PATH_FREDIT_WEB $SETTING_PATH_FREDIT_WAS $SETTING_PA
 
 for (( projectidx = 0 ; projectidx < ${#arraysettingpaths[@]} ; projectidx++ ))
 do
-    echo "backup"
+    echo $projectidx
     varsettingpath=${arraysettingpaths[$projectidx]}
     varsourcepath=${arraysourcepaths[$projectidx]}
     varfilenamelist=()
     if [ $projectidx == 0 ]; then
         echo ""
-        varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
+        # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WEB[@]})
     elif [[ $projectidx == 1 ]]; then
         echo ""
-        varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
+        # varfilenamelist=(${FILE_NAME_LIST_FREDIT_WAS[@]})
     elif [[ $projectidx == 2 ]]; then
         echo ""
         varfilenamelist=(${FILE_NAME_LIST_HYP_BATCH[@]})

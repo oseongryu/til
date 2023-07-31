@@ -501,6 +501,15 @@ https://stackoverflow.com/questions/38782928/how-to-add-man-and-zip-to-git-bash-
 7. In the zipped file, in the bin folder, find the file bzip2.dll
 8. Extract bzip2.dll to your mingw64\bin folder (same folder as above: C:\Program Files\Git\mingw64\bin)
 
+### git status filename oneline
+```
+git status --porcelain | sed s/^...//
+git status -s | cut -c4-
+
+git diff --name-only
+git diff --name-only --staged
+git diff --name-only HEAD
+```
 
 #### References
 ```

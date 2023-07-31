@@ -22,7 +22,8 @@
     -Xmx2028m
     -Dfile.encoding=UTF-8
     -Dconsole.encoding=UTF-8
-
+    -Duser.language=en -Duser.region=US
+    -Duser.language=kr -Duser.region=KR
 
 ### Java SDK 설정
     File > Project Structure 선택

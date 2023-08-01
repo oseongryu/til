@@ -26,9 +26,9 @@ else
     varsettingpath=$varsettingpath/$today
 fi
 
-for (( filepathindex = 0 ; filepathindex < ${#varfilenamelist[@]} ; filepathindex++ ))
+for (( filepathidx = 0 ; filepathidx < ${#varfilenamelist[@]} ; filepathidx++ ))
 do
-    str=(${varfilenamelist[$filepathindex]})
+    str=(${varfilenamelist[$filepathidx]})
     str_split=($(echo $str | tr "/" "\n"))
     filename=''
     # 파일이름 찾기
@@ -43,6 +43,6 @@ do
     echo "mkdir -p" $varsettingpath/${str/$filename/''}
     mkdir -p $varsettingpath/${str/$filename/''}
     # 파일이름 경로에 파일넣기
-    echo "cp" $varsourcepath/${varfilenamelist[$filepathindex]} $varsettingpath/${str/$filename/''}
-    cp $varsourcepath/${varfilenamelist[$filepathindex]} $varsettingpath/${str/$filename/''}
+    echo "cp" $varsourcepath/${varfilenamelist[$filepathidx]} $varsettingpath/${str/$filename/''}
+    cp $varsourcepath/${varfilenamelist[$filepathidx]} $varsettingpath/${str/$filename/''}
 done

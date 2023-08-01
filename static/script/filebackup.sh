@@ -11,7 +11,6 @@ SETTING_PATH=/c/Users/$(whoami)/setting_files
 mkdir -p $SETTING_PATH
 
 varfilenamelist=()
-echo $SOURCE_PATH
 # git status --porcelain | awk '{ print $2 }'
 # value=$(</c/Users/osryu/git/hyinterface/test.txt)
 
@@ -22,8 +21,19 @@ varfilenamelist=($(git status --porcelain | awk '{ print $2 }'))
 if [[ $1 != "" ]]; then
     varsettingpath=$varsettingpath/$1
 else
+
+    source_str=$PWD
+    source_str_split=($(echo $source_str | tr "/" "\n"))
+    source_filename=''
+    # SOURCE 파일이름 찾기
+    for (( filestridx = 0 ; filestridx < ${#source_str_split[@]} ; filestridx++ ))
+    do
+        if [ $filestridx == $(expr ${#source_str_split[@]} - 1) ]; then
+            source_filename=(${source_str_split[$filestridx]})
+        fi
+    done
     today=`date +%Y%m%d_%H%M%S`
-    varsettingpath=$varsettingpath/$today
+    varsettingpath=$varsettingpath/$today"_"$source_filename
 fi
 
 for (( filepathidx = 0 ; filepathidx < ${#varfilenamelist[@]} ; filepathidx++ ))

@@ -7,37 +7,47 @@
 SOURCE_PATH=/c/Users/$(whoami)/git
 SETTING_PATH=/c/Users/$(whoami)/setting_files
 
-# setting folder 생성
-mkdir -p $SETTING_PATH
-
 varfilenamelist=()
 # git status --porcelain | awk '{ print $2 }'
 # value=$(</c/Users/osryu/git/hyinterface/test.txt)
 
 varsourcepath=$PWD
 varsettingpath=$SETTING_PATH
-varfilenamelist=($(git status --porcelain | awk '{ print $2 }'))
 
 if [[ $1 != "" ]]; then
     varsettingpath=$varsettingpath/$1
-    for (( filepathindex = 0 ; filepathindex < ${#varfilenamelist[@]} ; filepathindex++ ))
-    do
-        str=(${varfilenamelist[$filepathindex]})
-        str_split=($(echo $str | tr "/" "\n"))
-        filename=''
-        # 파일이름 찾기
-        for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
+    echo "cd" $varsettingpath
+    cd $varsettingpath
+    if [[ $? -eq 0 ]]; then
+        echo "git init"
+        git init
+        echo "git add ."
+        git add .
+        echo "git status --porcelain | awk '{ print $2 }')"
+        varfilenamelist=($(git status --porcelain | awk '{ print $2 }'))
+        echo "rm -rf .git"
+        rm -rf .git
+        for (( filepathidx = 0 ; filepathidx < ${#varfilenamelist[@]} ; filepathidx++ ))
         do
-            if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
-                filename=(${str_split[$filestridx]})
-            fi
-        done
+            str=(${varfilenamelist[$filepathidx]})
+            str_split=($(echo $str | tr "/" "\n"))
+            filename=''
+            # 파일이름 찾기
+            for (( filestridx = 0 ; filestridx < ${#str_split[@]} ; filestridx++ ))
+            do
+                if [ $filestridx == $(expr ${#str_split[@]} - 1) ]; then
+                    filename=(${str_split[$filestridx]})
+                fi
+            done
 
-        echo "cp" $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
-        cp $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
-    done    
+            echo "cp" $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
+            cp $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
+        done
+    else 
+        echo "setup path is not correct"
+    fi
 else 
-    echo "setting path is null"
+    echo "setup path is null"
 fi
 
 

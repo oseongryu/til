@@ -168,3 +168,8 @@
 
 #### intellij Could not initialize class oracle.jdbc.driver.OracleDriver
     ~/project/src/main/webapp/WEB-INF/lib 로 ojdbc6.jar 파일을 넣어서 처리
+
+
+#### tomcat version 확인
+    cd {tomcat_dir}\lib
+    java -cp catalina.jar org.apache.catalina.util.ServerInfo

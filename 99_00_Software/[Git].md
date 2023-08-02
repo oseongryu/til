@@ -511,6 +511,16 @@ git diff --name-only --staged
 git diff --name-only HEAD
 ```
 
+### git add 취소하기(unstage로 변경)
+```bash
+git add .
+
+# 전체 되돌리기
+git reset HEAD
+# 특정파일 되돌리기
+git restore --staged filename
+```
+
 #### References
 ```
 Git Portable Location

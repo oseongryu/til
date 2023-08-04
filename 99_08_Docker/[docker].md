@@ -280,4 +280,18 @@ localectl set-locale LANG=en_US.UTF-8
 docker run -itd -p 80:80 -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
 docker run -it -d -p 80:80 -p 9911:9911 --privileged --restart=always --name centos-vue centos:7.9.2009 /sbin/init
 
+### docker using memory
 
+```bash
+docker stats --format "table {{.Name}}\t{{.Container}}\t{{.CPUPerc}}\t{{.MemUsage}}"
+```
+
+### docker memory limit
+
+```bash
+# memory
+docker run -m 512m nginx
+# cpu
+docker run --cpus=2 nginx
+$ docker run --cpus=2 --cpu-shares=2000 nginx
+```

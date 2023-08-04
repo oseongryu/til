@@ -4,8 +4,8 @@
 # echo "첫 번째 파라미터: $1"
 # echo "모든 파라미터 내용 : $@"
 
-SOURCE_PATH=/c/Users/$(whoami)/git
-SETTING_PATH=/c/Users/$(whoami)/setting_files
+SOURCE_PATH=~/git
+SETTING_PATH=~/setting_files
 
 varfilenamelist=()
 # git status --porcelain | awk '{ print $2 }'

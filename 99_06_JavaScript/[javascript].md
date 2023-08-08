@@ -17,6 +17,4 @@ regedit
 ```
 ### references
 https://haenny.tistory.com/267
-
-
-20230728077480
+https://iamaman.tistory.com/3928

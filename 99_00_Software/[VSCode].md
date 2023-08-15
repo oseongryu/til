@@ -147,6 +147,24 @@ code --install-extension adamhartford.vscode-base64
 #### note
 vsnotes
 
+
+#### 2023.08.09.
+code --install-extension aethli.camelgobrr
+code --install-extension alefragnani.Bookmarks
+code --install-extension alefragnani.project-manager    
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension hollowtree.vue-snippets
+code --install-extension jasonnutter.search-node-modules
+code --install-extension mhutchie.git-graph
+code --install-extension octref.vetur
+code --install-extension PKief.material-icon-theme
+code --install-extension sdras.vue-vscode-snippets
+code --install-extension shd101wyy.markdown-preview-enhanced
+code --install-extension techer.open-in-browser
+code --install-extension Tobermory.es6-string-html
+code --install-extension Vue.volar
+
 ```
 
 ### vscode camel

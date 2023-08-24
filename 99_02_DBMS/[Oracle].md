@@ -327,7 +327,22 @@ AS
 END PACKAGE_TEST;
 ```
 
+#### oracle procedure
+```sql
+-- IN 변수만 있는경우 실행
+EXEC TEST_PROC();
+EXEC TEST_PROC(213, 'DDOL');
 
+-- OUT 변수 있는경우 실행
+DECLARE
+    param1 varchar2(200);
+    param2 varchar2(200);
+BEGIN
+    TEST_PROC('123', param1, param2);
+END;
+
+# https://studyingazae.tistory.com/59
+```
 
 
 #### 테이블 컬럼찾기

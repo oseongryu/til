@@ -255,6 +255,21 @@ chmod 0700 ~/.ssh
 chmod 0600 ~/.ssh/authorized_keys
 ```
 
+### ssh proxyjump
+```bash
+Host root-proxy
+    HostName 192.168.0.99
+    Port 22
+    User root
+
+Host root-was1
+    HostName 192.168.0.1
+    Port 22
+    User root
+    ProxyJump root-proxy
+```
+
+
 ### systemd
 
 

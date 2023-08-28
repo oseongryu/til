@@ -521,6 +521,29 @@ git reset HEAD
 git restore --staged filename
 ```
 
+### git 특정 커밋 이미지 파일이 사라지지 않는 경우
+```
+특정 커밋 이미지 파일이 깃으로 삭제가 계속 남는 경우
+.git > config 파일에 해당 내용이 사라짐
+[core]
+	repositoryformatversion = 0
+	filemode = false
+	bare = false
+	logallrefupdates = true
+	ignorecase = true
+```
+
+### git 특정 파일의 수정사항 무시
+```bash
+# 특정 파일의 수정사항 무시하기
+git update-index --assume-unchanged [file path]
+# 특정 파일의 수정사항 무시 취소하기
+git update-index --no-assume-unchanged [file path]
+# 수정사항 무시 파일 조회
+git ls-files -v|grep '^h'
+```
+
+
 #### References
 ```
 Git Portable Location

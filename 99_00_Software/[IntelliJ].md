@@ -30,7 +30,6 @@ Mapper Class 에서 타고 들어가고 싶은 메서드에서
 [ Ctrl + Alt + B ] 단축키로 mapper.xml id 를 찾아감
 ```
 
-
 ### 한글깨짐
 
 ```
@@ -108,6 +107,16 @@ FIle > Settings > Editor > Color Scheme > Diff & Merge > Change
 385570, 43698D  => 294436, 447152
 ```
 
+### intellij git 설정
+
+```
+Compact References View (check)
+Align References to the Left (check)
+Show Tag Names (check)
+
+
+```
+
 ### IntelliJ 복사 붙여넣기 시 들여쓰기가 유지되지 않을 경우
 
 ```
@@ -141,11 +150,11 @@ File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injec
 ### SQL Dialect
 
 ```
+노란줄이 나타나는 경우
 File > Settings > Languages & Frameworks > SQL Dialects
-Global SQL Dialect: Oracle
+Global SQL Dialect: Oracle (자주 사용하는 설정으로)
 Project SQL Dialect: Oracle
 ```
-
 
 ### mapper 구현체로 이동
 
@@ -183,15 +192,6 @@ On frame deactivation: Update classes and resources (핫 리로드옵션 project
 VM options: -Dfile.encoding=UTF-8
 JRE: 1.7
 Tomcat Server Settings : HTTP port: 8080
-```
-
-### Mybatis Setting
-
-```
-노란줄이 나타나는 경우
-File > Settings > Languages & Frameworks > SQL Dialects
-Global SQL Dialect: Oracle (자주 사용하는 설정으로)
-Project SQL Dialect: Oracle
 ```
 
 ### Database

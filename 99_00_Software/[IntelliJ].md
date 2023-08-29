@@ -1,175 +1,298 @@
-### Project Java version 변경
+### plugin
 
-    Project Structure창 (단축키 : SHIFT+CTRL+ALT+S)
-    * Project
-    1) SDK 변경
-    2) Language Level 변경
-    * Module
-    3) Language Level 변경
-    * SDKs
-    4) 원하는 JDK를 선택한다(JDK는 한 폴더에 모아두는것을 추천!)
+```
+File > Setting > Plugins
 
-    Project Setting (단축키 : CTRL+ALT+S)
-    * Build,Execution,Deployment  -> Build Tools -> Gradle
-    5) Gradle JVM 변경
-    * Build,Execution,Deployment  -> Compiler -> Java Compiler
-    6) Project bytecode version 변경
+1. Atom Material File Icons
+프로젝트 구조(패키지, 폴더, 파일)을 Atom IDE 디자인을 입혀 아이콘 모양을 바꿔주는 플러그인 가독성
 
-### vmoptions
-사용자 옵션 변경 C:\Users\{user}\AppData\Roaming\JetBrains\IntelliJIdea2022.2\idea64.exe.vmoptions
-전체 옵션 변경  C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin\idea65.exe.vmoptions
+2. CodeGlance Pro 
+Visual Code 처럼 우측에 드래그 가능한 PreView 를 만들어 줌
 
-    -Xmx2028m
-    -Dfile.encoding=UTF-8
-    -Dconsole.encoding=UTF-8
-    -Duser.language=en -Duser.region=US
-    -Duser.language=kr -Duser.region=KR
+3. GitToolBox
+현재 위치의 브랜치를 프로젝트 옆에 표시해줌
+몇 번째 현재 브랜치에서 커밋이 몇 번째 앞에 또는 뒤에 있는지 알려줌
 
-### Java SDK 설정
-    File > Project Structure 선택
+4. Key Promoter X
+마우스로 이벤트를 발생 시킨 경우 인텔리제이의 단축키를 알려준다.
 
-    Project Settings > Project > SDK 클릭 > Add SDK
+5. Rainbow Brackets
+소괄호 ( ) 중괄호 { } 대괄호 [ ] 쌍을 색으로 묶어줌
+
+6. Presentation Assistant
+화면 중앙 하단에 자신이 클릭한 단축키 설명
+
+7. RestfulHelper
+Ctrl + \ 키로 서블릿 경로 Request Mapping 만으로 검색하여 찾아감
+
+8. iBATIS/MyBatis mini-plugin
+Mapper Class 에서 타고 들어가고 싶은 메서드에서
+[ Ctrl + Alt + B ] 단축키로 mapper.xml id 를 찾아감
+```
 
 
 ### 한글깨짐
-    Console에서 한글이 깨지는 경우
-    Ctrl + Shift + A 단축키 입력 후
-    Edit custom VM 입력 후 선택
-    -Dfile.encoding=UTF-8 입력후 저장
-    IntelliJ 재실행
-    * 설치시 Edit Custom VM Options 경로
-    C:\Users\{user}\AppData\Roaming\JetBrains\IdeaIC2022.1\idea64.exe.vmoptions
 
-### Font
-    File > Settings > Editor > Font > Consolas
+```
+Console에서 한글이 깨지는 경우
+Ctrl + Shift + A 단축키 입력 후
+Edit custom VM 입력 후 선택
+-Dfile.encoding=UTF-8 입력후 저장
+IntelliJ 재실행
+* 설치시 Edit Custom VM Options 경로
+C:\Users\{user}\AppData\Roaming\JetBrains\IdeaIC2022.1\idea64.exe.vmoptions
+```
 
 ### 한글Encoding 설정
-    CTRL + ALT + S 로 IntelliJ Settings 메뉴 호출
 
-    Editor > File Encodings 로 이동
+```
+CTRL + ALT + S 로 IntelliJ Settings 메뉴 호출
 
-    Global Encoding: UTF-8
-    Project Encoding: UTF-8
-    Default encoding for properties files: UTF-8 (.properties 파일)
-    Transparent native-to-ascii conversion 체크
+Editor > File Encodings 로 이동
+Global Encoding: UTF-8
+Project Encoding: UTF-8
+Default encoding for properties files: UTF-8 (.properties 파일)
+Transparent native-to-ascii conversion 체크
+```
+
+### System Settings
+
+```
+File > Setting > System Settings
+Reopen projects on startup 체크해제
+```
+
+
+### Font
+
+```
+File > Settings > Editor > Font > Consolas
+```
 
 ### Terminal (cmd to git bash)
-    File > Settings > Tools > Terminal
 
-    Application Settings > Shell path > 변경후 > OK > IntelliJ 재시작
+```bash
+File > Settings > Tools > Terminal
+Application Settings > Shell path > 변경후 > OK > IntelliJ 재시작
 
-    변경전 : powershell.exe
-    변경후 : "C:\Program Files\Git\bin\sh.exe" -login -i
+# 변경전
+powershell.exe
+# 변경후
+"C:\Program Files\Git\bin\sh.exe" -login -i
+```
 
 ### Inlay Hints
-    File > Settings > Editor > Inlay Hints > Code vision 체크 해제
+
+```
+File > Settings > Editor > Inlay Hints > Code vision 체크 해제
+```
 
 ### Line Number, Whitespce
 
-    File > Settings > Editor > General > Appearance
-    Show line numbers(check)
-    Show whitespaces(check)
+```
+File > Settings > Editor > General > Appearance
+Show line numbers(check)
+Show whitespaces(check)
+```
 
 ### Font SizeLine Number
 
-    File > Settings > Editor > General > Change font size with Ctrl + Mouse Wheel (Check)
-
+```
+File > Settings > Editor > General > Change font size with Ctrl + Mouse Wheel (Check)
+```
 
 ### Diff & Merge
-    FIle > Settings > Editor > Color Scheme > Diff & Merge > Change
-    385570, 43698D  => 294436, 447152
+
+```
+FIle > Settings > Editor > Color Scheme > Diff & Merge > Change
+385570, 43698D  => 294436, 447152
+```
 
 ### IntelliJ 복사 붙여넣기 시 들여쓰기가 유지되지 않을 경우
-    File > Settings > Editor > General > Smart Keys >
-    Reformat on paste 설정 None 또는 Indent block로 변경
 
+```
+File > Settings > Editor > General > Smart Keys >
+Reformat on paste 설정 None 또는 Indent block로 변경
+```
 
 <img width="800" src="../static/img/intellij/setting/001.png"/>
 <img width="800" src="../static/img/intellij/setting/002.png"/>
 
 
 ### jdbc drivers location
-    C:\Users\${user}\AppData\Roaming\JetBrains\IntelliJIdea2022.1\jdbc-drivers\Oracle
+
+```
+C:\Users\${user}\AppData\Roaming\JetBrains\IntelliJIdea2022.1\jdbc-drivers\Oracle
+```
 
 ### plugin Database Navigator
 
-    File > Settings > Plugins > Database Navigator
+```
+File > Settings > Plugins > Database Navigator
+```
 
 ### Data Source와 SQL Dialect 옵션 해제, 배경색 제외
 
-    File > Settings(Ctrl + Alt + S) > Editor > Inspections > SQL - No data sources configured, SQL dialect detection 체크 해제
-    File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injected language fragment - Background 체크 해제
+```
+File > Settings(Ctrl + Alt + S) > Editor > Inspections > SQL - No data sources configured, SQL dialect detection 체크 해제
+File > Settings(Ctrl + Alt + S) > Editor > Color Scheme > General > Code - Injected language fragment - Background 체크 해제
+```
+
+### SQL Dialect
+
+```
+File > Settings > Languages & Frameworks > SQL Dialects
+Global SQL Dialect: Oracle
+Project SQL Dialect: Oracle
+```
+
 
 ### mapper 구현체로 이동
-    ctrl + alt + b
+
+```
+ctrl + alt + b
+```
 
 ### 구현체 제외
-    검색시 ctrl + shift + n 사용 (모두를 할경우 전부 나옴)
+
+```
+검색시 ctrl + shift + n 사용 (모두를 할경우 전부 나옴)
+```
 
 ### Maven Project Setting
-    File > Project Structure
-    Project Settings > Project > SDK > 선택 > Apply
-    Platform Settings > SDKs > + > Add JDK
 
-    File > Settings
-    Build, Execution, Deployment > Build Tools > Maven
-    Use settings from .mvn/maven.config 체크해제 > User settings file에서 선택 > Apply
+```
+File > Project Structure
+Project Settings > Project > SDK > 선택 > Apply
+Platform Settings > SDKs > + > Add JDK
 
-    Run > Edit Configurations
-    + > Tomcat Server > local
+File > Settings
+Build, Execution, Deployment > Build Tools > Maven
+Use settings from .mvn/maven.config 체크해제 > User settings file에서 선택 > Apply
 
-    Deployment Tab > + > Artifact > Select Artifacts to Deploy에서 project명:war exploded 선택
-    Application context 설정 /
+Run > Edit Configurations
++ > Tomcat Server > local
 
-    Server Tab
-    Application server > Tomcat Server > Tomcat Home 설정 > 원하는 톰캣 선택 후 확인
-    On 'Update' action: Update classes and resources (핫 리로드옵션 project명:war exploded여야함)
-    On frame deactivation: Update classes and resources (핫 리로드옵션 project명:war exploded여야함)
-    VM options: -Dfile.encoding=UTF-8
-    JRE: 1.7
-    Tomcat Server Settings : HTTP port: 8080
+Deployment Tab > + > Artifact > Select Artifacts to Deploy에서 project명:war exploded 선택
+Application context 설정 /
+
+Server Tab
+Application server > Tomcat Server > Tomcat Home 설정 > 원하는 톰캣 선택 후 확인
+On 'Update' action: Update classes and resources (핫 리로드옵션 project명:war exploded여야함)
+On frame deactivation: Update classes and resources (핫 리로드옵션 project명:war exploded여야함)
+VM options: -Dfile.encoding=UTF-8
+JRE: 1.7
+Tomcat Server Settings : HTTP port: 8080
+```
 
 ### Mybatis Setting
-    노란줄이 나타나는 경우
-    File > Settings > Languages & Frameworks > SQL Dialects
-    Global SQL Dialect: Oracle (자주 사용하는 설정으로)
-    Project SQL Dialect: Oracle
 
+```
+노란줄이 나타나는 경우
+File > Settings > Languages & Frameworks > SQL Dialects
+Global SQL Dialect: Oracle (자주 사용하는 설정으로)
+Project SQL Dialect: Oracle
+```
 
 ### Database
-    Database탭 > + > Oracle 선택
-    설정 후 Test Connection > Driver 다운로드
+
+```
+Database탭 > + > Oracle 선택
+설정 후 Test Connection > Driver 다운로드
+```
+
+### Project Java version 변경
+
+```
+Project Structure창 (단축키 : SHIFT+CTRL+ALT+S)
+* Project
+1) SDK 변경
+2) Language Level 변경
+* Module
+3) Language Level 변경
+* SDKs
+4) 원하는 JDK를 선택한다(JDK는 한 폴더에 모아두는것을 추천!)
+
+Setting (단축키 : CTRL+ALT+S)
+* Build,Execution,Deployment  -> Build Tools -> Gradle
+5) Gradle JVM 변경
+* Build,Execution,Deployment  -> Compiler -> Java Compiler
+6) Project bytecode version 변경
+```
+
+### vmoptions
+
+```
+사용자 옵션 변경 C:\Users\{user}\AppData\Roaming\JetBrains\IntelliJIdea2022.2\idea64.exe.vmoptions
+전체 옵션 변경  C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin\idea65.exe.vmoptions
+-Xmx2028m
+-Dfile.encoding=UTF-8
+-Dconsole.encoding=UTF-8
+-Duser.language=en -Duser.region=US
+-Duser.language=kr -Duser.region=KR
+```
+
+### Java SDK 설정
+
+```
+File > Project Structure 선택
+Project Settings > Project > SDK 클릭 > Add SDK
+```
 
 
 
 ### IntelliJ Community Tomcat 설정
 
-    1. smart tomcat 플러그인 추가
-    2. Java 설정
-        File > Project Structure
-        Project Settings > Project > SDK > 선택 > Apply
-        Platform Settings > SDKs > + > Add JDK
-    2. Maven 설정
-        File > Settings
-        Build, Execution, Deployment > Build Tools > Maven
-        Use settings from .mvn/maven.config 체크해제 > User settings file에서 선택 > Apply
-    3. Edit Configurations
-        Run > Edit Configurations
-        + > Smart Tomcat
+```
+1. smart tomcat 플러그인 추가
+2. Java 설정
+    File > Project Structure
+    Project Settings > Project > SDK > 선택 > Apply
+    Platform Settings > SDKs > + > Add JDK
+2. Maven 설정
+    File > Settings
+    Build, Execution, Deployment > Build Tools > Maven
+    Use settings from .mvn/maven.config 체크해제 > User settings file에서 선택 > Apply
+3. Edit Configurations
+    Run > Edit Configurations
+    + > Smart Tomcat
 
-        Tomcat Server: 톰캣 추가
-        Deployment directory: ~/project/src/main/webapp
-        Use classpath of module: project
-        Context path: /
-
+    Tomcat Server: 톰캣 추가
+    Deployment directory: ~/project/src/main/webapp
+    Use classpath of module: project
+    Context path: /
+```
 
 <img width="800" src="../static/img/intellij/001.png"/>
 
 
 #### intellij Could not initialize class oracle.jdbc.driver.OracleDriver
-    ~/project/src/main/webapp/WEB-INF/lib 로 ojdbc6.jar 파일을 넣어서 처리
 
+```
+~/project/src/main/webapp/WEB-INF/lib 로 ojdbc6.jar 파일을 넣어서 처리
+```
 
 #### tomcat version 확인
-    cd {tomcat_dir}\lib
-    java -cp catalina.jar org.apache.catalina.util.ServerInfo
+
+```
+cd {tomcat_dir}\lib
+java -cp catalina.jar org.apache.catalina.util.ServerInfo
+```
+
+#### tomcat encoding
+
+```
+{tomcatfolder}\conf → server.xml
+
+<Connector port="8080" protocol="HTTP/1.1"
+            connectionTimeout="20000"
+            redirectPort="8443" />
+
+<Connector port="8080" protocol="HTTP/1.1"
+            connectionTimeout="20000"
+            redirectPort="8443" 
+            URIEncoding="UTF-8"
+            />
+
+
+```

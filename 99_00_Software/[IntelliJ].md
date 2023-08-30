@@ -28,6 +28,45 @@ Ctrl + \ 키로 서블릿 경로 Request Mapping 만으로 검색하여 찾아�
 8. iBATIS/MyBatis mini-plugin
 Mapper Class 에서 타고 들어가고 싶은 메서드에서
 [ Ctrl + Alt + B ] 단축키로 mapper.xml id 를 찾아감
+
+9. ToolWindow Manager
+자주 사용하는 Tool Windows 한번에 설정
+misc.xml 파일에 추가
+
+  <component name="org.codebrewer.idea.toolwindowmanager">
+    <toolwindow id="Bean Validation" preference="UNAVAILABLE" />
+    <toolwindow id="Bookmarks" preference="UNAFFECTED" />
+    <toolwindow id="Build" preference="UNAFFECTED" />
+    <toolwindow id="Commit" preference="UNAFFECTED" />
+    <toolwindow id="Database" preference="UNAVAILABLE" />
+    <toolwindow id="Database Changes" preference="UNAVAILABLE" />
+    <toolwindow id="Dependencies" preference="UNAVAILABLE" />
+    <toolwindow id="Dependency Checker" preference="UNAVAILABLE" />
+    <toolwindow id="Endpoints" preference="UNAVAILABLE" />
+    <toolwindow id="File Transfer" preference="UNAVAILABLE" />
+    <toolwindow id="Gradle" preference="UNAFFECTED" />
+    <toolwindow id="Internal Method Tracing" preference="UNAVAILABLE" />
+    <toolwindow id="Java Enterprise" preference="UNAVAILABLE" />
+    <toolwindow id="Layout Validation" preference="UNAVAILABLE" />
+    <toolwindow id="Learn" preference="UNAVAILABLE" />
+    <toolwindow id="Maven" preference="UNAFFECTED" />
+    <toolwindow id="Notifications" preference="UNAFFECTED" />
+    <toolwindow id="Problems View" preference="UNAVAILABLE" />
+    <toolwindow id="Profiler" preference="UNAVAILABLE" />
+    <toolwindow id="Project" preference="UNAFFECTED" />
+    <toolwindow id="Pull Requests" preference="UNAVAILABLE" />
+    <toolwindow id="Services" preference="UNAFFECTED" />
+    <toolwindow id="Space Code Reviews" preference="UNAVAILABLE" />
+    <toolwindow id="Spring" preference="UNAVAILABLE" />
+    <toolwindow id="Structure" preference="UNAVAILABLE" />
+    <toolwindow id="TODO" preference="UNAVAILABLE" />
+    <toolwindow id="Terminal" preference="UNAFFECTED" />
+    <toolwindow id="TypeScript" preference="UNAVAILABLE" />
+    <toolwindow id="Version Control" preference="UNAVAILABLE" />
+    <toolwindow id="Web" preference="UNAVAILABLE" />
+    <toolwindow id="documentation.v2" preference="UNAVAILABLE" />
+  </component>
+
 ```
 
 ### 한글깨짐
@@ -296,3 +335,9 @@ java -cp catalina.jar org.apache.catalina.util.ServerInfo
 
 
 ```
+
+
+####
+
+
+File .mvn/wrapper/maven-wrapper.properties not found. The Maven bundled version will be used instead.

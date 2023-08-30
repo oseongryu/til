@@ -341,3 +341,14 @@ java -cp catalina.jar org.apache.catalina.util.ServerInfo
 
 
 File .mvn/wrapper/maven-wrapper.properties not found. The Maven bundled version will be used instead.
+
+
+#### gradle embedded tomcat SSL 설정
+
+server:
+  port: 10021
+  ssl:
+    enabled: true
+    key-store: Wildcard.test.co.kr.jks
+    key-store-password: "test1234"
+    key-store-type: jks

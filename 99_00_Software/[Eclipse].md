@@ -84,3 +84,52 @@ File types click > Add Associated editors & Default
 ```
 http://success206.tistory.com/entry/%EC%9D%B4%ED%81%B4%EB%A6%BD%EC%8A%A4Eclipse-%ED%95%9C%EA%B8%80-%EA%B9%A8%EC%A7%90-%ED%98%84%EC%83%81
 ```
+
+
+### tomcat server SSL
+```xml
+<!-- 추가2 -->
+	
+   <Connector SSLEnabled="true" URIEncoding="UTF-8" clientAuth="false" keystoreFile="C:\.keystore\keyFile_Wildcard.test.co.kr.keystore"
+    			   keystorePass="test1234" keystoreType="jks" 
+               maxThreads="100" port="443" scheme="https" secure="true" sslProtocol="TLS"/>
+
+   <Connector SSLEnabled="true" URIEncoding="UTF-8" clientAuth="false" keystoreFile="C:\cert\sslkeystore" 
+               keystorePass="test1234" keystoreType="pkcs12" 
+               maxThreads="100" port="443" scheme="https" secure="true" sslProtocol="TLS"/>
+<!-- 변경1 -->
+
+    <Connector port="8080" protocol="HTTP/1.1" 
+               connectionTimeout="20000" 
+               redirectPort="8443" />
+
+
+    <Connector port="8080" protocol="HTTP/1.1"
+               connectionTimeout="20000" 
+               redirectPort="8443"
+               URIEncoding="UTF-8" 
+               useBodyEncoingForURI="ture" />
+
+
+<!-- 추가1 (필요없을수 있음)-->
+      <Host name="localhost"  appBase="webapps"
+            unpackWARs="true" autoDeploy="true"
+            xmlValidation="false" xmlNamespaceAware="false">
+        <!-- SingleSignOn valve, share authentication between web applications
+             Documentation at: /docs/config/valve.html -->
+        <!--
+        <Valve className="org.apache.catalina.authenticator.SingleSignOn" />
+        -->
+
+        <!-- Access log processes all example.
+             Documentation at: /docs/config/valve.html -->
+        <!--
+        <Valve className="org.apache.catalina.valves.AccessLogValve" directory="logs"  
+               prefix="localhost_access_log." suffix=".txt" pattern="common" resolveHosts="false"/>
+        -->
+         <!-- <Context docBase="FrontMobile" path="/" reloadable="true" source="org.eclipse.jst.jee.server:FrontMobile"/></Host>  -->
+         <Context docBase="FrontMobile" path="/FrontMobile" reloadable="false" source="org.eclipse.jst.jee.server:FrontMobile"/>
+      </Host>
+
+
+```

@@ -58,3 +58,17 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
     1. PC에 USB 연결
     2. chrome://inspect/#devices
     3. 연결시 USB 디버깅 등 확인
+
+### chrome web store using offline
+
+```
+# 확장프로그램 오프라인 다운로드
+1. https://crxextractor.com/ > Let's Start
+2. https://chrome.google.com/webstore/detail/selenium-ide/mooikfkahbdckldjjndioackbalphokd?hl=ko 확장 프로그램 입력후 다운로드
+
+# 확장프로그램 설치
+1. chrome에서 chrome://extensions/ 이동
+2. 확장프로그램 > 개발자모드 온
+3. 확장프로그램 추가
+
+```

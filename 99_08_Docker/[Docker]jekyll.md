@@ -66,9 +66,11 @@ cd my-awesome-site
 bundle exec jekyll serve
 bundle add webrick
 
+#!/bin/sh
 bundle exec jekyll serve --host localhost --port 8088
 bundle exec jekyll serve --skip-initial-build --host 0.0.0.0 --port 8088 > /dev/null 2>&1 &
 
+#!/bin/sh
 kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 
 yum install net-tools

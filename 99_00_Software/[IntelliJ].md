@@ -268,7 +268,7 @@ Setting (단축키 : CTRL+ALT+S)
 -Dfile.encoding=UTF-8
 -Dconsole.encoding=UTF-8
 -Duser.language=en -Duser.region=US
--Duser.language=kr -Duser.region=KR
+-Duser.language=ko -Duser.region=KR
 ```
 
 ### Java SDK 설정

@@ -345,6 +345,7 @@ File .mvn/wrapper/maven-wrapper.properties not found. The Maven bundled version 
 
 #### gradle embedded tomcat SSL 설정
 
+```xml
 server:
   port: 10021
   ssl:
@@ -352,3 +353,14 @@ server:
     key-store: Wildcard.test.co.kr.jks
     key-store-password: "test1234"
     key-store-type: jks
+```
+
+### bookmark 복원
+
+```
+1. {project}/.idea/workspace.xml > ProjectId 찾기
+<component name="ProjectId" id="2UeEwbr6xtjdTVsr33737oDAYp4" />
+
+2. ProjectId의 xml로 북마크 복사
+C:\Users\osryu\AppData\Roaming\JetBrains\IntelliJIdea2022.1\workspace
+```

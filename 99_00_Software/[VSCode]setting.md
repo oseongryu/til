@@ -83,6 +83,10 @@ settings.json
     "list.hoverBackground": "#535353",
     "list.activeSelectionBackground": "#1f242b",
     "list.activeSelectionForeground": "#06f7df",
+    // 상단 타이틀 배경색(변경)
+    "titleBar.activeBackground": "#038b6d",
+    // 하단 상태 배경색(변경)
+    "statusBar.background": "#038b6d",
   },
 }
 ```

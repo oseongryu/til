@@ -8,6 +8,8 @@ docker exec -it centos-env-vue bash
 docker commit centos-env-vue oseongryu/centos-env-vue:0.0.1
 docker pull 
 docker run -it -d --name centos-env-vue -p 9551:9551 -p 9552:9552 centos:latest
+docker run -it -d -p 9551:9551 -p 9552:9552 --privileged --restart=always --name centos-env-vue oseongryu/centos-env-vue:0.0.1 /sbin/init
+
 ```
 
 # centos 설정
@@ -45,21 +47,31 @@ npm -v
 
 ## yarn 설치
 # https://gist.github.com/teocci/5ac7c3b59e255f414185b677717e620b
-# curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
-# sudo yum install nodejs
+curl --silent --location https://rpm.nodesource.com/setup_16.x | sudo bash -
+sudo yum install nodejs
 curl --silent --location https://dl.yarnpkg.com/rpm/yarn.repo | sudo tee /etc/yum.repos.d/yarn.repo
 sudo rpm --import https://dl.yarnpkg.com/rpm/pubkey.gpg
-sudo yum install -y yarn
+sudo yum install yarn
 yarn --version
 
 ## nvm 설치
-yum install wget
-wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.35.2/install.sh | bash
-source ~/.bashrc
+curl -o- https://raw.githubusercontent.com/creationix/nvm/v0.33.1/install.sh | bash
+nvm -v
+nvm use system
+vi ~/.bash_profile
 
-nano ~/bashrc
-export NVM_DIR="$HOME/.nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+export NVM_DIR="$([ -z "${XDG_CONFIG_HOME-}" ] && printf %s "${HOME}/.nvm" || printf %s "${XDG_CONFIG_HOME}/nvm")"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" # This loads nvm
+
+source ~/.bash_profile
+nvm install 16.17.1
+nvm use 16.17.1
+nvm alias default 16.17.1
 ```
 
+
+
+### references
+```
+https://imksh.com/93
+```

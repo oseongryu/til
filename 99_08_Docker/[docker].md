@@ -157,6 +157,9 @@ docker pull centos:7.9.2009
 docker run -it -d -p 80:80 -p 9911:9911 --restart=always --name centos-vue centos:7.9.2009
 docker exec -it centos-vue bash
 
+systemctl enable nginx
+reboot
+
 
 #### Failed to get D-Bus connection: Operation not permitted
 docker run -it -d -p 80:80 --privileged --restart=always --name centos-vue oseongryu/centos-vue:0.0.4 /sbin/init
@@ -177,6 +180,9 @@ yum install yum-utils
 yum install net-tools
 yum install nginx
 
+systemctl enable nginx
+systemctl nginx
+systemctl start nginx
 
 
 ### docker network
@@ -201,17 +207,17 @@ docker network rm our-net
 docker stop centos-vue centos-spring
 
 ### docker commit
-docker commit centos-vue oseongryu/centos-vue:0.0.1
-docker push oseongryu/centos-vue:0.0.1
+docker commit centos-vue oseongryu/centos-vue:0.0.5
+docker push oseongryu/centos-vue:0.0.5
 
-docker commit centos-spring oseongryu/centos-spring:0.0.1
-docker push oseongryu/centos-spring:0.0.1
+docker commit centos-spring oseongryu/centos-spring:0.0.5
+docker push oseongryu/centos-spring:0.0.5
 
 docker commit centos-jekyll oseongryu/centos-jekyll:0.0.3
 docker push oseongryu/centos-jekyll:0.0.3
 
-docker pull oseongryu/centos-vue:0.0.1
-docker pull oseongryu/centos-spring:0.0.1
+docker pull oseongryu/centos-vue:0.0.5
+docker pull oseongryu/centos-spring:0.0.5
 docker pull oseongryu/centos-jekyll:0.0.3
 
 ### upload

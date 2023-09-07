@@ -36,7 +36,7 @@ docker container ls -as
 
 4. mariadb 접속
 ```bash
-docker exec -i -t mariadb_local bash 
+docker exec -i -t mariadb_local bash
 mysql -uroot -p1234
 ```
 

@@ -187,6 +187,14 @@ systemctl start nginx
 
 ### docker network
 
+```
+--- default
+NETWORK ID          NAME                DRIVER              SCOPE
+143496b94e57        bridge              bridge              local
+311d6534f79f        host                host                local
+aa89f58200a6        none                null                local
+---
+```
 docker network ls
 
 docker network create our-net

@@ -120,8 +120,7 @@ keybindings.json
 
 ```
 
-
-settings.json
+### green settings.json
 ```json
   "workbench.colorCustomizations": {
     // vscdoe 전체 전경 색
@@ -152,5 +151,35 @@ settings.json
     "list.hoverBackground": "#535353",
     "list.activeSelectionBackground": "#1f242b",
     "list.activeSelectionForeground": "#06f7df",
+  },
+```
+
+### blue settings.json
+```json
+  "workbench.colorCustomizations": {
+    // vscdoe 전체 전경 색
+    "editor.background": "#1f242b",
+    // 맨 왼쪽 activityBar
+    "activityBar.background": "#1f242b",
+    // 사이드바(파일,폴더) 배경 색
+    "sideBar.background": "#1f242b",
+    // 그룹 헤더 전체 배경 색
+    "editorGroupHeader.tabsBackground": "#1f242b",
+    // 선택된 탭 배경색
+    "tab.activeBackground": "#09569d",
+    "tab.activeForeground": "#e7e8ed",
+    "tab.inactiveForeground": "#fff",
+    // 비활성인 탭 배경색
+    "tab.inactiveBackground": "#1f242b",
+    // 상단 타이틀 배경색
+    "titleBar.activeBackground": "#1558d4",
+    // 상단 타이틀 글자색
+    "titleBar.activeForeground": "#fff",
+    // 하단 상태 배경색
+    "statusBar.background": "#1558d4",
+    // 사이드바 목록 선택 배경색 글자색
+    "list.hoverBackground": "#535353",
+    "list.activeSelectionBackground": "#1f242b",
+    "list.activeSelectionForeground": "#1558d4",
   },
 ```

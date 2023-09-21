@@ -554,6 +554,7 @@ git update-index --no-skip-worktree .vscode/launch.json
 # 2
 git update-index --assume-unchanged .vscode/launch.json
 git update-index --no-assume-unchanged .vscode/launch.json
+git ls-files -v | grep '^[[:lower:]]'
 ```
 
 #### References

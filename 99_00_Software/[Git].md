@@ -543,6 +543,11 @@ git update-index --no-assume-unchanged [file path]
 git ls-files -v|grep '^h'
 ```
 
+### git lcoal에서만 적용
+```bash
+git update-index --assume-unchanged fileName
+git update-index --no-assume-unchanged fileName
+```
 
 #### References
 ```

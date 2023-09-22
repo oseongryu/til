@@ -1,3 +1,10 @@
+#### 자동완성 해제
+```
+- Window > Preferences > Editors > SQL Editor > Code Completion
+Insert table aliases (N/A)
+
+```
+
 #### Auto Commit 해제
 
 ```

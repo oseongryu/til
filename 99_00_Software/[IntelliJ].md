@@ -98,6 +98,12 @@ Transparent native-to-ascii conversion 체크
 ```
 File > Setting > System Settings
 Reopen projects on startup 체크해제
+
+File > Setting > Updates
+Check IDE updates for
+Check for plugin updates
+Show What's New in the editor after an IDE update
+
 ```
 
 

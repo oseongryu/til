@@ -1,5 +1,5 @@
 #!/bin/bash
-
+# https://ko.linux-console.net/?p=13560#gsc.tab=0
 #Set the options of the getopt command
 format=$(getopt -n "$0" -l "email:,pass:" -- -- "$@")
 if [ $# -lt 3 ]; then

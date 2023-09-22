@@ -1,4 +1,5 @@
 #!/bin/bash
+# https://ko.linux-console.net/?p=13560#gsc.tab=0
 #Read the argument values
 while [[ "$#" -gt 0 ]]
   do

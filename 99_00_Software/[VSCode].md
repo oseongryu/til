@@ -87,10 +87,33 @@ View > Commnad Palette > File:OpenActive File in New Window
 #### vscode extension export
 ```
 code --list-extensions | % { "code --install-extension $_" }
+
+C:\Program Files\Microsoft VS Code\bin
+C:\DEV\tools\VSCode-win32-x64-1.82.2\bin
 ```
 
 #### vscode vue extension
 ```bash
+# recommand
+code --install-extension aethli.camelgobrr
+code --install-extension alefragnani.Bookmarks
+code --install-extension alefragnani.project-manager
+code --install-extension dbaeumer.vscode-eslint
+code --install-extension esbenp.prettier-vscode
+code --install-extension hollowtree.vue-snippets
+code --install-extension jasonnutter.search-node-modules
+code --install-extension mhutchie.git-graph
+code --install-extension octref.vetur
+code --install-extension PKief.material-icon-theme
+code --install-extension sdras.vue-vscode-snippets
+code --install-extension shd101wyy.markdown-preview-enhanced
+code --install-extension techer.open-in-browser
+code --install-extension Tobermory.es6-string-html
+code --install-extension Vue.volar
+
+
+
+
 code --install-extension alefragnani.Bookmarks
 code --install-extension alefragnani.project-manager
 code --install-extension donjayamanne.githistory
@@ -203,5 +226,13 @@ bootRun {
 ```
 ctrl + d
 ctrl + shift + l
+
+```
+
+### vscode install version to portable (windows)
+```
+C:\Users\osryu\.vscode\extensions\=> C:\DEV\tools\VSCode-win32-x64-1.82.2\data\extensions\
+
+C:\Users\osryu\AppData\Roaming\Code\ => C:\DEV\tools\VSCode-win32-x64-1.82.2\data\user-data\
 
 ```

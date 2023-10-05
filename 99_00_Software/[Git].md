@@ -1,5 +1,6 @@
 #### Git 사용방법
 ```bash
+git config --global init.defaultBranch main
 git --version
 git config --global user.name "사용자명"
 git config --global user.email "이메일"

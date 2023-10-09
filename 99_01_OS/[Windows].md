@@ -298,6 +298,12 @@ C:\Windows\Fonts에 설치할 폰트 넣기
      RemoveRotateImageContextMenuWin10.reg
      RestoreRotateImageContextMenuWin10.reg
 
+### user password 변경
+```
+net user
+net user {username} password
+```
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

@@ -25,6 +25,11 @@ npm ls -g
 npm list -global --depth=0
 ```
 
+## Appium Desktop
+```
+https://github.com/appium/appium-desktop/releases/tag/v1.22.0
+```
+
 
 ## references
 https://life-with-coding.tistory.com/474

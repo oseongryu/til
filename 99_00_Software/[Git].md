@@ -558,6 +558,12 @@ git update-index --no-assume-unchanged .vscode/launch.json
 git ls-files -v | grep '^[[:lower:]]'
 ```
 
+### git push 하지 않은 목록 확인
+```bash
+git log --branches --not --remotes
+git log --branches --not --remotes --oneline --graph --decorate
+```
+
 #### References
 ```
 Git Portable Location

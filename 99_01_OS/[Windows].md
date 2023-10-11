@@ -304,6 +304,15 @@ net user
 net user {username} password
 ```
 
+### 네트워크 재설정
+```
+netsh winsock reset
+netsh int ip reset
+ipconfig /release
+ipconfig /renew
+ipconfig /flushdns
+```
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

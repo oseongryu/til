@@ -7,11 +7,11 @@
 ```bash
 sudo apt upgrade
 sudo apt update
-sudo apt install openssh-server
 ```
 
 ## ssh 설정
 ```bash
+sudo apt install openssh-server -y
 sudo apt install vim -y
 sudo vi /etc/ssh/sshd_config
 

@@ -64,13 +64,13 @@ settings.json
   "gitlens.codeLens.authors.enabled": false,
   "workbench.colorCustomizations": {
     // 상단 타이틀 배경색
-    "titleBar.activeBackground": "#0d3d95",
+    "titleBar.activeBackground": "#0b856b",
     "titleBar.inactiveBackground": "#0a2d6e",
     // 상단 타이틀 글자색
     "titleBar.activeForeground": "#fff",
     "titleBar.inactiveForeground": "#fff",
     // 하단 상태 배경색
-    "statusBar.background": "#134dba"
+    "statusBar.background": "#0b856b"
 
     // // green
     // // vscdoe 전체 전경 색
@@ -88,13 +88,13 @@ settings.json
     // // 비활성인 탭 배경색
     // "tab.inactiveBackground": "#1f242b",
     // // 상단 타이틀 배경색
-    // "titleBar.activeBackground": "#23433c",
-    // "titleBar.inactiveBackground": "#142722",
+    // "titleBar.activeBackground": "#0b856b",
+    // "titleBar.inactiveBackground": "#086450",
     // // 상단 타이틀 글자색
     // "titleBar.activeForeground": "#fff",
     // "titleBar.inactiveForeground": "#fff",
     // // 하단 상태 배경색
-    // "statusBar.background": "#23433c",
+    // "statusBar.background": "#0b856b",
     // // 사이드바 목록 선택 배경색 글자색
     // "list.hoverBackground": "#535353",
     // "list.activeSelectionBackground": "#1f242b",

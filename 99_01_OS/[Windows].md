@@ -313,6 +313,21 @@ ipconfig /renew
 ipconfig /flushdns
 ```
 
+### 일부는 조직에서 숨겼거나 관리합니다, 조직설정 (모바일 핫스팟)
+```bash
+# https://answers.microsoft.com/ko-kr/windows/forum/all/%EC%9D%BC%EB%B6%80-%EC%84%A4%EC%A0%95%EC%9D%80/c5adc018-4321-4e34-acca-fdc75ea50f11
+reg delete "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies" /f
+reg delete "HKLM\Software\Microsoft\WindowsSelfHost" /f
+reg delete "HKLM\Software\Policies" /f
+reg delete "HKLM\Software\WOW6432Node\Microsoft\Policies" /f
+reg delete "HKLM\Software\WOW6432Node\Microsoft\Windows\CurrentVersion\Policies" /f
+reg delete "HKLM\SOFTWARE\Policies\Microsoft\Windows Defender" /v DisableAntiSpyware
+reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies" /f
+reg delete "HKCU\Software\Microsoft\WindowsSelfHost" /f
+reg delete "HKCU\Software\Policies" /f
+reg delete "HKLM\Software\Microsoft\Policies" /f
+```
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

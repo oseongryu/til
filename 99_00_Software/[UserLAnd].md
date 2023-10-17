@@ -58,4 +58,16 @@ Subsystem       sftp    /usr/lib/openssh/sftp-server
 ```bash
 sudo apt install openssh-sftp-server
 
+ssh ubuntu-userland
+ssh -p 10022 userland@192.168.0.1
+
+sudo vi /etc/ssh/sshd_config 
+Subsystem sftp /usr/lib/openssh/sftp-server => Subsystem sftp internal-sftp
+
+sudo service ssh start
+sudo service ssh restart
+sftp -oPort=10022 userland@192.168.0.1
+scp -P 10022 userland@192.168.0.1:/home/userland/ ~/
+scp -P 10022 ~/test.sql userland@192.168.0.1:/home/userland/
+
 ```

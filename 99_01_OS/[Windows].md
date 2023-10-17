@@ -326,6 +326,10 @@ reg delete "HKCU\Software\Microsoft\Windows\CurrentVersion\Policies" /f
 reg delete "HKCU\Software\Microsoft\WindowsSelfHost" /f
 reg delete "HKCU\Software\Policies" /f
 reg delete "HKLM\Software\Microsoft\Policies" /f
+
+# https://ko.tinystm.org/fix-we-can-t-set-up-mobile-hotspot-windows-10-settings
+# https://login.microsoftonline.com/common/oauth2/v2.0/authorize?client_id=a81d90ac-aa75-4cf8-b14c-58bf348528fe&redirect_uri=https%3A%2F%2Fanswers.microsoft.com&response_type=code%20id_token&scope=openid%20profile&state=OpenIdConnect.AuthenticationProperties%3DckL5YEpuS2dCecFD8RozM8HGAnwKhKLyqQUOn7B_kP8WhzGCLr0pvwZB1IJAeGsVS6FRvxX2cp8DpaapybTf6dXbwoqQodCmydjQqoehwZ8S5WipMgfEIZ0NnVJBNlDl90-tVqx-8ICNXJbSqTSZBs_DzZmmDYvpxiSrJyxSdePKa74EmS01-TMg3wINngGOg7Yad8CsudN0q2G90hfNw88zA6JKmJONvCBykY-_Sa_qi1VNGDdPDvWDSIkVoTk1S24t9JWo87XCNx9B0CJDjHYgQiieVQTNBWA01kNeyJu7WynLKRx0dG0KiDzzsw9bKhBi76WnVyLiRKOtPz_ridqk4dd8fFLDtoGslaUiP0s&response_mode=form_post&nonce=638331180530453333.N2ZiN2ZmNWUtODYzMS00OTU1LWExMzMtZTNlZWQwZTQ3ZjZhY2M3NWUxODQtOTRmMy00NzY4LWJiZjQtOWU3MzA1M2E3MGQ5&nopa=2&prompt=none&x-client-SKU=ID_NET472&x-client-ver=6.17.0.0
+
 ```
 
 ### References

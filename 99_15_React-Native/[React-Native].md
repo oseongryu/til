@@ -116,3 +116,10 @@ const bottomRoutes = [
 
 
 ## we have failed to run 'bundletool build-apks' on this android app bundle
+
+
+
+## The emulator process for AVD Pixel5API31 has terminated.
+```bash
+https://codingjerk-diary.tistory.com/entry/Android%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0-The-emulator-process-for-AVD-has-terminated
+```

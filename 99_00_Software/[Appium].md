@@ -7,10 +7,18 @@
 5) Appium-Client
 ```
 
-##
+## Init
 ```bash
 npm install -g appium
 npm install appium-doctor -g
+
+appium --version
+appium driver install uiautomator2
+appium driver list --installed
+
+
+# appium --version 에서 2.0.0 이상이 아닌경우
+npm install -g appium@2.0.0
 ```
 
 ## Appium 설치
@@ -77,7 +85,15 @@ emulator -avd Pixel_6_API_30 -netdelay none -netspeed full
 cd C:\Users\osryu\.android\avd
 ```
 
+### appium server cli 
 
+```
+appium -p 4723
+appium -p 4723 --allow-insecure chromedriver_autodownload
+
+self.appium_service = AppiumService()
+self.appium_service.start(args=['--address', '0.0.0.0', '-p', '4724', '--base-path', '/wd/hub'])
+```
 
 ## references
 https://life-with-coding.tistory.com/474

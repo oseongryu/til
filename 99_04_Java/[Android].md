@@ -205,3 +205,14 @@ C:\DEV\tools\dex2jar-2.0\d2j-dex2jar.bat -f -o C:\DEV\tools\dex2jar-2.0\test.jar
 apktool d C:\Users\f5074\Downloads\tester.apk
 
 C:\Users\f5074\AppData\Local\apktool\framework\
+
+
+### avd 장치 실행 안됨 
+```bash
+# 변경전
+hw.gpu.enabled=yes
+hw.gpu.mode=auto
+# 변경후
+hw.gpu.enabled=no
+hw.gpu.mode=off
+```

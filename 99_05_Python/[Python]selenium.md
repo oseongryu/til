@@ -88,4 +88,26 @@ pip install -r requirements.txt
 pip uninstall -r requirements.txt -y
 ```
 
+### selenium using same session
+```bash
+ chrome://version
+C:\Program Files\Google\Chrome\Application\chrome.exe --remote-debugging-port=9222
+C:\Program Files\Google\Chrome\Application
 
+chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\DEV\tools\automation\was\chrome_profile"
+
+
+C:\Program Files\Google\Chrome\Application\chrome.exe --remote-debugging-port=9222 --user-data-dir="C:\DEV\tools\automation\was\chrome_profile"
+
+
+C:\Users\osryu\AppData\Local\Google\Chrome\User Data\Default
+
+C:\DEV\tools\automation\was
+
+
+cd C:\DEV\tools\automation\public
+chromedriver.exe --remote-debugging-port=9515 --user-data-dir="C:\DEV\tools\automation\was\chrome_profile"
+
+```
+
+https://developers.google.com/youtube/v3/docs/search/list?hl=ko&apix_params=%7B%22part%22%3A%5B%22id%22%2C%22snippet%22%5D%2C%22q%22%3A%22BTS%22%2C%22regionCode%22%3A%22KR%22%2C%22prettyPrint%22%3Afalse%7D

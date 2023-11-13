@@ -140,3 +140,20 @@ Mac Path:
   }
 }
 ```
+
+
+###
+
+code-insiders-portable-data
+code-portable-data
+
+sudo npm uninstall npm -g
+sudo rm -rf /usr/local/lib/node 
+sudo rm -rf /usr/local/lib/node_modules 
+sudo rm -rf /var/db/receipts/org.nodejs.*
+sudo rm -rf /usr/local/include/node 
+sudo rm -rf /Users/oseongryu/.npm
+sudo rm /usr/local/bin/node
+sudo rm /usr/local/share/man/man1/node.1
+
+brew uninstall node

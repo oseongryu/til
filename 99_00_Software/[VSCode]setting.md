@@ -27,6 +27,7 @@ settings.json
   "git.enableSmartCommit": true,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
+  "terminal.integrated.defaultProfile.osx": "zsh",
   "update.enableWindowsBackgroundUpdates": false,
   "update.mode": "none",
   "window.title": "${dirty}${rootName}",
@@ -64,13 +65,13 @@ settings.json
   "gitlens.codeLens.authors.enabled": false,
   "workbench.colorCustomizations": {
     // 상단 타이틀 배경색
-    "titleBar.activeBackground": "#0b856b",
+    "titleBar.activeBackground": "#0d3d95",
     "titleBar.inactiveBackground": "#0a2d6e",
     // 상단 타이틀 글자색
     "titleBar.activeForeground": "#fff",
     "titleBar.inactiveForeground": "#fff",
     // 하단 상태 배경색
-    "statusBar.background": "#0b856b"
+    "statusBar.background": "#1558d4",
 
     // // green
     // // vscdoe 전체 전경 색
@@ -128,6 +129,7 @@ settings.json
     // "list.activeSelectionBackground": "#1f242b",
     // "list.activeSelectionForeground": "#1558d4",
   },
+  "extensions.autoUpdate": false
 }
 ```
 

@@ -38,3 +38,9 @@ ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD';
 ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
 
 ```
+
+#### dbeaver 6.3.5
+```bash
+# 6.3.5 버전 이후 alter session
+https://github.com/dbeaver/dbeaver/releases/tag/6.3.5
+```

@@ -157,3 +157,65 @@ sudo rm /usr/local/bin/node
 sudo rm /usr/local/share/man/man1/node.1
 
 brew uninstall node
+
+### 2023.11.10. 재설치
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+wget -qO- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.5/install.sh | bash
+
+
+export NVM_DIR="$HOME/.nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"  # This loads nvm
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+npm install --global yarn
+
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+brew install cocoapods
+npx react-native init LearnReactNative
+
+# 백업
+# export NODE_OPTIONS=--openssl-legacy-provider
+
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
+  
+# export ANDROID_HOME="/Users/oseongryu/Library/Android/sdk"
+# export PATH="$PATH:$ANDROID_HOME/platform-tools/"
+
+# alias python=/opt/homebrew/bin/python3
+
+# eval "$(/opt/homebrew/bin/brew shellenv)"
+# [[ -d ~/.rbenv  ]] && \
+# export PATH=${HOME}/.rbenv/bin:${PATH} && \
+# eval "$(rbenv init -)"
+# [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
+
+# /usr/libexec/java_home -V
+```
+
+### node_modules/react-native/scripts/find-node.sh
+
+```bash
+nvm unalias default
+rm -rf ./Pods && pod install
+npx react-native run-ios --simulator="iPhone 15 Pro"
+cd ios && RCT_NEW_ARCH_ENABLED=1 pod install
+RCT_NEW_ARCH_ENABLED=1 pod install
+watchman watch-del '/Users/oseongryu/git/rn-shorts' ; watchman watch-project '/Users/oseongryu/git/rn-shorts'
+
+# https://velog.io/@somangoi/React-Native-%EB%B9%8C%EB%93%9C-%EC%8B%9C-PhaseScriptExecution-%EC%97%90%EB%9F%AC-%ED%95%B4%EA%B2%B0
+# Define NVM_DIR and source the nvm.sh setup script
+[ -z "$NVM_DIR" ] && export NVM_DIR="$HOME/.nvm"
+
+if [[ -s "$HOME/.nvm/nvm.sh" ]]; then
+  . "$HOME/.nvm/nvm.sh"
+elif [[ -x "$(command -v brew)" && -s "$(brew --prefix nvm)/nvm.sh" ]]; then
+  . "$(brew --prefix nvm)/nvm.sh"
+fi
+```

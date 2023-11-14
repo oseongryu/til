@@ -247,7 +247,7 @@ npm start
 
 ## 키보드 오른쪽 한영전환키
 
-```
+```bash
 # 활성화
 mkdir -p /Users/Shared/bin
 echo '''#!/bin/sh\nhidutil property --set '\'{\"UserKeyMapping\":\[\{\"HIDKeyboardModifierMappingSrc\":0x7000000e7,\"HIDKeyboardModifierMappingDst\":0x70000006d\}\]\}\''''' > /Users/Shared/bin/userkeymapping
@@ -310,4 +310,62 @@ https://cli-fin.ncloud-docs.com/docs/guide-objectstorage
 AzureCli: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos
 AzureCli: https://docs.microsoft.com/ko-kr/cli/azure/get-started-with-azure-cli
 
+```
+
+
+### vscode 
+xattr "/Applications/Visual Studio Code.app"
+sudo xattr -r -d com.apple.quarantine "/Applications/Visual Studio Code.app"
+
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+
+
+arch -x86_64 pod install
+
+### .zshrc
+```bash
+export ZSH="$HOME/.oh-my-zsh"
+ZSH_THEME="simple"
+plugins=(git)
+source $ZSH/oh-my-zsh.sh
+
+# react-native android 2023.11.10.
+export ANDROID_HOME=$HOME/Library/Android/sdk
+export PATH=$PATH:$ANDROID_HOME/emulator
+export PATH=$PATH:$ANDROID_HOME/tools
+export PATH=$PATH:$ANDROID_HOME/tools/bin
+export PATH=$PATH:$ANDROID_HOME/platform-tools
+
+# homebrew 2023.11.10.
+export PATH="/opt/homebrew/bin:$PATH"
+
+# python 2023.11.10.
+alias python=/opt/homebrew/bin/python3
+
+# react-native ios ruby 2023.11.10.
+[[ -d ~/.rbenv  ]] && \
+export PATH=${HOME}/.rbenv/bin:${PATH} && \
+eval "$(rbenv init -)"
+
+# vscode 2023.11.10.
+code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
+# alias code='open -a "Visual Studio Code"' # open file or folder in VSCode e.g. code ~/.zshrc
+# export PATH="$PATH:/Applications/Visual Studio Code.app/Contents/Resources/app/bin"
+
+# react-native java 2023.11.10.
+export JAVA_HOME_8=$(/usr/libexec/java_home -v1.8)
+export JAVA_HOME_11=$(/usr/libexec/java_home -v11)
+export JAVA_HOME_15=$(/usr/libexec/java_home -v15)
+export JAVA_HOME=$JAVA_HOME_15
+
+# react-native react 2023.11.10.
+# export NODE_OPTIONS=--openssl-legacy-provider
+
+# react-native nvm
+export NVM_DIR="$HOME/.nvm"
+  [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh"
+  [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"
+
+# export NVM_DIR=~/.nvm
+# source $(brew --prefix nvm)/nvm.sh
 ```

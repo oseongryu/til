@@ -17,3 +17,6 @@ ENTRYPOINT ["java","-Djava.security.egd", "-Xdebug","-agentlib:jdwp=transport=dt
 ```bash
 docker build --tag war-app .
 ```
+
+### references
+https://ysjee141.github.io/blog/dev%20tools/intellij-springboot-docker/

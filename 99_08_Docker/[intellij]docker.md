@@ -1,0 +1,19 @@
+# 1. Dockerfile using
+
+## Dockerfile
+```bash
+FROM openjdk:11-jdk
+
+LABEL maintainer="maintainer"
+VOLUME /tmp
+EXPOSE 8089 5005
+ARG JAR_FILE=drawing-app/build/libs/drawing-app.war
+ADD ${JAR_FILE} drawing-app.war
+# 실행 명령
+ENTRYPOINT ["java","-Djava.security.egd", "-Xdebug","-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=*:5005","-jar","/drawing-app.war"]
+```
+
+## build
+```bash
+docker build --tag war-app .
+```

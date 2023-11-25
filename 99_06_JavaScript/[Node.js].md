@@ -1,3 +1,15 @@
+## proxy setting
+```bash
+npm config set proxy http://192.0.0.4:10001
+npm config set https-proxy https://192.0.0.4:10001
+npm config set strict-ssl false
+npm config set registry http://registry.npmjs.org/
+
+# confirm: ~/.npmrc
+npm config list
+```
+
+
 ### nvm
 
     nvm list

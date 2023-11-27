@@ -240,6 +240,11 @@ C:\Users\osryu\AppData\Roaming\Code\ => C:\DEV\tools\VSCode-win32-x64-1.82.2\dat
 
 ### vscode Remote-SSH (Windows 10)
 ```bash
+
+"C:\Windows\System32\OpenSSH\ssh.exe" -V
+# OpenSSH_for_Windows_8.1p1, LibreSSL 3.0.2
+"C:\Program Files\OpenSSH\ssh.exe" -V
+
 # ssh -V
 # Bad configuration option: pubkeyacceptedalgorithms
 "C:\WINDOWS\System32\OpenSSH\ssh.exe" -T -D 50750 "gcp-root" bash

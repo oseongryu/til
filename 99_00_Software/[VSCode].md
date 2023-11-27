@@ -236,3 +236,15 @@ C:\Users\osryu\.vscode\extensions\=> C:\DEV\tools\VSCode-win32-x64-1.82.2\data\e
 C:\Users\osryu\AppData\Roaming\Code\ => C:\DEV\tools\VSCode-win32-x64-1.82.2\data\user-data\
 
 ```
+
+
+### vscode Remote-SSH (Windows 10)
+```bash
+# ssh -V
+# Bad configuration option: pubkeyacceptedalgorithms
+"C:\WINDOWS\System32\OpenSSH\ssh.exe" -T -D 50750 "gcp-root" bash
+
+# 버전 업데이트 필요
+https://github.com/microsoft/vscode-remote-release/issues/5851
+https://github.com/PowerShell/Win32-OpenSSH/releases/
+```

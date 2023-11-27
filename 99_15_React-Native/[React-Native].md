@@ -123,3 +123,79 @@ const bottomRoutes = [
 ```bash
 https://codingjerk-diary.tistory.com/entry/Android%EC%98%A4%EB%A5%98%ED%95%B4%EA%B2%B0-The-emulator-process-for-AVD-has-terminated
 ```
+
+## custom react-native-appstate-hook
+```js
+// https://github.com/amrlabib/react-native-appstate-hook/issues/17
+const useAppState = settings => {
+  const {onChange, onForeground, onBackground} = settings || {};
+  const [appState, setAppState] = useState(AppState.currentState);
+
+  useEffect(() => {
+    const handleAppStateChange = nextAppState => {
+      if (nextAppState === 'active' && appState !== 'active') {
+        isValidFunction(onForeground) && onForeground();
+      } else if (
+        appState === 'active' &&
+        nextAppState.match(/inactive|background/)
+      ) {
+        isValidFunction(onBackground) && onBackground();
+      }
+      setAppState(nextAppState);
+      isValidFunction(onChange) && onChange(nextAppState);
+    };
+    AppState.addEventListener('change', handleAppStateChange);
+
+    return () => {
+      AppState.removeEventListener('change', handleAppStateChange);
+    };
+  }, [onChange, onForeground, onBackground, appState]);
+
+  return {appState};
+};
+```
+
+## gesture
+```js
+import {useFocusEffect} from '@react-navigation/native';
+
+  const pan = useRef(new Animated.ValueXY()).current;
+
+  const panResponder = useRef(
+    PanResponder.create({
+      // onStartShouldSetPanResponder: 스와이프를 시작해야 할지 여부를 결정합니다.
+      onStartShouldSetPanResponder: (evt, gestureState) => true, // 스와이프 허용
+
+      // onStartShouldSetPanResponderCapture: 스와이프를 위한 캡처 여부를 결정합니다.
+      onStartShouldSetPanResponderCapture: (evt, gestureState) => true, // 스와이프 허용
+
+      // onMoveShouldSetPanResponder: 스와이프를 진행할지 여부를 결정합니다.
+      onMoveShouldSetPanResponder: (evt, gestureState) => true, // 스와이프 허용
+
+      // onMoveShouldSetPanResponderCapture: 스와이프를 위한 캡처 여부를 결정합니다.
+      onMoveShouldSetPanResponderCapture: (evt, gestureState) => true, // 스와이프 허용
+
+      // onPanResponderMove: 스와이프 동작에 대한 처리를 합니다.
+      onPanResponderMove: (evt, gestureState) => {
+        // 스와이프 동작에 따른 처리 로직
+
+        // console.log('start', evt);
+        console.log('start', gestureState);
+      },
+
+      // onPanResponderRelease: 스와이프가 끝났을 때 처리를 합니다.
+      onPanResponderRelease: (evt, gestureState) => {
+        // 스와이프 종료 후 처리 로직
+        // console.log('end', evt);
+        console.log('end', gestureState);
+      },
+    }),
+  ).current;
+
+              <Animated.View
+                style={{
+                  transform: [{translateY: pan.y}],
+                }}
+                {...panResponder.panHandlers}>
+              </Animated.View>
+```

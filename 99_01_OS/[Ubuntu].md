@@ -1,19 +1,67 @@
+## ubuntu setting
+```bash
+# GUI
+Ctrl + h
+
+```
+
 ## ubuntu chrome
+```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 
 Google-chrome
+```
 
 ### chrome update
 ```bash
 cat /etc/apt/sources.list.d/google-chrome.list
-
 # ### THIS FILE IS AUTOMATICALLY CONFIGURED ###
 # # You may comment out this entry, but any other modifications may be lost.
 # deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 ```
 
 ## ubuntu vscode
+```bash
+https://code-designer.tistory.com/8
+https://code.visualstudio.com/
+
+cd Downloads
+sudo apt install ./code_1.84.2-1699528352_amd64.deb
+
+sudo apt remove code
+
+# 사용자 환경 폴더
+Windows %APPDATA%\Code
+macOS $HOME/Library/Application Support/Code
+Linux $HOME/.config/Code
+# 확장팩이 설치된 폴더의 위치는 다음과 같습니다.
+Windows %USERPROFILE%\.vscode\extensions
+macOS ~/.vscode/extensions
+Linux ~/.vscode/extensions
+
+# https://rottk.tistory.com/entry/VSCode-%EC%84%A4%EC%B9%98%EB%90%9C-VSCode-Portable-%EB%B2%84%EC%A0%84%EC%9C%BC%EB%A1%9C-%EC%A0%84%ED%99%98%ED%95%98%EA%B8%B0
+cd ~
+wget https://update.code.visualstudio.com/1.56.2/linux-x64/stable -O code-stable-x64-1620838810.tar.gz
+
+tar -xvf code-stable-x64-1620838810.tar.gz
+rm code-stable-x64-1620838810.tar.gz
+
+cd VSCode-linux-x64
+mkdir data
+
+# 사용자 설정 파일을 복사합니다.
+sudo cp ~/.config/Code ./data -r
+mv data/Code ./data/user-data
+
+# 설치했던 확장팩을 복사합니다.
+sudo cp ~/.vscode/extensions/ ./data -r
+
+# 생성한 폴더의 사용권한을 부여합니다.
+sudo chmod o+wx data 
+sudo chown -R oseongryu:oseongryu data
+sudo snap install --classic code
+```
 
 
 ## ubuntu docker

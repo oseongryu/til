@@ -546,6 +546,26 @@ find /home/user/logs/* -type f -mtime +7 -exec rm -f {} \;
 find /home/user/logs/* -name "filename*"
 ```
 
+### centos GUI
+```bash
+systemctl get-default
+systemctl set-default graphical.target
+systemctl get-default
+
+# GUI package setting
+yum groupinstall "GNOME Desktop" "Graphical Administration Tools"
+
+
+yum -y groupinstall "GNOME Desktop" && systemctl set-default graphical.target && shutdown -r now
+sudo yum install xrdp tigervnc-server
+
+#https://medium.com/tech-guides/google-cloud-platform-gcp-access-linux-server-using-gui-running-in-gcp-instance-using-windows-201e315925a6
+sudo su
+passwd
+systemctl start xrdp
+systemctl enable xrdpCreated symlink from /etc/systemd/system/multi-user.target.wants/xrdp.service to /usr/lib/systemd/system/xrdp.service.
+
+```
 
 
 ## References

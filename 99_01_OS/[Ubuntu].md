@@ -28,9 +28,8 @@ sudo passwd
 ```
 ##
 ```bash
-scp -P 22 ~/.ssh/id_rsa gcp-root:/home/
-scp -P 22 ~/.ssh/id_rsa.pub gcp-root:/home/
-scp -P 22 ~/.ssh/windows10.jpg gcp-root:/home/
+scp -P 22 ~/.ssh/id_rsa gcp-root:/home/oseongryu/.ssh
+scp -P 22 ~/.ssh/id_rsa.pub gcp-root:/home/oseongryu/.ssh
 
 ```
 
@@ -42,8 +41,12 @@ sudo apt-get upgrade python3
 apt install python3-pip
 
 sudo apt-get install python3-tk python3-dev
-
+pip install selenium
 pip install webdriver_manager
+pip install pyautogui
+# error The confidence keyword argument is only available if OpenCV is installed
+pip install opencv-python
+
 # https://stackoverflow.com/questions/73830524/attributeerror-module-lib-has-no-attribute-x509-v-flag-cb-issuer-check
 sudo apt remove python3-pip 
 wget https://bootstrap.pypa.io/get-pip.py

@@ -30,6 +30,8 @@ sudo passwd
 ```bash
 scp -P 22 ~/.ssh/id_rsa gcp-root:/home/oseongryu/.ssh
 scp -P 22 ~/.ssh/id_rsa.pub gcp-root:/home/oseongryu/.ssh
+scp -P 22 ~/.ssh/drawing-app.war gcp-root:/home/oseongryu/.ssh
+nohup java -jar /home/oseongryu/.ssh/drawing-app.war 1>/dev/null 2>&1 
 
 ```
 

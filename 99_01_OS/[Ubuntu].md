@@ -139,3 +139,46 @@ code --version
 
 ## ubuntu docker
 https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
+
+
+## customize dock panel 
+```bash
+sudo apt install dconf-editor
+
+# https://linuxconfig.org/how-to-customize-dock-panel-on-ubuntu-20-04-focal-fossa-linux
+gsettings set org.gnome.shell.extensions.dash-to-dock extend-height false
+gsettings set org.gnome.shell.extensions.dash-to-dock dock-position BOTTOM
+gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
+gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
+gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
+```
+
+
+## wsl
+
+```bash
+# https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview
+wsl --list --online
+wsl --install -d Ubuntu-20.04
+wsl -l -v
+
+sudo apt update
+sudo apt full-upgrade
+
+# enable systemd
+/etc/wsl.conf 
+
+sudo nano /etc/wsl.conf
+[boot]
+systemd=true
+
+wsl --shutdown
+```
+
+## wsl use GUI
+```bash
+sudo apt update
+sudo apt install x11-apps
+xeyes &
+xcalc
+```

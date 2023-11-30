@@ -7,6 +7,11 @@ unset http_proxy
 unset https_proxy
 ```
 
+## .npmrc
+```bash
+proxy=192.0.0.4:10001
+```
+
 
 ## proxy setting
 ```bash

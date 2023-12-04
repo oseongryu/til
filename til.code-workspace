@@ -5,6 +5,7 @@
         }
     ],
     "settings": {
+        "git.detectSubmodules": true,
         // "workbench.startupEditor": "none",
         // "editor.minimap.enabled": false,
         // "editor.formatOnSave": true,

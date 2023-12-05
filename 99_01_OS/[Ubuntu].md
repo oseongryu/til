@@ -175,10 +175,38 @@ systemd=true
 wsl --shutdown
 ```
 
-## wsl use GUI
+## ubuntu use GUI
 ```bash
-sudo apt update
-sudo apt install x11-apps
-xeyes &
-xcalc
+ubuntu config --default-user root
+# root 로그인 후 비밀번호 변경
+passwd
+passwd oseongryu
+ubuntu config --default-user oseongryu
+
+
+# sudo apt update
+# sudo apt install x11-apps
+# xeyes &
+# xcalc
+
+# https://guiyomi.tistory.com/113
+# wsl gui
+sudo apt update && apt -y upgrade
+sudo apt install -y ubuntu-desktop
+
+# xfce4 xrdp
+sudo apt -y install xfce4
+sudo apt-get install xrdp
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+
+# xrdp 활성화
+sudo /etc/init.d/xrdp start
+sudo passwd [username]
+
+# xrdp 오류해결
+# echo xfce4-session > ~/.xsession
+sudo update-alternatives --config x-session-manager
 ```

@@ -5,7 +5,9 @@
         }
     ],
     "settings": {
-        "git.detectSubmodules": true,
+    // "files.eol": "\n",
+    // "files.eol": "\r\n",
+    "git.detectSubmodules": true,
         // "workbench.startupEditor": "none",
         // "editor.minimap.enabled": false,
         // "editor.formatOnSave": true,

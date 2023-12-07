@@ -210,3 +210,26 @@ sudo passwd [username]
 # echo xfce4-session > ~/.xsession
 sudo update-alternatives --config x-session-manager
 ```
+
+## reset 2023.12.07.
+```bash
+# https://linux.how2shout.com/how-to-install-default-ubuntu-22-04s-desktop-environment/
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+wsl --set-default-version 2
+
+https://docs.microsoft.com/ko-kr/windows/wsl/install-manual
+
+wsl --update
+
+wsl --install -d Ubuntu-22.04
+wsl -l -v
+wsl -v -v
+
+sudo passwd root
+su root
+
+sudo apt update && apt -y upgrade
+sudo apt install -y ubuntu-desktop
+sudo reboot
+```

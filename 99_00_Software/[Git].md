@@ -581,5 +581,5 @@ git rebase: https://junlab.tistory.com/m/203
 https://doublesprogramming.tistory.com/256
 git local pull request: https://blog.outsider.ne.kr/1204
 git cherry-pick: https://gitbetter.substack.com/p/how-to-use-git-cherry-pick-effectively
-
+git submodule: https://pinedance.github.io/blog/2019/05/28/Git-Submodule
 ```

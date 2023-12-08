@@ -485,6 +485,8 @@ rm -rf path_to_submodule
 
 git submodule init
 git submodule update
+git submodule foreach git checkout main
+
 ```
 
 ### git bash zip

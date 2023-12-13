@@ -1,3 +1,27 @@
+### google cloud ubuntu 20.04
+```bash
+sudo apt update
+sudo apt upgrade
+sudo apt install -y ubuntu-desktop
+sudo apt -y install xfce4
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo apt-get install xrdp
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3389/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+sudo /etc/init.d/xrdp start
+sudo passwd oseongryu
+sudo passwd ubuntu
+sudo passwd root
+apt install net-tools
+sudo apt install net-tools
+netstat -tnlp
+
+```
+
+
+
 ##
 
 ```bash

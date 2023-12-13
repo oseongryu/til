@@ -361,6 +361,39 @@ sudo systemctl status docker
 
 ```
 
+### docker ubuntu
+```bash
+# https://hermeslog.tistory.com/498
+dockr search ubuntu
+docker pull ubuntu:22.04
+docker run --name ubuntu -d --restart=always ubuntu:22.04
+docker exec -it ubuntutemp bash
+
+apt update && apt -y upgrade
+apt install -y ubuntu-desktop
+
+# xfce4 xrdp
+sudo apt -y install xfce4
+sudo apt-get install xrdp
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+
+# xrdp 활성화
+sudo /etc/init.d/xrdp start
+sudo passwd [username]
+
+# xrdp 오류해결
+# echo xfce4-session > ~/.xsession
+sudo update-alternatives --config x-session-manager
+
+docker stop ubuntutemp
+docker commit ubuntutemp temp
+docker run -p 13389:3389 --name ubuntu2 -d --restart=always temp
+```
+
+
 ### references
 docker on server(centos) setting
 https://link2me.tistory.com/2088

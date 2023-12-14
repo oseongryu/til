@@ -3,7 +3,9 @@
 sudo apt update
 sudo apt upgrade
 sudo apt install -y ubuntu-desktop
-sudo apt -y install xfce4
+sudo apt install slim
+sudo reboot
+sudo service slim start
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
 sudo apt-get install xrdp
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak

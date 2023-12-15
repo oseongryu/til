@@ -91,6 +91,10 @@ sudo apt install python-tk
 # https://linuxhint.com/install-xvfb-ubuntu/
 sudo apt install xvfb
 sudo apt install scrot
+
+sudo apt-get install fonts-indic
+sudo apt-get install font-noto
+sudo apt-get install fonts-noto-cjk
 ```
 
 

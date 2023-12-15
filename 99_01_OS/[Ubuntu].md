@@ -95,9 +95,14 @@ sudo apt install scrot
 sudo apt-get install fonts-indic
 sudo apt-get install font-noto
 sudo apt-get install fonts-noto-cjk
+
+sudo timedatectl set-timezone Asia/Seoul
 ```
 
-
+## ubuntu gradle
+sudo apt-get install openjdk-8-jdk
+chmod +x gradlew
+./gradlew bootWar
 
 
 ## ubuntu setting

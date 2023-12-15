@@ -2,17 +2,17 @@
 ```bash
 sudo apt update
 sudo apt upgrade
-sudo apt install -y ubuntu-desktop
-sudo apt install slim
-sudo reboot
-sudo service slim start
-sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
-sudo apt-get install xrdp
-sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
-sudo sed -i 's/3389/3389/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
-sudo /etc/init.d/xrdp start
+# sudo apt install -y ubuntu-desktop
+# sudo apt install slim
+# sudo reboot
+# sudo service slim start
+# sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+# sudo apt-get install xrdp
+# sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+# sudo sed -i 's/3389/3389/g' /etc/xrdp/xrdp.ini
+# sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+# sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+# sudo /etc/init.d/xrdp start
 sudo passwd oseongryu
 sudo passwd ubuntu
 sudo passwd root
@@ -66,14 +66,16 @@ nohup java -jar /home/oseongryu/.ssh/drawing-app.war 1>/dev/null 2>&1
 sudo apt-get update
 sudo apt-get upgrade python3
 
-apt install python3-pip
+sudo apt install python3-pip
 
-sudo apt-get install python3-tk python3-dev
+sudo apt install python3-tk python3-dev
 pip install selenium
 pip install webdriver_manager
 pip install pyautogui
 # error The confidence keyword argument is only available if OpenCV is installed
 pip install opencv-python
+
+pip install -r requirements.txt
 
 # https://stackoverflow.com/questions/73830524/attributeerror-module-lib-has-no-attribute-x509-v-flag-cb-issuer-check
 sudo apt remove python3-pip 
@@ -81,6 +83,14 @@ wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
 sudo reboot
 pip install pyopenssl --upgrade
+
+pip install python-xlib
+sudo apt install python-tk
+
+# ubuntu cli에서 pyautogui 사용방법
+# https://linuxhint.com/install-xvfb-ubuntu/
+sudo apt install xvfb
+sudo apt install scrot
 ```
 
 

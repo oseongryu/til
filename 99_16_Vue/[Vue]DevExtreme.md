@@ -172,3 +172,26 @@ $(() => {
   });
 });
 ```
+
+### button
+```js
+<template>
+  <dx-button type="success" class="btn--etc--ct06" icon="search" :height="34" text="상품검색" @click="showProductPopup = true" id="product-sch-btn" />
+</template>
+<style scoped>
+#product-sch-btn {
+  color: white;
+  background-color: #004b29;
+}
+
+#product-sch-btn.dx-state-hover {
+  background-color: #004b29;
+  color: white;
+}
+
+#product-sch-btn.dx-state-active {
+  background-color: #004b29;
+  color: white;
+}
+</style>
+```

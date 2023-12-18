@@ -25,7 +25,7 @@ docker container run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -v /Users/Share
 docker volume create vol-mysql
 docker volume ls
 docker volume inspect vol-mysql
-docker container run -d -p 3306:3306 -e MYSQL_ROOT_PASSWORD=1234 -v vol-mysql:/var/lib/mysql --restart=always --name mysql_local mysql
+docker container run -d -p 13306:3306 -e MYSQL_ROOT_PASSWORD=1234 -v vol-mysql:/var/lib/mysql --restart=always --name mysql_local mysql
 ```
 
 3. 컨테이너 실행 확인

@@ -86,7 +86,11 @@ View > Commnad Palette > File:OpenActive File in New Window
 
 #### vscode extension export
 ```
+# cmd
 code --list-extensions | % { "code --install-extension $_" }
+
+# bash
+code --list-extensions | xargs -L 1 echo code --install-extension
 
 C:\Program Files\Microsoft VS Code\bin
 C:\DEV\tools\VSCode-win32-x64-1.82.2\bin

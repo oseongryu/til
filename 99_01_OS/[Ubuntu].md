@@ -184,7 +184,19 @@ code --version
 
 ## ubuntu docker
 https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
+https://shanepark.tistory.com/237
 
+sudo apt-get install \
+    ca-certificates \
+    curl \
+    gnupg \
+    lsb-release
+
+curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
+
+ echo \
+  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
 
 ## customize dock panel 
 ```bash
@@ -278,3 +290,11 @@ sudo apt update && apt -y upgrade
 sudo apt install -y ubuntu-desktop
 sudo reboot
 ```
+
+### mac
+docker pull ubuntu:20.04
+docker run -it --name myUbuntu ubuntu:20.04
+
+apt-get update
+apt-get upgrade -y
+apt-get install build-essential gdb

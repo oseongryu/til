@@ -216,3 +216,14 @@ hw.gpu.mode=auto
 hw.gpu.enabled=no
 hw.gpu.mode=off
 ```
+
+### debugging
+```bash
+# 1. 폰 연결, CMD 실행
+# 2. 앱의 PID 확인
+adb shell ps | grep 패키지명
+# 3. 로그캣 실행
+adb logcat --pid=패키지PID
+
+filddler 활용해서 api 호출 확인
+```

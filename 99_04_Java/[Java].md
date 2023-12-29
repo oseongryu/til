@@ -435,3 +435,20 @@ pCal.add(Calendar.YEAR, 1);
 String nDate = ordDateFormat.format(nCal.getTime()).substring(0,4);
 String orderDate = ordDateFormat.format(date);
 ```
+
+
+## interceptor
+```java
+		if(url.toString().contains("validLoginToken") || url.toString().contains("appVersionCheck")){
+			Enumeration<String> headerNames = request.getHeaderNames();
+			Map<String, String> headersMap = new HashMap<>();
+			while (headerNames.hasMoreElements()) {
+				String headerName = headerNames.nextElement();
+				String headerValue = request.getHeader(headerName);
+				headersMap.put(headerName, headerValue);
+			}
+			for (Map.Entry<String, String> entry : headersMap.entrySet()) {
+				System.out.println("Header Name: " + entry.getKey() + ", Value: " + entry.getValue());
+			}
+		}
+```

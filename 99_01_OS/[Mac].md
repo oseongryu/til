@@ -373,9 +373,10 @@ export NVM_DIR="$HOME/.nvm"
 ## How to change proxy setting using Command line in Mac
 
 # https://superuser.com/questions/316502/how-to-change-proxy-setting-using-command-line-in-mac-os
-sudo networksetup -setwebproxy "Wi-Fi" 192.0.0.4 8001
+sudo networksetup -setwebproxy "Wi-Fi" 192.0.0.4 8000
 sudo networksetup -setsecurewebproxy "Wi-Fi" 192.0.0.4 8000
 sudo networksetup -setwebproxystate "Wi-Fi" off
+sudo networksetup -setsecurewebproxystate "Wi-Fi" off
 sudo networksetup -setwebproxystate "Wi-Fi" on
 
 networksetup -getwebproxy "Wi-Fi"

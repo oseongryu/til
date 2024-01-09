@@ -1,3 +1,0 @@
-[submodule "00_corp_script"]
-	path = 00_corp_script
-	url = git@github.com:oseongryu/corp-script.git

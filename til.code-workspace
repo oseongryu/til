@@ -3,9 +3,9 @@
         {
             "path": "."
         },
-        {
-            "path": "../corp-script"
-        }
+        // {
+        //     "path": "../corp-script"
+        // }
     ],
     "settings": {
     // "files.eol": "\n",

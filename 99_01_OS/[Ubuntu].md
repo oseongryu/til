@@ -300,7 +300,7 @@ apt-get upgrade -y
 apt-get install build-essential gdb
 
 
-## ssl
+## ssl (with springboot)
 ```bash
 # https://velog.io/@jiwon615/Spring-Boot%EC%97%90-Lets-Encrypt-SSL-%EC%A0%81%EC%9A%A9%EA%B8%B0
 sudo apt-get install certbot
@@ -329,5 +329,48 @@ sudo crontab -e
 
 sudo certbot certificates
 sudo certbot renew --dry-run
+
+```
+
+## ssl (with nginx)
+```bash
+# https://velog.io/@gudcks0305/%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90%EC%84%9C-Nginx%EB%A1%9C-Reverse-Proxy-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
+upstream backend {
+    server 127.0.0.1:8089;
+}
+
+# server {
+#     listen 80;
+#     server_name gptinfo.co.kr;
+#     location / {
+#         proxy_pass http://backend/;
+#     }
+# }
+
+server {
+    listen 80;
+    server_name gptinfo.co.kr;
+    if ($host = gptinfo.co.kr) {
+        return 301 https://$host$request_uri;
+    }
+    return 404;
+}
+
+server {
+    listen 443 ssl;
+    server_name gptinfo.co.kr;
+    ssl on;
+    ssl_certificate /etc/letsencrypt/live/gptinfo.co.kr/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/gptinfo.co.kr/privkey.pem;
+    location / {
+        proxy_pass http://backend/;
+        proxy_set_header HOST $http_host;
+        proxy_set_header X-Real-IP $remote_addr;
+        proxy_set_header X-Forwarded-For $proxy_add_x_forwarded_for;
+        proxy_set_header X-Forwarded-Proto $scheme;
+        proxy_redirect off;
+        charset utf-8;
+    }
+}
 
 ```

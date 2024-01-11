@@ -298,3 +298,36 @@ docker run -it --name myUbuntu ubuntu:20.04
 apt-get update
 apt-get upgrade -y
 apt-get install build-essential gdb
+
+
+## ssl
+```bash
+# https://velog.io/@jiwon615/Spring-Boot%EC%97%90-Lets-Encrypt-SSL-%EC%A0%81%EC%9A%A9%EA%B8%B0
+sudo apt-get install certbot
+sudo certbot certonly --standalone
+sudo certbot certonly --standalone --register-unsafely-without-email
+
+# /etc/letsencrypt/live/도메인/ (fullchain.pem, privkey.pen)
+
+sudo openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -name ttp -CAfile chain.pem -caname root
+
+# 배포 후 root 권한으로 실행하는게 아니면 RFC 규약에 의하여 1024미만 포트는 root만 가능하므로 리다이렉션처리 (nginx 설치후 리다이렉트를 진행하는 방식 추천)
+sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8089
+
+# 목록
+sudo iptables -t nat -L PREROUTING --line-numbers
+# iptables 삭제 번호
+sudo iptables -t nat -D PREROUTING 3
+
+
+# 인증서 자동갱신
+# Crontab 보기
+sudo crontab -l
+# Crontab 편집
+sudo crontab -e
+0 2 1 * * /usr/bin/certbot renew
+
+sudo certbot certificates
+sudo certbot renew --dry-run
+
+```

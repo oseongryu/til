@@ -236,3 +236,14 @@ https://wooono.tistory.com/371
 
 ```
 
+
+### AWS 인증서 변경작업중 이슈 (SSL)
+
+
+```js
+# 인증서 정상여부 확인
+https://www.digicert.com/help/
+# 비슷한 오류 이슈
+http://www.kunwi.co.kr/gunwi/board.php?bo_table=os&wr_id=184
+
+```

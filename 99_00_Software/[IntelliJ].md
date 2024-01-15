@@ -69,6 +69,15 @@ misc.xml 파일에 추가
 
 ```
 
+### intelliJ (bin/idea.properties)
+
+```
+idea.config.path=${idea.home}/.IntelliJIdea/config
+idea.system.path=${idea.home}/.IntelliJIdea/system
+idea.plugins.path=${idea.config.path}/plugins
+idea.log.path=${idea.system.path}/log
+```
+
 ### 한글깨짐
 
 ```

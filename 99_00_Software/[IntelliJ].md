@@ -379,3 +379,13 @@ server:
 2. ProjectId의 xml로 북마크 복사
 C:\Users\osryu\AppData\Roaming\JetBrains\IntelliJIdea2022.1\workspace
 ```
+
+
+### Remote Debugging
+```bash
+-agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
+
+java  -Xms2g -Xmx2g -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dfile.encoding=UTF-8 -Dconsole=true -jar drawing-app.war --spring.profiles.active=prod
+```
+<img width="800" src="../static/img/intellij/remotedebugging/001.png"/>
+

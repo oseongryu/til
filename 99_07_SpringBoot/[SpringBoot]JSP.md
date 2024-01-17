@@ -116,3 +116,26 @@ kill $(cat ./drawing-app/pid.file)
 Environment variables: 
 -spring.profiles.active=stage;-spring.datasource.url=jdbc:log4jdbc:oracle:thin:@127.0.0.1:1521/XE
 ```
+
+#### 방화벽 작업후 postgre SQL관련 연결이 안됨
+
+```sql
+-- connect 상태 확인 시 방화벽 작업이후 해당 커넥션이 연결되지 않음
+-- 서버에서 telnet 등을 사용해서 연결상태는 정상이었음
+-- 방화벽 작업 후 Java 서비스에서 재연결이 되지 않아서 발생
+
+
+-- postgre 운영 커넥션 정보 확인
+SELECT usename
+	, application_name
+	, client_addr
+	, client_port
+	, backend_start
+	, query_start
+	, state
+	, query
+FROM pg_stat_activity
+WHERE datname = 'postgres'
+	AND client_addr IN ('192.168.0.1', '192.168.0.2')
+ORDER BY client_addr DESC
+```

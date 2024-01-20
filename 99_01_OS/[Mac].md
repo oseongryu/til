@@ -381,3 +381,10 @@ sudo networksetup -setwebproxystate "Wi-Fi" on
 
 networksetup -getwebproxy "Wi-Fi"
 networksetup -getsecurewebproxy "Wi-Fi"
+
+
+## mac sudo 명령어 비밀번호 없이
+```
+sudo visudo
+사용자명 ALL=(ALL) NOPASSWD:ALL
+```

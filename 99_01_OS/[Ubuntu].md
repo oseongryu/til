@@ -80,6 +80,7 @@ pip install -r requirements.txt
 # https://stackoverflow.com/questions/73830524/attributeerror-module-lib-has-no-attribute-x509-v-flag-cb-issuer-check
 sudo apt remove python3-pip 
 wget https://bootstrap.pypa.io/get-pip.py
+wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chromedriver-linux64.zip
 sudo python3 get-pip.py
 sudo reboot
 pip install pyopenssl --upgrade
@@ -293,7 +294,11 @@ sudo reboot
 
 ### mac
 docker pull ubuntu:20.04
-docker run -it --name myUbuntu ubuntu:20.04
+docker run -it -p 8089:8089 --privileged --restart=always --name my-ubuntu ubuntu:20.04
+docker exec -it my-ubuntu bash
+
+sudo docker cp /Users/oseongryu/.ssh/id_rsa my-ubuntu:/root/.ssh/
+sudo docker cp /Users/oseongryu/.ssh/id_rsa.pub my-ubuntu:/root/.ssh/
 
 apt-get update
 apt-get upgrade -y

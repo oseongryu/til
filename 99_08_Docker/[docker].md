@@ -364,12 +364,13 @@ sudo systemctl status docker
 ### docker ubuntu
 ```bash
 # https://hermeslog.tistory.com/498
-dockr search ubuntu
-docker pull ubuntu:22.04
+docker search ubuntu
+docker pull ubuntu:20.04
 docker run --name ubuntu -d --restart=always ubuntu:22.04
 docker exec -it ubuntutemp bash
 
-apt update && apt -y upgrade
+apt -y update
+apt -y upgrade
 apt install -y ubuntu-desktop
 
 # xfce4 xrdp

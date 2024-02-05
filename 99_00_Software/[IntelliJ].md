@@ -295,6 +295,22 @@ Project Settings > Project > SDK 클릭 > Add SDK
 
 
 
+### IntelliJ 빌드/실행 플랫폼 변경 및 소스코드 자동반영 설정
+```
+File > Build, Execution, Deployment > Compiler
+Aumomatically show first error in editor 체크
+Build project automatically 체크
+
+File > Advanced Settings
+Allow auto-make to start even if developed application is currently running 체크
+```
+
+
+### IntelliJ live templates
+```
+https://velog.io/@max9106/IntelliJ-Live-Template
+```
+
 ### IntelliJ Community Tomcat 설정
 
 ```

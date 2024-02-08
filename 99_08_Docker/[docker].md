@@ -394,6 +394,16 @@ docker commit ubuntutemp temp
 docker run -p 13389:3389 --name ubuntu2 -d --restart=always temp
 ```
 
+### docker redis
+```bash
+docker pull redis
+docker run -p 6379:6379 --name my-redis -d --restart=always redis
+docker exec -it my-redis /bin/bash
+redis-cli
+info
+
+```
+
 
 ### references
 docker on server(centos) setting

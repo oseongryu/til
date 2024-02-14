@@ -31,3 +31,51 @@ Sub HideAndShowFunction()
     ActiveSheet.Cells(1, 1).Select
 End Sub
 ```
+
+### pptx add slides, input title and content
+
+```vb
+Sub AddSlides()
+
+Dim oPres As Presentation
+Dim oSlide As Slide
+Dim sTitle As String
+Dim sContent As String
+
+Set oPres = ActivePresentation
+
+' 3. 주요 기능 및 화면 구성
+
+' 슬라이드 추가
+Set oSlide = oPres.Slides.Add(oPres.Slides.Count + 1, ppLayoutCustom)
+
+' 제목 설정
+sTitle = "3. 주요 기능 및 화면 구성"
+oSlide.Shapes.Title.TextFrame.TextRange.Text = sTitle
+
+' 내용 추가
+sContent = "- 홈 화면" & vbCrLf & _
+"- 검색 및 필터링 기능" & vbCrLf & _
+"- 식당 상세 정보 및 메뉴 선택" & vbCrLf & _
+"- 주문 및 결제" & vbCrLf & _
+"- 주문 현황 및 배달 추적" & vbCrLf & _
+"- 사용자 프로필 및 설정"
+oSlide.Shapes.AddTextbox(msoTextOrientationHorizontal, 100, 100, 500, 300).TextFrame.TextRange.Text = sContent
+
+' 4. 상세 화면 설계
+
+' 슬라이드 추가
+Set oSlide = oPres.Slides.Add(oPres.Slides.Count + 1, ppLayoutCustom)
+
+' 제목 설정
+sTitle = "4. 상세 화면 설계"
+oSlide.Shapes.Title.TextFrame.TextRange.Text = sTitle
+
+' 내용 추가
+sContent = "- 각 화면의 요소 및 기능 정의" & vbCrLf & _
+"- 사용자 인터랙션 디자인" & vbCrLf & _
+"- UI 디자인 및 시각적 요소 정의"
+oSlide.Shapes.AddTextbox(msoTextOrientationHorizontal, 100, 100, 500, 300).TextFrame.TextRange.Text = sContent
+
+End Sub
+```

@@ -90,9 +90,29 @@ Call OrderDate
 Call GenerateID
 Call DeliveryDate
 
+' 오늘 날짜 가져오기
+Dim todayDate As Date
+todayDate = DateAdd("d", 1, Date)
+
+lastRow = Cells(Rows.Count, 1).End(xlUp).Row
+ChangeDate 3, lastRow, GetColumnNumber("B"), todayDate
+
 Debug.Print "종료"
 
 End Sub
+
+Sub ChangeDate(startRow As Long, lastRow As Long, colNum As Long, todayDate As Date)
+
+
+' B열 3번부터 마지막 행까지 반복
+Dim i As Integer
+For i = startRow To lastRow
+    ' Cells(i, colNum).Value = CStr(todayDate)
+    Cells(i, colNum).Value = Format(todayDate, "yyyy-mm-dd")
+Next i
+
+End Sub
+
 
 Sub OrderDate()
 
@@ -115,7 +135,7 @@ lastRow = Cells(Rows.Count, colNum).End(xlUp).Row
 ' B열 3번부터 마지막 행까지 반복
 Dim i As Integer
 For i = rowStartNum To lastRow
-    Cells(i, colNum).Value = todayDate
+    Cells(i, 1).Value = todayDate
 Next i
 
 End Sub
@@ -162,7 +182,7 @@ rowStartNum = 3
 
 ' 마지막 행 찾기
 Dim lastRow As Long
-lastRow = Cells(Rows.Count, 6).End(xlUp).Row
+lastRow = Cells(Rows.Count, colNum).End(xlUp).Row
 
 ' F열 3번부터 마지막 행까지 반복
 Dim i As Integer

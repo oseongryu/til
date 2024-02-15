@@ -332,6 +332,15 @@ reg delete "HKLM\Software\Microsoft\Policies" /f
 
 ```
 
+### proxy
+
+```
+netsh winhttp set proxy proxy-server="http=192.0.0.5:8000;https=192.0.0.5:8000" bypass-list="*.local"
+netsh winhttp reset proxy
+
+```
+
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

@@ -85,116 +85,37 @@ End Sub
 ```vb
 Sub Main()
 
-' 다른 서브 모듈 호출
-Call OrderDate
-Call GenerateID
-Call DeliveryDate
+Debug.Print "시작"
 
-' 오늘 날짜 가져오기
-Dim todayDate As Date
-todayDate = DateAdd("d", 1, Date)
+' 시작,종료 행
+Dim startRow As Long
+Dim lastRow As Long
 
+startRow = 3
 lastRow = Cells(Rows.Count, 1).End(xlUp).Row
-ChangeDate 3, lastRow, GetColumnNumber("B"), todayDate
+
+ChangeDate startRow, lastRow, "B", 0
+ChangeDate startRow, lastRow, "K", 7
 
 Debug.Print "종료"
 
 End Sub
 
-Sub ChangeDate(startRow As Long, lastRow As Long, colNum As Long, todayDate As Date)
+Sub ChangeDate(startRow As Long, lastRow As Long, inputCell As String, dayVal As Long)
+' colNum
+Dim colNum As Long
+colNum = Evaluate(inputCell & "1").Column
+' low
+Dim todayDate As Date
+todayDate = DateAdd("d", dayVal, Date)
 
-
-' B열 3번부터 마지막 행까지 반복
+' x열 startRow부터 lastRow까지 반복
 Dim i As Integer
 For i = startRow To lastRow
-    ' Cells(i, colNum).Value = CStr(todayDate)
     Cells(i, colNum).Value = Format(todayDate, "yyyy-mm-dd")
 Next i
 
-End Sub
-
-
-Sub OrderDate()
-
-' 오늘 날짜 가져오기
-Dim todayDate As Date
-todayDate = DateAdd("d", -1, Date)
-
-' 열 숫자 찾기
-Dim colNum As Integer
-colNum = GetColumnNumber("B")
-
-' 행 시작 값
-Dim rowStartNum As Long
-rowStartNum = 3
-
-' 마지막 행 찾기
-Dim lastRow As Long
-lastRow = Cells(Rows.Count, colNum).End(xlUp).Row
-
-' B열 3번부터 마지막 행까지 반복
-Dim i As Integer
-For i = rowStartNum To lastRow
-    Cells(i, 1).Value = todayDate
-Next i
 
 End Sub
-
-Sub DeliveryDate()
-
-' 오늘 날짜 가져오기
-Dim todayDate As Date
-todayDate = Date
-
-' 열 숫자 찾기
-Dim colNum As Integer
-colNum = GetColumnNumber("K")
-
-' 행 시작 값
-Dim rowStartNum As Long
-rowStartNum = 3
-
-' 마지막 행 찾기
-Dim lastRow As Long
-lastRow = Cells(Rows.Count, colNum).End(xlUp).Row
-
-' K열 3번부터 마지막 행까지 반복
-Dim i As Integer
-For i = rowStartNum To lastRow
-    Cells(i, colNum).Value = todayDate + 7
-Next i
-
-End Sub
-
-Sub GenerateID()
-
-' 오늘 날짜 가져오기
-Dim todayDate As Date
-todayDate = Date
-
-' 열 숫자 찾기
-Dim colNum As Integer
-colNum = GetColumnNumber("F")
-
-' 행 시작 값
-Dim rowStartNum As Long
-rowStartNum = 3
-
-' 마지막 행 찾기
-Dim lastRow As Long
-lastRow = Cells(Rows.Count, colNum).End(xlUp).Row
-
-' F열 3번부터 마지막 행까지 반복
-Dim i As Integer
-For i = rowStartNum To lastRow
-        ' "TEST202402150001" 형태의 값 생성
-        Cells(i, colNum).Value = "TEST" & Format(todayDate, "yyyyMMdd") & Right("0000" & CStr(i - 2), 4)
-Next i
-
-End Sub
-
-Function GetColumnNumber(inputCell As String) As Integer
-    GetColumnNumber = Evaluate(inputCell & "1").Column
-End Function
 
 ```

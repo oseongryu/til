@@ -90,31 +90,70 @@ Debug.Print "시작"
 ' 시작,종료 행
 Dim startRow As Long
 Dim lastRow As Long
-
 startRow = 3
 lastRow = Cells(Rows.Count, 1).End(xlUp).Row
 
-ChangeDate startRow, lastRow, "B", 0
+' 주문일자
+ChangeDate startRow, lastRow, "B", -1
+' 배송예정일
 ChangeDate startRow, lastRow, "K", 7
+' 제휴사주문번호
+GenAllnOrdId startRow, lastRow, "F", -1
+' 쇼핑몰명
+GenSNSShop startRow, lastRow, "C", "테스트"
 
 Debug.Print "종료"
 
 End Sub
 
 Sub ChangeDate(startRow As Long, lastRow As Long, inputCell As String, dayVal As Long)
+
 ' colNum
 Dim colNum As Long
 colNum = Evaluate(inputCell & "1").Column
-' low
-Dim todayDate As Date
-todayDate = DateAdd("d", dayVal, Date)
+
+' reqDate
+Dim reqDate As Date
+reqDate = DateAdd("d", dayVal, Date)
 
 ' x열 startRow부터 lastRow까지 반복
-Dim i As Integer
-For i = startRow To lastRow
-    Cells(i, colNum).Value = Format(todayDate, "yyyy-mm-dd")
-Next i
+Dim index As Integer
+For index = startRow To lastRow
+    Cells(index, colNum).Value = CStr(Format(reqDate, "yyyymmdd"))
+    Range(inputCell & CStr(index)).NumberFormat = "@"
+Next index
 
+End Sub
+
+Sub GenAllnOrdId(startRow As Long, lastRow As Long, inputCell As String, dayVal As Long)
+
+' colNum
+Dim colNum As Long
+colNum = Evaluate(inputCell & "1").Column
+' reqDate
+Dim reqDate As Date
+reqDate = DateAdd("d", dayVal, Date)
+
+' x열 startRow부터 lastRow까지 반복
+Dim index As Integer
+For index = startRow To lastRow
+    ' "TEST202402150001" 형태의 값 생성
+    Cells(index, colNum).Value = "TEST" & Format(reqDate, "yyyyMMdd") & Right("0000" & CStr(index - 2), 4)
+Next index
+
+End Sub
+
+Sub GenSNSShop(startRow As Long, lastRow As Long, inputCell As String, val As String)
+
+' colNum
+Dim colNum As Long
+colNum = Evaluate(inputCell & "1").Column
+
+' x열 startRow부터 lastRow까지 반복
+Dim index As Integer
+For index = startRow To lastRow
+    Cells(index, colNum).Value = val
+Next index
 
 End Sub
 

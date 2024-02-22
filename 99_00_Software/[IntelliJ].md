@@ -3,69 +3,18 @@
 ```
 File > Setting > Plugins
 
-1. Atom Material File Icons
-프로젝트 구조(패키지, 폴더, 파일)을 Atom IDE 디자인을 입혀 아이콘 모양을 바꿔주는 플러그인 가독성
-
-2. CodeGlance Pro 
-Visual Code 처럼 우측에 드래그 가능한 PreView 를 만들어 줌
-
-3. GitToolBox
-현재 위치의 브랜치를 프로젝트 옆에 표시해줌
-몇 번째 현재 브랜치에서 커밋이 몇 번째 앞에 또는 뒤에 있는지 알려줌
-
-4. Key Promoter X
+1. Key Promoter X
 마우스로 이벤트를 발생 시킨 경우 인텔리제이의 단축키를 알려준다.
 
-5. Rainbow Brackets
-소괄호 ( ) 중괄호 { } 대괄호 [ ] 쌍을 색으로 묶어줌
-
-6. Presentation Assistant
+2. Presentation Assistant
 화면 중앙 하단에 자신이 클릭한 단축키 설명
 
-7. RestfulHelper
+3. RestfulHelper
 Ctrl + \ 키로 서블릿 경로 Request Mapping 만으로 검색하여 찾아감
 
-8. iBATIS/MyBatis mini-plugin
+4. iBATIS/MyBatis mini-plugin
 Mapper Class 에서 타고 들어가고 싶은 메서드에서
 [ Ctrl + Alt + B ] 단축키로 mapper.xml id 를 찾아감
-
-9. ToolWindow Manager
-자주 사용하는 Tool Windows 한번에 설정
-misc.xml 파일에 추가
-
-  <component name="org.codebrewer.idea.toolwindowmanager">
-    <toolwindow id="Bean Validation" preference="UNAVAILABLE" />
-    <toolwindow id="Bookmarks" preference="UNAFFECTED" />
-    <toolwindow id="Build" preference="UNAFFECTED" />
-    <toolwindow id="Commit" preference="UNAFFECTED" />
-    <toolwindow id="Database" preference="UNAVAILABLE" />
-    <toolwindow id="Database Changes" preference="UNAVAILABLE" />
-    <toolwindow id="Dependencies" preference="UNAVAILABLE" />
-    <toolwindow id="Dependency Checker" preference="UNAVAILABLE" />
-    <toolwindow id="Endpoints" preference="UNAVAILABLE" />
-    <toolwindow id="File Transfer" preference="UNAVAILABLE" />
-    <toolwindow id="Gradle" preference="UNAFFECTED" />
-    <toolwindow id="Internal Method Tracing" preference="UNAVAILABLE" />
-    <toolwindow id="Java Enterprise" preference="UNAVAILABLE" />
-    <toolwindow id="Layout Validation" preference="UNAVAILABLE" />
-    <toolwindow id="Learn" preference="UNAVAILABLE" />
-    <toolwindow id="Maven" preference="UNAFFECTED" />
-    <toolwindow id="Notifications" preference="UNAFFECTED" />
-    <toolwindow id="Problems View" preference="UNAVAILABLE" />
-    <toolwindow id="Profiler" preference="UNAVAILABLE" />
-    <toolwindow id="Project" preference="UNAFFECTED" />
-    <toolwindow id="Pull Requests" preference="UNAVAILABLE" />
-    <toolwindow id="Services" preference="UNAFFECTED" />
-    <toolwindow id="Space Code Reviews" preference="UNAVAILABLE" />
-    <toolwindow id="Spring" preference="UNAVAILABLE" />
-    <toolwindow id="Structure" preference="UNAVAILABLE" />
-    <toolwindow id="TODO" preference="UNAVAILABLE" />
-    <toolwindow id="Terminal" preference="UNAFFECTED" />
-    <toolwindow id="TypeScript" preference="UNAVAILABLE" />
-    <toolwindow id="Version Control" preference="UNAVAILABLE" />
-    <toolwindow id="Web" preference="UNAVAILABLE" />
-    <toolwindow id="documentation.v2" preference="UNAVAILABLE" />
-  </component>
 
 ```
 
@@ -84,7 +33,8 @@ idea.log.path=${idea.system.path}/log
 Console에서 한글이 깨지는 경우
 Ctrl + Shift + A 단축키 입력 후
 Edit custom VM 입력 후 선택
--Dfile.encoding=UTF-8 입력후 저장
+-Dfile.encoding=UTF-8
+
 IntelliJ 재실행
 * 설치시 Edit Custom VM Options 경로
 C:\Users\{user}\AppData\Roaming\JetBrains\IdeaIC2022.1\idea64.exe.vmoptions

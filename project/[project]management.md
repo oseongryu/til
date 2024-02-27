@@ -65,3 +65,13 @@
 • Base1 방법론 : 국제표준을 참고해서 만든 자사 방법론
 • Base1/PM <> Base1/WEB
 ```
+
+```
+mkdir "01.착수"
+mkdir "02.분석"
+mkdir "03.설계"
+mkdir "04.이행"
+mkdir "05.종료"
+mkdir "06.보고서"
+mkdir "07.기타"
+```

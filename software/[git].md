@@ -313,7 +313,7 @@ git reset --hard
 ```
 
 #### git Directory 계정설정
-```
+```bash
 git config --list --show-origin
 
 .gitconfig(제외)
@@ -347,7 +347,6 @@ git config --list --show-origin
 
 ```
 
-
 #### 리모트 브랜치 참조 업데이트
 ```bash
 # 리모트 브랜치의 더 이상 유효하지 않은 참조를 깨끗이 지우는 명령어
@@ -369,7 +368,7 @@ git checkout -b 'temp' HEAD@{1}
 git push origin --delete feature/oseongryu
 ```
 
-#### git  커밋이 잘못되어 복구하는 방법
+#### git 커밋이 잘못되어 복구하는 방법
 ```js
 // 1. 방법
 1. 로그로 특정 부분 헤더 확인

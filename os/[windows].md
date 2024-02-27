@@ -340,6 +340,11 @@ netsh winhttp reset proxy
 
 ```
 
+### windows explorer
+```
+explorer > ctrl + l > cmd 
+```
+
 
 ### References
 ```

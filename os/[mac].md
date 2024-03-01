@@ -388,3 +388,10 @@ networksetup -getsecurewebproxy "Wi-Fi"
 sudo visudo
 사용자명 ALL=(ALL) NOPASSWD:ALL
 ```
+
+## mac change screenshot name 
+```
+defaults write com.apple.screencapture name "shot"
+killall SystemUIServer
+defaults write com.apple.screencapture name "Screenshot"
+```

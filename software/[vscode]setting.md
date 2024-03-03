@@ -133,7 +133,9 @@ settings.json
     // "list.activeSelectionBackground": "#1f242b",
     // "list.activeSelectionForeground": "#1558d4",
   },
-  "extensions.autoUpdate": false
+  "extensions.autoUpdate": false,
+  "git.autofetch": true,
+  "editor.mouseWheelZoom": true
 }
 ```
 

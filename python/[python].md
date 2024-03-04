@@ -1,3 +1,19 @@
+## python uninstall mac
+```bash
+
+ls -l /usr/local/bin/python*
+which python
+which python3
+
+brew uninstall python@3.11
+brew uninstall python@3.12
+
+cd /usr/local/bin
+# 목록 삭제
+ls -al | grep Python.framework
+
+```
+
 # 파이썬 tensorflow
 ## module 'tensorflow' has no attribute 'placeholder'
 https://stackoverflow.com/questions/37383812/tensorflow-module-object-has-no-attribute-placeholder

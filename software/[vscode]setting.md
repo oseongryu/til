@@ -17,14 +17,18 @@ settings.json
 {
   "editor.formatOnType": false,
   "editor.minimap.enabled": false,
+  "editor.mouseWheelZoom": true,
   "editor.renderWhitespace": "all",
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.unicodeHighlight.invisibleCharacters": false,
   "editor.unicodeHighlight.ambiguousCharacters": false,
   "extensions.autoCheckUpdates": false,
+  "extensions.autoUpdate": false,
   "extensions.ignoreRecommendations": true,
   // "files.trimTrailingWhitespace": true,
   "git.enableSmartCommit": true,
+  "git.autofetch": true,
+  "git.confirmSync": false,
   "security.workspace.trust.untrustedFiles": "open",
   "terminal.integrated.defaultProfile.windows": "Git Bash",
   "terminal.integrated.defaultProfile.osx": "zsh",
@@ -76,6 +80,15 @@ settings.json
     "titleBar.inactiveForeground": "#fff",
     // 하단 상태 배경색
     "statusBar.background": "#1558d4",
+
+    // // 상단 타이틀 배경색
+    // "titleBar.activeBackground": "#0b856b",
+    // "titleBar.inactiveBackground": "#086450",
+    // // 상단 타이틀 글자색
+    // "titleBar.activeForeground": "#fff",
+    // "titleBar.inactiveForeground": "#fff",
+    // // 하단 상태 배경색
+    // "statusBar.background": "#0b856b"
 
     // // green
     // // vscdoe 전체 전경 색
@@ -133,9 +146,8 @@ settings.json
     // "list.activeSelectionBackground": "#1f242b",
     // "list.activeSelectionForeground": "#1558d4",
   },
-  "extensions.autoUpdate": false,
-  "git.autofetch": true,
-  "editor.mouseWheelZoom": true
+  "diffEditor.ignoreTrimWhitespace": false,
+  "application.shellEnvironmentResolutionTimeout": 20
 }
 ```
 

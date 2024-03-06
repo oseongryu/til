@@ -39,25 +39,25 @@ settings.json
   "workbench.editor.enablePreview": false,
   "workbench.layoutControl.enabled": false,
   "workbench.startupEditor": "none",
-  "[javascript][typescript]": {
-    "editor.maxTokenizationLineLength": 2500
-  },
-  "[json]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[jsonc]": {
-    "editor.defaultFormatter": "vscode.json-language-features"
-  },
-  "[markdown]": {
-    // "editor.formatOnSave": true,
-    "editor.wordWrap": "on",
-    "editor.renderWhitespace": "all",
-    "editor.acceptSuggestionOnEnter": "off"
-  },
-  "[typescript]": {
-    "editor.formatOnSave": false,
-    "editor.formatOnPaste": false
-  },
+  // "[javascript][typescript]": {
+  //   "editor.maxTokenizationLineLength": 2500
+  // },
+  // "[json]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  // "[jsonc]": {
+  //   "editor.defaultFormatter": "vscode.json-language-features"
+  // },
+  // "[markdown]": {
+  //   // "editor.formatOnSave": true,
+  //   "editor.wordWrap": "on",
+  //   "editor.renderWhitespace": "all",
+  //   "editor.acceptSuggestionOnEnter": "off"
+  // },
+  // "[typescript]": {
+  //   "editor.formatOnSave": false,
+  //   "editor.formatOnPaste": false
+  // },
   "npm.keybindingsChangedWarningShown": true,
   "bookmarks.keepBookmarksOnLineDelete": true,
   "volar.inlayHints.eventArgumentInInlineHandlers": false,

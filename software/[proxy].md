@@ -62,8 +62,15 @@ netsh winhttp set proxy proxy-server="http=myproxy;https=sproxy:88" bypass-list=
 
 
 
-### gradle.properties
-```
+### gradle.properties (~/.gradle/gradle.properties)
+```bash
+systemProp.http.proxyHost=192.0.0.4
+systemProp.http.proxyPort=8000
+systemProp.https.proxyHost=192.0.0.4
+systemProp.https.proxyPort=8000
+
+
+
 # https://sharplee7.tistory.com/12
 systemProp.http.proxyHost=192.0.0.4
 systemProp.http.proxyPort=10001

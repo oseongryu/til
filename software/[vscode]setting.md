@@ -72,6 +72,8 @@ settings.json
     // 상단 타이틀 배경색
     "titleBar.activeBackground": "#0d3d95",
     "titleBar.inactiveBackground": "#0a2d6e",
+    // vscdoe 전체 전경 색
+    "editor.background": "#000000",
     // 상단 타이틀 글자색
     "titleBar.activeForeground": "#fff",
     "titleBar.inactiveForeground": "#fff",
@@ -81,6 +83,8 @@ settings.json
     // // 상단 타이틀 배경색
     // "titleBar.activeBackground": "#0b856b",
     // "titleBar.inactiveBackground": "#086450",
+    // // vscdoe 전체 전경 색
+    // "editor.background": "#000000",
     // // 상단 타이틀 글자색
     // "titleBar.activeForeground": "#fff",
     // "titleBar.inactiveForeground": "#fff",

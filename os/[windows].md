@@ -346,6 +346,20 @@ explorer > ctrl + l > cmd
 ```
 
 
+### windows tasklist, taskkill
+
+```bash
+tasklist
+
+taskkill /im "com.docker.build.exe" /t /f
+taskkill /im "com.docker.backend.exe" /t /f
+taskkill /im "com.docker.dev-envs.exe" /t /f
+taskkill /im "com.docker.extensions.exe" /t /f
+taskkill /im "docker.exe" /t /f
+taskkill /im "Docker Desktop.exe" /t /f
+```
+
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

@@ -229,7 +229,7 @@ Setting (단축키 : CTRL+ALT+S)
 ```
 사용자 옵션 변경 C:\Users\{user}\AppData\Roaming\JetBrains\IntelliJIdea2022.2\idea64.exe.vmoptions
 전체 옵션 변경  C:\Program Files\JetBrains\IntelliJ IDEA 2022.2.3\bin\idea65.exe.vmoptions
--Xmx2028m
+-Xmx2048m
 -Dfile.encoding=UTF-8
 -Dconsole.encoding=UTF-8
 -Duser.language=en -Duser.region=US
@@ -303,7 +303,6 @@ java -cp catalina.jar org.apache.catalina.util.ServerInfo
 
 ```
 {tomcatfolder}\conf → server.xml
-
 <Connector port="8080" protocol="HTTP/1.1"
             connectionTimeout="20000"
             redirectPort="8443" />

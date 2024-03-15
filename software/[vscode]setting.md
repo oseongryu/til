@@ -71,32 +71,68 @@ settings.json
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
   "workbench.colorCustomizations": {
-    // 상단 타이틀 배경색
-    "titleBar.activeBackground": "#0d3d95",
-    "titleBar.inactiveBackground": "#0a2d6e",
+    // green
     // vscdoe 전체 전경 색
-    "editor.background": "#000000",
+    "editor.background": "#2a2c2b",
+    // 맨 왼쪽 activityBar
+    "activityBar.background": "#1f242b",
+    // 사이드바(파일,폴더) 배경 색
+    "sideBar.background": "#333635",
+    // 그룹 헤더 전체 배경 색
+    "editorGroupHeader.tabsBackground": "#1f242b",
+    // 선택된 탭 배경색
+    "tab.activeBackground": "#225348",
+    "tab.activeForeground": "#06f7df",
+    "tab.inactiveForeground": "#fff",
+    // 비활성인 탭 배경색
+    "tab.inactiveBackground": "#1f242b",
+    // 상단 타이틀 배경색
+    "titleBar.activeBackground": "#0b856b",
+    "titleBar.inactiveBackground": "#086450",
     // 상단 타이틀 글자색
     "titleBar.activeForeground": "#fff",
     "titleBar.inactiveForeground": "#fff",
     // 하단 상태 배경색
-    "statusBar.background": "#1558d4",
+    "statusBar.background": "#0b856b",
+    // 사이드바 목록 선택 배경색 글자색
+    "list.hoverBackground": "#535353",
+    "list.activeSelectionBackground": "#1f242b",
+    "list.activeSelectionForeground": "#06f7df",
 
-    // // 상단 타이틀 배경색
-    // "titleBar.activeBackground": "#0b856b",
-    // "titleBar.inactiveBackground": "#086450",
+    // // blue
     // // vscdoe 전체 전경 색
-    // "editor.background": "#000000",
+    // "editor.background": "#1f242b",
+    // // 맨 왼쪽 activityBar
+    // "activityBar.background": "#1f242b",
+    // // 사이드바(파일,폴더) 배경 색
+    // "sideBar.background": "#1f242b",
+    // // 그룹 헤더 전체 배경 색
+    // "editorGroupHeader.tabsBackground": "#1f242b",
+    // // 선택된 탭 배경색
+    // "tab.activeBackground": "#09569d",
+    // "tab.inactiveForeground": "#fff",
+    // // 비활성인 탭 배경색
+    // "tab.activeForeground": "#e7e8ed",
+    // "tab.inactiveBackground": "#1f242b",
+    // // 상단 타이틀 배경색
+    // "titleBar.activeBackground": "#0d3d95",
+    // "titleBar.inactiveBackground": "#0a2d6e",
     // // 상단 타이틀 글자색
     // "titleBar.activeForeground": "#fff",
     // "titleBar.inactiveForeground": "#fff",
     // // 하단 상태 배경색
-    // "statusBar.background": "#0b856b",
+    // "statusBar.background": "#1558d4",
+    // // 사이드바 목록 선택 배경색 글자색
+    // "list.hoverBackground": "#535353",
+    // "list.activeSelectionBackground": "#1f242b",
+    // "list.activeSelectionForeground": "#1558d4",
+
   },
-  "diffEditor.ignoreTrimWhitespace": false,
   "application.shellEnvironmentResolutionTimeout": 20,
-  "editor.multiCursorLimit": 100000
+  "editor.multiCursorLimit": 100000,
+  "workbench.activityBar.location": "top"
 }
+
 ```
 
 keybindings.json

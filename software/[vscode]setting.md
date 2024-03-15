@@ -1,6 +1,6 @@
 ### 2022.12.25.
 
-#### vscode settings.json
+#### path
 ```
 Windows Path:
 ./data/user-data/User (Portable)
@@ -12,12 +12,14 @@ Mac Path:
 
 https://code.visualstudio.com/docs/getstarted/settings
 
+
+#### vscode settings.json
 settings.json
 ```json
 {
   "editor.formatOnType": false,
   "editor.minimap.enabled": false,
-  "editor.mouseWheelZoom": true,
+  // "editor.mouseWheelZoom": true,
   "editor.renderWhitespace": "all",
   "editor.unicodeHighlight.nonBasicASCII": false,
   "editor.unicodeHighlight.invisibleCharacters": false,

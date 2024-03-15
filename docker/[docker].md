@@ -366,32 +366,34 @@ sudo systemctl status docker
 # https://hermeslog.tistory.com/498
 docker search ubuntu
 docker pull ubuntu:20.04
-docker run --name ubuntu -d --restart=always ubuntu:22.04
-docker exec -it ubuntutemp bash
+docker run -it -p 8089:8089 -p 13389:3389 --privileged --restart=always --name ubuntu ubuntu:20.04
+docker exec -it ubuntu bash
 
 apt -y update
 apt -y upgrade
 apt install -y ubuntu-desktop
 
 # xfce4 xrdp
-sudo apt -y install xfce4
-sudo apt-get install xrdp
-sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
-sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+apt update && apt -y upgrade
+apt install -y xfce4
+#area: 6, 69, display mamger: lightdm
+apt install -y xrdp
+cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 
 # xrdp 활성화
-sudo /etc/init.d/xrdp start
+/etc/init.d/xrdp start
 sudo passwd [username]
 
 # xrdp 오류해결
 # echo xfce4-session > ~/.xsession
 sudo update-alternatives --config x-session-manager
 
-docker stop ubuntutemp
-docker commit ubuntutemp temp
-docker run -p 13389:3389 --name ubuntu2 -d --restart=always temp
+docker stop ubuntu
+docker commit ubuntu ubuntutemp
+docker run -it -p 8089:8089 -p 13389:3390 --privileged --restart=always --name ubuntu2 ubuntutemp
 ```
 
 ### docker redis
@@ -401,6 +403,16 @@ docker run -p 6379:6379 --name my-redis -d --restart=always redis
 docker exec -it my-redis /bin/bash
 redis-cli
 info
+
+```
+
+
+### docker ubuntu remote-desktop
+
+```bash
+# https://github.com/scottyhardy/docker-remote-desktop
+docker pull scottyhardy/docker-remote-desktop
+docker run -it --hostname="$(hostname)" --publish="13389:3389/tcp" --name="remote-desktop" scottyhardy/docker-remote-desktop:latest
 
 ```
 

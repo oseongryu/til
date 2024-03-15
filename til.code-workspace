@@ -11,15 +11,16 @@
         },
     ],
     "settings": {
-    // "files.eol": "\n",
-    // "files.eol": "\r\n",
-    "git.detectSubmodules": true,
+        "markdown-preview-github-styles.darkTheme": "light",
+        // "files.eol": "\n",
+        // "files.eol": "\r\n",
+        "git.detectSubmodules": true,
         // "workbench.startupEditor": "none",
         // "editor.minimap.enabled": false,
         // "editor.formatOnSave": true,
         // "diffEditor.ignoreTrimWhitespace": true,
-        // "terminal.integrated.defaultProfile.windows": "Git Bash",
-        // "terminal.integrated.defaultProfile.osx": "zsh",
+        "terminal.integrated.defaultProfile.windows": "Git Bash",
+        "terminal.integrated.defaultProfile.osx": "zsh",
         // "prettier.jsxSingleQuote": true,
         // "prettier.singleQuote": true,
         // "javascript.preferences.quoteStyle": "single",
@@ -37,11 +38,14 @@
             // "editor.suggest.insertMode": "replace",
             // "gitlens.codeLens.scopes": ["document"]
         },
+        "[markdown]": {
+            "editor.autoClosingQuotes": "never"
+        },
         "code-runner.executorMap": {
             "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
         },
         "window.title": "${dirty}${rootName}",
         "workbench.colorCustomizations": {
-        }
+        },
     }
 }

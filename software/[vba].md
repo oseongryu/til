@@ -7,7 +7,7 @@
 
 
 ### 열숨기기 및 사이즈 변경
-```
+```vb
 Sub HideAndShowFunction()
     Dim resultMsgBox As VbMsgBoxResult
     resultMsgBox = MsgBox("열을 숨길지 여부 선택", vbOKCancel)
@@ -24,6 +24,38 @@ Sub HideAndShowFunction()
             Columns(arrx(index)).ColumnWidth = arry(index) / 5
         Next index
 
+    Else
+        Columns("A:KS").Hidden = False
+    End If
+
+    ActiveSheet.Cells(1, 1).Select
+End Sub
+```
+
+### 열숨기기 2
+```vb
+Sub HideAndShowFunction()
+    Dim resultMsgBox As VbMsgBoxResult
+    resultMsgBox = MsgBox("열을 숨길지 여부 선택", vbOKCancel)
+
+    If resultMsgBox = vbOK Then
+
+        arrx = Array("A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M", "N", "O", "P", "Q", "R", "S", "T", "U", "V", "W", "X")
+        arry = Array("20", "40", "40", "45", "40", "40", "80", "20", "20", "20", "80", "100", "250", "30", "100", "20", "20", "20", "40", "50", "40", "50", "50", "150")
+        Dim index As Long
+
+        For index = LBound(arrx) To UBound(arrx)
+            Columns(arrx(index)).Hidden = False
+            Columns(arrx(index)).ColumnWidth = arry(index) / 5
+        Next index
+
+        arrhide = Array("D", "E", "F", "H", "I", "J", "P", "Q", "R", "S", "V", "W")
+        Dim indexHide As Long
+
+        For indexHide = LBound(arrhide) To UBound(arrhide)
+            Columns(arrhide(indexHide)).Hidden = True
+            
+        Next indexHide
     Else
         Columns("A:KS").Hidden = False
     End If

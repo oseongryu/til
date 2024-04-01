@@ -467,6 +467,7 @@ DECLARE
 ### oracle tablespace 
 
 ```sql
+-- Error updating database.  Cause: java.sql.SQLException: ORA-01653: TEST.TB_TEST1 테이블을 128(으)로 TEST_DATA2 테이블스페이스에서 확장할 수 없습니다
 -- 테이블 스페이스 확인
 SELECT TABLE_NAME,TABLESPACE_NAME
   FROM DBA_TABLES

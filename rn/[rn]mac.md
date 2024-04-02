@@ -219,3 +219,59 @@ elif [[ -x "$(command -v brew)" && -s "$(brew --prefix nvm)/nvm.sh" ]]; then
   . "$(brew --prefix nvm)/nvm.sh"
 fi
 ```
+
+
+### mac rbenv
+```bash
+brew install rbenv
+rbenv install 2.7.6.
+rbenv versions
+rbenv global 2.7.6
+rbenv versions
+ruby --version
+gem install bundler
+
+sudo gem install ffi
+sudo gem install cocoapods
+
+```
+### 2024.03.14. error
+
+```bash
+✔ Initializing Git repository
+
+  Run instructions for Android:
+    • Have an Android emulator running (quickest way to get started), or a device connected.
+    • cd "/Users/oseongryu/git/rnshorts" && npx react-native run-android
+  
+  Run instructions for iOS:
+    • cd "/Users/oseongryu/git/rnshorts/ios"
+    
+    • Install Cocoapods
+      • bundle install # you need to run this only once in your project.
+      • bundle exec pod install
+      • cd ..
+    
+    • npx react-native run-ios
+    - or -
+    • Open rnshorts/ios/rnshorts.xcodeproj in Xcode or run "xed -b ios"
+    • Hit the Run button
+    
+  Run instructions for macOS:
+    • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.
+```
+
+
+nvm use --delete-prefix v16.1.0
+unset PREFIX
+
+/Users/oseongryu/git/rnshorts/node_modules/.bin/launchPackager.command ; exit;
+nvm is not compatible with the "PREFIX" environment variable: currently set to "/opt/homebrew"
+Run `unset PREFIX` to unset it.
+~ /Users/oseongryu/git/rnshorts/node_modules/.bin/launchPackager.command ; exit;
+env: node: No such file or directory
+Process terminated. Press <enter> to close the window
+
+
+
+error Failed to install the app. Looks like your Android environment is not properly set. Please go to https://reactnative.dev/docs/0.73/environment-setup?os=macos&platform=android&guide=native#jdk-studio and follow the React Native CLI QuickStart guide to install the compatible version of JDK.

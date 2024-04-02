@@ -360,6 +360,16 @@ taskkill /im "Docker Desktop.exe" /t /f
 ```
 
 
+### Microsoft PowerToys
+
+```
+Color Picker
+Keyboard Manager
+lmage Reslzer
+Markdown file explorer preview pane
+always on top
+```
+
 ### References
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know

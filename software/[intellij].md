@@ -18,6 +18,24 @@ Mapper Class 에서 타고 들어가고 싶은 메서드에서
 
 ```
 
+### Edit Custom VM Options
+```
+# Custom IntelliJ IDEA VM Options
+# https://blog.ddoong2.com/2019/07/29/IntelliJ-IDEA-%EC%98%B5%EC%85%98/
+-Xms2048m
+-Xmx4096m
+
+-XX:+UseG1GC
+-XX:NewRatio=1
+-XX:MaxGCPauseMillis=100
+-XX:GCTimeRatio=24
+-XX:ParallelGCThreads=8
+-XX:ConcGCThreads=2
+
+-Djava.net.preferIPv4Stack=true
+-Dfile.encoding=UTF-8
+```
+
 ### intelliJ (bin/idea.properties)
 
 ```

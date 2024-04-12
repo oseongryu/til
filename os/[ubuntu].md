@@ -82,7 +82,6 @@ pip install -r requirements.txt
 # https://stackoverflow.com/questions/73830524/attributeerror-module-lib-has-no-attribute-x509-v-flag-cb-issuer-check
 sudo apt remove python3-pip
 wget https://bootstrap.pypa.io/get-pip.py
-wget https://edgedl.me.gvt1.com/edgedl/chrome/chrome-for-testing/120.0.6099.109/linux64/chromedriver-linux64.zip
 sudo python3 get-pip.py
 sudo reboot
 pip install pyopenssl --upgrade
@@ -104,16 +103,17 @@ sudo timedatectl set-timezone Asia/Seoul
 
 ## ubuntu gradle
 
+```bash
 sudo apt-get install openjdk-8-jdk
 chmod +x gradlew
 ./gradlew bootWar
+```
 
 ## ubuntu setting
 
 ```bash
 # GUI
 Ctrl + h
-
 ```
 
 ## ubuntu chrome
@@ -190,8 +190,9 @@ code --version
 
 ## ubuntu docker
 
-https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
-https://shanepark.tistory.com/237
+```bash
+# https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
+# https://shanepark.tistory.com/237
 
 sudo apt-get install \
  ca-certificates \
@@ -204,6 +205,7 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo \
  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
 
 ## customize dock panel
 
@@ -305,14 +307,54 @@ sudo reboot
 ```bash
 docker pull ubuntu:20.04
 docker run -it -p 8089:8089 --privileged --restart=always --name my-ubuntu ubuntu:20.04
+docker run -it -p 8081:8089 --platform linux/amd64 --privileged --restart=always --name my-ubuntu ubuntu:20.04
+docker run -it -p 8082:8089 --privileged --restart=always --name my-ubuntu2 ubuntu:20.04
+
 docker exec -it my-ubuntu bash
 
 sudo docker cp /Users/oseongryu/.ssh/id_rsa my-ubuntu:/root/.ssh/
 sudo docker cp /Users/oseongryu/.ssh/id_rsa.pub my-ubuntu:/root/.ssh/
 
+apt install chromium-browser
+apt-get install chromium-chromedriver
 apt-get update
 apt-get upgrade -y
 apt-get install build-essential gdb
+apt install chromium-shell
+snap install chromium
+
+systemctl unmask snapd.service
+systemctl enable snapd.service
+systemctl start snapd.service
+/usr/lib/snapd/snapd &
+
+apt-get update
+
+apt-get upgrade python3
+apt install python3-pip
+apt install python3-tk python3-dev
+pip install selenium
+pip install webdriver_manager
+pip install pyautogui
+pip install opencv-python
+apt remove python3-pip
+wget https://bootstrap.pypa.io/get-pip.py
+python3 get-pip.py
+reboot
+pip install pyopenssl --upgrade
+pip install python-xlib
+
+# https://codetryout.com/google-chrome-following-packages-have-unmet-dependencies/
+apt install wget
+wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
+apt install ./google-chrome-stable_current_amd64.deb
+
+
+apt install python-tk
+apt install xvfb
+apt install scrot
+
+python3 /root/git/python-selenium/selenium/service.py 0
 ```
 
 ## ssl (with springboot)

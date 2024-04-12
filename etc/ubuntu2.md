@@ -1,4 +1,5 @@
 ### google cloud ubuntu 20.04
+
 ```bash
 sudo apt update
 sudo apt upgrade
@@ -21,8 +22,6 @@ sudo apt install net-tools
 netstat -tnlp
 
 ```
-
-
 
 ##
 
@@ -52,16 +51,19 @@ sudo passwd
 # sudo ufw allow 49952/tcp
 # sudo ufw reload
 ```
+
 ##
+
 ```bash
 scp -P 22 ~/.ssh/id_rsa gcp-root:/home/oseongryu/.ssh
 scp -P 22 ~/.ssh/id_rsa.pub gcp-root:/home/oseongryu/.ssh
 scp -P 22 ~/.ssh/drawing-app.war gcp-root:/home/oseongryu/.ssh
-nohup java -jar /home/oseongryu/.ssh/drawing-app.war 1>/dev/null 2>&1 
+nohup java -jar /home/oseongryu/.ssh/drawing-app.war 1>/dev/null 2>&1
 
 ```
 
 ## python
+
 ```bash
 sudo apt-get update
 sudo apt-get upgrade python3
@@ -78,7 +80,7 @@ pip install opencv-python
 pip install -r requirements.txt
 
 # https://stackoverflow.com/questions/73830524/attributeerror-module-lib-has-no-attribute-x509-v-flag-cb-issuer-check
-sudo apt remove python3-pip 
+sudo apt remove python3-pip
 wget https://bootstrap.pypa.io/get-pip.py
 sudo python3 get-pip.py
 sudo reboot
@@ -100,19 +102,22 @@ sudo timedatectl set-timezone Asia/Seoul
 ```
 
 ## ubuntu gradle
+
+```bash
 sudo apt-get install openjdk-8-jdk
 chmod +x gradlew
 ./gradlew bootWar
-
+```
 
 ## ubuntu setting
+
 ```bash
 # GUI
 Ctrl + h
-
 ```
 
 ## ubuntu chrome
+
 ```bash
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
@@ -122,6 +127,7 @@ sudo apt install ./google-chrome-stable_current_amd64.deb
 ```
 
 ### chrome update
+
 ```bash
 cat /etc/apt/sources.list.d/google-chrome.list
 # ### THIS FILE IS AUTOMATICALLY CONFIGURED ###
@@ -130,6 +136,7 @@ cat /etc/apt/sources.list.d/google-chrome.list
 ```
 
 ## ubuntu vscode
+
 ```bash
 sudo snap install --classic code
 code --version
@@ -176,29 +183,32 @@ code --version
 # sudo cp ~/.vscode/extensions/ ./data -r
 
 # # 생성한 폴더의 사용권한을 부여합니다.
-# sudo chmod o+wx data 
+# sudo chmod o+wx data
 # sudo chown -R osryu:google-sudoers data
 # sudo snap install --classic code
 ```
 
-
 ## ubuntu docker
-https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
-https://shanepark.tistory.com/237
+
+```bash
+# https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
+# https://shanepark.tistory.com/237
 
 sudo apt-get install \
-    ca-certificates \
-    curl \
-    gnupg \
-    lsb-release
+ ca-certificates \
+ curl \
+ gnupg \
+ lsb-release
 
 curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
 
- echo \
-  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
-  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+echo \
+ "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
+ $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
 
-## customize dock panel 
+## customize dock panel
+
 ```bash
 sudo apt install dconf-editor
 
@@ -209,7 +219,6 @@ gsettings set org.gnome.shell.extensions.dash-to-dock transparency-mode FIXED
 gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
 gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 ```
-
 
 ## wsl
 
@@ -223,7 +232,7 @@ sudo apt update
 sudo apt full-upgrade
 
 # enable systemd
-/etc/wsl.conf 
+/etc/wsl.conf
 
 sudo nano /etc/wsl.conf
 [boot]
@@ -232,7 +241,8 @@ systemd=true
 wsl --shutdown
 ```
 
-## ubuntu use GUI
+## ubuntu use GUI (wsl)
+
 ```bash
 ubuntu config --default-user root
 # root 로그인 후 비밀번호 변경
@@ -269,6 +279,7 @@ sudo update-alternatives --config x-session-manager
 ```
 
 ## reset 2023.12.07.
+
 ```bash
 # https://linux.how2shout.com/how-to-install-default-ubuntu-22-04s-desktop-environment/
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
@@ -292,6 +303,8 @@ sudo reboot
 ```
 
 ### mac
+
+```bash
 docker pull ubuntu:20.04
 docker run -it -p 8089:8089 --privileged --restart=always --name my-ubuntu ubuntu:20.04
 docker run -it -p 8081:8089 --platform linux/amd64 --privileged --restart=always --name my-ubuntu ubuntu:20.04
@@ -324,7 +337,7 @@ pip install selenium
 pip install webdriver_manager
 pip install pyautogui
 pip install opencv-python
-apt remove python3-pip 
+apt remove python3-pip
 wget https://bootstrap.pypa.io/get-pip.py
 python3 get-pip.py
 reboot
@@ -342,3 +355,4 @@ apt install xvfb
 apt install scrot
 
 python3 /root/git/python-selenium/selenium/service.py 0
+```

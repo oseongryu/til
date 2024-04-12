@@ -11,6 +11,7 @@
         },
     ],
     "settings": {
+        "editor.formatOnSave": true,
         "markdown-preview-github-styles.darkTheme": "light",
         // "files.eol": "\n",
         // "files.eol": "\r\n",
@@ -39,7 +40,7 @@
             // "gitlens.codeLens.scopes": ["document"]
         },
         "[markdown]": {
-            "editor.autoClosingQuotes": "never"
+            // "editor.autoClosingQuotes": "never"
         },
         "code-runner.executorMap": {
             "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"

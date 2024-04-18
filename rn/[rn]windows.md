@@ -1,12 +1,15 @@
 ## Setting
 
 1. [cmd] react-native-cli
+
 ```bash
+# clean
 yarn global remove react-native
 yarn global remove react-native-cli
 npm uninstall -g react-native
 npm uninstall -g react-native-cli
 
+# install
 yarn global list
 npm -g list
 
@@ -16,52 +19,73 @@ npx react-native --version
 ```
 
 2. [EnvironmentVariable] ANDROID_HOME
-C:\Users\{User}\AppData\Local\Android\Sdk\
+
+```bash
+%USERPROFILE%\AppData\Local\Android\Sdk\
+# C:\Users\{User}\AppData\Local\Android\Sdk\
+```
 
 3. [EnvironmentVariable] Path
-C:\Users\{User}\AppData\Local\Android\Sdk\platform-tools
+
+```bash
+%ANDROID_HOME%\platform-tools
+%ANDROID_HOME%\emulator
+%ANDROID_HOME%\tools
+%ANDROID_HOME%\tools\bin
+
+%USERPROFILE%\AppData\Local\Android\Sdk\platform-tools
+# C:\Users\{User}\AppData\Local\Android\Sdk\platform-tools
+```
 
 4. [cmd]
+
 ```bash
 adb
 ```
 
 ## Init React-Native
+
 1. [cmd] init
+
 ```bash
 # npx react-native init reactnative
 npx react-native init reactnative --version 0.68.2
 ```
+
 2. [cmd] Android Start
+
 ```bash
 react-native run-android
 npm run android
 ```
 
-* [error] Failed to install the following Android SDK packages as some licences have not been accepted.
-Add to Google licenses on SDK tools(at Android Studio)
-C:\Users\{User}\AppData\Local\Android\Sdk\licenses
-
+- [error] Failed to install the following Android SDK packages as some licences have not been accepted.
+  Add to Google licenses on SDK tools(at Android Studio)
+  C:\Users\{User}\AppData\Local\Android\Sdk\licenses
 
 ## module clean
 
 ### package.json
+
 "build": "npm build",
 "clean": "rm -rf node_modules",
 "reinstall": "npm run clean && npm install",
 "rebuild": "npm run clean && npm install && npm run build",
 
-
 ### npm 재인스톨
+
+```bash
 npm ci
+```
 
 ### npx npkill
+
+```bash
 npx npkill
-
-
-
+```
 
 ### chocolatey 설정
+
 ```
 1. PowerShell
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
@@ -88,4 +112,3 @@ react-native run-android
 cd android
 gradlew assembleRelease
 ```
-

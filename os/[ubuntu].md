@@ -23,6 +23,53 @@ netstat -tnlp
 
 ```
 
+### ubuntu wsl + docker
+
+```bash
+# https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/
+curl -sSL get.docker.com | sh
+
+grep -E 'sudo|wheel' /etc/group
+sudo grep -E '%sudo|%wheel' /etc/sudoers
+sudo usermod -aG docker $USER
+
+echo '' >> ~/.profile
+echo '# set DOCKER_HOST for docker default context' >> ~/.profile
+echo 'wsl_ip=$(ip addr show eth0 | grep -oP "(?<=inet\s)\d+(\.\d+){3}")' >> ~/.profile
+echo 'export DOCKER_HOST=tcp://$wsl_ip:2375' >> ~/.profile
+sudo update-alternatives --config iptables
+# Press <enter> to keep the current choice[*], or type selection number: 1
+wsl --shutdown
+
+```
+
+```bat
+@REM Windows 관리자 권한으로 bat로 실행
+@echo Starting dockerd in WSL ...
+@echo off
+if exist nohup.out del /f /q nohup.out
+for /f "tokens=1" %%a in ('wsl sh -c "hostname -I"') do set wsl_ip=%%a
+netsh interface portproxy add v4tov4 listenport=2375 connectport=2375 connectaddress=%wsl_ip%
+
+wsl -d Ubuntu-22.04 -u root -e sudo systemctl stop docker.socket
+wsl -d Ubuntu-22.04 -u root -e sudo systemctl stop docker.service
+wsl -d Ubuntu-22.04 -u root -e nohup sh -c "dockerd -H tcp://%wsl_ip% &"
+```
+
+#### ubuntu docker-compose
+
+```ps1
+# windows
+# https://docs.docker.com/compose/install/standalone/
+Start-BitsTransfer -Source "https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-windows-x86_64.exe" -Destination $Env:ProgramFiles\Docker\docker-compose.exe
+
+# wsl ubuntu
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo apt install -y docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
+```
+
 ##
 
 ```bash
@@ -263,7 +310,7 @@ sudo apt install -y ubuntu-desktop
 
 # xfce4 xrdp
 sudo apt -y install xfce4
-sudo apt-get install xrdp
+sudo apt -y install xrdp
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
 sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
 sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
@@ -272,6 +319,13 @@ sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 # xrdp 활성화
 sudo /etc/init.d/xrdp start
 sudo passwd [username]
+
+# Starting xrdp (via systemctl): xrdp.service Failed to connect to bus: Connection refused
+# https://superuser.com/questions/1628546/wsl2-run-xrdp-service-from-windows
+# https://askubuntu.com/questions/234856/unable-to-do-remote-desktop-using-xrdp
+wsl bash -c "sudo service xrdp start |cat"
+wsl sudo "/etc/init.d/xrdp start"
+sudo /etc/init.d/xrdp start
 
 # xrdp 오류해결
 # echo xfce4-session > ~/.xsession

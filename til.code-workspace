@@ -46,7 +46,7 @@
             "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
         },
         "window.title": "${dirty}${rootName}",
-        "workbench.colorCustomizations": {
+        "workbench.colorCustomizations": {  
         },
     }
 }

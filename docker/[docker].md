@@ -1,3 +1,10 @@
+### docker-desktop license
+
+```
+docker-deskop license 문제로 wsl에 도커를 설정하는 형태로 진행
+https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/
+```
+
 ### docker setting (windows)
 
 ```bash

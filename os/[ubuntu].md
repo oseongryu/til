@@ -70,11 +70,30 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
+#### wsl portainer
+
+```bash
+# https://docs.docksal.io/use-cases/portainer/
+# install
+docker volume create portainer_data
+docker run --name portainer -d -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --label='io.docksal.virtual-host=portainer.*' --label=io.docksal.virtual-port=9000 portainer/portainer -H unix:///var/run/docker.sock
+
+# use
+# http://portainer.docksal
+
+#uninstall
+docker rm -vf portainer
+docker volume rm -f portainer_data
+
+
+```
+
 ##
 
 ```bash
 # https://medium.com/@selvamraju007/install-and-launch-ubuntu-22-04-desktop-on-google-cloud-1fba8c0f9585
 wget https://dl.google.com/linux/direct/chrome-remote-desktop_current_amd64.deb
+sudo apt-get install --assume-yes ./chrome-remote-desktop_current_amd64.deb
 sudo apt update && sudo apt upgrade
 sudo apt install slim
 sudo apt install ubuntu-desktop

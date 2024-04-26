@@ -145,3 +145,60 @@ sudo apt update && apt -y upgrade
 sudo apt install -y ubuntu-desktop
 sudo reboot
 ```
+
+## wsl Ubuntu-22.04 setting
+
+```
+### wsl 삭제 후 재설치
+wsl --unregister Ubuntu-22.04
+wsl --install -d Ubuntu-22.04
+wsl -l -v
+
+### wsl GUI
+### https://guiyomi.tistory.com/113
+sudo apt update && apt -y upgrade
+
+### systemd 확인
+systemd
+sudo vi /etc/wsl.conf
+
+### wsl ubuntu-desktop
+sudo apt install -y ubuntu-desktop
+sudo apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
+sudo apt -y install xrdp
+
+### xrdp 설정 변경
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+
+### xrdp 변경 확인
+vi /etc/xrdp/xrdp.ini
+
+### xrdp 재시작
+sudo /etc/init.d/xrdp start
+
+### xrdp 상태 확인
+service xrdp status
+
+### 포트확인
+sudo apt install net-tools
+netstat -tnlp
+```
+
+### temp
+
+# sudo service xrdp restart
+
+# sudo systemctl enable --now xrdp
+
+# sudo apt insatll xfce4-session
+
+# free -h
+
+# wget https://www.c-nergy.be/downloads/xrdp-installer-1.2.2.zip
+
+# unzip xrdp-installer-1.2.2.zip
+
+# sh xrdp-installer-1.2.2.sh

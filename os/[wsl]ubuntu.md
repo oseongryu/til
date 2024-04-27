@@ -1,3 +1,60 @@
+## wsl Ubuntu-22.04 setting
+
+```bash
+# https://linux.how2shout.com/how-to-install-default-ubuntu-22-04s-desktop-environment/
+dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
+dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
+dism.exe /online /enable-feature /featurename:microsoft-hyper-v /all /norestart
+
+# unregister
+dism.exe /online /disable-feature /featurename:VirtualMachinePlatform
+dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux
+dism.exe /online /disable-feature /featurename:microsoft-hyper-v /all /norestart
+
+# information
+dism.exe /online /get-featureinfo /featurename:VirtualMachinePlatform
+
+wsl --set-default-version 2
+
+
+### wsl 삭제 후 재설치
+wsl --unregister Ubuntu-22.04
+wsl --install -d Ubuntu-22.04
+wsl -l -v
+
+### wsl GUI
+### https://guiyomi.tistory.com/113
+sudo apt update && apt -y upgrade
+
+### systemd 확인
+systemd
+sudo vi /etc/wsl.conf
+
+### wsl ubuntu-desktop
+sudo apt install -y ubuntu-desktop
+sudo apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
+sudo apt -y install xrdp
+
+### xrdp 설정 변경
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+
+### xrdp 변경 확인
+vi /etc/xrdp/xrdp.ini
+
+### xrdp 재시작
+sudo /etc/init.d/xrdp start
+
+### xrdp 상태 확인
+service xrdp status
+
+### 포트확인
+sudo apt install net-tools
+netstat -tnlp
+```
+
 ### ubuntu wsl + docker
 
 ```bash
@@ -126,10 +183,6 @@ sudo update-alternatives --config x-session-manager
 ## reset 2023.12.07.
 
 ```bash
-# https://linux.how2shout.com/how-to-install-default-ubuntu-22-04s-desktop-environment/
-dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
-wsl --set-default-version 2
 
 https://docs.microsoft.com/ko-kr/windows/wsl/install-manual
 
@@ -146,49 +199,9 @@ sudo apt install -y ubuntu-desktop
 sudo reboot
 ```
 
-## wsl Ubuntu-22.04 setting
-
-```
-### wsl 삭제 후 재설치
-wsl --unregister Ubuntu-22.04
-wsl --install -d Ubuntu-22.04
-wsl -l -v
-
-### wsl GUI
-### https://guiyomi.tistory.com/113
-sudo apt update && apt -y upgrade
-
-### systemd 확인
-systemd
-sudo vi /etc/wsl.conf
-
-### wsl ubuntu-desktop
-sudo apt install -y ubuntu-desktop
-sudo apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
-sudo apt -y install xrdp
-
-### xrdp 설정 변경
-sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
-sudo sed -i 's/3389/3390/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
-sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
-
-### xrdp 변경 확인
-vi /etc/xrdp/xrdp.ini
-
-### xrdp 재시작
-sudo /etc/init.d/xrdp start
-
-### xrdp 상태 확인
-service xrdp status
-
-### 포트확인
-sudo apt install net-tools
-netstat -tnlp
-```
-
 ### temp
 
+```bash
 # sudo service xrdp restart
 
 # sudo systemctl enable --now xrdp
@@ -202,3 +215,4 @@ netstat -tnlp
 # unzip xrdp-installer-1.2.2.zip
 
 # sh xrdp-installer-1.2.2.sh
+```

@@ -392,8 +392,11 @@ sudo systemctl status docker
 # https://hermeslog.tistory.com/498
 docker search ubuntu
 docker pull ubuntu:20.04
-docker run -it -p 8089:8089 -p 13389:3389 --privileged --restart=always --name ubuntu ubuntu:20.04
-docker exec -it ubuntu bash
+docker run -it -p 8089:8089 -p 13389:3389 --privileged --restart=always --name my-ubuntu ubuntu:20.04
+# https://mungiyo.tistory.com/22
+docker run -it -p 8089:8089 -p 13389:3389 --privileged -d --restart=always --name my-ubuntu2 ubuntutemp /sbin/init
+
+docker exec -it my-ubuntu2 bash
 
 apt -y update
 apt -y upgrade
@@ -436,9 +439,9 @@ cat ~/.xsession # 정상변경여부 확인
 # # xrdp 오류해결
 # # echo xfce4-session > ~/.xsession
 # sudo update-alternatives --config x-session-manager
-# docker stop ubuntu
-# docker commit ubuntu ubuntutemp
-# docker run -it -p 8089:8089 -p 13389:3390 --privileged --restart=always --name ubuntu2 ubuntutemp
+# docker stop my-ubuntu
+# docker commit my-ubuntu ubuntutemp
+# docker run -it -p 8089:8089 -p 13389:3390 --privileged -d --restart=always --name my-ubuntu2 ubuntutemp /sbin/init
 ```
 
 ### docker redis

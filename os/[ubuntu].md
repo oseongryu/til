@@ -1,3 +1,86 @@
+### ubuntu GUI
+
+```bash
+# https://guiyomi.tistory.com/113
+# https://hermeslog.tistory.com/498
+# https://mungiyo.tistory.com/22
+
+# wsl gui
+sudo apt update && sudo apt -y upgrade
+sudo apt install -y ubuntu-desktop
+
+
+### systemd 확인
+systemd
+sudo vi /etc/wsl.conf
+
+# xfce4 xrdp
+sudo apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
+#area: 6, 69, display mamger: lightdm
+
+sudo apt -y install xrdp
+
+sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
+sudo sed -i 's/3389/13389/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
+sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
+
+# xrdp 변경 확인
+vi /etc/xrdp/xrdp.ini
+
+
+# xrdp 활성화
+sudo /etc/init.d/xrdp start
+sudo passwd [username]
+
+sudo reboot
+
+# xrdp 상태 확인
+service xrdp status
+
+
+# xrdp 오류 해결
+sudo vi /etc/xrdp/startwm.sh
+
+unset DBUS_SESSION_BUS_ADDRESS
+unset XDG_RUNTIME_DIR
+
+sudo systemctl restart xrdp
+
+# 환경설정
+
+echo "xfce4-session" > ~/.xsession
+cat ~/.xsession # 정상변경여부 확인
+
+
+# # Starting xrdp (via systemctl): xrdp.service Failed to connect to bus: Connection refused
+# # https://superuser.com/questions/1628546/wsl2-run-xrdp-service-from-windows
+# # https://askubuntu.com/questions/234856/unable-to-do-remote-desktop-using-xrdp
+# wsl bash -c "sudo service xrdp start |cat"
+# wsl sudo "/etc/init.d/xrdp start"
+# sudo /etc/init.d/xrdp start
+
+# # xrdp 오류해결
+# # echo xfce4-session > ~/.xsession
+# sudo update-alternatives --config x-session-manager
+```
+
+#### wsl portainer
+
+```bash
+# https://docs.docksal.io/use-cases/portainer/
+# install
+docker volume create portainer_data
+docker run --name portainer -d -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --label='io.docksal.virtual-host=portainer.*' --label=io.docksal.virtual-port=9000 portainer/portainer -H unix:///var/run/docker.sock
+
+# use
+# http://portainer.docksal
+
+#uninstall
+docker rm -vf portainer
+docker volume rm -f portainer_data
+```
+
 ### google cloud ubuntu 20.04
 
 ```bash
@@ -202,6 +285,20 @@ curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o 
 echo \
  "deb [arch=amd64 signed-by=/usr/share/keyrings/docker-archive-keyring.gpg] https://download.docker.com/linux/ubuntu \
  $(lsb_release -cs) stable" | sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+```
+
+#### ubuntu docker-compose
+
+```ps1
+# windows
+# https://docs.docker.com/compose/install/standalone/
+Start-BitsTransfer -Source "https://github.com/docker/compose/releases/download/v2.26.1/docker-compose-windows-x86_64.exe" -Destination $Env:ProgramFiles\Docker\docker-compose.exe
+
+# wsl ubuntu
+sudo curl -L "https://github.com/docker/compose/releases/download/1.29.2/docker-compose-$(uname -s)-$(uname -m)" -o /usr/local/bin/docker-compose
+sudo apt install -y docker-compose
+sudo chmod +x /usr/local/bin/docker-compose
+docker-compose --version
 ```
 
 ## customize dock panel

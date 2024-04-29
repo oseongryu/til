@@ -20,10 +20,34 @@ dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v
 wsl --set-default-version 2
 
 ### wsl 삭제 후 재설치
+# https://docs.microsoft.com/ko-kr/windows/wsl/install-manual
+# https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview
+wsl --list --online
+
 wsl --unregister Ubuntu-22.04
 wsl --install -d Ubuntu-22.04
 wsl -l -v
 
+wsl
+
+# enable systemd
+/etc/wsl.conf
+
+sudo nano /etc/wsl.conf
+[boot]
+systemd=true
+
+wsl --shutdown
+```
+
+### default-user
+
+```bash
+ubuntu config --default-user root
+# root 로그인 후 비밀번호 변경
+passwd
+passwd oseongryu
+ubuntu config --default-user oseongryu
 ```
 
 ### ubuntu wsl + docker
@@ -57,4 +81,16 @@ netsh interface portproxy add v4tov4 listenport=2375 connectport=2375 connectadd
 wsl -d Ubuntu-22.04 -u root -e sudo systemctl stop docker.socket
 wsl -d Ubuntu-22.04 -u root -e sudo systemctl stop docker.service
 wsl -d Ubuntu-22.04 -u root -e nohup sh -c "dockerd -H tcp://%wsl_ip% &"
+```
+
+### temp
+
+```bash
+# sudo service xrdp restart
+# sudo systemctl enable --now xrdp
+# sudo apt insatll xfce4-session
+# free -h
+# wget https://www.c-nergy.be/downloads/xrdp-installer-1.2.2.zip
+# unzip xrdp-installer-1.2.2.zip
+# sh xrdp-installer-1.2.2.sh
 ```

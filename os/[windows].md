@@ -1,4 +1,5 @@
 ### WinServer2012R2원격데스크톱연결
+
 ```
 *윈 서버2012 원격 데스크톱 활성화 및 포트 변경
 http://t2t2tt.tistory.com/12
@@ -11,21 +12,27 @@ http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%
 ```
 
 ### IIS 서버 로깅
+
 ```
 https://technet.microsoft.com/ko-kr/library/hh831775(v=ws.11).aspx
 
 
 ```
+
 ### Win10 Evaluation Center
+
 ```
 https://www.microsoft.com/ko-kr/evalcenter/evaluate-windows-10-enterprise
 ```
 
 ### Hyper-V가 실행이 안될경우
+
 ```
 bcdedit /set hypervisorlaunchtype auto
 ```
+
 ### psexec 사용
+
 ```
 psexec \\joker21.iptime.org -u <uesr> -p <pass> /c notepad
 psexec \\112.186.198.40 -u administrator cmd.exe
@@ -34,9 +41,8 @@ powershell사용
 Enable-PSRemoting
 ```
 
-
-
 ### 윈도우 서비스 등록,삭제
+
 ```
 https://openeidos.tistory.com/3912
 
@@ -59,16 +65,18 @@ sc delete [Service Name]
 ```
 
 ### 로컬 컴퓨터 에서 서비스 를 시작 하지 못했습니다 오류 1053
+
 https://skql.tistory.com/518
 http://urhelper.com/zb41_urhelper/zb_urhelper.php?id=cho_computers_progs&no=103
 
 ### C# 윈도우 서비스 만들기
+
 ```
 https://nowprogramming.tistory.com/34
 ```
 
-
 ### 장치추가 제거
+
 ```
 http://forensic-proof.com/archives/5945
 
@@ -76,9 +84,8 @@ http://forensic-proof.com/archives/5945
 %SystemRoot%\System32\winevt\Logs\Microsoft-Windows-DeviceSetupManager%4Admin.evtx
 ```
 
-
-
 ### Windows 단축키
+
 ```
 시작-실행  윈 + R
 
@@ -158,6 +165,7 @@ C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\mscorcfg.msc : .NET Configuration 1
 ```
 
 ### 단축키
+
 ```
 로컬보안정책 명령어 https://www.snoopybox.co.kr/1561
 단축키 https://www.clien.net/service/board/lecture/13621530?od=T31&po=0&category=&groupCd=
@@ -188,15 +196,19 @@ control userpasswords2
 http://127.0.0.1
 %appdata%
 ```
+
 ### Windows 원격접속이 안될 떄 (오라클 수정암호화)
+
 ```
 http://prolite.tistory.com/743
 
 microsoft.com/fwlink/?linkid=866660
 ```
+
 ### IP 공격
 
 ### Windows Wifi 비밀번호 확인
+
 ```bash
 netsh wlan show profile
 netsh wlan show profile "profile이름" key=clear
@@ -205,6 +217,7 @@ netsh wlan show profile "profile이름" key=clear
 ```
 
 ### 네트워크 경로추적
+
 ```
 Windows: tracert 8.8.8.8
 Linux: traceroute 8.8.8.8
@@ -215,6 +228,7 @@ traceroute  8.8.8.8
 ```
 
 ### Windows telnet
+
 ```
 cmd > appwiz.cpl > Windows 기능 켜기/끄기 > 텔넷 클라이언트 체크
 telnet IP PORT
@@ -222,6 +236,7 @@ telnet 127.0.0.1 8080
 ```
 
 ### cmd
+
 ```
 ipconfig /?
 
@@ -252,11 +267,13 @@ sfc / scannow
 ```
 
 ### dir list
+
 ```
 dir/b > list.txt
 ```
 
 ### Windows 10 Ubuntu
+
 ```bash
 appwiz.cpl > Windows 기능 켜기/끄기 > Linux용 Windows 하위 시스템 (체크)
 Microsoft Store > ubuntu 검색 > 설치 > 실행
@@ -279,6 +296,7 @@ cd /mnt/c
 ```
 
 ### Windows Font 설치
+
 ```
 C:\Windows\Fonts에 설치할 폰트 넣기
 ```
@@ -292,19 +310,20 @@ C:\Windows\Fonts에 설치할 폰트 넣기
 
 <img width="100" src="../static/img/windows/001.png"/>
 
-
-###  이미지 파일 우클릭 시 오른쪽으로 회전, 왼쪽으로 회전 삭제 및 복구
+### 이미지 파일 우클릭 시 오른쪽으로 회전, 왼쪽으로 회전 삭제 및 복구
 
      RemoveRotateImageContextMenuWin10.reg
      RestoreRotateImageContextMenuWin10.reg
 
 ### user password 변경
+
 ```
 net user
 net user {username} password
 ```
 
 ### 네트워크 재설정
+
 ```
 netsh winsock reset
 netsh int ip reset
@@ -314,6 +333,7 @@ ipconfig /flushdns
 ```
 
 ### 일부는 조직에서 숨겼거나 관리합니다, 조직설정 (모바일 핫스팟)
+
 ```bash
 # https://answers.microsoft.com/ko-kr/windows/forum/all/%EC%9D%BC%EB%B6%80-%EC%84%A4%EC%A0%95%EC%9D%80/c5adc018-4321-4e34-acca-fdc75ea50f11
 reg delete "HKLM\Software\Microsoft\Windows\CurrentVersion\Policies" /f
@@ -341,10 +361,10 @@ netsh winhttp reset proxy
 ```
 
 ### windows explorer
-```
-explorer > ctrl + l > cmd 
-```
 
+```
+explorer > ctrl + l > cmd
+```
 
 ### windows tasklist, taskkill
 
@@ -359,7 +379,6 @@ taskkill /im "docker.exe" /t /f
 taskkill /im "Docker Desktop.exe" /t /f
 ```
 
-
 ### Microsoft PowerToys
 
 ```
@@ -370,7 +389,15 @@ Markdown file explorer preview pane
 always on top
 ```
 
+### win-bash
+
+```
+sourceforge.net/projects/win-bash/files/shell-complete/latest/shell.w32-ix86.zip/download
+환경변수 설정 후 사용
+```
+
 ### References
+
 ```
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know
 

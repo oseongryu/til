@@ -386,64 +386,6 @@ sudo systemctl status docker
 
 ```
 
-### docker ubuntu
-
-```bash
-# https://hermeslog.tistory.com/498
-docker search ubuntu
-docker pull ubuntu:20.04
-docker run -it -p 8089:8089 -p 13389:3389 --privileged --restart=always --name my-ubuntu ubuntu:20.04
-# https://mungiyo.tistory.com/22
-docker run -it -p 8089:8089 -p 13389:3389 --privileged -d --restart=always --name my-ubuntu2 ubuntutemp /sbin/init
-
-docker exec -it my-ubuntu2 bash
-
-apt -y update
-apt -y upgrade
-apt install -y ubuntu-desktop
-
-# xfce4 xrdp
-apt update && apt -y upgrade
-apt install -y xfce4
-#area: 6, 69, display mamger: lightdm
-apt install -y xrdp
-cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
-sed -i 's/3389/8089/g' /etc/xrdp/xrdp.ini
-sed -i 's/max_bpp=32/#max_bpp=32nmax_bpp=128/g' /etc/xrdp/xrdp.ini
-sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
-
-# xrdp 활성화
-/etc/init.d/xrdp start
-sudo passwd [username]
-
-sudo reboot
-docker exec -it my-ubuntu /bin/bash
-
-
-# xrdp 오류 해결
-sudo vi /etc/xrdp/startwm.sh
-
-unset DBUS_SESSION_BUS_ADDRESS
-unset XDG_RUNTIME_DIR
-
-sudo systemctl restart xrdp
-
-# 환경설정
-
-echo "xfce4-session" > ~/.xsession
-cat ~/.xsession # 정상변경여부 확인
-
-# xrdp 서비스 재시작
-
-
-# # xrdp 오류해결
-# # echo xfce4-session > ~/.xsession
-# sudo update-alternatives --config x-session-manager
-# docker stop my-ubuntu
-# docker commit my-ubuntu ubuntutemp
-# docker run -it -p 8089:8089 -p 13389:3390 --privileged -d --restart=always --name my-ubuntu2 ubuntutemp /sbin/init
-```
-
 ### docker redis
 
 ```bash

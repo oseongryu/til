@@ -17,10 +17,8 @@ sudo apt upgrade
 sudo passwd oseongryu
 sudo passwd ubuntu
 sudo passwd root
-apt install net-tools
 sudo apt install net-tools
 netstat -tnlp
-
 ```
 
 ## ubuntu chrome-remote-desktop

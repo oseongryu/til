@@ -445,3 +445,20 @@ server {
 }
 
 ```
+
+### temp
+
+```bash
+# apt install slim
+# cat /etc/X11/default-display-manager
+# apt install lightdm
+# apt install ubuntu-desktop
+# reboot
+# # delete GUI diplay manager
+# apt remove slim lxde
+# # 불필요한 종속성제외
+# apt autoremove
+# service slim start
+# /etc/init.d/xrdp stop
+# /etc/init.d/xrdp start
+```

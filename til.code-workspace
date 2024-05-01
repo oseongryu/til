@@ -3,6 +3,12 @@
         {
             "path": "."
         },
+        {
+            "path": "../corp-script"
+        },
+        {
+            "path": "../docker-composes"
+        },
     ],
     "settings": {
         "editor.formatOnSave": true,

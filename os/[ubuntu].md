@@ -5,14 +5,9 @@
 # https://hermeslog.tistory.com/498
 # https://mungiyo.tistory.com/22
 
-# wsl gui
+# gui
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y ubuntu-desktop
-
-
-### systemd 확인
-systemd
-sudo vi /etc/wsl.conf
 
 # xfce4 xrdp
 sudo apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
@@ -28,7 +23,6 @@ sudo sed -i 's/xserverbpp=24/#xserverbpp=24nxserverbpp=128/g' /etc/xrdp/xrdp.ini
 # xrdp 변경 확인
 vi /etc/xrdp/xrdp.ini
 
-
 # xrdp 활성화
 sudo /etc/init.d/xrdp start
 sudo passwd [username]
@@ -38,16 +32,15 @@ sudo reboot
 # xrdp 상태 확인
 service xrdp status
 
-
 # xrdp 오류 해결
 sudo vi /etc/xrdp/startwm.sh
 
+----
 unset DBUS_SESSION_BUS_ADDRESS
 unset XDG_RUNTIME_DIR
+----
 
 sudo systemctl restart xrdp
-
-# 환경설정
 
 echo "xfce4-session" > ~/.xsession
 cat ~/.xsession # 정상변경여부 확인
@@ -60,12 +53,12 @@ cat ~/.xsession # 정상변경여부 확인
 # wsl sudo "/etc/init.d/xrdp start"
 # sudo /etc/init.d/xrdp start
 
-# # xrdp 오류해결
+# # xrdp error
 # # echo xfce4-session > ~/.xsession
 # sudo update-alternatives --config x-session-manager
 ```
 
-#### wsl portainer
+#### portainer
 
 ```bash
 # https://docs.docksal.io/use-cases/portainer/
@@ -198,12 +191,39 @@ chmod +x gradlew
 Ctrl + h
 ```
 
-## ubuntu chrome
+## chrome, chromium
 
 ```bash
+# amd 64
 wget https://dl.google.com/linux/direct/google-chrome-stable_current_amd64.deb
 sudo apt install ./google-chrome-stable_current_amd64.deb
 /usr/bin/google-chrome-stable
+
+# arm
+sudo apt install chromium-browser
+
+# chromium browser 실행안될경우 (no-sandbox 옵션추가)
+# https://answers.launchpad.net/ubuntu/+question/707831
+vi /usr/bin/chromium-browser
+
+---
+exec /snap/bin/chromium "$@"
+exec /snap/bin/chromium --no-sandbox "$@"
+----
+
+# old
+vi /usr/share/applications/chromium-browser.desktop
+# new
+vi /var/lib/snapd/desktop/applications/chromium_chromium.desktop
+
+---
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/chromium_chromium.desktop /snap/bin/chromium %U
+Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/chromium_chromium.desktop /snap/bin/chromium %U --no-sandbox
+--service-sandbox-type=none
+--service-sandbox-type=utility
+---
+
+
 ```
 
 ### chrome update
@@ -461,4 +481,20 @@ server {
 # service slim start
 # /etc/init.d/xrdp stop
 # /etc/init.d/xrdp start
+```
+
+### [error] authentication is required to create a color managed device
+
+```sh
+# https://jkim83.tistory.com/142
+sudo vi /etc/polkit-1/localauthority/50-local.d/color.pkla
+```
+
+```
+[Allow colord for all users]
+Identity=unix-user:*
+Action=org.freedesktop.color-manager.create-device;org.freedesktop.color-manager.create-profile;org.freedesktop.color-manager.delete-device;org.freedesktop.color-manager.delete-profile;org.freedesktop.color-manager.modify-device;org.freedesktop.color-manager.modify-profile
+ResultAny=yes
+ResultInactive=yes
+ResultActive=yes
 ```

@@ -31,9 +31,9 @@ wsl -l -v
 wsl
 
 # enable systemd
+systemd
 /etc/wsl.conf
-
-sudo nano /etc/wsl.conf
+sudo vi /etc/wsl.conf
 [boot]
 systemd=true
 

@@ -344,10 +344,10 @@ docker buildx create \
 --bootstrap --use
 
 # build
-docker buildx build --platform linux/arm64,linux/amd64 -t buildx-test-image .
+docker buildx build --platform linux/arm64,linux/amd64 -t ubuntu-desktop .
 
 # load local
-docker buildx build --load -t buildx-test-image .
+docker buildx build --load -t ubuntu-desktop .
 docker images
 # change image name
 docker image tag buildx-test-image:latest oseongryu/ubuntu-desktop:20.04
@@ -355,6 +355,9 @@ docker image tag buildx-test-image:latest oseongryu/ubuntu-desktop:20.04
 # push
 docker login
 docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:20.04 --push .
+
+# remove buidlx
+docker buildx rm --all-inactive
 ```
 
 ### references

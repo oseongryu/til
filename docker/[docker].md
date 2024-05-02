@@ -333,19 +333,10 @@ docker cp ~/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
 unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
 ```
 
-### references
-
-```
-# docker on server(centos) setting
-https://link2me.tistory.com/2088
-# docker on intellij
-https://ysjee141.github.io/blog/dev%20tools/intellij-springboot-docker/
-```
-
 ### docker buildx
 
 ```bash
-
+# https://blog.taehun.dev/docker-buildx-
 # create buildx
 docker buildx create \
 --name multi-arch-builder \
@@ -353,14 +344,24 @@ docker buildx create \
 --bootstrap --use
 
 # build
-docker buildx build --platform linux/arm64,linux/amd64 -t buildx-test .
+docker buildx build --platform linux/arm64,linux/amd64 -t buildx-test-image .
 
 # load local
-docker buildx build --load -t buildx-test .
+docker buildx build --load -t buildx-test-image .
 docker images
-docker image tag buildx-test:latest oseongryu/ubuntu-desktop:20.04
+# change image name
+docker image tag buildx-test-image:latest oseongryu/ubuntu-desktop:20.04
 
 # push
 docker login
 docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:20.04 --push .
+```
+
+### references
+
+```
+# docker on server(centos) setting
+https://link2me.tistory.com/2088
+# docker on intellij
+https://ysjee141.github.io/blog/dev%20tools/intellij-springboot-docker/
 ```

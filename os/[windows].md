@@ -402,3 +402,29 @@ sourceforge.net/projects/win-bash/files/shell-complete/latest/shell.w32-ix86.zip
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know
 
 ```
+
+### iphlpsvc의 포트 포워딩이 설정되서 특정 포트가 binding안되는 경우
+
+```bash
+# https://blog.naver.com/webpioneer/220677150747
+netstat -ano | findstr :8089
+netstat -ano | findstr PID
+tasklist /svc /FI "PID eq 4886"
+tasklist /SVC
+
+# https://m.blog.naver.com/toruin84/222143445312
+iphlpsvc
+net start iphlpsvc
+net stop iphlpsvc
+
+
+# https://www.sysnet.pe.kr/2/0/1480
+netsh interface portproxy reset
+```
+
+### windows defender
+
+```bash
+윈도우 defender가 보이지 않거나 보이지 않게하고 싶은경우
+https://www.sordum.org/9480/defender-control-v2-1/
+```

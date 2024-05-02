@@ -502,3 +502,9 @@ ResultAny=yes
 ResultInactive=yes
 ResultActive=yes
 ```
+
+## magnet (ubuntu GUI)
+
+```
+sudo apt-get install comizconfig-settings-manager
+```

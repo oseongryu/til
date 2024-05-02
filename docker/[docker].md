@@ -341,3 +341,26 @@ https://link2me.tistory.com/2088
 # docker on intellij
 https://ysjee141.github.io/blog/dev%20tools/intellij-springboot-docker/
 ```
+
+### docker buildx
+
+```bash
+
+# create buildx
+docker buildx create \
+--name multi-arch-builder \
+--driver docker-container \
+--bootstrap --use
+
+# build
+docker buildx build --platform linux/arm64,linux/amd64 -t buildx-test .
+
+# load local
+docker buildx build --load -t buildx-test .
+docker images
+docker image tag buildx-test:latest oseongryu/ubuntu-desktop:20.04
+
+# push
+docker login
+docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:20.04 --push .
+```

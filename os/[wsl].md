@@ -1,3 +1,17 @@
+### .wslconfig
+
+외부서버접속위해서설정: https://velog.io/@bluejoyq/wsl-%EC%84%9C%EB%B2%84-%EC%99%B8%EB%B6%80-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0
+
+```
+[wsl2]
+memory=8GB
+processors=8
+swap=4GB
+localhostForwarding=true
+[experimental]
+networkingMode=mirrored
+```
+
 ## wsl setting
 
 ```bash

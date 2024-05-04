@@ -1,6 +1,7 @@
 ### 2022.12.25.
 
 #### path
+
 ```
 Windows Path:
 ./data/user-data/User (Portable)
@@ -12,12 +13,13 @@ Mac Path:
 
 https://code.visualstudio.com/docs/getstarted/settings
 
-
 #### vscode settings.json
+
 settings.json
+
 ```json
 {
-  "editor.formatOnType": false,
+  "editor.formatOnType": true,
   "editor.minimap.enabled": false,
   // "editor.mouseWheelZoom": true,
   "editor.renderWhitespace": "all",
@@ -97,7 +99,7 @@ settings.json
     // 사이드바 목록 선택 배경색 글자색
     "list.hoverBackground": "#535353",
     "list.activeSelectionBackground": "#1f242b",
-    "list.activeSelectionForeground": "#06f7df",
+    "list.activeSelectionForeground": "#06f7df"
 
     // // blue
     // // vscdoe 전체 전경 색
@@ -126,16 +128,14 @@ settings.json
     // "list.hoverBackground": "#535353",
     // "list.activeSelectionBackground": "#1f242b",
     // "list.activeSelectionForeground": "#1558d4",
-
   },
   "application.shellEnvironmentResolutionTimeout": 20,
-  "editor.multiCursorLimit": 100000,
-  "workbench.activityBar.location": "top"
+  "editor.multiCursorLimit": 100000
 }
-
 ```
 
 keybindings.json
+
 ```json
 // Place your key bindings in this file to override the defaultsauto[]
 [
@@ -188,5 +188,4 @@ keybindings.json
     "command": "editor.action.transformToSnakecase"
   }
 ]
-
 ```

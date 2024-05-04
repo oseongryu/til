@@ -1,16 +1,20 @@
 ### theme
+
 ```
 Community Material Theme
 Github Plus Theme
 One Dark Pro
 Panda Theme
 ```
+
 ### vscode 노트용과 개발용 분리해서 사용하기
+
 ```
 vscode 와 vscode-insider를 사용
 ```
 
 ### vscodium
+
 ```
 Set-ExecutionPolicy Bypass -Scope Process -Force; [System.Net.ServicePointManager]::SecurityProtocol = [System.Net.ServicePointManager]::SecurityProtocol -bor 3072; iex ((New-Object System.Net.WebClient).DownloadString('https://chocolatey.org/install.ps1'))
 
@@ -24,6 +28,7 @@ choco list --localonly
 ```
 
 ### vscode setting
+
 ```
 Explorer > TIMELIE > Filter TimeLine
 Local History 제외 또는 추가 (커밋내용으로만 찾고싶을경우 해제)
@@ -31,25 +36,29 @@ Local History 제외 또는 추가 (커밋내용으로만 찾고싶을경우 해
 Source Control > Views and More Actions > View & Sort > View as Tree (Check)
 
 ```
+
 #### vscode Format on save, Format On Type 해제
+
 ```
 File > Preperences > Settings > Text Editor > Formatting > Format On Save (unChecked)
 File > Preperences > Settings > Text Editor > Formatting > Format On Type (unChecked)
 ```
 
 #### VSCode Show Whitespace
+
 ```
 File > Preperences > Settings > Users Tab > Text Editor > Render Whitespace > all (selection)
 ```
 
 #### VSCode Trim Trailing Whitespace
+
 ```
 File > Preperences > Settings > Users Tab > Text Editor > Files > Trim Trailing Whitespace(Check)
 
 ```
 
-
 ### vscode 상단 타이틀 바에 경로 표시하기
+
 ```
 File > Preperences > Settings > window.title
 
@@ -58,8 +67,8 @@ default: ${dirty}${activeEditorShort}${separator}${rootName}${separator}${appNam
 ${dirty}${rootName}${separator}${folderPath}
 ```
 
-
 #### vscode settings.json
+
 ```
 Windows Path:
 ./data/user-data/User (Portable)
@@ -69,8 +78,8 @@ Mac Path:
 ~/Library/Application Support/Code/User/settings.json (Excute)
 ```
 
-
 #### Tab or Space
+
 ```
 우측 하단 Tab Size, Spaces 선택 후 변경
 Indent Using Spaces
@@ -85,6 +94,7 @@ View > Commnad Palette > File:OpenActive File in New Window
 ```
 
 #### vscode extension export
+
 ```
 # cmd
 code --list-extensions | % { "code --install-extension $_" }
@@ -97,6 +107,7 @@ C:\DEV\tools\VSCode-win32-x64-1.82.2\bin
 ```
 
 #### vscode vue extension
+
 ```bash
 # recommand
 code --install-extension aethli.camelgobrr
@@ -114,18 +125,6 @@ code --install-extension shd101wyy.markdown-preview-enhanced
 code --install-extension techer.open-in-browser
 code --install-extension Tobermory.es6-string-html
 code --install-extension Vue.volar
-
-
-
-
-code --install-extension alefragnani.Bookmarks
-code --install-extension alefragnani.project-manager
-code --install-extension donjayamanne.githistory
-code --install-extension mhutchie.git-graph
-code --install-extension PKief.material-icon-theme
-code --install-extension yzane.markdown-pdf
-code --install-extension yzhang.markdown-all-in-one
-code --install-extension shd101wyy.markdown-preview-enhanced
 
 #### javascript, vue
 code --install-extension techer.open-in-browser
@@ -157,12 +156,13 @@ code --install-extension vscjava.vscode-spring-initializr
 #### java gradle
 code --install-extension vscjava.vscode-gradle
 
-### camel
+#### camel
 code --install-extension aethli.camelgobrr
 
-##### etc
+#### etc
 code --install-extension codezombiech.gitignore
 code --install-extension donjayamanne.git-extension-pack
+code --install-extension donjayamanne.githistory
 code --install-extension eamodio.gitlens
 code --install-extension hollowtree.vue-snippets
 code --install-extension huizhou.githd
@@ -170,31 +170,16 @@ code --install-extension ms-vsliveshare.vsliveshare
 code --install-extension ziyasal.vscode-open-in-github
 code --install-extension yandeu.five-server
 code --install-extension adamhartford.vscode-base64
+#### mac
+code --install-extension smcpeak.default-keys-windows
 
 #### note
 vsnotes
 
-
-#### 2023.08.09.
-code --install-extension aethli.camelgobrr
-code --install-extension alefragnani.Bookmarks
-code --install-extension alefragnani.project-manager    
-code --install-extension dbaeumer.vscode-eslint
-code --install-extension esbenp.prettier-vscode
-code --install-extension hollowtree.vue-snippets
-code --install-extension jasonnutter.search-node-modules
-code --install-extension mhutchie.git-graph
-code --install-extension octref.vetur
-code --install-extension PKief.material-icon-theme
-code --install-extension sdras.vue-vscode-snippets
-code --install-extension shd101wyy.markdown-preview-enhanced
-code --install-extension techer.open-in-browser
-code --install-extension Tobermory.es6-string-html
-code --install-extension Vue.volar
-
 ```
 
 ### vscode camel
+
 ```json
 {
   "camelgobrr.cases": [
@@ -211,6 +196,7 @@ code --install-extension Vue.volar
 ```
 
 ### vscode spring boot 설정
+
 ```
 .\gradlew
 .\gradlew bootRun
@@ -227,6 +213,7 @@ bootRun {
 ```
 
 ### vscode shortcut
+
 ```
 ctrl + d
 ctrl + shift + l
@@ -234,6 +221,7 @@ ctrl + shift + l
 ```
 
 ### vscode install version to portable (windows)
+
 ```
 C:\Users\osryu\.vscode\extensions\=> C:\DEV\tools\VSCode-win32-x64-1.82.2\data\extensions\
 
@@ -241,8 +229,20 @@ C:\Users\osryu\AppData\Roaming\Code\ => C:\DEV\tools\VSCode-win32-x64-1.82.2\dat
 
 ```
 
+### vscode portable
+
+```bash
+# mac
+cd /Applications
+mkdir code-portable-data
+mkdir code-insiders-portable-data
+
+# windows
+# make "data" folder in "vscode folder"
+```
 
 ### vscode Remote-SSH (Windows 10)
+
 ```bash
 
 "C:\Windows\System32\OpenSSH\ssh.exe" -V

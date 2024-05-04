@@ -4,16 +4,19 @@
 # https://guiyomi.tistory.com/113
 # https://hermeslog.tistory.com/498
 # https://mungiyo.tistory.com/22
+# https://learn.microsoft.com/ko-kr/azure/virtual-machines/linux/use-remote-desktop?tabs=azure-cli
 
 # gui
 sudo apt update && sudo apt -y upgrade
 sudo apt install -y ubuntu-desktop
 
 # xfce4 xrdp
-sudo apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
+sudo DEBIAN_FRONTEND=noninteractive apt -y install xfce4 # gdm3, lightdm (lightdm 선택)
+sudp apt install -y xfce4-session xfce-goodies
 #area: 6, 69, display mamger: lightdm
 
 sudo apt -y install xrdp
+systecmctl enable xrdp
 
 sudo cp /etc/xrdp/xrdp.ini /etc/xrdp/xrdp.ini.bak
 sudo sed -i 's/3389/13389/g' /etc/xrdp/xrdp.ini
@@ -32,6 +35,9 @@ sudo reboot
 # xrdp 상태 확인
 service xrdp status
 
+# 오류시 로그 확인
+tail -f /var/log/syslog
+
 # xrdp 오류 해결
 sudo vi /etc/xrdp/startwm.sh
 
@@ -45,7 +51,14 @@ sudo systemctl restart xrdp
 echo "xfce4-session" > ~/.xsession
 cat ~/.xsession # 정상변경여부 확인
 
-
+# ubuntu is not in the sudoers file.  This incident will be reported
+vi /etc/sudoers
+---
+ubuntu ALL=(ALL:ALL) ALL
+---
+sudo bash
+chattr -i /etc/sudoers
+chmod u+w /etc/sudoers
 # # Starting xrdp (via systemctl): xrdp.service Failed to connect to bus: Connection refused
 # # https://superuser.com/questions/1628546/wsl2-run-xrdp-service-from-windows
 # # https://askubuntu.com/questions/234856/unable-to-do-remote-desktop-using-xrdp

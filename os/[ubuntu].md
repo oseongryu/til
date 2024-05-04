@@ -72,6 +72,51 @@ ubuntu ALL=(ALL:ALL) ALL
 # sudo update-alternatives --config x-session-manager
 ```
 
+### ubuntu korean
+
+```bash
+# 한글 언어 팩
+sudo apt-get install -y language-pack-ko
+
+#Locale 설치
+sudo locale-gen ko_KR.EUC-KR
+
+#LANG 설정 업데이트
+sudo update-locale LANG=ko_KR.UTF-8 LC_MESSAGES=POSIX
+
+#한글 입력기 ibus 설치
+sudo apt-get install -y ibus-hangul
+
+# 한글 폰트 설치 #나눔 글꼴 설치
+sudo apt-get install -y fonts-nanum\*
+
+#윈도우에 적응된 인간이므로, 파일 관리툴 MC 도 설치
+apt-get install mc
+
+2 fcitx 설치시작
+
+#설치
+sudo apt install fcitx fcitx-hangul fonts-noto-cjk dbus-x11
+
+#입력기 설정 -> fictx 선택 #첨부 이미지는 이미 한글 설정이 되어, 한글로 출력 중
+im-config
+
+#fcitx.sh 추가
+sudo vim /etc/profile.d/fcitx.sh
+
+#!/bin/bash
+export QT_IM_MODULE=fcitx
+export GTK_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+export DefaultIMModule=fcitx
+
+#optional
+fcitx-autostart &>/dev/null
+
+#아래 명령어 실행해서 한글 입력기 추가 되어 있는 지 확인
+fcitx-config-gtk3
+```
+
 #### portainer
 
 ```bash

@@ -23,6 +23,51 @@ localhostForwarding=true
 3. 재부팅
 ```
 
+### docker-compose
+
+```bash
+# 이미지 재빌드가 필요하면 --build 옵션 추가, 그렇지 않으면 이미 작성된 이미지를 사용하게 됨
+docker-compose up -d
+docker-compose up --build -d
+
+docker-compose stop
+docker-compose down
+
+docker exec -it test bash
+
+docker-compose -f docker-compose.yml -f docker-compose.a.yml config
+docker-compose -f docker-compose.yml -f docker-compose.a.yml up --build -d
+
+```
+
+### docker buildx
+
+```bash
+# https://blog.taehun.dev/docker-buildx-
+# create buildx
+docker buildx create \
+--name multi-arch-builder \
+--driver docker-container \
+--bootstrap --use
+
+# build
+docker buildx build --platform linux/arm64,linux/amd64 -t ubuntu-desktop:22.04 .
+
+# load local
+docker buildx build --load -t ubuntu-desktop:22.04 .
+docker images
+# change image name
+# docker image tag ubuntu-desktop:22.04 oseongryu/ubuntu-desktop:20.04
+
+# push
+docker login
+docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:20.04 --push .
+
+# remove buidlx
+docker buildx ls
+docker buildx rm --all-inactive
+```
+
 ### oracle
 
 ```bash
@@ -331,33 +376,6 @@ nohup /app/java/jdk-8u212-ojdkbuild-linux-x64/bin/java -jar /root/bo-0.0.1-SNAPS
 mkdir /app /app/java /app/wasapp /app/nginx-conf
 docker cp ~/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
 unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
-```
-
-### docker buildx
-
-```bash
-# https://blog.taehun.dev/docker-buildx-
-# create buildx
-docker buildx create \
---name multi-arch-builder \
---driver docker-container \
---bootstrap --use
-
-# build
-docker buildx build --platform linux/arm64,linux/amd64 -t ubuntu-desktop .
-
-# load local
-docker buildx build --load -t ubuntu-desktop .
-docker images
-# change image name
-docker image tag buildx-test-image:latest oseongryu/ubuntu-desktop:20.04
-
-# push
-docker login
-docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:20.04 --push .
-
-# remove buidlx
-docker buildx rm --all-inactive
 ```
 
 ### references

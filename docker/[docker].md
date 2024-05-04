@@ -61,7 +61,7 @@ docker images
 
 # push
 docker login
-docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:20.04 --push .
+docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:22.04 --push .
 
 # remove buidlx
 docker buildx ls

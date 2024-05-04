@@ -52,13 +52,14 @@ echo "xfce4-session" > ~/.xsession
 cat ~/.xsession # 정상변경여부 확인
 
 # ubuntu is not in the sudoers file.  This incident will be reported
+sudo bash
+chattr -i /etc/sudoers
+chmod u+w /etc/sudoers
+
 vi /etc/sudoers
 ---
 ubuntu ALL=(ALL:ALL) ALL
 ---
-sudo bash
-chattr -i /etc/sudoers
-chmod u+w /etc/sudoers
 # # Starting xrdp (via systemctl): xrdp.service Failed to connect to bus: Connection refused
 # # https://superuser.com/questions/1628546/wsl2-run-xrdp-service-from-windows
 # # https://askubuntu.com/questions/234856/unable-to-do-remote-desktop-using-xrdp

@@ -75,6 +75,7 @@ ubuntu ALL=(ALL:ALL) ALL
 ### ubuntu korean
 
 ```bash
+# https://shanepark.tistory.com/231
 # 한글 언어 팩
 sudo apt-get install -y language-pack-ko
 

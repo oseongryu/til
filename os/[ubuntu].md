@@ -1,3 +1,9 @@
+### ubuntu architecture
+
+```bash
+dpkg --print-architecture
+```
+
 ### ubuntu GUI
 
 ```bash

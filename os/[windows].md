@@ -427,4 +427,18 @@ netsh interface portproxy reset
 ```bash
 윈도우 defender가 보이지 않거나 보이지 않게하고 싶은경우
 https://www.sordum.org/9480/defender-control-v2-1/
+
+shell:startup
+
+# regedit 수정
+# 컴퓨터\HKEY_CURRENT_USER\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify
+# IconStreams, PstIconsStream 삭제
+
+taskkill /im explorer.exe /f
+reg delete "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v IconStreams /f
+reg delete "HKCU\Software\Classes\Local Settings\Software\Microsoft\Windows\CurrentVersion\TrayNotify" /v PastIconsStream /f
+explorer.exe
+
+C:\ProgramData\Microsoft\Windows\Start Menu
+C:\Users\{USER}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```

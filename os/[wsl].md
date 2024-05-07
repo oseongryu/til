@@ -23,12 +23,12 @@ dism.exe /online /enable-feature /featurename:microsoft-hyper-v /all /norestart
 # unregister
 dism.exe /online /disable-feature /featurename:VirtualMachinePlatform
 dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux
-dism.exe /online /disable-feature /featurename:microsoft-hyper-v
+dism.exe /online /disable-feature /featurename:microsoft-hyper-v-all
 
 # information
 dism.exe /online /get-featureinfo /featurename:VirtualMachinePlatform
 dism.exe /online /get-featureinfo /featurename:Microsoft-Windows-Subsystem-Linux
-dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v
+dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v-all
 
 # wsl version 설정
 wsl --set-default-version 2

@@ -116,3 +116,9 @@ function guide() {
 }
 
 ```
+
+### google sheet query
+
+```
+=QUERY({'상품'!B4:P64;'전시'!B4:P65;'캠페인'!B4:P55;'주문'!B4:P142;'회원'!B4:P94;'외부연동'!B4:P79';물류/정산'!B4:P63}, "SELECT '4월', Col2, Col5, Col4, Col7, Col10, Col1, Col3, Col12, Col13, Col14, Col15 WHERE (Col6 = '개발' and (Col14 >= DATE'2024-02-01' OR Col14 is null)) ORDER BY Col10 desc, Col14,Col1, Col7",0)
+```

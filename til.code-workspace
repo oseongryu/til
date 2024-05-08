@@ -40,6 +40,7 @@
             // "gitlens.codeLens.scopes": ["document"]
         },
         "[markdown]": {
+            "editor.formatOnSave": false,
             // "editor.autoClosingQuotes": "never"
         },
         "code-runner.executorMap": {

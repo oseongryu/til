@@ -1,34 +1,37 @@
 ### .wslconfig
 
-외부서버접속위해서설정: https://velog.io/@bluejoyq/wsl-%EC%84%9C%EB%B2%84-%EC%99%B8%EB%B6%80-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0
+외부서버접속위해서설정:
+https://velog.io/@bluejoyq/wsl-%EC%84%9C%EB%B2%84-%EC%99%B8%EB%B6%80-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0
 
 ```
 [wsl2]
-memory=8GB
+memory=16GB
 processors=8
 swap=4GB
 localhostForwarding=true
-[experimental]
-networkingMode=mirrored
 ```
 
 ## wsl setting
 
-```bash
+```powershell
+# cmd 관리자 권한으로 진행
 # https://linux.how2shout.com/how-to-install-default-ubuntu-22-04s-desktop-environment/
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
 dism.exe /online /enable-feature /featurename:microsoft-hyper-v /all /norestart
+
+# information
+dism.exe /online /get-featureinfo /featurename:VirtualMachinePlatform
+dism.exe /online /get-featureinfo /featurename:Microsoft-Windows-Subsystem-Linux
+dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v-all
 
 # unregister
 dism.exe /online /disable-feature /featurename:VirtualMachinePlatform
 dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux
 dism.exe /online /disable-feature /featurename:microsoft-hyper-v-all
 
-# information
-dism.exe /online /get-featureinfo /featurename:VirtualMachinePlatform
-dism.exe /online /get-featureinfo /featurename:Microsoft-Windows-Subsystem-Linux
-dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v-all
+# linux kernel setting
+https://docs.microsoft.com/ko-KR/windows/wsl/wsl2-kernel
 
 # wsl version 설정
 wsl --set-default-version 2
@@ -36,13 +39,22 @@ wsl --set-default-version 2
 ### wsl 삭제 후 재설치
 # https://docs.microsoft.com/ko-kr/windows/wsl/install-manual
 # https://ubuntu.com/tutorials/install-ubuntu-on-wsl2-on-windows-11-with-gui-support#1-overview
-wsl --list --online
 
-wsl --unregister Ubuntu-22.04
-wsl --install -d Ubuntu-22.04
+# list
+wsl --list --online
+# install
+wsl --install -d Ubuntu-20.04
+
+# version, install list
 wsl -l -v
 
 wsl
+
+# version 선택
+wsl --set-default Ubuntu-20.04
+
+# remove
+wsl --unregister Ubuntu-20.04
 
 # enable systemd
 systemd
@@ -54,7 +66,7 @@ systemd=true
 wsl --shutdown
 ```
 
-### default-user
+### default-user (ubuntu20.04는 ubuntu2004)
 
 ```bash
 ubuntu config --default-user root
@@ -64,12 +76,14 @@ passwd oseongryu
 ubuntu config --default-user oseongryu
 ```
 
-### ubuntu wsl + docker
+### docker
 
 ```bash
 # https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/
 curl -sSL get.docker.com | sh
+docker --version
 
+# sudo 권한설정
 grep -E 'sudo|wheel' /etc/group
 sudo grep -E '%sudo|%wheel' /etc/sudoers
 sudo usermod -aG docker $USER
@@ -81,7 +95,6 @@ echo 'export DOCKER_HOST=tcp://$wsl_ip:2375' >> ~/.profile
 sudo update-alternatives --config iptables
 # Press <enter> to keep the current choice[*], or type selection number: 1
 wsl --shutdown
-
 ```
 
 ```bat

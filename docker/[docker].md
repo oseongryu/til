@@ -45,23 +45,20 @@ docker-compose -f docker-compose.yml -f docker-compose.a.yml up --build -d
 ```bash
 # https://blog.taehun.dev/docker-buildx-
 # create buildx
-docker buildx create \
---name multi-arch-builder \
---driver docker-container \
---bootstrap --use
+docker buildx create --name multi-arch-builder --driver docker-container --bootstrap --use
 
 # build
-docker buildx build --platform linux/arm64,linux/amd64 -t ubuntu-desktop:22.04 .
+docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 -t ubuntu-desktop:20.04 .
 
 # load local
-docker buildx build --load -t ubuntu-desktop:22.04 .
+docker buildx build --load -t ubuntu-desktop:20.04 .
 docker images
 # change image name
 # docker image tag ubuntu-desktop:22.04 oseongryu/ubuntu-desktop:20.04
 
 # push
 docker login
-docker buildx build --platform linux/arm64,linux/amd64 -t oseongryu/ubuntu-desktop:22.04 --push .
+docker buildx build --platform linux/amd64,linux/arm/v7,linux/arm64 -t oseongryu/ubuntu-desktop:20.04 --push .
 
 # remove buidlx
 docker buildx ls

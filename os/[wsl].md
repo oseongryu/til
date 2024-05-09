@@ -98,9 +98,12 @@ wsl --shutdown
 ```
 
 ### docker setting
-```
+
+```bash
 [Environment]::GetEnvironmentVariable('DOCKER_HOST', 'Machine')
-[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://localcmhost:2375', 'Machine')
+[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://localhost:2375', 'Machine')
+
+docker 실행프로그램 연결
 
 sudo vi /etc/docker/daemon.json
 
@@ -125,29 +128,21 @@ sudo systemctl daemon-reload
 sudo systemctl restart docker.service
 ```
 
-#### docker start using batch
+#### wsl 백그라운드 실행 + docker mapping (작업 스케줄러에 추가하는 방식도 가능)
+
 ```bat
 @REM Windows 관리자 권한으로 bat로 실행
 @REM wsl 백그라운드에서 계속 실행중이어야 함
 @echo Starting dockerd in WSL ...
 @echo off
-if exist nohup.out del /f /q nohup.out
-for /f "tokens=1" %%a in ('wsl sh -c "hostname -I"') do set wsl_ip=%%a
+for /f "tokens=1" %%a in ('wsl -d Ubuntu sh -c "hostname -I"') do set wsl_ip=%%a
 netsh interface portproxy add v4tov4 listenport=2375 connectport=2375 connectaddress=%wsl_ip%
-
-wsl -d Ubuntu-22.04 -u root -e sudo systemctl stop docker.socket
-wsl -d Ubuntu-22.04 -u root -e sudo systemctl stop docker.service
-wsl -d Ubuntu-22.04 -u root -e nohup sh -c "dockerd -H tcp://%wsl_ip% &"
+powershell.exe -Command "start-process wsl.exe -WindowStyle Hidden"
 ```
 
-```powershell
-
-```
-
-### wsl 백그라운드 실행 (작업 스케줄러에 추가하는 방식도 가능)
+#### wsl 실행 확인 프로세스종료
 
 ```bash
-powershell.exe -Command "start-process wsl.exe -WindowStyle Hidden"
 Get-Process | Where-Object { $_.Name -like '*wsl*' }
 Stop-Process -ID 9488
 ```

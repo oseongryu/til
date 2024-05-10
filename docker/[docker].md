@@ -40,6 +40,20 @@ docker-compose -f docker-compose.yml -f docker-compose.a.yml up --build -d
 
 ```
 
+### docker multi architecture (not buildx)
+
+```bash
+# https://medium.com/@life-is-short-so-enjoy-it/docker-how-to-build-and-push-multi-arch-docker-images-to-docker-hub-64dea4931df9
+docker commit oseongryu/ubuntu-desktop-flutter-amd64:0.0.1
+docker push oseongryu/ubuntu-desktop-flutter-amd64:0.0.1
+
+docker commit oseongryu/ubuntu-desktop-flutter-arm64:0.0.1
+docker push oseongryu/ubuntu-desktop-flutter-arm64:0.0.1
+
+docker manifest create oseongryu/ubuntu-desktop-flutter:0.0.1 oseongryu/ubuntu-desktop-flutter-amd64:0.0.1 oseongryu/ubuntu-desktop-flutter-arm64:0.0.1
+docker manifest push oseongryu/ubuntu-desktop-flutter:0.0.1
+```
+
 ### docker buildx
 
 ```bash

@@ -79,6 +79,34 @@ docker buildx ls
 docker buildx rm --all-inactive
 ```
 
+### osx
+
+```bash
+# https://www.lesstif.com/container/docker-osx-106856663.html
+# https://github.com/sickcodes/Docker-OSX
+
+# 환경설정
+sudo apt install qemu qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager
+
+sudo systemctl enable libvirtd.service
+sudo systemctl enable virtlogd.service
+
+echo 1 | sudo tee /sys/module/kvm/parameters/ignore_msrs
+
+sudo modprobe kvm
+sudo systemctl reboot
+
+# use
+docker pull sickcodes/docker-osx:latest
+
+docker run -it \
+    --device /dev/kvm \
+    -p 50922:10022 \
+    -v /tmp/.X11-unix:/tmp/.X11-unix \
+    -e "DISPLAY=${DISPLAY:-:0.0}" \
+    sickcodes/docker-osx:big-sur
+```
+
 ### oracle
 
 ```bash

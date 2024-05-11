@@ -23,6 +23,47 @@ localhostForwarding=true
 3. 재부팅
 ```
 
+### portainer
+
+#### docksal
+
+```bash
+# install docksal
+# https://docs.docksal.io/use-cases/portainer/
+# https://docs.docksal.io/getting-started/setup/#install-macos-docker-for-mac
+DOCKER_NATIVE=1 bash <(curl -fsSL https://get.docksal.io)
+
+# setting
+fin config set --global DOCKSAL_VHOST_PROXY_PORT_HTTP=80
+fin config set --global DOCKSAL_VHOST_PROXY_PORT_HTTPS=443
+fin system reset
+
+# uninstall
+fin cleanup
+fin system stop
+rm -rf "$HOME/.docksal"
+rm -f /usr/local/bin/fin
+```
+
+#### portainer
+
+```bash
+# install
+docker volume create portainer_data
+
+# docksal
+docker run --name portainer -d -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --label='io.docksal.virtual-host=portainer.*' --label=io.docksal.virtual-port=9000 portainer/portainer -H unix:///var/run/docker.sock
+# not docksal
+docker run --name portainer -itd -p 9000:9000 -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --restart=always portainer/portainer
+
+# use
+# http://portainer.docksal or localohost:9000
+
+#uninstall
+docker rm -vf portainer
+docker volume rm -f portainer_data
+```
+
 ### docker-compose
 
 ```bash
@@ -84,6 +125,8 @@ docker buildx rm --all-inactive
 ```bash
 # https://www.lesstif.com/container/docker-osx-106856663.html
 # https://github.com/sickcodes/Docker-OSX
+
+# m1 mac brew install qemu
 
 # 환경설정
 sudo apt install qemu qemu-kvm libvirt-clients libvirt-daemon-system bridge-utils virt-manager

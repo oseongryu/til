@@ -124,22 +124,6 @@ fcitx-autostart &>/dev/null
 fcitx-config-gtk3
 ```
 
-#### portainer
-
-```bash
-# https://docs.docksal.io/use-cases/portainer/
-# install
-docker volume create portainer_data
-docker run --name portainer -d -v /var/run/docker.sock:/var/run/docker.sock -v portainer_data:/data --label='io.docksal.virtual-host=portainer.*' --label=io.docksal.virtual-port=9000 portainer/portainer -H unix:///var/run/docker.sock
-
-# use
-# http://portainer.docksal
-
-#uninstall
-docker rm -vf portainer
-docker volume rm -f portainer_data
-```
-
 ### google cloud ubuntu 20.04
 
 ```bash

@@ -78,6 +78,38 @@ ubuntu ALL=(ALL:ALL) ALL
 # sudo update-alternatives --config x-session-manager
 ```
 
+### novnc
+
+```bash
+lsb_release -cd  ; getconf LONG_BIT ; hostname ; hostname -I
+
+# https://www.youtube.com/watch?v=BWe2bnL0Nl8
+Offcial Wesbite :https://novnc.com/info.html GitHub -https://github.com/novnc/noVNC
+#
+sudo apt install xfce4 xfce4-goodies tightvncserver novnc websockify python3-numpy build-essential net-tools curl git software-properties-common -y
+vncserver
+vncserver -kill :1
+mv ~/.vnc/xstartup ~/.vnc/xstartup.bak
+vim ~/.vnc/xstartup
+----
+#!/bin/bash
+xrdb $HOME/.Xresources
+startxfce4 &
+---
+chmod +x ~/.vnc/xstartup
+vncserver
+vncpasswd  [ StrongPassword ]
+
+sudo adduser ubuntu
+echo ubuntu ALL=\(root\) NOPASSWD:ALL > /etc/sudoers.d/ubuntu \
+    && chmod 0440 /etc/sudoers.d/ubuntu
+
+cd /etc/ssl ; openssl req -x509 -nodes -newkey rsa:2048 -keyout novnc.pem -out novnc.pem -days 365
+chmod 644 novnc.pem
+websockify -D --web=/usr/share/novnc/ --cert=/etc/ssl/novnc.pem 6080 localhost:5901
+https://localhost:6080/vnc.html
+```
+
 ### ubuntu korean
 
 ```bash

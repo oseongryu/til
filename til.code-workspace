@@ -11,6 +11,13 @@
         },
     ],
     "settings": {
+        "vscode-office.previewCode": false,
+        "vscode-office.editorTheme": "Light",
+        "vscode-office.previewCodeHighlight.showLineNumber": false,
+        "vscode-office.viewAbsoluteLocal": true,
+        "vscode-office.editorLanguage": "ko_KR",
+        "vscode-office.openOutline": true,
+        "vscode-office.hideToolbar": false,
         "editor.formatOnSave": true,
         "markdown-preview-github-styles.darkTheme": "light",
         // "files.eol": "\n",

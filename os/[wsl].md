@@ -18,17 +18,17 @@ localhostForwarding=true
 # https://linux.how2shout.com/how-to-install-default-ubuntu-22-04s-desktop-environment/
 dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart
 dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart
-dism.exe /online /enable-feature /featurename:microsoft-hyper-v /all /norestart
+# dism.exe /online /enable-feature /featurename:microsoft-hyper-v /all /norestart
 
 # information
 dism.exe /online /get-featureinfo /featurename:VirtualMachinePlatform
 dism.exe /online /get-featureinfo /featurename:Microsoft-Windows-Subsystem-Linux
-dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v-all
+# dism.exe /online /get-featureinfo /featurename:microsoft-hyper-v-all
 
 # unregister
 dism.exe /online /disable-feature /featurename:VirtualMachinePlatform
 dism.exe /online /disable-feature /featurename:Microsoft-Windows-Subsystem-Linux
-dism.exe /online /disable-feature /featurename:microsoft-hyper-v-all
+# dism.exe /online /disable-feature /featurename:microsoft-hyper-v-all
 
 # linux kernel setting
 https://docs.microsoft.com/ko-KR/windows/wsl/wsl2-kernel

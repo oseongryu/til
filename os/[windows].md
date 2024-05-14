@@ -442,3 +442,22 @@ explorer.exe
 C:\ProgramData\Microsoft\Windows\Start Menu
 C:\Users\{USER}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
+
+### windows10 검색시 이미지 안보임
+
+```bash
+# https://comformation.tistory.com/27
+cd /d %userprofile%\AppData\Local\Microsoft\Windows\Explorer
+attrib –h thumbcache_*.db
+del thumbcache_*.db start explorer
+```
+
+#### 네트워크 드라이브 연결
+
+```bash
+cmdkey /add:192.168.0.1 /user:networkuser /pass:1234
+pushd \\192.168.0.1\outunion
+
+# 지정된 네트워크 암호가 맞지 않습니다
+자격 증명 관리자 > Windows 자격 증명 > Windows 자격 증명 추가
+```

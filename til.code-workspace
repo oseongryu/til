@@ -11,9 +11,12 @@
         },
     ],
     "settings": {
+        "workbench.editorAssociations": {
+            "*.md": "default"
+        },
         "vscode-office.previewCode": false,
         "vscode-office.editorTheme": "Light",
-        "vscode-office.previewCodeHighlight.showLineNumber": false,
+        "vscode-office.previewCodeHighlight.showLineNumber": true,
         "vscode-office.viewAbsoluteLocal": true,
         "vscode-office.editorLanguage": "ko_KR",
         "vscode-office.openOutline": true,

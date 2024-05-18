@@ -452,6 +452,31 @@ attrib –h thumbcache_*.db
 del thumbcache_*.db start explorer
 ```
 
+### environment variables
+
+```powershell
+[Environment]::GetEnvironmentVariable('DOCKER_HOST', 'Machine')
+[Environment]::SetEnvironmentVariable('DOCKER_HOST', 'tcp://localhost:2375', 'Machine')
+
+# 환경변수를 추가하면 %%가 사라짐 .vba를 사용해서 등록하는 형태로 진행
+# https://wednesday1304.tistory.com/entry/Windows-사용자환경변수에-관하여-UserProfile-AppData-LocalAppData-등
+# https://blog.naver.com/PostView.naver?blogId=21centmen&logNo=223173965426
+# https://wednesday1304.tistory.com/entry/Windows-레지스트리-경로시스템-환경변수-사용자-환경변수
+# https://itenium.be/blog/dev-setup/environment-variables-management-with-powershell/
+Get-ChildItem Env: | Format-Table -Wrap
+Get-ChildItem Env: | Format-Table -Wrap > Desktop\variables.txt
+
+$value = Get-ItemProperty -Path HKCU:\Environment -Name Path
+$newpath = $value.Path += ";C:\src\bin\"
+Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
+
+# use regedit
+# HKCU:\Environment
+# HKLM:\SYSTEM\CurrentControlSet\Control\Session Manager\Environment
+# reg add HKCU\Environment /v JAVA_HOME /d E:\j2ee\j2sdk1.4.2_10
+# REG QUERY HHKCU\Environment /s
+```
+
 #### 네트워크 드라이브 연결
 
 ```bash

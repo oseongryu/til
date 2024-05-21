@@ -1,4 +1,5 @@
 ## OS 확인
+
 ```
 uname -a
 
@@ -8,70 +9,87 @@ cat /etc/*release*
 
 rpm --query centos-release
 ```
+
 ### OS bit 확인
+
 ```
 getconf LONG_BIT
 ```
+
 ## 설치된 패키지 확인
+
 ```
 rpm -qa
 ```
 
 ## 열린 포트 확인
+
 ```
 netstat -tnlp
 ```
 
 ### list open files
+
 ```
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 nmap localhost
 ```
 
 ## nginx 사용여부 확인
+
 systemctl status ngin bx
 
-
 ## chmod chown chcon
+
 ls -l 로 각 파일의 권한을 확인
 
 ### 파일에 권한설정
+
 chmod 777 test.txt
 
 ### 폴더에 권한설정
+
 chmode -R 777 folder
 drwxrwxrwx
 
 ## nginx
+
 cd /etc/nginx/conf.d
 
 ### 재시작
+
 sudo service nginx stop
 sudo service nginx start
 sudo service nginx reload
 
 ### 상태확인
+
 systemctl status nginx
 telnet -tnlp
 
 ### list open files
+
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 nmap localhost
 
 ### 디렉토리 용량확인
+
 ```
 du -a directory
 ```
 
 ### 압축
-zip -r test.zip ./*
+
+zip -r test.zip ./\*
 unzip test.zip
 unzip test.zip -d /home/oseongryu
 
 ### 폴더 복제 cp
+
 cp -R repo backup_repo
 
 ### 새로운 유저 생성 후, home에 nginx 서비스 배포시
+
 ```bash
 useradd test
 #### 해당 홈에 대해서 접근권한을 줘야함
@@ -103,6 +121,7 @@ ll /home | grep testuser
 ```
 
 ### linux Embeded Tomcat SSL
+
 ```
 keytool -genkeypair -alias tomcat-localhost -storetype jks -keyalg RSA -keysize 2048 -validity 3650 -keystore <your project path>/<your project class path>/keystore.jks
 
@@ -119,6 +138,7 @@ server:
 ```
 
 ### CentOS Default 설정
+
 ```bash
 ### 1. 계정 생성
 useradd testuser
@@ -153,6 +173,7 @@ sudo firewall-cmd --reload
 ```
 
 ### UTC, KST
+
 ```bash
 sudo ln -sf /usr/share/zoneinfo/UTC /etc/localtime
 date
@@ -161,6 +182,7 @@ date
 ```
 
 ### CMD History
+
 ```
 /home/.bash_history
 
@@ -172,6 +194,7 @@ history | grep -i searchterm | less
 ```
 
 ### nc, nmap (Scan IP ranges)
+
 ```bash
 nmap 127.0.0.1
 nc -v 127.0.0.1 8080
@@ -179,6 +202,7 @@ nc -v 127.0.0.1 8080
 ```
 
 ### telnet
+
 ```bash
 sudo yum install telnet
 telnet 127.0.0.1 8080
@@ -256,6 +280,7 @@ chmod 0600 ~/.ssh/authorized_keys
 ```
 
 ### ssh proxyjump
+
 ```bash
 Host root-proxy
     HostName 192.168.0.99
@@ -269,10 +294,7 @@ Host root-was1
     ProxyJump root-proxy
 ```
 
-
 ### systemd
-
-
 
 ```bash
 0. 실행 스크립트 chmod
@@ -334,6 +356,7 @@ systemctl status api_service.service
 ```
 
 ### connect: Network is unreachable
+
 ```
 ping 8.8.8.8
 ```
@@ -382,6 +405,7 @@ yum -y install MariaDB
 ```
 
 ### SFTP 설정
+
 ```bash
 #### 1. SFTP를 위한 SSH설치
 rpm -qa|grep ssh
@@ -433,6 +457,7 @@ sftp -oPort=22 -i ~/.ssh/id_rsa_sftpdev01 sftpdev01@192.168.0.1
 ```
 
 ### 서버 재시작, 서버 종료
+
 ```bash
 #### 10분 뒤 종료 (halt)
 shutdown -h +10
@@ -446,7 +471,8 @@ reboot
 
 ```
 
-###  CentOS 서버 설정 확인
+### CentOS 서버 설정 확인
+
 ```bash
 #
 ip addr show
@@ -464,6 +490,7 @@ traceroute 127.0.0.1 -p 80
 ```
 
 ### oracle 과 Locale 맞추기
+
 ```bash
 SELECT * FROM nls_session_parameters WHERE PARAMETER LIKE '%DATE%' OR PARAMETER LIKE '%LANG%';
 
@@ -500,6 +527,7 @@ sudo ln -s /usr/share/zoneinfo/Asia/Seoul /etc/localtime
 ```
 
 ### sshfs
+
 ```bash
 sudo yum install -y epel-release
 sudo yum install -y fuse-sshfs
@@ -511,11 +539,13 @@ sudo sshfs devuser@192.168.0.1:/data/upload /upload -o allow_other
 ```
 
 ### nfs
+
 ```bash
 https://it-serial.tistory.com/entry/Linux-NFS-%EC%84%9C%EB%B2%84-%EA%B0%9C%EB%85%90-%EA%B5%AC%EC%B6%95%EC%84%A4%EC%B9%98
 ```
 
 ### font error
+
 ```bash
 # https://logical-code.tistory.com/191
 # https://www.lesstif.com/lpt/linux-font-font-config-93127497.html
@@ -524,6 +554,7 @@ sudo yum install freetype fontconfig -y
 ```
 
 ### mem check
+
 ```bash
 cat /proc/meminfo | grep Mem
 ```
@@ -533,10 +564,17 @@ cat /proc/meminfo | grep Mem
 ```bash
 # 톰캣 구동중 catalina.out 삭제 시 톰캣 재기동 전까지 생성되지 않음
 cd tomcatsetupfolder/logs
+
+#!/bin/bash
+curr_date=$(date +%Y%m%d)
+# 오늘날짜로 백업
+cp catalina.out catalina.out-$curr_date
+# 복제후 로그 초기화
 cat /dev/null > catalina.out
 ```
 
 ### find
+
 ```bash
 # 7일 전 파일 목록 확인
 find /home/user/logs/* -type f -mtime +7
@@ -547,6 +585,7 @@ find /home/user/logs/* -name "filename*"
 ```
 
 ### centos GUI
+
 ```bash
 systemctl get-default
 systemctl set-default graphical.target
@@ -567,7 +606,6 @@ systemctl enable xrdpCreated symlink from /etc/systemd/system/multi-user.target.
 
 ```
 
-
 ## References
 
 ```
@@ -583,4 +621,3 @@ sshfs: https://blog.sonim1.com/226
 nfs: https://it-serial.tistory.com/entry/Linux-NFS-%EC%84%9C%EB%B2%84-%EA%B0%9C%EB%85%90-%EA%B5%AC%EC%B6%95%EC%84%A4%EC%B9%98
 
 ```
-

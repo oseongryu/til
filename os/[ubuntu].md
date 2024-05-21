@@ -7,6 +7,7 @@ dpkg --print-architecture
 ### ubuntu GUI
 
 ```bash
+# https://freetome.tistory.com/517
 # https://guiyomi.tistory.com/113
 # https://hermeslog.tistory.com/498
 # https://mungiyo.tistory.com/22

@@ -460,6 +460,12 @@ docker cp ~/jdk-8u212-ojdkbuild-linux-x64.zip centos-spring:/root/
 unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
 ```
 
+### windows
+
+```bash
+docker pull mcr.microsoft.com/windows:20H2
+```
+
 ### references
 
 ```

@@ -135,14 +135,11 @@ DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
 
 ## 한글전환 Shift + space 변경
 
-```md
-
+```
 1. 시스템 환경설정 > 키보드 > 단축키 > 입력소스 > 입력 메뉴에서 다음 소스 선택 단축키를 fn + shift + space 로 변경
 (한영 딜레이가 없으려면 입력 메뉴에서 다음 소스 선택)
 
-
 2. 1번이 안 될 경우 ~/Library/Preferences/com.apple.symbolichotkeys.plist 파일 안에서 60,61 둘 중에 하나를 선택하고 value의 값을 131072로 변경 후 재부팅
-
 ```
 
 ## Oh my zsh
@@ -293,17 +290,16 @@ sudo launchctl remove userkeymapping
 sudo rm /Library/LaunchAgents/userkeymapping.plist
 sudo rm /Users/Shared/bin/userkeymapping
 
-
 ```
 
 ### 슬립모드
+
 ```bash
 # 슬립모드 비활성화
 sudo pmset -c disablesleep 1
 # 슬립모드 활성화
 sudo pmset -c disablesleep 0
 ```
-
 
 ## References
 
@@ -317,17 +313,19 @@ AzureCli: https://docs.microsoft.com/ko-kr/cli/azure/get-started-with-azure-cli
 
 ```
 
+### vscode
 
-### vscode 
+```bash
 xattr "/Applications/Visual Studio Code.app"
 sudo xattr -r -d com.apple.quarantine "/Applications/Visual Studio Code.app"
 
 code () { VSCODE_CWD="$PWD" open -n -b "com.microsoft.VSCode" --args $* ;}
 
-
 arch -x86_64 pod install
+```
 
 ### .zshrc
+
 ```bash
 export ZSH="$HOME/.oh-my-zsh"
 ZSH_THEME="simple"
@@ -378,6 +376,8 @@ export NVM_DIR="$HOME/.nvm"
 ## How to change proxy setting using Command line in Mac
 
 # https://superuser.com/questions/316502/how-to-change-proxy-setting-using-command-line-in-mac-os
+
+```bash
 sudo networksetup -setwebproxy "Wi-Fi" 192.0.0.4 8000
 sudo networksetup -setsecurewebproxy "Wi-Fi" 192.0.0.4 8000
 sudo networksetup -setwebproxystate "Wi-Fi" off
@@ -386,16 +386,18 @@ sudo networksetup -setwebproxystate "Wi-Fi" on
 
 networksetup -getwebproxy "Wi-Fi"
 networksetup -getsecurewebproxy "Wi-Fi"
-
+```
 
 ## mac sudo 명령어 비밀번호 없이
+
 ```
 sudo visudo
 사용자명 ALL=(ALL) NOPASSWD:ALL
 ```
 
-## mac change screenshot name 
-```
+## mac change screenshot name
+
+```bash
 defaults write com.apple.screencapture name "shot"
 killall SystemUIServer
 defaults write com.apple.screencapture name "Screenshot"

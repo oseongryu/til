@@ -1,4 +1,5 @@
 #### Git 사용방법
+
 ```bash
 git config --global init.defaultBranch main
 git --version
@@ -198,6 +199,7 @@ Load key "/Users/oseongryu/.ssh/id_rsa_oseongryu": bad permissions
 ```
 
 #### 원격에서 ssh설정시
+
 ```bash
 chown $USER ~/.ssh/config
 chmod 644 ~/.ssh/config
@@ -265,8 +267,8 @@ git config --global http.sslVerify false
 
 ```
 
-
 #### git remote origin
+
 ```bash
 git config --local --list
 git remote add origin git@github.com:oseongryu/til.git
@@ -280,6 +282,7 @@ git push -u origin main
 ```
 
 #### git merge option
+
 ```bash
 git merge [branch] --strategy-option ours
 git merge [branch] --strategy-option theirs
@@ -296,23 +299,27 @@ git merge --squash [branch]
 ```
 
 #### git remove specific file on all commit
+
 ```bash
 git filter-branch --force --index-filter 'git rm --cached --ignore-unmatch 파일명' --prune-empty --tag-name-filter cat -- --all
 git filter-branch --force --index-filter 'git rm -r --cached --ignore-unmatch 99_00_Software/[IntelliJ].md' --prune-empty --tag-name-filter cat -- --all
 ```
 
 #### git stage to unstage
+
 ```bash
 git reset HEAD -- .
 ```
 
 ### git discard change
+
 ```bash
 git restore .
 git reset --hard
 ```
 
 #### git Directory 계정설정
+
 ```bash
 git config --list --show-origin
 
@@ -348,6 +355,7 @@ git config --list --show-origin
 ```
 
 #### 리모트 브랜치 참조 업데이트
+
 ```bash
 # 리모트 브랜치의 더 이상 유효하지 않은 참조를 깨끗이 지우는 명령어
 git remote prune origin
@@ -358,17 +366,20 @@ git fetch -p
 ```
 
 #### 실수로 삭제한 브랜치 복구하기
+
 ```bash
 git reflog
 git checkout -b 'temp' HEAD@{1}
 ```
 
 #### 원격 브랜치 삭제
+
 ```bash
 git push origin --delete feature/oseongryu
 ```
 
 #### git 커밋이 잘못되어 복구하는 방법
+
 ```js
 // 1. 방법
 1. 로그로 특정 부분 헤더 확인
@@ -383,6 +394,7 @@ git status로 수정한 파일에서 자신이 수정한 파일목록 확인
 ```
 
 #### ssh config (github, gitblit, gitlab)
+
 ```bash
 # 2022.09.23. github oseongryu
 Host github.com
@@ -409,6 +421,7 @@ Host corporation.gitblit.com
 ```
 
 #### git stash
+
 ```
 git stash
 git stash save
@@ -425,6 +438,7 @@ git stash pop
 ```
 
 #### gitlab
+
 ```
 데이터이관
 https://trytoso.tistory.com/1313
@@ -462,6 +476,7 @@ $ git reset --hard origin/<branch_name>
 ```
 
 ### git submodules
+
 ```
 git submodule add git@github.com:oseongryu/corp-script.git
 git submodule add git@github.com:oseongryu/corp-script.git 00_corp_script
@@ -493,7 +508,6 @@ git submodule foreach git checkout main
 C:\Program Files\Git\mingw64\bin
 https://stackoverflow.com/questions/38782928/how-to-add-man-and-zip-to-git-bash-installation-on-windows
 
-
 1. [Navigate to this sourceforge page](https://sourceforge.net/projects/gnuwin32/files/zip/3.0/)
 2. Download zip-3.0-bin.zip
 3. In the zipped file, in the bin folder, find the file zip.exe.
@@ -504,6 +518,7 @@ https://stackoverflow.com/questions/38782928/how-to-add-man-and-zip-to-git-bash-
 8. Extract bzip2.dll to your mingw64\bin folder (same folder as above: C:\Program Files\Git\mingw64\bin)
 
 ### git status filename oneline
+
 ```
 git status --porcelain | sed s/^...//
 git status -s | cut -c4-
@@ -514,6 +529,7 @@ git diff --name-only HEAD
 ```
 
 ### git add 취소하기(unstage로 변경)
+
 ```bash
 git add .
 
@@ -524,6 +540,7 @@ git restore --staged filename
 ```
 
 ### git 특정 커밋 이미지 파일이 사라지지 않는 경우
+
 ```
 특정 커밋 이미지 파일이 깃으로 삭제가 계속 남는 경우
 .git > config 파일에 해당 내용이 사라짐
@@ -536,6 +553,7 @@ git restore --staged filename
 ```
 
 ### git 특정 파일의 수정사항 무시
+
 ```bash
 # 특정 파일의 수정사항 무시하기
 git update-index --assume-unchanged [file path]
@@ -546,6 +564,7 @@ git ls-files -v|grep '^h'
 ```
 
 ### git lcoal에서만 적용
+
 ```bash
 # 1
 vim .git/info/exclude
@@ -560,12 +579,21 @@ git ls-files -v | grep '^[[:lower:]]'
 ```
 
 ### git push 하지 않은 목록 확인
+
 ```bash
 git log --branches --not --remotes
 git log --branches --not --remotes --oneline --graph --decorate
 ```
 
+### git log clear
+
+```bash
+git reflog expire --expire=now --all
+git gc --aggressive --prune=all
+```
+
 #### References
+
 ```
 Git Portable Location
 https://www.theserverside.com/blog/Coffee-Talk-Java-News-Stories-and-Opinions/Where-system-global-and-local-Windows-Git-config-files-are-saved

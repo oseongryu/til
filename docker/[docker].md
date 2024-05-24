@@ -466,6 +466,29 @@ unzip /root/jdk-8u212-ojdkbuild-linux-x64.zip -d /app/java
 docker pull mcr.microsoft.com/windows:20H2
 ```
 
+### docker swarm
+
+```bash
+# https://this1.tistory.com/50'
+# https://medium.com/dtevangelist/docker-기본-7-8-docker-swarm의-구조와-service-배포하기-1d5c05967b0d
+# docker swarm 시작
+docker swarm init
+docker swarm init --advertise-addr {managerIP}
+
+# docker swarm token 확인
+docker swarm join-token worker
+
+# docker swarm node에서 실행
+docker swarm join --token SWMTKN-1-36aduyc0oygzelqi15f0atklib6z31pxe2uk56f4vxjvqnr7s8-17cm5a98qu6mvphhdo05ol58w 192.168.5.15:2377
+
+# docker swarm 상태 확인
+docker info
+
+# docker swarm 종료
+docker swarm leave
+docker swarm leave --force
+```
+
 ### references
 
 ```

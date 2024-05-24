@@ -477,6 +477,12 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 # REG QUERY HHKCU\Environment /s
 ```
 
+### 표시언어 설치 또는 제거
+
+```bash
+cmd + r  > LPKSETUP
+```
+
 #### 네트워크 드라이브 연결
 
 ```bash

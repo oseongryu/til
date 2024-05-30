@@ -402,3 +402,16 @@ defaults write com.apple.screencapture name "shot"
 killall SystemUIServer
 defaults write com.apple.screencapture name "Screenshot"
 ```
+
+## mac xcode 정리
+
+```bash
+# 1. Xcode Archive 삭제
+~/Library/Developer/Xcode/Archives
+# 2. Simulator Device 삭제
+~/Library/Developer/Xcode/iOS DeviceSupport/
+# 3. Project Build 삭제
+~/Library/Developer/Xcode/DerivedData/
+# 4. Device Log 삭제
+~/Library/Developer/Xcode/iOS Device Logs/
+```

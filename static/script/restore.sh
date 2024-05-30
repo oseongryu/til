@@ -40,6 +40,10 @@ if [[ $1 != "" ]]; then
                 fi
             done
 
+            # 파일이름 제외 폴더생성
+            echo "mkdir -p" $varsourcepath/${str/$filename/''}
+            mkdir -p $varsourcepath/${str/$filename/''}
+
             echo "cp" $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
             cp $varsettingpath/${varfilenamelist[$filepathidx]} $varsourcepath/${varfilenamelist[$filepathidx]}
         done

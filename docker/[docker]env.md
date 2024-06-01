@@ -71,17 +71,20 @@ source ~/.bash_profile
 nvm install 16.17.1
 nvm use 16.17.1
 nvm alias default 16.17.1
+
+# yarn 설치
+npm i -g yarn
 ```
 
-## docker offline image 
+## docker offline image
 
 ```bash
 docker save -o centos-env-vue-0.0.2.tar oseongryu/centos-env-vue:0.0.2
 docker load -i centos-env-vue-0.0.2.tar
 ```
 
-
 ### references
+
 ```
 https://imksh.com/93
 ```

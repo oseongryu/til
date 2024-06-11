@@ -375,3 +375,28 @@ defaults delete com.apple.dock autohide && defaults delete com.apple.dock autohi
 # 4. Device Log 삭제
 ~/Library/Developer/Xcode/iOS Device Logs/
 ```
+
+## [mac] mkdir Read-only file system
+
+```bash
+
+# SIP (Security Integrity Protection) 비활성화
+## 부팅시 cmd + R
+csrutil disable
+
+## bash
+sudo mount -uw /
+
+## SIP 활성화
+scrutil enable
+
+# 심볼릭링크 (\t로 띄어쓰기)
+# 설정후 재시작
+sudo vi /etc/synthetic.conf
+/etc/synthetic.conf
+
+---
+data    /Users/doo/data
+---
+
+```

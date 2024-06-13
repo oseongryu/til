@@ -410,6 +410,15 @@ docker run -p 6379:6379 --name my-redis -d --restart=always redis
 docker exec -it my-redis /bin/bash
 redis-cli
 info
+
+#password 설정
+AUTH 'password'
+
+## 패스워드 정보확인
+config get requirepass
+config set requirepass password
+exit
+AUTH 'password'
 ```
 
 ### ubuntu remote-desktop

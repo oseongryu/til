@@ -407,6 +407,7 @@ docker run -it -d -p 9901:9901 --restart=always --name centos-spring oseongryu/c
 ```bash
 docker pull redis
 docker run -p 6379:6379 --name my-redis -d --restart=always redis
+docker run -p 6379:6379 --name my-redis -d --restart=always redis --requirepass testpassword
 docker exec -it my-redis /bin/bash
 redis-cli
 info

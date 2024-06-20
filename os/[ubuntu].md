@@ -523,7 +523,10 @@ sudo crontab -e
 0 2 1 * * /usr/bin/certbot renew
 
 sudo certbot certificates
+# 재갱신테스트
 sudo certbot renew --dry-run
+# 재갱신진행
+sudo certbot renew
 
 ```
 

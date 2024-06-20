@@ -1,7 +1,22 @@
-#### 자동완성 해제
+#### Table alias 자동완성 해제
+
 ```
 - Window > Preferences > Editors > SQL Editor > Code Completion
 Insert table aliases (N/A)
+
+```
+
+#### Code 자동완성 해제
+
+- Window > Preferences > Editors > SQL Editor > Code Editor
+  Auto close
+  Brackets (unchecked)
+
+### 행번호
+
+```
+- Window > Preferences > Editors > Text Editors
+Show line numbers (checked)
 
 ```
 
@@ -17,7 +32,6 @@ Auto-commit by default (체크해제)
 ```
 - Schemas 우클릭 > Filter > Configure "Schemas" filter
 ```
-
 
 #### Encoding
 
@@ -40,6 +54,7 @@ ALTER SESSION SET NLS_DATE_FORMAT = 'YYYY-MM-DD HH24:MI:SS';
 ```
 
 #### dbeaver 6.3.5
+
 ```bash
 # 6.3.5 버전 이후 alter session
 https://github.com/dbeaver/dbeaver/releases/tag/6.3.5

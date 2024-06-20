@@ -130,7 +130,8 @@ settings.json
     // "list.activeSelectionForeground": "#1558d4",
   },
   "application.shellEnvironmentResolutionTimeout": 20,
-  "editor.multiCursorLimit": 100000
+  "editor.multiCursorLimit": 100000,
+  "editor.copyWithSyntaxHighlighting": false
 }
 ```
 

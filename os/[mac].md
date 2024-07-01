@@ -33,6 +33,48 @@
 - 캡쳐시 옵션에서 미리보기썸네일제거
 - 폴더선택후 터미널로 열기
 - 오토마타 사용으로 VSCode로 열기 서비스 만들기
+
+### 6. 단축키
+
+Command + tab = 화면전환
+Command + shift + 3 = 전체 화면 캡처 , 4 = 부분선택 캡처 , 5 = 창선택 캡처
+Control + 위에 방향키 = Mission Control
+Control + 아래 방향키  = 한 프로그램 여러창 띄웠을때 방향키로 선택 가능 (command + n = 새창 띄우기[shift 추가하면 시크릿])
+Control + Command + F 하면 전체화면 되면서 넘어가는데, Control + 좌우로 이동가능
+Command 방향키 = 문장 첫번째줄로 키보드커서 옮기기
+Option 방향키 = 단어별 키보드 커서 옮기기
+Command + Q  = 프로그램 완전 종료 하기
+Command + W = 프로그램 끄기
+Command + 왼쪽 = 뒤로 가기
+Command + 오른쪽  = 앞으로 가기
+Command+, 모든 앱에서 환경 설정 창을 열기
+[command]+[A] Finder 창, 또는 바탕화면에서 모든 파일을 선택
+[command]+[shift]+[A] 응용 프로그램 폴더를 열기
+[command]+[C] 선택한 파일이나 텍스트를 복사
+[command]+[D] 선택한 파일을 복제
+[command]+[shift]+[D] [데스크탑] 폴더를 열기
+[command]+[I] 선택한 항목의 정보를 가져오기
+[command]+[option]+[I] 선택한 다수 항목의 속성을 보기
+[command]+[J] Finder 창의 보기 옵션을 표시
+[command]+[M] 활성화된 창을 Dock으로 축소
+[command]+[N] 새로운 Finder 창을 생성
+[command]+[shift]+[N] 새 폴더를 만들기
+[command]+[O] 선택한 파일을 열기
+[command]+[V] 복사된 파일이나 텍스트를 붙이기
+[command]+[W] 활성화된 창을 닫기
+[command]+[X] 오려두기
+[command]+[Z] 방금 작업했던 내용을 취소
+[command]+[1]~[4] Finder 보기 형식을 전환
+[command]+[`] 열려 있는 Finder 창 순환
+[command]+ [ 이전 폴더로 이동
+[command]+ ] 다음 폴더로 이동
+[command]+ [위쪽 화살표] 폴더를 열기
+[command]+[아래쪽 화살표] 선택된 파일을 열거나 실행
+[command]+[delete] 선택한 파일을 휴지통에 버리기
+[command]+[shift]+[delete] 휴지통을 비우기
+[space bar] 또는 [command]+[Y] 훑어보기
+[command]+파일 드래그 다른 디스크로 파일을 드래그할 때 복사하지 않고 이동
+[option]+파일 드래그 같은 디스크로 파일을 드래그할 때 이동하지 않고 복사
 ```
 
 ## 시스템 환경설정

@@ -19,6 +19,13 @@ git remote add origin https://github.com/f5074/sample.git
 git push origin main
 ```
 
+### gitignore global
+
+```bash
+touch ~/.gitignore
+git config --global core.excludesfile ~/.gitignore
+```
+
 #### Git Revert
 
 ```bash

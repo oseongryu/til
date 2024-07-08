@@ -131,7 +131,9 @@ settings.json
   },
   "application.shellEnvironmentResolutionTimeout": 20,
   "editor.multiCursorLimit": 100000,
-  "editor.copyWithSyntaxHighlighting": false
+  "editor.copyWithSyntaxHighlighting": false,
+  "terminal.integrated.scrollback": 9999,
+  "redhat.telemetry.enabled": false
 }
 ```
 

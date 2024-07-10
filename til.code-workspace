@@ -1,60 +1,106 @@
 {
-    "folders": [
-        {
-            "path": "."
-        },
-        {
-            "path": "../corp-script"
-        },
-    ],
-    "settings": {
-        "workbench.editorAssociations": {
-            "*.md": "default"
-        },
-        "vscode-office.previewCode": false,
-        "vscode-office.editorTheme": "Light",
-        "vscode-office.previewCodeHighlight.showLineNumber": true,
-        "vscode-office.viewAbsoluteLocal": true,
-        "vscode-office.editorLanguage": "ko_KR",
-        "vscode-office.openOutline": true,
-        "vscode-office.hideToolbar": false,
-        "editor.formatOnSave": true,
-        "markdown-preview-github-styles.darkTheme": "light",
-        // "files.eol": "\n",
-        // "files.eol": "\r\n",
-        "git.detectSubmodules": true,
-        // "workbench.startupEditor": "none",
-        // "editor.minimap.enabled": false,
-        // "editor.formatOnSave": true,
-        // "diffEditor.ignoreTrimWhitespace": true,
-        "terminal.integrated.defaultProfile.windows": "Git Bash",
-        "terminal.integrated.defaultProfile.osx": "zsh",
-        // "prettier.jsxSingleQuote": true,
-        // "prettier.singleQuote": true,
-        // "javascript.preferences.quoteStyle": "single",
-        // "typescript.preferences.quoteStyle": "single",
-        "launch": {
-            "configurations": [],
-            "compounds": []
-        },
-        // "editor.defaultFormatter": "esbenp.prettier-vscode",
-        "code-runner.runInTerminal": true,
-        "[json]": {
-            // "editor.quickSuggestions": {
-            //   "strings": true
-            // },
-            // "editor.suggest.insertMode": "replace",
-            // "gitlens.codeLens.scopes": ["document"]
-        },
-        "[markdown]": {
-            // "editor.formatOnSave": false,
-            // "editor.autoClosingQuotes": "never"
-        },
-        "code-runner.executorMap": {
-            "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-        },
-        "window.title": "${dirty}${rootName}",
-        "workbench.colorCustomizations": {  
-        },
+  "folders": [
+    {
+      "path": "."
+    },
+    {
+      "path": "../corp-script"
+    },
+    {
+      "path": "../docker-composes"
+    },
+    {
+      "path": "../python-selenium"
     }
+  ],
+  "settings": {
+    "editor.tabSize": 2,
+    "http.proxyStrictSSL": false,
+    "prettier.packageManager": "yarn",
+    // "editor.formatOnSave": true,
+    "explorer.autoReveal": true,
+    // "files.eol": "\n",
+    "liveServer.settings.multiRootWorkspaceName": "packages",
+    "javascript.implicitProjectConfig.experimentalDecorators": true,
+    "eslint.enable": true,
+    "eslint.options": { "configFile": "./.eslintrc" },
+    // "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
+    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    "workbench.iconTheme": "material-icon-theme",
+    "editor.suggestSelection": "first",
+    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
+    "path-intellisense.extensionOnImport": true,
+    "files.associations": {
+      "*.json": "jsonc"
+    },
+    "editor.fontFamily": "D2Coding,  Consolas, 나눔고딕코딩, 'Courier New', monospace",
+    "git.autofetch": true,
+    "svn.ignoreMissingSvnWarning": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode",
+    // "python.terminal.activateEnvironment": false,
+    // "python.terminal.activateEnvInCurrentTerminal": false,
+    // "python.defaultInterpreterPath": "C:\\Users\\${env:USERNAME}\\git\\python-selenium\\venv\\Scripts\\python.exe",
+    // "python.defaultInterpreterPath": "${workspaceFolder}/venv/Scripts/python",
+    // "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/activate",
+    // "python.defaultInterpreterPath": "./venv/bin/activate",
+    "editor.insertSpaces": true,
+
+    // "python.formatting.provider": "black",
+    // "python.linting.pylintEnabled": true,
+    // "python.linting.enabled": true,
+    "[python]": {
+      // "editor.defaultFormatter": "ms-python.black-formatter",
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
+    },
+    "black-formatter.args": ["--line-length", "300"],
+    "workbench.editorAssociations": {
+      "*.md": "default"
+    },
+    "vscode-office.previewCode": false,
+    "vscode-office.editorTheme": "Light",
+    "vscode-office.previewCodeHighlight.showLineNumber": true,
+    "vscode-office.viewAbsoluteLocal": true,
+    "vscode-office.editorLanguage": "ko_KR",
+    "vscode-office.openOutline": true,
+    "vscode-office.hideToolbar": false,
+    "editor.formatOnSave": true,
+    "markdown-preview-github-styles.darkTheme": "light",
+    // "files.eol": "\n",
+    // "files.eol": "\r\n",
+    "git.detectSubmodules": true,
+    // "workbench.startupEditor": "none",
+    // "editor.minimap.enabled": false,
+    // "editor.formatOnSave": true,
+    // "diffEditor.ignoreTrimWhitespace": true,
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
+    "terminal.integrated.defaultProfile.osx": "zsh",
+    // "prettier.jsxSingleQuote": true,
+    // "prettier.singleQuote": true,
+    // "javascript.preferences.quoteStyle": "single",
+    // "typescript.preferences.quoteStyle": "single",
+    "launch": {
+      "configurations": [],
+      "compounds": []
+    },
+    // "editor.defaultFormatter": "esbenp.prettier-vscode",
+    "code-runner.runInTerminal": true,
+    "[json]": {
+      // "editor.quickSuggestions": {
+      //   "strings": true
+      // },
+      // "editor.suggest.insertMode": "replace",
+      // "gitlens.codeLens.scopes": ["document"]
+    },
+    "[markdown]": {
+      // "editor.formatOnSave": false,
+      // "editor.autoClosingQuotes": "never"
+    },
+    "code-runner.executorMap": {
+      "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
+    },
+    "window.title": "${dirty}${rootName}",
+    "workbench.colorCustomizations": {}
+  }
 }

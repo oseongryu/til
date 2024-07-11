@@ -182,16 +182,7 @@ vsnotes
 
 ```json
 {
-  "camelgobrr.cases": [
-    "kebab-case",
-    "CamelCase",
-    "camelCase",
-    "Space Case",
-    "SPACE CASE",
-    "space case",
-    "SNAKE_CASE",
-    "snake_case"
-  ]
+  "camelgobrr.cases": ["kebab-case", "CamelCase", "camelCase", "Space Case", "SPACE CASE", "space case", "SNAKE_CASE", "snake_case"]
 }
 ```
 
@@ -235,6 +226,7 @@ C:\Users\osryu\AppData\Roaming\Code\ => C:\DEV\tools\VSCode-win32-x64-1.82.2\dat
 # mac
 cd /Applications
 mkdir code-portable-data
+mkdir codium-portable-data
 mkdir code-insiders-portable-data
 
 # windows

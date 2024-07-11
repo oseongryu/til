@@ -123,6 +123,14 @@ on run {input, parameters}
 		activate
 	end tell
 end run
+
+- 빈 파일 만들기
+Application 선택 > AppleScript
+
+tell application "Finder" to make new file at (the target of the front window) as alias
+
+파일저장 > /Applications > BlankFile.app
+cmd를 누른 상태에서 Finder에 Drag&drop
 ```
 
 ## 기본 단축키

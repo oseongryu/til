@@ -450,3 +450,22 @@ data    /Users/doo/data
 ---
 
 ```
+
+## hosts
+
+sudo vi /private/etc/hosts
+
+```
+127.0.0.1 local.co.kr
+127.0.0.1 local.test.co.kr
+```
+
+## 루트레벨 하위 심볼릭링크 생성
+
+sudo vi /etc/synthetic.conf
+synthetic.conf 파일 추가후 재부팅
+
+```
+tomcat  /Users/oseongryu/DEV/tomcat
+java    /Users/oseongryu/DEV/java
+```

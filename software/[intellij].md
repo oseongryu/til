@@ -16,9 +16,14 @@ Ctrl + \ 키로 서블릿 경로 Request Mapping 만으로 검색하여 찾아�
 Mapper Class 에서 타고 들어가고 싶은 메서드에서
 [ Ctrl + Alt + B ] 단축키로 mapper.xml id 를 찾아감
 
+5. Grep Console
+
+6. Writerside
+
 ```
 
 ### Edit Custom VM Options
+
 ```
 # Custom IntelliJ IDEA VM Options
 # https://blog.ddoong2.com/2019/07/29/IntelliJ-IDEA-%EC%98%B5%EC%85%98/
@@ -82,7 +87,6 @@ Check for plugin updates
 Show What's New in the editor after an IDE update
 
 ```
-
 
 ### Font
 
@@ -148,7 +152,6 @@ Reformat on paste 설정 None 또는 Indent block로 변경
 
 <img width="800" src="../static/img/intellij/setting/001.png"/>
 <img width="800" src="../static/img/intellij/setting/002.png"/>
-
 
 ### jdbc drivers location
 
@@ -261,9 +264,8 @@ File > Project Structure 선택
 Project Settings > Project > SDK 클릭 > Add SDK
 ```
 
-
-
 ### IntelliJ 빌드/실행 플랫폼 변경 및 소스코드 자동반영 설정
+
 ```
 File > Build, Execution, Deployment > Compiler
 Aumomatically show first error in editor 체크
@@ -273,8 +275,8 @@ File > Advanced Settings
 Allow auto-make to start even if developed application is currently running 체크
 ```
 
-
 ### IntelliJ live templates
+
 ```
 https://velog.io/@max9106/IntelliJ-Live-Template
 ```
@@ -303,7 +305,6 @@ https://velog.io/@max9106/IntelliJ-Live-Template
 
 <img width="800" src="../static/img/intellij/001.png"/>
 
-
 #### intellij Could not initialize class oracle.jdbc.driver.OracleDriver
 
 ```
@@ -327,19 +328,16 @@ java -cp catalina.jar org.apache.catalina.util.ServerInfo
 
 <Connector port="8080" protocol="HTTP/1.1"
             connectionTimeout="20000"
-            redirectPort="8443" 
+            redirectPort="8443"
             URIEncoding="UTF-8"
             />
 
 
 ```
 
-
 ####
 
-
 File .mvn/wrapper/maven-wrapper.properties not found. The Maven bundled version will be used instead.
-
 
 #### gradle embedded tomcat SSL 설정
 
@@ -363,12 +361,12 @@ server:
 C:\Users\osryu\AppData\Roaming\JetBrains\IntelliJIdea2022.1\workspace
 ```
 
-
 ### Remote Debugging
+
 ```bash
 -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005
 
 java  -Xms2g -Xmx2g -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dfile.encoding=UTF-8 -Dconsole=true -jar drawing-app.war --spring.profiles.active=prod
 ```
-<img width="800" src="../static/img/intellij/remotedebugging/001.png"/>
 
+<img width="800" src="../static/img/intellij/remotedebugging/001.png"/>

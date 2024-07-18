@@ -134,6 +134,11 @@ tell application "Finder" to make new file at (the target of the front window) a
 
 # 2번
 ---
+tell application "Finder" to make new file at (the target of the front window) as alias with properties {name:"newfile.txt"}
+---
+
+# 2번
+---
 on run {input, parameters}
     tell application "Finder"
         set selection to make new file at (get insertion location) with properties {name:"newfile.txt"}

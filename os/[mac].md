@@ -103,14 +103,14 @@ Command+, 모든 앱에서 환경 설정 창을 열기
 ```
 - 등록한 서비스를 확인하는 위치는 ~/Library/services
 
-- VSCode 열기
+- Open VSCode
 셀스크립트 열기
 현재수신하는작업흐름:파일 또는 폴더
 선택항목위치: Finder.app
 통과입력: 변수
 open -n -b "com.microsoft.VSCode" --args "$*"
 
-- Terminal 열기
+- Open Terminal
 AppleScript 실행
 작업흐름수신: 입력없음
 선택항목위치: 모든 응용 프로그램
@@ -124,7 +124,15 @@ on run {input, parameters}
 	end tell
 end run
 
-- 빈 파일 만들기
+- Make NewFile
+Automator > 빠른 동작 > AppleScript DoubleClick
+선택항목위치: Finder.app
+
+---
+tell application "Finder" to make new file at (the target of the front window) as alias
+---
+
+- Make NewFile (Application 버전)
 Application 선택 > AppleScript
 
 # 1번

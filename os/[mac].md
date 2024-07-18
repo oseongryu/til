@@ -127,7 +127,21 @@ end run
 - 빈 파일 만들기
 Application 선택 > AppleScript
 
+# 1번
+---
 tell application "Finder" to make new file at (the target of the front window) as alias
+---
+
+# 2번
+---
+on run {input, parameters}
+    tell application "Finder"
+        set selection to make new file at (get insertion location) with properties {name:"newfile.txt"}
+    end tell
+    return input
+end run
+---
+
 
 파일저장 > /Applications > BlankFile.app
 cmd를 누른 상태에서 Finder에 Drag&drop

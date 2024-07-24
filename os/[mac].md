@@ -1,3 +1,20 @@
+## 추천 앱
+
+```bash
+Magnet
+Scroll Reverser
+AltTab
+# AltTab 사용시
+# 블랙리스트: 열린윈도우없을때 AltTab에서 숨기기(Finder처럼 설정, Excel,PowerPoint 등)
+# 모양: 테마-Windows10, 한줄내윈도우최소너비-15%, 한줄내윈도우최대너비-15%, 마우스올릴때색칠된원들숨기기-체크
+반디네이머(맥에서 생성한 문서 한글자모음분리)
+AppCleaner
+TaskBar(윈도우같은 taskbar)
+Whale(hwp 문서 볼수 있음)
+UTM
+Rancher Desktop(Docker Desktop 대체)
+```
+
 ## 맥 사용법
 
 ```

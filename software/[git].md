@@ -599,6 +599,18 @@ git reflog expire --expire=now --all
 git gc --aggressive --prune=all
 ```
 
+### git alias
+
+```bash
+# https://hannut91.github.io/blogs/git/config
+git config --global alias.cm commit
+git config --global alias.co checkout
+
+# 머지된 브랜치 일괄삭제 (.gitconfig)
+[alias]
+    cleanbranch = "!git branch -d $(git branch --merged | grep -v '\\<master\\>')"
+```
+
 #### References
 
 ```

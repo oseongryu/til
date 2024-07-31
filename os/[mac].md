@@ -18,6 +18,9 @@ Rancher Desktop(Docker Desktop 대체)
 ## 맥 사용법
 
 ```
+### 0. 기타
+-  동일 프로그램 전환 cmd + `
+
 ### 1. 프로그램 종료
 - 프로그램 종료 cmd + q
 - 한탭만 종료 cmd + w
@@ -455,6 +458,27 @@ defaults write com.apple.dock autohide -bool true && defaults write com.apple.do
 defaults write com.apple.dock autohide -bool true && defaults write com.apple.dock autohide-delay -float 0 && defaults write com.apple.dock autohide-time-modifier -float 0.25 && killall Dock 
 # 비활성화
 defaults delete com.apple.dock autohide && defaults delete com.apple.dock autohide-delay && defaults delete com.apple.dock autohide-time-modifier && killall Dock
+```
+
+### launcherpad
+
+```bash
+#런치패드 아이콘 크기 조절
+defaults write com.apple.dock springboard-columns -int 10
+defaults write com.apple.dock springboard-rows -int 10
+
+#런치패드 초기화
+killall Dock
+
+# 처음 상태로 돌아가기
+defaults delete com.apple.dock springboard-columns
+defaults delete com.apple.dock springboard-rows
+
+# 런치패드 초기화
+killall Dock
+
+# 런치패드 설정 완전 초기화
+# defaults write com.apple.dock ResetLaunchPad -bool true
 ```
 
 ## mac xcode 정리

@@ -129,11 +129,18 @@ settings.json
     // "list.activeSelectionBackground": "#1f242b",
     // "list.activeSelectionForeground": "#1558d4",
   },
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "~/DEV/java/zulu8.78.0.19-ca-jdk8.0.412-macosx_x64"
+    }
+  ],
   "application.shellEnvironmentResolutionTimeout": 20,
   "editor.multiCursorLimit": 100000,
   "editor.copyWithSyntaxHighlighting": false,
   "terminal.integrated.scrollback": 9999,
-  "redhat.telemetry.enabled": false
+  "redhat.telemetry.enabled": false,
+  "spring.output.ansi.enabled": "always",
 }
 ```
 

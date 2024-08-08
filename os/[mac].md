@@ -543,3 +543,48 @@ synthetic.conf 파일 추가후 재부팅
 tomcat  /Users/oseongryu/DEV/tomcat
 java    /Users/oseongryu/DEV/java
 ```
+
+
+## [error] cp: utimensat: /usr/local/Cellar/ca-certificates/.: Permission denied
+
+```bash
+sudo chown -R ${USER}:staff /usr/local/Cellar/
+```
+
+## pyenv
+
+```bash
+# https://dchkang83.tistory.com/199
+brew instlal pyenv
+
+# 버전목록확인
+pyenv install --list
+pyenv install --l
+# 필요버전설치
+pyenv install 3.10.6
+# 설정(전역)
+pyenv global 3.10.6
+# 설정(현재프로젝트)
+pyenv local 3.10.6
+# 설정(현재shell)
+pyenv shell 3.10.6
+
+# 설치버전목록확인
+pyenv versions
+# 버전
+pyenv version 
+
+# python 재설치
+ls -l /usr/local/bin/python*
+ln -s -f /usr/local/bin/python3.10 /usr/local/bin/python
+
+#기존 버전 삭제
+rm -rf /usr/local/bin/python*
+rm -rf /usr/local/bin/pip*
+# 환경변수 삭제 
+brew doctor
+brew cleanup
+
+python -m ensurepip --default-pip
+python -m pip install --upgrade pip
+```

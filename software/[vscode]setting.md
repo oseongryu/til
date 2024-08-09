@@ -20,6 +20,7 @@ settings.json
 ```json
 {
   "editor.formatOnType": true,
+  "editor.formatOnSave": true,
   "editor.minimap.enabled": false,
   // "editor.mouseWheelZoom": true,
   "editor.renderWhitespace": "all",
@@ -72,6 +73,92 @@ settings.json
   "camelgobrr.cases": ["camelCase", "SNAKE_CASE"],
   "gitlens.codeLens.enabled": false,
   "gitlens.codeLens.authors.enabled": false,
+  "java.configuration.runtimes": [
+    {
+      "name": "JavaSE-1.8",
+      "path": "~/DEV/java/zulu8.78.0.19-ca-jdk8.0.412-macosx_x64"
+    }
+  ],
+  "application.shellEnvironmentResolutionTimeout": 20,
+  "editor.multiCursorLimit": 100000,
+  "editor.copyWithSyntaxHighlighting": false,
+  "terminal.integrated.scrollback": 9999,
+  "redhat.telemetry.enabled": false,
+  "spring.output.ansi.enabled": "always",
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "editor.accessibilitySupport": "off",
+  "markdown-preview-enhanced.revealjsTheme": "black.css",
+  "workbench.layoutControl.enabled": false,
+  "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
+  "git.ignoreRebaseWarning": true,
+  "diffEditor.ignoreTrimWhitespace": false,
+  "workbench.editorAssociations": {
+    "*.strings": "default"
+  }
+}
+
+```
+
+keybindings.json
+
+```json
+// Place your key bindings in this file to override the defaultsauto[]
+[
+  {
+    "key": "ctrl+shift+9",
+    "command": "workbench.action.files.showOpenedFileInNewWindow",
+    "when": "emptyWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+k o",
+    "command": "-workbench.action.files.showOpenedFileInNewWindow",
+    "when": "emptyWorkspaceSupport"
+  },
+  {
+    "key": "ctrl+shift+alt+8",
+    "command": "casegobrr.caseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "-casegobrr.caseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+9",
+    "command": "casegobrr.repeatCaseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+g",
+    "command": "-casegobrr.repeatCaseChange",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+shift+8",
+    "command": "workbench.action.terminal.sendSequence",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+alt+g",
+    "command": "-workbench.action.terminal.sendSequence",
+    "when": "terminalFocus"
+  },
+  {
+    "key": "ctrl+shift+alt+u",
+    "command": "editor.action.transformToUppercase"
+  },
+  {
+    "key": "ctrl+shift+alt+l",
+    "command": "editor.action.transformToSnakecase"
+  }
+]
+```
+
+setting.json
+
+```
+
   "workbench.colorCustomizations": {
     // green
     // vscdoe 전체 전경 색
@@ -129,73 +216,4 @@ settings.json
     // "list.activeSelectionBackground": "#1f242b",
     // "list.activeSelectionForeground": "#1558d4",
   },
-  "java.configuration.runtimes": [
-    {
-      "name": "JavaSE-1.8",
-      "path": "~/DEV/java/zulu8.78.0.19-ca-jdk8.0.412-macosx_x64"
-    }
-  ],
-  "application.shellEnvironmentResolutionTimeout": 20,
-  "editor.multiCursorLimit": 100000,
-  "editor.copyWithSyntaxHighlighting": false,
-  "terminal.integrated.scrollback": 9999,
-  "redhat.telemetry.enabled": false,
-  "spring.output.ansi.enabled": "always",
-}
-```
-
-keybindings.json
-
-```json
-// Place your key bindings in this file to override the defaultsauto[]
-[
-  {
-    "key": "ctrl+shift+9",
-    "command": "workbench.action.files.showOpenedFileInNewWindow",
-    "when": "emptyWorkspaceSupport"
-  },
-  {
-    "key": "ctrl+k o",
-    "command": "-workbench.action.files.showOpenedFileInNewWindow",
-    "when": "emptyWorkspaceSupport"
-  },
-  {
-    "key": "ctrl+shift+alt+8",
-    "command": "casegobrr.caseChange",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+alt+g",
-    "command": "-casegobrr.caseChange",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+9",
-    "command": "casegobrr.repeatCaseChange",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+g",
-    "command": "-casegobrr.repeatCaseChange",
-    "when": "editorTextFocus"
-  },
-  {
-    "key": "ctrl+shift+8",
-    "command": "workbench.action.terminal.sendSequence",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+alt+g",
-    "command": "-workbench.action.terminal.sendSequence",
-    "when": "terminalFocus"
-  },
-  {
-    "key": "ctrl+shift+alt+u",
-    "command": "editor.action.transformToUppercase"
-  },
-  {
-    "key": "ctrl+shift+alt+l",
-    "command": "editor.action.transformToSnakecase"
-  }
-]
 ```

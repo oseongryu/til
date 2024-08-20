@@ -126,17 +126,17 @@ Command+, 모든 앱에서 환경 설정 창을 열기
 
 ## 오토마타(Automator)를 사용
 
-```
-- 등록한 서비스를 확인하는 위치는 ~/Library/services
+```bash
+# 등록한 서비스를 확인하는 위치는 ~/Library/services
 
-- Open VSCode
+# 1. Open VSCode
 셀스크립트 열기
 현재수신하는작업흐름:파일 또는 폴더
 선택항목위치: Finder.app
 통과입력: 변수
 open -n -b "com.microsoft.VSCode" --args "$*"
 
-- Open Terminal
+# 2. Open Terminal
 AppleScript 실행
 작업흐름수신: 입력없음
 선택항목위치: 모든 응용 프로그램
@@ -150,7 +150,7 @@ on run {input, parameters}
 	end tell
 end run
 
-- Make NewFile
+# 3. Make NewFile
 Automator > 빠른 동작 > AppleScript DoubleClick
 선택항목위치: Finder.app
 
@@ -161,17 +161,17 @@ tell application "Finder" to make new file at (the target of the front window) a
 - Make NewFile (Application 버전)
 Application 선택 > AppleScript
 
-# 1번
+## 1번
 ---
 tell application "Finder" to make new file at (the target of the front window) as alias
 ---
 
-# 2번
+## 2번
 ---
 tell application "Finder" to make new file at (the target of the front window) as alias with properties {name:"newfile.txt"}
 ---
 
-# 2번
+## 2번
 ---
 on run {input, parameters}
     tell application "Finder"
@@ -181,9 +181,20 @@ on run {input, parameters}
 end run
 ---
 
+# 4. BlankFile
 
 파일저장 > /Applications > BlankFile.app
 cmd를 누른 상태에서 Finder에 Drag&drop
+
+
+# 5. Change Display
+빠른동작 > 셸 스크립트 실행
+현재 수신하는 작업흐름(작업흐름 수신): 입력없음
+
+---
+/opt/homebrew/bin/displayplacer "id:957531B3-A352-27D5-8C8B-539281A92537 res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
+exit 0;
+---
 ```
 
 ## 기본 단축키
@@ -544,7 +555,6 @@ tomcat  /Users/oseongryu/DEV/tomcat
 java    /Users/oseongryu/DEV/java
 ```
 
-
 ## [error] cp: utimensat: /usr/local/Cellar/ca-certificates/.: Permission denied
 
 ```bash
@@ -572,7 +582,7 @@ pyenv shell 3.10.6
 # 설치버전목록확인
 pyenv versions
 # 버전
-pyenv version 
+pyenv version
 
 # python 재설치
 ls -l /usr/local/bin/python*
@@ -587,4 +597,34 @@ brew cleanup
 
 python -m ensurepip --default-pip
 python -m pip install --upgrade pip
+```
+
+### displayplacer 맥북 듀얼모니터 위치 변경 문제 해결
+
+```bash
+# https://yoshikixdrum.tistory.com/316
+brew tap jakehilborn/jakehilborn && brew install displayplacer
+
+# 적용
+displayplacer list
+
+# 회사용
+displayplacer "id:957531B3-A352-27D5-8C8B-539281A92537 res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
+```
+
+### 맥북 한글 자음 모음 분리 문제 해결
+
+```bash
+시스템설정 > 키보드 > 텍스트입력 > 입력소스 편집
+
+맞춤법 언어별 자동설정을 한국어로 변경
+맞춤법 자동 수정 체크해제
+자동으로 문장을 대문자로 시작 체크해제
+스페이스를 두 번 눌러 마침표 추가 체크해제
+Touch Bar 입력 제안 체크해제
+스마트 인용 부호 및 대시 사용 체크해제
+
+설정 후 리프레시
+문제 해결 후 필요한 체크박스 다시체크
+# https://playnewway.com/entry/맥북-한글-자음-모음-분리-문제-해결법-마우스-만으로
 ```

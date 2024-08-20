@@ -192,7 +192,7 @@ cmd를 누른 상태에서 Finder에 Drag&drop
 현재 수신하는 작업흐름(작업흐름 수신): 입력없음
 
 ---
-/opt/homebrew/bin/displayplacer "id:957531B3-A352-27D5-8C8B-539281A92537 res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
+/usr/local/bin/displayplacer  "id:A374115D-FB70-7BFF-E15E-ECCF3261834E res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
 exit 0;
 ---
 ```
@@ -609,7 +609,7 @@ brew tap jakehilborn/jakehilborn && brew install displayplacer
 displayplacer list
 
 # 회사용
-displayplacer "id:957531B3-A352-27D5-8C8B-539281A92537 res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
+displayplacer "id:A374115D-FB70-7BFF-E15E-ECCF3261834E res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
 ```
 
 ### 맥북 한글 자음 모음 분리 문제 해결

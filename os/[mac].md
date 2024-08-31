@@ -254,7 +254,55 @@ DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
 (한영 딜레이가 없으려면 입력 메뉴에서 다음 소스 선택)
 
 2. 1번이 안 될 경우 ~/Library/Preferences/com.apple.symbolichotkeys.plist 파일 안에서 60,61 둘 중에 하나를 선택하고 value의 값을 131072로 변경 후 재부팅
+61(입력 메뉴에서 다음 소스 선택)
+60(이전 입력 소스 선택)
 ```
+## 한글전환 키보드 오른쪽 한영전환키
+
+```bash
+# 활성화
+mkdir -p /Users/Shared/bin
+echo '''#!/bin/sh\nhidutil property --set '\'{\"UserKeyMapping\":\[\{\"HIDKeyboardModifierMappingSrc\":0x7000000e7,\"HIDKeyboardModifierMappingDst\":0x70000006d\}\]\}\''''' > /Users/Shared/bin/userkeymapping
+chmod 755 /Users/Shared/bin/userkeymapping
+sudo cat<<: >/Users/Shared/bin/userkeymapping.plist
+
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+    <key>Label</key>
+    <string>userkeymapping</string>   <key>ProgramArguments</key>
+    <array>
+        <string>/Users/Shared/bin/userkeymapping</string>
+    </array>
+    <key>RunAtLoad</key>
+    <true/>
+</dict>
+</plist>
+:
+
+sudo mv /Users/Shared/bin/userkeymapping.plist /Library/LaunchAgents/userkeymapping.plist
+sudo chown root /Library/LaunchAgents/userkeymapping.plist
+sudo launchctl load /Library/LaunchAgents/userkeymapping.plist
+
+왼쪽 상단 사과 로고 클릭
+시스템 환경설정.. 클릭
+키보드 클릭
+단축키 탭 클릭
+입력소스 클릭
+이전 입력소스 선택에 오른쪽 option⌥+스페이스를 클릭하여 오른쪽 command을 누르면
+F18키로 단축키가 설정됨
+시스템 환경설정 창을 닫고 한영 변환이 오른쪽 command키로 잘 되는지 확인
+완료
+
+
+# 비활성화
+sudo launchctl remove userkeymapping
+sudo rm /Library/LaunchAgents/userkeymapping.plist
+sudo rm /Users/Shared/bin/userkeymapping
+
+```
+
 
 ## Oh my zsh
 
@@ -360,51 +408,7 @@ az webapp up --sku F1 --name myExpressApp
 npm start
 ```
 
-## 키보드 오른쪽 한영전환키
 
-```bash
-# 활성화
-mkdir -p /Users/Shared/bin
-echo '''#!/bin/sh\nhidutil property --set '\'{\"UserKeyMapping\":\[\{\"HIDKeyboardModifierMappingSrc\":0x7000000e7,\"HIDKeyboardModifierMappingDst\":0x70000006d\}\]\}\''''' > /Users/Shared/bin/userkeymapping
-chmod 755 /Users/Shared/bin/userkeymapping
-sudo cat<<: >/Users/Shared/bin/userkeymapping.plist
-
-<?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-<plist version="1.0">
-<dict>
-    <key>Label</key>
-    <string>userkeymapping</string>   <key>ProgramArguments</key>
-    <array>
-        <string>/Users/Shared/bin/userkeymapping</string>
-    </array>
-    <key>RunAtLoad</key>
-    <true/>
-</dict>
-</plist>
-:
-
-sudo mv /Users/Shared/bin/userkeymapping.plist /Library/LaunchAgents/userkeymapping.plist
-sudo chown root /Library/LaunchAgents/userkeymapping.plist
-sudo launchctl load /Library/LaunchAgents/userkeymapping.plist
-
-왼쪽 상단 사과 로고 클릭
-시스템 환경설정.. 클릭
-키보드 클릭
-단축키 탭 클릭
-입력소스 클릭
-이전 입력소스 선택에 오른쪽 option⌥+스페이스를 클릭하여 오른쪽 command을 누르면
-F18키로 단축키가 설정됨
-시스템 환경설정 창을 닫고 한영 변환이 오른쪽 command키로 잘 되는지 확인
-완료
-
-
-# 비활성화
-sudo launchctl remove userkeymapping
-sudo rm /Library/LaunchAgents/userkeymapping.plist
-sudo rm /Users/Shared/bin/userkeymapping
-
-```
 
 ### 슬립모드
 

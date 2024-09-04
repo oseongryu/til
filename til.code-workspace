@@ -2,6 +2,12 @@
   "folders": [
     {
       "path": "."
+    },
+    {
+      "path": "../corp-script"
+    },
+    {
+      "path": "../docker-composes"
     }
   ],
   "settings": {

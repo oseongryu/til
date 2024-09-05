@@ -257,6 +257,7 @@ DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
 61(입력 메뉴에서 다음 소스 선택)
 60(이전 입력 소스 선택)
 ```
+
 ## 한글전환 키보드 오른쪽 한영전환키
 
 ```bash
@@ -286,14 +287,7 @@ sudo chown root /Library/LaunchAgents/userkeymapping.plist
 sudo launchctl load /Library/LaunchAgents/userkeymapping.plist
 
 왼쪽 상단 사과 로고 클릭
-시스템 환경설정.. 클릭
-키보드 클릭
-단축키 탭 클릭
-입력소스 클릭
-이전 입력소스 선택에 오른쪽 option⌥+스페이스를 클릭하여 오른쪽 command을 누르면
-F18키로 단축키가 설정됨
-시스템 환경설정 창을 닫고 한영 변환이 오른쪽 command키로 잘 되는지 확인
-완료
+시스템 > 키보드 > 단축키 > 입력소스 > 입력 메뉴에서 다음 소스 선택 > 오른쪽 command 클릭(F18)
 
 
 # 비활성화
@@ -302,7 +296,6 @@ sudo rm /Library/LaunchAgents/userkeymapping.plist
 sudo rm /Users/Shared/bin/userkeymapping
 
 ```
-
 
 ## Oh my zsh
 
@@ -407,8 +400,6 @@ az webapp up --sku F1 --name <app-name>
 az webapp up --sku F1 --name myExpressApp
 npm start
 ```
-
-
 
 ### 슬립모드
 

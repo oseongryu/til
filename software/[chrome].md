@@ -1,3 +1,9 @@
+### chrome profile
+
+```
+mac: $HOME/Library/Application\ Support/Google/Chrome/Default
+```
+
 ### 크롬 캡쳐
 
 ```
@@ -22,7 +28,6 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 
     설정 > 개인정보 및 보안 > 보안
     데이터 유출로 인해 비밀번호가 노출된 경우 알림 (해제)
-
 
 ### 모바일 크롬 라이브페이지 설정
 
@@ -53,8 +58,8 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 <img width="800" src="../static/img/chrome/003.png"/>
 <img width="800" src="../static/img/chrome/004.png"/>
 
-
 ### chrome android debugger
+
     1. PC에 USB 연결
     2. chrome://inspect/#devices
     3. 연결시 USB 디버깅 등 확인
@@ -74,41 +79,42 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 ```
 
 ### chrome speed up
+
 ```
 --process-per-site
 ```
 
-### chrome cmd 
+### chrome cmd
 
 ```
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --disable-plugins
 "C:\Program Files\Google\Chrome\Application\chrome.exe" --restore-last-session
 
 
-1. 크롬을 기본 브라우저로 설정한 뒤 실행하기 
+1. 크롬을 기본 브라우저로 설정한 뒤 실행하기
 --make-chrome-default
-2. 플러그인 비활성화하여 크롬 실행하기 
+2. 플러그인 비활성화하여 크롬 실행하기
 --disable-plugins
-3. 크롬 실행하지 않고 웹 사이트의 스크린 샷 찍기 
+3. 크롬 실행하지 않고 웹 사이트의 스크린 샷 찍기
 --headless --screenshot="스크린샷 저장 경로" "스크린샷을 찍을 웹 사이트 경로"
-4. 구글 계정 동기화 비활성화하고 실행하기 
+4. 구글 계정 동기화 비활성화하고 실행하기
 --disable-sync
-5. 야간 조명 활성화하여 크롬 실행하기 
+5. 야간 조명 활성화하여 크롬 실행하기
 --ash-enable-night-light
-6. 크롬을 시크릿 모드로 실행하기 
+6. 크롬을 시크릿 모드로 실행하기
 --disable-plugins
-7. 백그라운드 앱 비활성화하고 크롬 실행하기 
+7. 백그라운드 앱 비활성화하고 크롬 실행하기
 --disable-background-mode
-8. 크롬 창 최대화 상태로 실행하기 
+8. 크롬 창 최대화 상태로 실행하기
 --start-maximized
-9. GPU 가속 비활성화하고 크롬 실행하기 
+9. GPU 가속 비활성화하고 크롬 실행하기
 --disable-gpu
-10. DNS 프리 패치 비활성화하고 크롬 실행하기 
+10. DNS 프리 패치 비활성화하고 크롬 실행하기
 --dns-prefetch-disable
-11. 마지막 세션 복원 상태로 크롬 실행하기 
+11. 마지막 세션 복원 상태로 크롬 실행하기
 --restore-last-session
-12. 크롬 소리 음소거 상태로 실행하기 
+12. 크롬 소리 음소거 상태로 실행하기
 --mute-audio
-13. 크롬을 강제 다크 모드 상태로 실행하기 
+13. 크롬을 강제 다크 모드 상태로 실행하기
 --force-dark-mode
 ```

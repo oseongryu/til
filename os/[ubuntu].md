@@ -506,13 +506,13 @@ sudo certbot certonly --standalone --register-unsafely-without-email
 
 sudo openssl pkcs12 -export -in fullchain.pem -inkey privkey.pem -out keystore.p12 -name ttp -CAfile chain.pem -caname root
 
-# 배포 후 root 권한으로 실행하는게 아니면 RFC 규약에 의하여 1024미만 포트는 root만 가능하므로 리다이렉션처리 (nginx 설치후 리다이렉트를 진행하는 방식 추천)
-sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8089
+# # 배포 후 root 권한으로 실행하는게 아니면 RFC 규약에 의하여 1024미만 포트는 root만 가능하므로 리다이렉션처리 (nginx 설치후 리다이렉트를 진행하는 방식 추천)
+# sudo iptables -t nat -A PREROUTING -p tcp --dport 443 -j REDIRECT --to-port 8089
 
-# 목록
-sudo iptables -t nat -L PREROUTING --line-numbers
-# iptables 삭제 번호
-sudo iptables -t nat -D PREROUTING 3
+# # 목록
+# sudo iptables -t nat -L PREROUTING --line-numbers
+# # iptables 삭제 번호
+# sudo iptables -t nat -D PREROUTING 3
 
 
 # 인증서 자동갱신

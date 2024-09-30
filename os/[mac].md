@@ -623,3 +623,28 @@ Touch Bar 입력 제안 체크해제
 문제 해결 후 필요한 체크박스 다시체크
 # https://playnewway.com/entry/맥북-한글-자음-모음-분리-문제-해결법-마우스-만으로
 ```
+
+### mac crontab
+
+```bash
+#### mac crontabl 추가
+# 크론탭 등록
+crontab -e
+# 10분마다 수행
+*/10 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py
+# 5분마다 수행
+*/5 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py
+
+# 크론탭 목록
+crontab -l
+```
+
+### mac mail(You have new mail.)
+
+```bash
+# mail list
+cat /var/mail/$USER
+
+# mail delete
+sudo rm /var/mail/$USER
+```

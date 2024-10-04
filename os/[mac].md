@@ -631,12 +631,11 @@ Touch Bar 입력 제안 체크해제
 # 크론탭 등록 (크론탭 추가 후 권한 문제 발생시 chmod +x filename)
 crontab -e
 # 10분마다 수행
-*/10 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py
+*/10 * * * * $HOME/git/python-selenium/venv/bin/python3 $HOME/git/python-selenium/selenium/youtube_fredit.py
 # 5분마다 수행
-*/5 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py
-
-*/5 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py >> ~/python.log 2>&1
-
+*/5 * * * * $HOME/git/python-selenium/venv/bin/python3 $HOME/git/python-selenium/selenium/youtube_fredit.py
+# 5분마다 수행 mail이 오지 않도록 로그로 처리
+*/5 * * * * $HOME/git/python-selenium/venv/bin/python3 $HOME/git/python-selenium/selenium/youtube_fredit.py >> $HOME/python.log 2>&1
 # 크론탭 목록
 crontab -l
 ```

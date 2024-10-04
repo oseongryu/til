@@ -628,12 +628,14 @@ Touch Bar 입력 제안 체크해제
 
 ```bash
 #### mac crontabl 추가
-# 크론탭 등록
+# 크론탭 등록 (크론탭 추가 후 권한 문제 발생시 chmod +x filename)
 crontab -e
 # 10분마다 수행
 */10 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py
 # 5분마다 수행
 */5 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py
+
+*/5 * * * * $USER/git/python-selenium/venv/bin/python3 $USER/git/python-selenium/selenium/youtube_fredit.py >> ~/python.log 2>&1
 
 # 크론탭 목록
 crontab -l

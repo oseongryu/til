@@ -1,4 +1,4 @@
-### Fiddler 
+### Fiddler
 
 ```
 The community-trusted free Windows-only tool that logs HTTP(s) network traffic.
@@ -15,4 +15,3 @@ The community-trusted free Windows-only tool that logs HTTP(s) network traffic.
 
 <img width="800" src="./img/fiddler_4.png"/>
 <img width="800" src="./img/fiddler_5.png"/>
-

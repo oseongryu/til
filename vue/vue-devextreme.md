@@ -15,19 +15,21 @@ devextreme add devextreme-vue
 ```
 
 ##
+
 ```bash
 npx -p devextreme-cli devextreme add devextreme-vue
 npm install devextreme@22.2 devextreme-vue@22.2 --save --save-exact
 ```
 
 ## devextreme 가이드
+
 ```
 https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/
 
 검색을 사용해서 찾기
 ```
-<img width="700" src="../static/img/devextreme/001.png"/>
 
+<img width="700" src="../static/img/devextreme/001.png"/>
 
 ## grid checkbox
 
@@ -49,21 +51,21 @@ https://codesandbox.io/s/rj5zzy
     </dx-data-grid>
 
 onListSelectionChanged(e) {
-    alert('temp')
-    if (e.selectedRowsData && e.selectedRowsData.length > 0) {
-        // this.disableRemoveButton = false
-    } else {
-        // this.disableRemoveButton = true
-    }
+alert('temp')
+if (e.selectedRowsData && e.selectedRowsData.length > 0) {
+// this.disableRemoveButton = false
+} else {
+// this.disableRemoveButton = true
+}
 }
 
 ## devextreme grid cell change
+
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/ColumnCustomization/Vue/Light/
 
-
 ### grid cell edit
-https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/BatchEditing/Vue/Light/
 
+https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/BatchEditing/Vue/Light/
 
 ```js
 <template>
@@ -152,28 +154,34 @@ export default class {
 ```
 
 ### grid summary
+
 summary type - "sum","min","max","avg","count","custom"
 https://js.devexpress.com/Demos/WidgetsGallery/Demo/DataGrid/RecalculateWhileEditing/jQuery/Light/
 https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/Configuration/summary/totalItems/#summaryType
+
 ```js
 $(() => {
   $('#gridContainer').dxDataGrid({
     summary: {
       recalculateWhileEditing: true,
-      totalItems: [{
-        column: 'OrderNumber',
-        summaryType: 'count',
-      }, {
-        column: 'SaleAmount',
-        summaryType: 'avg',
-        valueFormat: 'currency',
-      }],
+      totalItems: [
+        {
+          column: 'OrderNumber',
+          summaryType: 'count',
+        },
+        {
+          column: 'SaleAmount',
+          summaryType: 'avg',
+          valueFormat: 'currency',
+        },
+      ],
     },
-  });
-});
+  })
+})
 ```
 
 ### button
+
 ```js
 <template>
   <dx-button type="success" class="btn--etc--ct06" icon="search" :height="34" text="상품검색" @click="showProductPopup = true" id="product-sch-btn" />

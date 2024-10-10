@@ -5,11 +5,13 @@ Ctrl +  Alt + L : 코드정렬
 ```
 
 ### 안드로이드 테마 다크로 변경하기
+
 ```
 "Theme.AppCompat.Light.DarkActionBar" -> "Theme.AppCompat.NoActionBar"
 ```
 
 ### 안드로이드 설치 후 세팅 (20180225일 19시)
+
 ```
 File > Setting > Appearance & Behavior> System Settings
 Reopen last project on startup
@@ -23,17 +25,20 @@ File > Settings > Tools > Emulator > Launch in a tool window 체크해제
 
 ```
 
-
 ### 안드로이드 상태바에 Notifications 보내기
+
 ```
 https://mainia.tistory.com/1143
 https://episode1.tistory.com/entry/6-%EC%95%88%EB%93%9C%EB%A1%9C%EC%9D%B4%EB%93%9C-Notification-%ED%99%9C%EC%9A%A9%ED%95%9C-%EC%95%8C%EB%A6%BC%EB%B0%94-%EB%9D%84%EC%9A%B0%EA%B8%B0
 ```
+
 ### 안드로이드 json 파싱
+
 ```
 http://turtle.azurewebsites.net/users
 https://dpdpwl.tistory.com/23
 ```
+
 ### android에서 Navigation Drawer 사용하기
 
 ```
@@ -59,7 +64,6 @@ https://play.google.com/store/apps/details?id=com.dki.spb_android
 https://itunes.apple.com/us/app/keynote/id1037272004?mt=8
 ```
 
-
 ### 안드로이드 리팩토링 방법 (dex2jar,jd-gui,apktool)
 
 ```
@@ -73,12 +77,13 @@ https://build.phonegap.com/
 ```
 
 ### Error:Could not determine the class-path for interface com.android.builder.model.AndroidProject.
+
 ```
 https://stackoverflow.com/questions/42777321/could-not-determine-the-class-path-for-interface-com-android-builder-model-andro/42994035
 ```
 
+### No service of type Factory available in ProjectScopeServices. Open File
 
-### No service of type Factory  available in ProjectScopeServices. Open File
 ```
 https://www.google.co.kr/search?rlz=1C1CHZL_koKR769KR769&ei=bfWXWu2fK8ej8AWP1avQBg&q=+No+service+of+type+Factory++available+in+ProjectScopeServices.+Open+File&oq=+No+service+of+type+Factory++available+in+ProjectScopeServices.+Open+File&gs_l=psy-ab.3..0.471387.471387.0.472298.1.1.0.0.0.0.143.143.0j1.1.0....0...1c.1.64.psy-ab..0.1.141....0.qGcrThDlueA
 
@@ -111,12 +116,12 @@ apply plugin: 'com.android.library'
 ```
 
 ### android webview chrome debugger
+
 ```js
 1. PC에 USB 연결
 2. chrome://inspect/#devices
 3. 연결시 USB 디버깅 등 확인
 ```
-
 
 ### [ERROR] please retry with version 2021.2.1 or newer
 
@@ -131,8 +136,8 @@ File > Help > Check for Updates
 
 https://developer.android.com/jetpack/androidx/explorer?hl=ko
 
-
 ### Android Decompile
+
 ```
 http://woowabros.github.io/experience/2017/07/17/resume.html
 
@@ -147,17 +152,18 @@ http://layers7.tistory.com/7?category=724470
 https://m.blog.naver.com/PostView.nhn?blogId=coogi21c&logNo=220990437650&categoryNo=0&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 ```
 
-
 ## Android build
 
 ### Clean Project
+
 <img width="400" src="../static/img/android/build/001.png"/>
 
 ### Build Variants
+
 <img width="400" src="../static/img/android/build/002.png"/>
 
-
 ### Android icon
+
     1. https://www.appicon.co/
     2. android/app/src/main/res 기본 아이콘 경로로 변경
 
@@ -165,6 +171,7 @@ https://m.blog.naver.com/PostView.nhn?blogId=coogi21c&logNo=220990437650&categor
     2.  manifest.xml application icon과 roundIcon 변경
 
 ### Android decompile
+
 ```
 1. Dex2Jar
 apk이미지를 jar파일로 변환해 줍니다.
@@ -198,16 +205,14 @@ apk-studio로 실행해서 보시면 됩니다.
 안드로이드 아이콘으로 apk 파일을 선택하시면, 안에 있는 파일을 풀고 조회가 가능 합니다.
 ```
 
-
 C:\DEV\tools\dex2jar-2.0\d2j-dex2jar.bat -f -o C:\DEV\tools\dex2jar-2.0\test.jar C:\DEV\tools\dex2jar-2.0\test.apk
-
 
 apktool d C:\Users\f5074\Downloads\tester.apk
 
 C:\Users\f5074\AppData\Local\apktool\framework\
 
+### avd 장치 실행 안됨
 
-### avd 장치 실행 안됨 
 ```bash
 # 변경전
 hw.gpu.enabled=yes
@@ -218,6 +223,7 @@ hw.gpu.mode=off
 ```
 
 ### debugging
+
 ```bash
 # 1. 폰 연결, CMD 실행
 # 2. 앱의 PID 확인

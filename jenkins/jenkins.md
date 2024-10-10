@@ -1,6 +1,7 @@
 ## jenkins
 
 ### jenkins setup
+
 ```bash
 sudo wget -O /etc/yum.repos.d/jenkins.repo https://pkg.jenkins.io/redhat-stable/jenkins.repo --no-check-certificate
 sudo rpm --import https://pkg.jenkins.io/redhat-stable/jenkins.io.key
@@ -16,9 +17,11 @@ systemctl reset-failed jenkins.service
 ```
 
 ### jenkins start
+
 ```bash
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
+
 <img width="800" src="../static/img/99_17_jenkins/001.png"/>
 <img width="500" src="../static/img/99_17_jenkins/002.png"/>
 <img width="800" src="../static/img/99_17_jenkins/003.png"/>
@@ -30,8 +33,8 @@ sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 <img width="800" src="../static/img/99_17_jenkins/009.png"/>
 <img width="800" src="../static/img/99_17_jenkins/010.png"/>
 
-
 ### jenkins 에러 (젠킨스 업데이트 이후 에러가 발생해서 실행이 안됨)
+
 ```bash
 
 # Error
@@ -66,7 +69,7 @@ vi jenkins.log
 # 3. 젠킨스 배포 위치 확인
 cd /
 find . -name "*.war"
-/usr/lib/jenkins/jenkins.war 
+/usr/lib/jenkins/jenkins.war
 
 # 4. 젠킨스 실행되던 버전의 war 파일로 변경후 재실행
 cp jenkins.war jenkins.war.20230109.bak
@@ -81,6 +84,6 @@ systemctl start jenkins
 
 ```
 
-
 ## references
+
 https://www.jenkins.io/doc/book/installing/linux/#red-hat-centos

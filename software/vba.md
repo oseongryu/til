@@ -5,8 +5,8 @@
 <img width="600" src="../static/img/vba/003.png"/>
 <img width="600" src="../static/img/vba/004.png"/>
 
-
 ### 열숨기기 및 사이즈 변경
+
 ```vb
 Sub HideAndShowFunction()
     Dim resultMsgBox As VbMsgBoxResult
@@ -33,6 +33,7 @@ End Sub
 ```
 
 ### 열숨기기 2
+
 ```vb
 Sub HideAndShowFunction()
     Dim resultMsgBox As VbMsgBoxResult
@@ -54,7 +55,7 @@ Sub HideAndShowFunction()
 
         For indexHide = LBound(arrhide) To UBound(arrhide)
             Columns(arrhide(indexHide)).Hidden = True
-            
+
         Next indexHide
     Else
         Columns("A:KS").Hidden = False

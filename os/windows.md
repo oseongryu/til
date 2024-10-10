@@ -1,92 +1,6 @@
-### WinServer2012R2원격데스크톱연결
+### windows 단축키
 
-```
-*윈 서버2012 원격 데스크톱 활성화 및 포트 변경
-http://t2t2tt.tistory.com/12
-* Windows 원격 데스크톱 설정방법
-http://gloria1004.tistory.com/145
-http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%B2%A9&uid=7398
-
-*원격으로 공유기 접속관리 설정방법
- http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%B2%A9&uid=7384
-```
-
-### IIS 서버 로깅
-
-```
-https://technet.microsoft.com/ko-kr/library/hh831775(v=ws.11).aspx
-
-
-```
-
-### Win10 Evaluation Center
-
-```
-https://www.microsoft.com/ko-kr/evalcenter/evaluate-windows-10-enterprise
-```
-
-### Hyper-V가 실행이 안될경우
-
-```
-bcdedit /set hypervisorlaunchtype auto
-```
-
-### psexec 사용
-
-```
-psexec \\joker21.iptime.org -u <uesr> -p <pass> /c notepad
-psexec \\112.186.198.40 -u administrator cmd.exe
-netsh advfirewall firewall add rule name="tcp_445" dir= in action=allow protocol=tcp localport=445
-powershell사용
-Enable-PSRemoting
-```
-
-### 윈도우 서비스 등록,삭제
-
-```
-https://openeidos.tistory.com/3912
-
-sc create MyPlayer3 binpath="C:\DEV\MyPlayer\Test.bat" type=share start=auto
-
-sc create [Service Name] binpath=[Service file full path]
--> sc create MyService binpath=c:\MyService.exe
-
-
-sc create
-
-sc create 서비스명 Displayname="표시이름" binpath="프로그램 경로" type=share start=auto
-
-sc delete [Service Name]
--> sc delete MyService
-
-
-시작 : sc start [Service Name]
-종료 : sc stop [Service Name]
-```
-
-### 로컬 컴퓨터 에서 서비스 를 시작 하지 못했습니다 오류 1053
-
-https://skql.tistory.com/518
-http://urhelper.com/zb41_urhelper/zb_urhelper.php?id=cho_computers_progs&no=103
-
-### C# 윈도우 서비스 만들기
-
-```
-https://nowprogramming.tistory.com/34
-```
-
-### 장치추가 제거
-
-```
-http://forensic-proof.com/archives/5945
-
-
-%SystemRoot%\System32\winevt\Logs\Microsoft-Windows-DeviceSetupManager%4Admin.evtx
-```
-
-### Windows 단축키
-
-```
+```bash
 시작-실행  윈 + R
 
 2.2.1. 기본 명령어
@@ -162,11 +76,7 @@ secpol.msc : 로컬 보안설정
 services.msc : 서비스
 C:\WINDOWS\system32\Com\comexp.msc : 구성요소서비스
 C:\WINDOWS\Microsoft.NET\Framework\v1.1.4322\mscorcfg.msc : .NET Configuration 1.1
-```
 
-### 단축키
-
-```
 로컬보안정책 명령어 https://www.snoopybox.co.kr/1561
 단축키 https://www.clien.net/service/board/lecture/13621530?od=T31&po=0&category=&groupCd=
 탐색기에서 동일한 창 띄우기 ctrl + n
@@ -197,7 +107,121 @@ http://127.0.0.1
 %appdata%
 ```
 
-### Windows 원격접속이 안될 떄 (오라클 수정암호화)
+### windows cmd
+
+```bash
+ipconfig /?
+F1 : 마지막으로 사용 된 문자 당 붙여 넣기 명령
+F2 : 마지막으로 사용한 명령을 지정된 명령 문자에만 붙여 넣습니다.
+F3 : 붙여 넣기 마지막으로 사용한 명령
+F4 : 지정된 명령 문자로만 명령 삭제
+F5 : 사이클링없이 마지막으로 사용한 명령 붙여 넣기
+F6 : 붙여 넣기 ^ Z
+F7 : 이미 사용 된 명령 목록을 제공합니다 (선택 가능).
+F : 8 사이클 가능 명령 붙여 넣기
+F9 : 최근에 사용한 명령 목록에서 명령을 붙여 넣을 수있게합니다.
+ipconfig > ./test.txt
+nslookup www.google.com
+ipconfig && dir
+assoc
+driverquery
+sfc / scannow
+```
+
+### windows dir list
+
+```bash
+dir/b > list.txt
+```
+
+### windows WinServer2012R2원격데스크톱연결
+
+```
+* 윈 서버2012 원격 데스크톱 활성화 및 포트 변경
+http://t2t2tt.tistory.com/12
+
+* Windows 원격 데스크톱 설정방법
+http://gloria1004.tistory.com/145
+http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%B2%A9&uid=7398
+
+* 원격으로 공유기 접속관리 설정방법
+ http://iptime.com/iptime/?pageid=1&page_id=67&mod=document&keyword=%EC%9B%90%EA%B2%A9&uid=7384
+```
+
+### windows IIS 서버 로깅
+
+```
+https://technet.microsoft.com/ko-kr/library/hh831775(v=ws.11).aspx
+```
+
+### windows Win10 Evaluation Center
+
+```
+https://www.microsoft.com/ko-kr/evalcenter/evaluate-windows-10-enterprise
+```
+
+### windows Hyper-V가 실행이 안될경우
+
+```
+bcdedit /set hypervisorlaunchtype auto
+```
+
+### windows psexec 사용
+
+```
+psexec \\joker21.iptime.org -u <uesr> -p <pass> /c notepad
+psexec \\112.186.198.40 -u administrator cmd.exe
+netsh advfirewall firewall add rule name="tcp_445" dir= in action=allow protocol=tcp localport=445
+powershell사용
+Enable-PSRemoting
+```
+
+### windows 서비스 등록,삭제
+
+```
+https://openeidos.tistory.com/3912
+
+sc create MyPlayer3 binpath="C:\DEV\MyPlayer\Test.bat" type=share start=auto
+
+sc create [Service Name] binpath=[Service file full path]
+-> sc create MyService binpath=c:\MyService.exe
+
+
+sc create
+
+sc create 서비스명 Displayname="표시이름" binpath="프로그램 경로" type=share start=auto
+
+sc delete [Service Name]
+-> sc delete MyService
+
+
+시작 : sc start [Service Name]
+종료 : sc stop [Service Name]
+```
+
+### windows 로컬 컴퓨터 에서 서비스 를 시작 하지 못했습니다 오류 1053
+
+```
+https://skql.tistory.com/518
+http://urhelper.com/zb41_urhelper/zb_urhelper.php?id=cho_computers_progs&no=103
+```
+
+### windows C# 윈도우 서비스 만들기
+
+```
+https://nowprogramming.tistory.com/34
+```
+
+### windows 장치추가 제거
+
+```
+http://forensic-proof.com/archives/5945
+
+
+%SystemRoot%\System32\winevt\Logs\Microsoft-Windows-DeviceSetupManager%4Admin.evtx
+```
+
+### windows 원격접속이 안될 떄 (오라클 수정암호화)
 
 ```
 http://prolite.tistory.com/743
@@ -205,9 +229,7 @@ http://prolite.tistory.com/743
 microsoft.com/fwlink/?linkid=866660
 ```
 
-### IP 공격
-
-### Windows Wifi 비밀번호 확인
+### windows Wifi 비밀번호 확인
 
 ```bash
 netsh wlan show profile
@@ -216,7 +238,7 @@ netsh wlan show profile "profile이름" key=clear
 키 콘텐츠의 값이 비밀번호
 ```
 
-### 네트워크 경로추적
+### windows 네트워크 경로추적
 
 ```
 Windows: tracert 8.8.8.8
@@ -227,7 +249,7 @@ sudo yum install bind-utils
 traceroute  8.8.8.8
 ```
 
-### Windows telnet
+### windows telnet
 
 ```
 cmd > appwiz.cpl > Windows 기능 켜기/끄기 > 텔넷 클라이언트 체크
@@ -235,44 +257,7 @@ telnet IP PORT
 telnet 127.0.0.1 8080
 ```
 
-### cmd
-
-```
-ipconfig /?
-
-
-F1 : 마지막으로 사용 된 문자 당 붙여 넣기 명령
-F2 : 마지막으로 사용한 명령을 지정된 명령 문자에만 붙여 넣습니다.
-F3 : 붙여 넣기 마지막으로 사용한 명령
-F4 : 지정된 명령 문자로만 명령 삭제
-F5 : 사이클링없이 마지막으로 사용한 명령 붙여 넣기
-F6 : 붙여 넣기 ^ Z
-F7 : 이미 사용 된 명령 목록을 제공합니다 (선택 가능).
-F : 8 사이클 가능 명령 붙여 넣기
-F9 : 최근에 사용한 명령 목록에서 명령을 붙여 넣을 수있게합니다.
-
-
-ipconfig > ./test.txt
-
-nslookup www.google.com
-
-ipconfig && dir
-
-assoc
-
-driverquery
-
-sfc / scannow
-
-```
-
-### dir list
-
-```
-dir/b > list.txt
-```
-
-### Windows 10 Ubuntu
+### windows Ubuntu
 
 ```bash
 appwiz.cpl > Windows 기능 켜기/끄기 > Linux용 Windows 하위 시스템 (체크)
@@ -295,34 +280,38 @@ cd /mnt/c
 ---
 ```
 
-### Windows Font 설치
+### windows Font 설치
 
 ```
 C:\Windows\Fonts에 설치할 폰트 넣기
 ```
 
-### 윈도우 색인기능
+### windows 색인기능
 
-     파일 우측에 파란색 표시가 색인기능이 적용된 부분
-     드라이브 > 속성
-     이 드라이브를 압축하여 디스크 공간 절약 체크해제
-     이 드라이브의 파일 속성 및 내용 색인 허용 체크해제
+```
+파일 우측에 파란색 표시가 색인기능이 적용된 부분
+드라이브 > 속성
+이 드라이브를 압축하여 디스크 공간 절약 체크해제
+이 드라이브의 파일 속성 및 내용 색인 허용 체크해제
+```
 
-<img width="100" src="../static/img/windows/001.png"/>
+<img width="100" src="../public/img/windows/001.png"/>
 
-### 이미지 파일 우클릭 시 오른쪽으로 회전, 왼쪽으로 회전 삭제 및 복구
+### windows 이미지 파일 우클릭 시 오른쪽으로 회전, 왼쪽으로 회전 삭제 및 복구
 
-     RemoveRotateImageContextMenuWin10.reg
-     RestoreRotateImageContextMenuWin10.reg
+```
+RemoveRotateImageContextMenuWin10.reg
+RestoreRotateImageContextMenuWin10.reg
+```
 
-### user password 변경
+### windows user password 변경
 
 ```
 net user
 net user {username} password
 ```
 
-### 네트워크 재설정
+### windows 네트워크 재설정
 
 ```
 netsh winsock reset
@@ -332,7 +321,7 @@ ipconfig /renew
 ipconfig /flushdns
 ```
 
-### 일부는 조직에서 숨겼거나 관리합니다, 조직설정 (모바일 핫스팟)
+### windows 일부는 조직에서 숨겼거나 관리합니다, 조직설정 (모바일 핫스팟)
 
 ```bash
 # https://answers.microsoft.com/ko-kr/windows/forum/all/%EC%9D%BC%EB%B6%80-%EC%84%A4%EC%A0%95%EC%9D%80/c5adc018-4321-4e34-acca-fdc75ea50f11
@@ -352,7 +341,7 @@ reg delete "HKLM\Software\Microsoft\Policies" /f
 
 ```
 
-### proxy
+### windows proxy
 
 ```
 netsh winhttp set proxy proxy-server="http=192.0.0.5:8000;https=192.0.0.5:8000" bypass-list="*.local"
@@ -379,7 +368,7 @@ taskkill /im "docker.exe" /t /f
 taskkill /im "Docker Desktop.exe" /t /f
 ```
 
-### Microsoft PowerToys
+### windows Microsoft PowerToys
 
 ```
 Color Picker
@@ -389,21 +378,14 @@ Markdown file explorer preview pane
 always on top
 ```
 
-### win-bash
+### windows win-bash
 
 ```
 sourceforge.net/projects/win-bash/files/shell-complete/latest/shell.w32-ix86.zip/download
 환경변수 설정 후 사용
 ```
 
-### References
-
-```
-https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know
-
-```
-
-### iphlpsvc의 포트 포워딩이 설정되서 특정 포트가 binding안되는 경우
+### windows iphlpsvc의 포트 포워딩이 설정되서 특정 포트가 binding안되는 경우
 
 ```bash
 # https://blog.naver.com/webpioneer/220677150747
@@ -443,7 +425,7 @@ C:\ProgramData\Microsoft\Windows\Start Menu
 C:\Users\{USER}\AppData\Roaming\Microsoft\Windows\Start Menu\Programs\Startup
 ```
 
-### windows10 검색시 이미지 안보임
+### windows 검색시 이미지 안보임
 
 ```bash
 # https://comformation.tistory.com/27
@@ -452,7 +434,7 @@ attrib –h thumbcache_*.db
 del thumbcache_*.db start explorer
 ```
 
-### environment variables
+### windows environment variables
 
 ```powershell
 [Environment]::GetEnvironmentVariable('DOCKER_HOST', 'Machine')
@@ -477,13 +459,13 @@ Set-ItemProperty -Path HKCU:\Environment -Name Path -Value $newpath
 # REG QUERY HHKCU\Environment /s
 ```
 
-### 표시언어 설치 또는 제거
+### windows 표시언어 설치 또는 제거
 
 ```bash
 cmd + r  > LPKSETUP
 ```
 
-#### 네트워크 드라이브 연결
+### windows 네트워크 드라이브 연결
 
 ```bash
 cmdkey /add:192.168.0.1 /user:networkuser /pass:1234
@@ -491,4 +473,11 @@ pushd \\192.168.0.1\outunion
 
 # 지정된 네트워크 암호가 맞지 않습니다
 자격 증명 관리자 > Windows 자격 증명 > Windows 자격 증명 추가
+```
+
+### references
+
+```
+https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know
+
 ```

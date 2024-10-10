@@ -181,7 +181,7 @@ grant dba to ptnr with admin option;
 
 ```
 
-## docker commit push pull
+### docker commit push pull
 
 ```bash
 docker container ps -a

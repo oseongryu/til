@@ -199,7 +199,7 @@ sudo apt install net-tools
 netstat -tnlp
 ```
 
-## ubuntu chrome-remote-desktop
+### ubuntu chrome-remote-desktop
 
 ```bash
 # https://medium.com/@selvamraju007/install-and-launch-ubuntu-22-04-desktop-on-google-cloud-1fba8c0f9585
@@ -229,17 +229,16 @@ sudo passwd
 # sudo ufw reload
 ```
 
-##
+### ubuntu scp
 
 ```bash
 scp -P 22 ~/.ssh/id_rsa gcp-root:/home/oseongryu/.ssh
 scp -P 22 ~/.ssh/id_rsa.pub gcp-root:/home/oseongryu/.ssh
 scp -P 22 ~/.ssh/drawing-app.war gcp-root:/home/oseongryu/.ssh
 nohup java -jar /home/oseongryu/.ssh/drawing-app.war 1>/dev/null 2>&1
-
 ```
 
-## ubuntu python setting
+### ubuntu python setting
 
 ```bash
 sudo apt-get update
@@ -278,7 +277,7 @@ sudo apt-get install fonts-noto-cjk
 sudo timedatectl set-timezone Asia/Seoul
 ```
 
-## ubuntu java gradle setting
+### ubuntu java gradle setting
 
 ```bash
 sudo apt-get install openjdk-8-jdk
@@ -286,14 +285,14 @@ chmod +x gradlew
 ./gradlew bootWar
 ```
 
-## ubuntu setting
+### ubuntu setting
 
 ```bash
 # GUI
 Ctrl + h
 ```
 
-## chrome, chromium
+### chrome, chromium
 
 ```bash
 # amd 64
@@ -337,7 +336,7 @@ cat /etc/apt/sources.list.d/google-chrome.list
 # deb [arch=amd64] http://dl.google.com/linux/chrome/deb/ stable main
 ```
 
-## ubuntu vscode (amd64)
+### ubuntu vscode (amd64)
 
 ```bash
 sudo snap install --classic code
@@ -394,7 +393,7 @@ sudo chown -R osryu:google-sudoers data
 # Linux ~/.vscode/extensions
 ```
 
-## ubuntu docker
+### ubuntu docker
 
 ```bash
 # https://stackoverflow.com/questions/40658095/how-to-open-ubuntu-gui-inside-a-docker-image
@@ -412,7 +411,7 @@ sudo apt update
 sudo apt-get install docker-ce docker-ce-cli containerd.io
 ```
 
-#### ubuntu docker-compose
+### ubuntu docker-compose
 
 ```ps1
 # windows
@@ -426,7 +425,7 @@ sudo chmod +x /usr/local/bin/docker-compose
 docker-compose --version
 ```
 
-## customize dock panel
+### customize dock panel
 
 ```bash
 sudo apt install dconf-editor
@@ -439,7 +438,7 @@ gsettings set org.gnome.shell.extensions.dash-to-dock dash-max-icon-size 64
 gsettings set org.gnome.shell.extensions.dash-to-dock unity-backlit-items true
 ```
 
-### mac
+### ubuntu in mac
 
 ```bash
 docker pull ubuntu:20.04
@@ -494,7 +493,7 @@ apt install scrot
 python3 /root/git/python-selenium/selenium/service.py 0
 ```
 
-## ssl (with springboot)
+### ssl (with springboot)
 
 ```bash
 # https://velog.io/@jiwon615/Spring-Boot%EC%97%90-Lets-Encrypt-SSL-%EC%A0%81%EC%9A%A9%EA%B8%B0
@@ -530,7 +529,7 @@ sudo certbot renew
 
 ```
 
-## ssl (with nginx)
+### ssl (with nginx)
 
 ```bash
 # https://velog.io/@gudcks0305/%EC%9A%B0%EB%B6%84%ED%88%AC%EC%97%90%EC%84%9C-Nginx%EB%A1%9C-Reverse-Proxy-%EC%84%A4%EC%A0%95%ED%95%98%EA%B8%B0
@@ -607,7 +606,7 @@ ResultInactive=yes
 ResultActive=yes
 ```
 
-## magnet (ubuntu GUI)
+### magnet (ubuntu GUI)
 
 ```
 sudo apt-get install comizconfig-settings-manager

@@ -1,23 +1,26 @@
-
 ## 원격 실행
-### 원격 
+
+### 원격
 
 ```
 http://lab.gamecodi.com/board/zboard.php?id=GAMECODILAB_QnA_etc&no=5258&z=
 ```
 
 ### 원격관련 오류 참조
+
 ```
 https://m.blog.naver.com/PostView.nhn?blogId=sung487&logNo=221042683798&proxyReferer=https%3A%2F%2Fwww.google.com%2F
 ```
 
 ### 원격 PowerShell :
+
 ```
 1) Enable-PSRemoting
 2)Azure와 원격방화벽의 인바운드 포트 5985,5986 개방
 ```
 
 ### 로컬 PowerShell:
+
 ```
 1)winrm quickconfig --force
 
@@ -29,7 +32,7 @@ Set-Item WSMan:\localhost\Client\TrustedHosts -Value "52.141.18.204"
 -- 전체 허용
 Set-Item WSMan:\localhost\Client\TrustedHosts -Value *
 
-4)자동접속을 하기 위한 세팅 
+4)자동접속을 하기 위한 세팅
 $MyCredential = Get-Credential "f5074"
 $MyPassword = Read-Host "Password" -AsSecureString | ConvertFrom-SecureString
 $MyPassword = $MyPassword | ConvertTo-SecureString
@@ -63,18 +66,15 @@ f5074.koreacentral.cloudapp.azure.com:4200
 ```
 
 ### 보안 그룹 규칙에 의해 차단된 네트워크 연결: DefaultRule_DenyAllInBound
+
 ```
 Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 ```
 
-
-
 ### references
+
 ```
 https://community.spiceworks.com/topic/2242211-azure-nsg-rdp
 
 https://docs.microsoft.com/en-us/powershell/azure/install-az-ps?view=azps-5.9.0
 ```
-
-
-

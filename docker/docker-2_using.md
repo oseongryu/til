@@ -1,6 +1,7 @@
-## Docker Using in Windows
+## docker Using in Windows
 
 ### 오라클 사용법
+
 ```bash
 # docker version
 docker version
@@ -40,6 +41,7 @@ GRANT CREATE ANY TABLE TO drawing;
 ```
 
 ### Oracle 초기화 방지 사용법
+
 ```bash
 1. docker run --name oracle11g --shm-size=1g -d -p 1521:1521 -v /oracle11g-data/:/u01/app/oracle/oradata/oracle11g-data/ -e ORACLE_ALLOW_REMOTE=true -e ORACLE_PWD=password --restart=always daggerok/oracle
 
@@ -47,6 +49,7 @@ GRANT CREATE ANY TABLE TO drawing;
 ```
 
 ### Oracle
+
 ```bash
 ##### 오라클의 경우 테이블 생성시 30자 제한이 있어서 12.1 버전이 아닌 12.2 버전에서 30자 제한이 없음
 docker pull ashimjk/oracle-ee-12c
@@ -75,7 +78,8 @@ User Name: user1
 Password: password
 
 ```
-### Docker Volume
+
+### docker Volume
 
 ```bash
 1. docker volume 생성
@@ -84,7 +88,7 @@ docker volume ls
 docker volume inspect vol-mysql
 ```
 
-### Docker Excute
+### docker Excute
 
 ```bash
 ### 1. container 리스트 확인
@@ -97,11 +101,10 @@ docker exec -it [NAMES] bash
 docker exec -it 1174feb7c6f4 bash
 ```
 
-### References
+### references
+
 ```
 https://subicura.com/2017/01/19/docker-guide-for-beginners-2.html
 오라클 관련 https://github.com/daggerok/oracle/releases
 docker oracle11g 재시작시 데이터 저장시키기 https://sangmoo.tistory.com/225
 ```
-
-

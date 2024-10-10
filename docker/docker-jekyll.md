@@ -1,20 +1,22 @@
 ### CentOS 설치
+
 ```
 docker pull centos:7.9.2009
 docker run -it --name centos-jekyll -p 8088:8088 centos:7.9.2009
 ```
+
 docker exec -it centos-jekyll /bin/bash
 
+### ruby
 
-###
 ```bash
 yum install ruby
 ruby -v
 
 ```
 
+### rbenv
 
-###
 ```bash
 yum install -y git-core zlib zlib-devel gcc-c++ patch readline readline-devel libyaml-devel libffi-devel openssl-devel make bzip2 autoconf automake libtool bison curl sqlite-devel
 
@@ -30,8 +32,8 @@ echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' >> ~/.bash_profil
 exec $SHELL
 ```
 
+### rvm
 
-###
 ```bash
 yum install which
 curl -L https://get.rvm.io | bash -s stable --ruby
@@ -47,6 +49,7 @@ ruby -v
 ```
 
 ### jekyll setup
+
 ```bash
 gem install jekyll
 gem install minima
@@ -56,12 +59,14 @@ gem install tzinfo-data
 ```
 
 ### jekyll init
+
 ```bash
 jekyll new my-awesome-site
 cd my-awesome-site
 ```
 
 ### jekyll exec
+
 ```bash
 bundle exec jekyll serve
 bundle add webrick
@@ -76,6 +81,7 @@ kill $(ps aux | grep '[j]ekyll' | awk '{print $2}')
 yum install net-tools
 netstat -tnlp
 ```
+
 ### docker-cp
 
 ```bash

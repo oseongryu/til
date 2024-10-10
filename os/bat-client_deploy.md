@@ -1,9 +1,13 @@
 ### 1. 상대경로 사용
+
+```
 copy ..\bin\Release\lib\*.dll
 rename *.dll *.deploy
-
+```
 
 ### 2. 절대경로 사용
+
+```
 @echo off
 setlocal
 :: set location
@@ -52,11 +56,10 @@ set secs=%time:~6,2%
 if "%secs:~0,1%" == " " set secs=0%secs:~1,1%
 
 set current_dttm=%year%%month%%day%%hour%%min%%secs%
-
-
-
+```
 
 ### reference
+
+```
 https://stackoverflow.com/questions/774175/show-a-popup-message-box-from-a-windows-batch-file
-
-
+```

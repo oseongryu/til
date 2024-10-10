@@ -1,3 +1,6 @@
+### centos docker
+
+```
 docker cp centos-jekyll:/root/guide ~/git-personal
 
 docker cp ~/git-personal/template-jekyll centos-jekyll:/root
@@ -22,3 +25,4 @@ sudo docker exec -it centos-jekyll /bin/bash
 
 
 bundle exec jekyll serve --ssl-key ssl/localhost.key --ssl-cert ssl/localhost.crt
+```

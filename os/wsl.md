@@ -1,9 +1,9 @@
-### .wslconfig
+### wsl .wslconfig
 
+```
 외부서버접속위해서설정:
 https://velog.io/@bluejoyq/wsl-%EC%84%9C%EB%B2%84-%EC%99%B8%EB%B6%80-%EC%A0%91%EC%86%8D%ED%95%98%EA%B8%B0
 
-```
 [wsl2]
 memory=16GB
 processors=8
@@ -66,7 +66,7 @@ systemd=true
 wsl --shutdown
 ```
 
-### default-user (ubuntu20.04는 ubuntu2004)
+### wsl default-user (ubuntu20.04는 ubuntu2004)
 
 ```bash
 ubuntu config --default-user root
@@ -76,7 +76,7 @@ passwd oseongryu
 ubuntu config --default-user oseongryu
 ```
 
-### docker
+### wsl docker
 
 ```bash
 # https://netmarble.engineering/docker-on-wsl2-without-docker-desktop/
@@ -97,7 +97,7 @@ sudo update-alternatives --config iptables
 wsl --shutdown
 ```
 
-### docker setting
+### wsl docker setting
 
 ```bash
 [Environment]::GetEnvironmentVariable('DOCKER_HOST', 'Machine')
@@ -147,7 +147,7 @@ Get-Process | Where-Object { $_.Name -like '*wsl*' }
 Stop-Process -ID 9488
 ```
 
-### temp
+### wsl temp
 
 ```bash
 # sudo service xrdp restart

@@ -111,18 +111,24 @@ https://learn.microsoft.com/ko-kr/azure/app-service/quickstart-ruby?tabs=cli
 
 ### MS Imagine
 
+```
 https://namu.wiki/w/Microsoft%20Imagine
+```
 
 ### 학생용Azure 설명
 
+```
 https://azure.microsoft.com/ko-kr/free/free-account-students-faq/
 https://azure.microsoft.com/ko-kr/free/free-account-faq/
+```
 
 ### 분실된 부팅 복구 방법 easyBCD설치
 
 ### ★Azure Node.js 활용 시 참고
 
+```
 http://fiadot.tistory.com/2003
+```
 
 ### Azure 가상머신 설치
 
@@ -130,40 +136,54 @@ http://fiadot.tistory.com/2003
 
 ### Azure 가상머신 FTP 연결 (FileZila, WinSCP)
 
+```
 파일질라사용시
 https://blogs.msdn.microsoft.com/eva/?p=11975
 설치
 https://www.youtube.com/watch?v=bHA790VbSZ0
+```
 
 ### ftp채널포트
 
+```
 http://xgunheex.blogspot.com/2014/01/iis-ftp.html
+```
 
 ### FTP연결오류
 
+```
 https://serverfault.com/questions/718662/server-sent-passive-reply-with-unroutable-address-using-server-address-instead
+```
 
 ### 파이썬,파이참 설치
 
 ### localdb가 영어버전이어서 nvarchar 사용
 
+```
 http://hackersstudy.tistory.com/60
 http://pythonstudy.xyz/python/article/208-MSSQL-%EC%82%AC%EC%9A%A9
+```
 
 ### 애저 가상머신 비밀번호 변경
 
 ### MSSQL Sever 2017 Express 설치
 
+```
 http://www.uhoon.co.kr/mssql/957
 https://m.blog.naver.com/PostView.nhn?blogId=jasmin7727&logNo=220548929435&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
 http://hackersstudy.tistory.com/60
+```
 
 ### 애저 IP DNS 설정
 
 ### 비주얼스튜디오설치 언어팩
 
+```
 http://jackandthebeanstalk.tistory.com/23
+```
 
 ### 애저 언어팩
 
+```
 http://doopsjh.tistory.com/entry/Lab-Azure-%ED%85%9C%ED%94%8C%EB%A6%BF-VM-Win-2012-R2-%ED%95%9C%EA%B8%80%EC%96%B8%EC%96%B4%ED%8C%A9-%EC%84%A4%EC%B9%98
+```

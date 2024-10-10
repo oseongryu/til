@@ -1,4 +1,4 @@
-## docker
+### docker
 
 ```bash
 #!/bin/sh
@@ -16,7 +16,7 @@ docker exec -it centos-env-vue bash
 
 ```
 
-# centos 설정
+### centos 설정
 
 ```bash
 yum update
@@ -76,7 +76,7 @@ nvm alias default 16.17.1
 npm i -g yarn
 ```
 
-## docker offline image
+### docker offline image
 
 ```bash
 docker save -o centos-env-vue-0.0.2.tar oseongryu/centos-env-vue:0.0.2

@@ -127,6 +127,6 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 google, naver tab 등을 사용
 
 이름: perplexity
-바로가기: @perplexity
+바로가기: perplexity.ai/search
 URL: https://www.perplexity.ai/search/?q=%s
 ```

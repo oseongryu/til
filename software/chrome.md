@@ -118,3 +118,15 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
 13. 크롬을 강제 다크 모드 상태로 실행하기
 --force-dark-mode
 ```
+
+### chrome AI 검색엔진
+
+```
+설정 > 검색엔진 > 검색엔진 및 사이트 검색 관리
+
+google, naver tab 등을 사용
+
+이름: perplexity
+바로가기: @perplexity
+URL: https://www.perplexity.ai/search/?q=%s
+```

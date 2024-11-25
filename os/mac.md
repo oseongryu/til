@@ -130,14 +130,17 @@ Command+, 모든 앱에서 환경 설정 창을 열기
 # 등록한 서비스를 확인하는 위치는 ~/Library/services
 
 # 1. Open VSCode
-셀스크립트 열기
+Automator > 빠른 동작 > 셀스크립트 열기
 현재수신하는작업흐름:파일 또는 폴더
 선택항목위치: Finder.app
-통과입력: 변수
+(셀스크립트실행)통과입력: 변수
+
+---
 open -n -b "com.microsoft.VSCode" --args "$*"
+---
 
 # 2. Open Terminal
-AppleScript 실행
+Automator > 빠른 동작 > AppleScript 실행
 작업흐름수신: 입력없음
 선택항목위치: 모든 응용 프로그램
 
@@ -151,27 +154,28 @@ on run {input, parameters}
 end run
 
 # 3. Make NewFile
-Automator > 빠른 동작 > AppleScript DoubleClick
+Automator > 빠른 동작 > AppleScript 실행
+작업흐름수신: 입력없음
 선택항목위치: Finder.app
 
 ---
 tell application "Finder" to make new file at (the target of the front window) as alias
 ---
 
-- Make NewFile (Application 버전)
-Application 선택 > AppleScript
+# 4. Make NewFile (Application 버전)
 
-# 1번
+Automator > 응용프로그램 > AppleScript 실행
+
+## 스크립트1 (스크립트1,2,3중 하나선택)
 ---
 tell application "Finder" to make new file at (the target of the front window) as alias
 ---
-
-# 2번
+## 스크립트2
 ---
 tell application "Finder" to make new file at (the target of the front window) as alias with properties {name:"newfile.txt"}
 ---
 
-# 2번
+## 스크립트3
 ---
 on run {input, parameters}
     tell application "Finder"
@@ -181,10 +185,19 @@ on run {input, parameters}
 end run
 ---
 
-# 4. BlankFile
+## 파일저장
+별도저장: MakeNewFile.app
+위치: /Applications > BlankFile.app
 
-파일저장 > /Applications > BlankFile.app
-cmd를 누른 상태에서 Finder에 Drag&drop
+## Finder에 추가방법
+### 추가
+- cmd를 누른 상태에서 Finder 상단에 Drag&drop으로 추가
+
+### 삭제
+cmd를 누른 상태에서 Finder 상단에 버튼을 Drag&drop으로 제외
+
+## 앱 아이콘 변경
+MakeNewFile.app > 우클릭 >  정보가져오기 > 최상단 왼족 이미지에 새로운이미지를 드래그해서 바꾸기
 
 
 # 5. Change Display

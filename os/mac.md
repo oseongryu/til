@@ -651,6 +651,19 @@ cat /var/mail/$USER
 sudo rm /var/mail/$USER
 ```
 
+### mac 시작 프로그램, 백그라운드에서 허용
+
+```bash
+# 시스템 설정 > 일반 > 로그인 항목
+# Finder > shift + cmd + G 이동 > .plist 삭제
+~/Library/LaunchAgents
+~/Library/LaunchDaemons
+~/Library/StartupItems
+/Library/LaunchAgents
+/Library/LaunchDaemons
+/Library/StartupItems
+```
+
 ### References
 
 ```

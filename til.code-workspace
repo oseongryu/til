@@ -5,6 +5,9 @@
     },
     {
       "path": "../corp-script"
+    },
+    {
+      "path": "../docker-composes"
     }
   ],
   "settings": {

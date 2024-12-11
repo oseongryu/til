@@ -611,6 +611,28 @@ git config --global alias.co checkout
     cleanbranch = "!git branch -d $(git branch --merged | grep -v '\\<master\\>')"
 ```
 
+### git .gitattributes
+
+```bash
+# https://git-scm.com/book/ko/v2/Git맞춤-Git-Attributes
+* text eol=lf
+*.png binary
+*.gif binary
+*.woff binary
+*.woff2 binary
+*.otf binary
+*.zip binary
+
+
+* linguist-vendored
+*.py linguist-vendored=false
+
+# *.js linguist-detectable=false
+# *.html linguist-detectable=false
+# *.css linguist-detectable=false
+# *.scss linguist-detectable=false
+```
+
 #### References
 
 ```

@@ -370,3 +370,10 @@ java  -Xms2g -Xmx2g -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,addres
 ```
 
 <img width="800" src="https://oseongryu.github.io/img/intellij/remotedebugging/001.png"/>
+
+### [error] java: Compilation failed: internal java compiler error
+
+```
+File > Settings > Build, Execution, Deployment > Compiler > Java Compiler
+Use compiler: Javac => Eclipse
+```

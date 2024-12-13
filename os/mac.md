@@ -664,6 +664,12 @@ sudo rm /var/mail/$USER
 /Library/StartupItems
 ```
 
+### mac 폴더명 현지화
+
+```bash
+/System/Library/CoreServices/SystemFolderLocalizations/ko.lproj/SystemFolderLocalization.strings
+```
+
 ### References
 
 ```

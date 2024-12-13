@@ -1,18 +1,17 @@
 ###
+
 ```
 자바프로그램 만들어서 jar파일로 배포하고 실행할떄 unable to access jarfile 오류
 - java -jar Test.jar 로 실행
 - 자바디컴파일러 프로그램으로 runable jar와 일반 jar 파일 비교해보기
 JAR 실행 한 후 cmd를 화면 숨기기
 https://code.i-harness.com/ko-kr/q/409ef
-start javaw 
+start javaw
 감사모드
 ```
 
-
-
-
 # 톰캣 설치 에러
+
 ```
 로컬 컴퓨터의 apache tomcat 7.0 tomcat7을 시작하지 못했습니다
 Apache Tomcat 8.0 Tomcat8 서비스가 서비스 특정 오류
@@ -20,27 +19,25 @@ Apache Tomcat 8.0 Tomcat8 서비스가 서비스 특정 오류
 msvcr71을 해도 안됨 아마도 32비트 톰캣을 64비트로 변경해서 된듯
 ```
 
-
-
-
 ### 전자정부프레임워크-나만의 프레임워크 만들기
+
 ```
 1.개발환경 다운로드  https://www.egovframe.go.kr/EgovDevEnvRelease_300.jsp?menu=3&submenu=2&leftsub=2#
 2.세미나 관련 자료  https://open.egovframe.org/oc/docs/pds.do
 3.
 smart sheet4(WBS용 유료 )
-4.통합IDE 
+4.통합IDE
 ```
 
-
-
 ### 자바 UI로 삭제버튼 만들때 :No enclosing instance of type ... is accessible.
+
 ```
 The method actionPerformed(ActionEvent) of type DeleteButton must override a superclass method
 https://jamong-icetea.tistory.com/65
 ```
 
 ### JAD 사용방법
+
 ```
 #### jad 사용방법 https://javacpro.tistory.com/23
 
@@ -76,7 +73,7 @@ jar -uvf test-V2.1.jar /bin/com/itcomm/itsfw/core/ObjectCache.class
 
 3. 이때 패키지내의 교체될 클래스의 위치를 지정해주고  교체될 클래스 파일은 해당 경로에 존재해야 한다.
 
-jar -uvf test.jar 
+jar -uvf test.jar
 jar -uvf test.jar .\core\database\ObjectCache.class
 jar -uvf test.jar ./core/ObjectCache.class
 jar -uvf test.jar ./database/ObjectCache.class
@@ -86,8 +83,9 @@ jar 파일에 특정파일을 업데이트 하기 https://priceless.tistory.com/
 ```
 
 ### JSP Setting
+
 ```
-VMWare 설치 
+VMWare 설치
 https://www.vmware.com/products/workstation-player/workstation-player-evaluation.html
 
 CentOS 설치
@@ -105,6 +103,7 @@ https://dev.mysql.com/downloads/connector/j/
 ```
 
 ### JSP
+
 ```
 1. 웹서버 작동원리
 -톰캣 자바환경변수설정
@@ -125,6 +124,7 @@ C:\Temp\tomcat\conf
 ```
 
 ### API, SDK
+
 ```
 http://skmagic.tistory.com/220
 ```
@@ -146,6 +146,7 @@ https://okky.kr/article/441163
 ```
 
 ### CompletableFuture
+
 ```java
 CompletableFuture.runAsync -> {
 
@@ -155,12 +156,14 @@ CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(()
 ```
 
 ### spring context-security.xml
+
 ```
 <security:intercept-url pattern="/api/test/**" filters="none"/>
 
 ```
 
 ### eclipse tomcat build 위치
+
 ```
 \.metadata\.plugins\org.eclipse.wst.server.core\tmp0\wtpwebapps\{appName}
 ```
@@ -170,7 +173,7 @@ CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(()
 ```java
 	@SuppressWarnings("unchecked")
 	private String restAPI(String url) {
-		
+
 		UriComponents uriComponents = UriComponentsBuilder.fromUriString(url).build();
 
 		String changeString = "";
@@ -185,11 +188,11 @@ CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(()
 	    	MediaType contentType = httpHeaders.getContentType();
 	    	byte[] body = response.getBody();
 
-	    	
-	    	Path data = Files.write(Paths.get(orgFileName), body);
-	    	
 
-	    	
+	    	Path data = Files.write(Paths.get(orgFileName), body);
+
+
+
 	        FileInputStream fis = new FileInputStream(data.toFile().getAbsolutePath());
 	        try {
 				try (ByteArrayOutputStream byteOutStream = new ByteArrayOutputStream()) {
@@ -215,6 +218,7 @@ CompletableFuture<Map<String, String>> future = CompletableFuture.supplyAsync(()
 ```
 
 ### spring message convert
+
 ```
 메시지 컨버터를 별도로 선언하지 않으면 Spring 에서 등록하는 디폴트 메시지 컨버터는 다음과 같다.
 
@@ -227,6 +231,7 @@ https://m.blog.naver.com/PostView.naver?isHttpsRedirect=true&blogId=moonv11&logN
 ```
 
 ### Current request is not of type [org.springframework.web.multipart.MultipartHttpServletRequest]
+
 ```java
 // 해결
 MultipartHttpServletRequest => HttpServletRequest로 변경해서 처리
@@ -236,10 +241,10 @@ MultipartHttpServletRequest => HttpServletRequest로 변경해서 처리
 // 일반적인 방법
 // 1. spring 설정에서 multipartResolver가 bean으로 주입이 되었는지,
 // ex)<bean id="multipartResolver" class="org.springframework.web.multipart.commons.CommonsMultipartResolver"/>
-// 
+//
 // 2. form에서 enctype이 multipart/form-data 으로 되었는지,
 // ex)<form id="fileupload" method="post" enctype="multipart/form-data">
-// 
+//
 // 3. Controller에서 Request 를 MultipartHttpServletRequest 로 받고 있는지 확인합니다.
 // 올려주신 내용만으로는 해당오류의 원인을 파악하기 힘드나, 보통 form 태그에 enctype="multipart/form-data" 지정되지 않은 경우이거나, form tag가 여러 개 있는지, post로 호출하는 부분들을 재 점검해보시기 바랍니다.
 // 아니면 함수의 파라미터로 MultipartHttpServetRequest를 넣지 않고 HttpServletRequest 객체로 받아 함수 안에서 캐스팅을 하는 형태로 처리해 보시기 바랍니다.
@@ -271,8 +276,9 @@ https://dalili.tistory.com/168
 ```
 
 ### inputstream to multifile
+
 ```java
-			File file; 
+			File file;
             InputStream input = new FileInputStream(file);
             OutputStream os = fileItem.getOutputStream();
             IOUtils.copy(input, os);
@@ -305,18 +311,19 @@ https://dalili.tistory.com/168
 https://ksabs.tistory.com/152
 https://dev.umejintan.com/9
 ```
+
 ### autowired 에러 관련
+
 양쪽 @Component컴포넌트에서 서로에 @Autowired를 거는 경우 오류 발생가능 주의 (빌드에서는 문제가 없을 수 도 있음. 개발자들에게 주의주기!!)
 또는 lazy를 거는형태로 사용
 
 ```
  Application run failed
 org.springframework.beans.factory.BeanCurrentlyInCreationException: Error creating bean with name 'returnBsl':
- Bean with name 'returnBsl' has been injected into other beans [orderBsl] in its raw version as part of a circular reference, 
- but has eventually been wrapped. This means that said other beans do not use the final version of the bean. 
+ Bean with name 'returnBsl' has been injected into other beans [orderBsl] in its raw version as part of a circular reference,
+ but has eventually been wrapped. This means that said other beans do not use the final version of the bean.
  This is often the result of over-eager type matching - consider using 'getBeanNamesOfType' with the 'allowEagerInit' flag turned off, for example
 ```
-
 
 ### substring
 
@@ -347,7 +354,8 @@ public static String relaxSubString(String src, int beginIndex, int endIndex) {
 }
 ```
 
-### 
+###
+
 ```java
 import java.io.File;
 import java.io.IOException;
@@ -419,6 +427,7 @@ public class Temp {
 ```
 
 ### Date
+
 ```java
 Date date = java.sql.Timestamp.valueOf(ordDate);
 ordDateFormat.format(new Date()).substring(0,4);
@@ -436,8 +445,8 @@ String nDate = ordDateFormat.format(nCal.getTime()).substring(0,4);
 String orderDate = ordDateFormat.format(date);
 ```
 
-
 ## interceptor
+
 ```java
 		if(url.toString().contains("validLoginToken") || url.toString().contains("appVersionCheck")){
 			Enumeration<String> headerNames = request.getHeaderNames();
@@ -451,4 +460,36 @@ String orderDate = ordDateFormat.format(date);
 				System.out.println("Header Name: " + entry.getKey() + ", Value: " + entry.getValue());
 			}
 		}
+```
+
+### java 1.7 java.security.InvalidKeyException: Illegal key size
+
+```java
+// 오류내용:java.security.invalidkeyexception: illegal key size
+// 방법1
+// 해결방법: 정책적용된 Jar파일을 적용 (https://www.oracle.com/java/technologies/javase-jce-all-downloads.html)
+// java/jdk1.7.0_80.jdk/Contents/Home/jre/lib/security
+// local_policy.jar, US_export_policy.jar
+
+// https://stackoverflow.com/questions/41580489/how-to-install-unlimited-strength-jurisdiction-policy-files
+// 방법2
+private String encrypt(String key, String iv, String plainText) throws Exception {
+		// 제한이 있는 경우 수정
+    if (Cipher.getMaxAllowedKeyLength("AES") < 256) {
+      try {
+        Field field = Class.forName("javax.crypto.JceSecurity").
+        getDeclaredField("isRestricted");
+        field.setAccessible(true);
+        field.set(null, java.lang.Boolean.FALSE);
+      } catch (Exception e) {
+      }
+    }
+
+    SecretKeySpec secretKey = new SecretKeySpec(key.getBytes(), "AES");
+    IvParameterSpec ivParameterSpec = new IvParameterSpec(iv.getBytes(StandardCharsets.UTF_8));
+    Cipher cipher = Cipher.getInstance("AES/CBC/PKCS5Padding");
+    cipher.init(Cipher.ENCRYPT_MODE, secretKey, ivParameterSpec);
+    byte[] encryptedBytes = cipher.doFinal(plainText.getBytes(StandardCharsets.UTF_8));
+    return new String(Base64.encodeBase64(encryptedBytes));
+}
 ```

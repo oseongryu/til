@@ -24,21 +24,36 @@ Mapper Class 에서 타고 들어가고 싶은 메서드에서
 
 ### Edit Custom VM Options
 
-```
+```xml
 # Custom IntelliJ IDEA VM Options
-# https://blog.ddoong2.com/2019/07/29/IntelliJ-IDEA-%EC%98%B5%EC%85%98/
--Xms2048m
+# https://blog.ddoong2.com/2019/07/29/IntelliJ-IDEA-옵션/
+# https://snow-line.tistory.com/34
+-server
+-Xms4096m
 -Xmx4096m
-
--XX:+UseG1GC
--XX:NewRatio=1
--XX:MaxGCPauseMillis=100
--XX:GCTimeRatio=24
--XX:ParallelGCThreads=8
--XX:ConcGCThreads=2
-
+-XX:NewRatio=3
+-Xss16m
+-XX:+AlwaysPreTouch
+-XX:+TieredCompilation
+-XX:ReservedCodeCacheSize=240m
+-XX:SoftRefLRUPolicyMSPerMB=50
+-XX:+UseCodeCacheFlushing
+-Dsun.io.useCanonCaches=false-ea
+-XX:CICompilerCount=2
+-Dsun.io.useCanonPrefixCache=false
 -Djava.net.preferIPv4Stack=true
+-Djsse.enableSNIExtension=false
+-Djdk.http.auth.tunneling.disabledSchemes=""
+-XX:+HeapDumpOnOutOfMemoryError
+-XX:-OmitStackTraceInFastThrow
+-Djdk.attach.allowAttachSelf=true
+-Dkotlinx.coroutines.debug=off
+-Djdk.module.illegalAccess.silent=true
+-XX:+UseCompressedOops
 -Dfile.encoding=UTF-8
+-XX:+UseG1GC
+-XX:ErrorFile=$USER_HOME/java_error_in_idea_%p.log
+-XX:HeapDumpPath=$USER_HOME/java_error_in_idea.hprof
 ```
 
 ### intelliJ (bin/idea.properties)
@@ -376,4 +391,11 @@ java  -Xms2g -Xmx2g -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,addres
 ```
 File > Settings > Build, Execution, Deployment > Compiler > Java Compiler
 Use compiler: Javac => Eclipse
+```
+
+### intelij memory Debugging
+
+```xml
+# https://americanopeople.tistory.com/428
+View > Tool Windows > Profiler > Cpu and Memory Live Charts
 ```

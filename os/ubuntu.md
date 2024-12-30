@@ -539,7 +539,7 @@ upstream backend {
 
 # server {
 #     listen 80;
-#     server_name gptinfo.co.kr;
+#     server_name dnsname.co.kr;
 #     location / {
 #         proxy_pass http://backend/;
 #     }
@@ -547,8 +547,8 @@ upstream backend {
 
 server {
     listen 80;
-    server_name gptinfo.co.kr;
-    if ($host = gptinfo.co.kr) {
+    server_name dnsname.co.kr;
+    if ($host = dnsname.co.kr) {
         return 301 https://$host$request_uri;
     }
     return 404;
@@ -556,10 +556,10 @@ server {
 
 server {
     listen 443 ssl;
-    server_name gptinfo.co.kr;
+    server_name dnsname.co.kr;
     ssl on;
-    ssl_certificate /etc/letsencrypt/live/gptinfo.co.kr/fullchain.pem;
-    ssl_certificate_key /etc/letsencrypt/live/gptinfo.co.kr/privkey.pem;
+    ssl_certificate /etc/letsencrypt/live/dnsname.co.kr/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/dnsname.co.kr/privkey.pem;
     location / {
         proxy_pass http://backend/;
         proxy_set_header HOST $http_host;

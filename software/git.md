@@ -15,7 +15,7 @@ git add *
 git commit -m "설명"
 git status
 
-git remote add origin https://github.com/f5074/sample.git
+git remote add origin https://github.com/oseongryu/sample.git
 git push origin main
 ```
 
@@ -277,6 +277,7 @@ git config --global http.sslVerify false
 #### git remote origin
 
 ```bash
+# 1
 git config --local --list
 git remote add origin git@github.com:oseongryu/til.git
 
@@ -286,6 +287,8 @@ git config --local --list
 git remote add origin git@github.com:oseongryu/til.git
 git push -u origin main
 
+# 2
+git remote set-url origin git@github.com:oseongryu/til.git
 ```
 
 #### git merge option

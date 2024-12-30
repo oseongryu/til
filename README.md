@@ -1,4 +1,4 @@
-[![Version](https://img.shields.io/badge/version-2020.01.05-red.svg)](./CHANGELOG)  [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/f5074/TIL)](https://hits.seeyoufarm.com/)
+[![Version](https://img.shields.io/badge/version-2020.01.05-red.svg)](./CHANGELOG)  [![License](https://img.shields.io/github/license/mashape/apistatus.svg)](./LICENSE)  [![Hits](https://hits.seeyoufarm.com/api/count/incr/badge.svg?url=https://github.com/oseongryu/til)](https://hits.seeyoufarm.com/)
 # Today I Learned
 
 * 정리하는 습관은 나를 잊지 않게 만든다.

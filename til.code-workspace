@@ -2,91 +2,42 @@
   "folders": [
     {
       "path": "."
-    },
+    }
   ],
   "settings": {
     "editor.fontFamily": "D2Coding,  Consolas, 나눔고딕코딩, 'Courier New', monospace",
     "editor.insertSpaces": true,
     "editor.tabSize": 2,
     "editor.defaultFormatter": "esbenp.prettier-vscode",
-    // "editor.formatOnSave": true,
-    "http.proxyStrictSSL": false,
     "explorer.autoReveal": true,
-    // "files.eol": "\n",
-    "liveServer.settings.multiRootWorkspaceName": "packages",
     "eslint.enable": true,
     "eslint.options": { "configFile": "./.eslintrc" },
-    "terminal.integrated.shell.windows": "C:\\Program Files\\Git\\bin\\bash.exe",
-    "terminal.integrated.defaultProfile.windows": "Command Prompt",
+    "terminal.integrated.defaultProfile.windows": "Git Bash",
     "terminal.integrated.defaultProfile.osx": "zsh",
     "workbench.iconTheme": "material-icon-theme",
     "editor.suggestSelection": "first",
-    "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "path-intellisense.extensionOnImport": true,
     "files.associations": {
       "*.json": "jsonc"
     },
     "git.autofetch": true,
-    "svn.ignoreMissingSvnWarning": true,
-    // "python.terminal.activateEnvironment": false,
-    // "python.terminal.activateEnvInCurrentTerminal": false,
-    // "python.defaultInterpreterPath": "C:\\Users\\${env:USERNAME}\\git\\python-selenium\\venv\\Scripts\\python.exe",
-    // "python.defaultInterpreterPath": "${workspaceFolder}/venv/Scripts/python",
-    // "python.defaultInterpreterPath": "${workspaceFolder}/venv/bin/activate",
-    // "python.defaultInterpreterPath": "./venv/bin/activate",
-    // "python.formatting.provider": "black",
-    // "python.linting.pylintEnabled": true,
-    // "python.linting.enabled": true,
-    "[python]": {
-      // "editor.defaultFormatter": "ms-python.black-formatter",
-      "editor.formatOnSave": true,
-      "editor.formatOnPaste": true
-    },
-    "black-formatter.args": ["--line-length", "300"],
+
     "workbench.editorAssociations": {
       "*.md": "default"
     },
-    "vscode-office.previewCode": false,
-    "vscode-office.editorTheme": "Light",
-    "vscode-office.previewCodeHighlight.showLineNumber": true,
-    "vscode-office.viewAbsoluteLocal": true,
-    "vscode-office.editorLanguage": "ko_KR",
-    "vscode-office.openOutline": true,
-    "vscode-office.hideToolbar": false,
-    "editor.formatOnSave": true,
-    "markdown-preview-github-styles.darkTheme": "light",
-    // "files.eol": "\n",
-    // "files.eol": "\r\n",
     "git.detectSubmodules": true,
-    // "workbench.startupEditor": "none",
-    // "editor.minimap.enabled": false,
-    // "editor.formatOnSave": true,
-    // "diffEditor.ignoreTrimWhitespace": true,
-    // "prettier.jsxSingleQuote": true,
-    // "prettier.singleQuote": true,
-    // "javascript.preferences.quoteStyle": "single",
-    // "typescript.preferences.quoteStyle": "single",
     "launch": {
       "configurations": [],
       "compounds": []
     },
-    // "editor.defaultFormatter": "esbenp.prettier-vscode",
-    "code-runner.runInTerminal": true,
-    "[json]": {
-      // "editor.quickSuggestions": {
-      //   "strings": true
-      // },
-      // "editor.suggest.insertMode": "replace",
-      // "gitlens.codeLens.scopes": ["document"]
+    "window.title": "${dirty}${rootName}",
+    "[python]": {
+      "editor.formatOnSave": true,
+      "editor.formatOnPaste": true
     },
     "[markdown]": {
-      // "editor.formatOnSave": false,
+      // "editor.formatOnSave": true,
       // "editor.autoClosingQuotes": "never"
     },
-    "code-runner.executorMap": {
-      "cpp": "cd $dir && clang++ -std=c++17 $fileName -o $fileNameWithoutExt && $dir$fileNameWithoutExt"
-    },
-    "window.title": "${dirty}${rootName}",
     "workbench.colorCustomizations": {
       // green
       // vscdoe 전체 전경 색
@@ -117,36 +68,6 @@
       "list.activeSelectionForeground": "#06f7df",
       "list.inactiveSelectionBackground": "#1f242b",
       "list.inactiveSelectionForeground": "#06f7df"
-
-      // // blue
-      // // vscdoe 전체 전경 색
-      // "editor.background": "#1f242b",
-      // // 맨 왼쪽 activityBar
-      // "activityBar.background": "#1f242b",
-      // // 사이드바(파일,폴더) 배경 색
-      // "sideBar.background": "#1f242b",
-      // // 그룹 헤더 전체 배경 색
-      // "editorGroupHeader.tabsBackground": "#1f242b",
-      // // 선택된 탭 배경색
-      // "tab.activeBackground": "#09569d",
-      // "tab.inactiveForeground": "#fff",
-      // // 비활성인 탭 배경색
-      // "tab.activeForeground": "#e7e8ed",
-      // "tab.inactiveBackground": "#1f242b",
-      // // 상단 타이틀 배경색
-      // "titleBar.activeBackground": "#0d3d95",
-      // "titleBar.inactiveBackground": "#0a2d6e",
-      // // 상단 타이틀 글자색
-      // "titleBar.activeForeground": "#fff",
-      // "titleBar.inactiveForeground": "#fff",
-      // // 하단 상태 배경색
-      // "statusBar.background": "#1558d4",
-      // // 사이드바 목록 선택 배경색 글자색
-      // "list.hoverBackground": "#535353",
-      // "list.activeSelectionBackground": "#1f242b",
-      // "list.activeSelectionForeground": "#1558d4",
-      // "list.inactiveSelectionBackground": "#1f242b",
-      // "list.inactiveSelectionForeground": "#4379dd"
     }
   }
 }

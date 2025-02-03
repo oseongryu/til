@@ -670,6 +670,20 @@ sudo rm /var/mail/$USER
 /System/Library/CoreServices/SystemFolderLocalizations/ko.lproj/SystemFolderLocalization.strings
 ```
 
+### mac 한글파일명 한글 자음모음 분리 현상 해결
+
+```bash
+https://blog.naver.com/daekkai71/223176789304
+
+brew install convmv
+#파일변환
+convmv -f utf8 -t utf8 --nfc --notest 표준근무시간변경안내_20250124.png
+
+for i in "$@"; do
+    convmv -f utf-8 -t utf-8 --nfc --notest "$i"
+done
+```
+
 ### References
 
 ```

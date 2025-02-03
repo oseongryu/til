@@ -17,7 +17,7 @@ Rancher Desktop(Docker Desktop 대체)
 
 ### 맥 사용법
 
-```
+```bash
 ###  0. 기타
 -  동일 프로그램 전환 cmd + `
 
@@ -97,6 +97,14 @@ Command+, 모든 앱에서 환경 설정 창을 열기
 [space bar] 또는 [command]+[Y] 훑어보기
 [command]+파일 드래그 다른 디스크로 파일을 드래그할 때 복사하지 않고 이동
 [option]+파일 드래그 같은 디스크로 파일을 드래그할 때 이동하지 않고 복사
+
+### Mac Command Line 명령어
+^+U to delete before Cursor
+^+K to delete after Cursor
+^+W to delete just a word.
+^+C to cancel.
+^+A to go to the beginning of the line.
+^+E to go to the end of the line.
 ```
 
 ### 시스템 환경설정
@@ -210,21 +218,66 @@ exit 0;
 ---
 ```
 
-### 기본 단축키
+### mac brew
 
-```
-cmd + c 복사
+```bash
+/bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/HEAD/install.sh)"
 ```
 
-### Mac Command Line 명령어
+### Oh my zsh
 
+```bash
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
+
+.zshrc에서 ZSH_THEME="robbyrussell" => ZSH_THEME="simple"
 ```
-^+U to delete before Cursor
-^+K to delete after Cursor
-^+W to delete just a word.
-^+C to cancel.
-^+A to go to the beginning of the line.
-^+E to go to the end of the line.
+
+### mac nvm
+
+```bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.1/install.sh | bash
+
+nvm install 16.17.1
+nvm use 16.17.1
+nvm alias default 16.17.1
+```
+
+### pyenv
+
+```bash
+# https://dchkang83.tistory.com/199
+brew install pyenv
+
+# 버전목록확인
+pyenv install --list
+pyenv install --l
+# 필요버전설치
+pyenv install 3.10.6
+# 설정(전역)
+pyenv global 3.10.6
+# 설정(현재프로젝트)
+pyenv local 3.10.6
+# 설정(현재shell)
+pyenv shell 3.10.6
+
+# 설치버전목록확인
+pyenv versions
+# 버전
+pyenv version
+
+# python 재설치
+ls -l /usr/local/bin/python*
+ln -s -f /usr/local/bin/python3.10 /usr/local/bin/python
+
+#기존 버전 삭제
+rm -rf /usr/local/bin/python*
+rm -rf /usr/local/bin/pip*
+# 환경변수 삭제 
+brew doctor
+brew cleanup
+
+python -m ensurepip --default-pip
+python -m pip install --upgrade pip
 ```
 
 ### 터미널에서 파인더 열기
@@ -235,22 +288,18 @@ open .
 
 ### Finder 숨김파일 보기
 
-```
+```bash
 shift + cmd + .
 defaults write com.apple.Finder AppleShowAllFiles YES
 killall Finder
-```
-
-### 다시 숨김
-
-```
+# 다시 숨김
 defaults write com.apple.Finder AppleShowAllFiles NO
 killall Finder
 ```
 
 ### macOS Sierra에서 원화(₩) 대신 백 쿼트(`) 입력하기
 
-```
+```bash
 ~/Library 폴더로 이동해서 KeyBindings 폴더를 추가한다.
 ~/Library/KeyBindings 폴더에 DefaultkeyBinding.dict 파일을 만든다.
 DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
@@ -262,7 +311,7 @@ DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
 
 ### 한글전환 Shift + space 변경
 
-```
+```bash
 1. 시스템 환경설정 > 키보드 > 단축키 > 입력소스 > 입력 메뉴에서 다음 소스 선택 단축키를 fn + shift + space 로 변경
 (한영 딜레이가 없으려면 입력 메뉴에서 다음 소스 선택)
 
@@ -307,15 +356,6 @@ sudo launchctl load /Library/LaunchAgents/userkeymapping.plist
 sudo launchctl remove userkeymapping
 sudo rm /Library/LaunchAgents/userkeymapping.plist
 sudo rm /Users/Shared/bin/userkeymapping
-
-```
-
-### Oh my zsh
-
-```bash
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-
-.zshrc에서 ZSH_THEME="robbyrussell" => ZSH_THEME="simple"
 ```
 
 ### Terminal alias
@@ -557,44 +597,6 @@ java    /Users/oseongryu/DEV/java
 sudo chown -R ${USER}:staff /usr/local/Cellar/
 ```
 
-### pyenv
-
-```bash
-# https://dchkang83.tistory.com/199
-brew instlal pyenv
-
-# 버전목록확인
-pyenv install --list
-pyenv install --l
-# 필요버전설치
-pyenv install 3.10.6
-# 설정(전역)
-pyenv global 3.10.6
-# 설정(현재프로젝트)
-pyenv local 3.10.6
-# 설정(현재shell)
-pyenv shell 3.10.6
-
-# 설치버전목록확인
-pyenv versions
-# 버전
-pyenv version
-
-# python 재설치
-ls -l /usr/local/bin/python*
-ln -s -f /usr/local/bin/python3.10 /usr/local/bin/python
-
-#기존 버전 삭제
-rm -rf /usr/local/bin/python*
-rm -rf /usr/local/bin/pip*
-# 환경변수 삭제 
-brew doctor
-brew cleanup
-
-python -m ensurepip --default-pip
-python -m pip install --upgrade pip
-```
-
 ### displayplacer 맥북 듀얼모니터 위치 변경 문제 해결
 
 ```bash
@@ -693,5 +695,4 @@ https://cli.ncloud-docs.com/docs/guide-objectstorage
 https://cli-fin.ncloud-docs.com/docs/guide-objectstorage
 AzureCli: https://docs.microsoft.com/en-us/cli/azure/install-azure-cli-macos
 AzureCli: https://docs.microsoft.com/ko-kr/cli/azure/get-started-with-azure-cli
-
 ```

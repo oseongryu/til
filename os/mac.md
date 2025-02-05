@@ -700,7 +700,9 @@ done
 
 ```bash
 # Finder는 최대한 기본값 사용으로 설정되도록 하기
+# 환경 설정 초기화 /Users/users/Preferences/com.apple.finder(.plist), com.apple.systempreferences(.plist) 파일 2개를 삭제하고 재시동
 1. Finder > 보기 > 경로 막대 보기
+1. Finder > 보기 > 상태 막대 보기
 1. 목록보기
 2. 계층보기: 수정일, 크기, 종류
 3. 상대적 날짜 사용 체크해제

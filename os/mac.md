@@ -51,10 +51,16 @@ Rancher Desktop(Docker Desktop 대체)
 
 ###  5. 추가설정
 - 캡쳐시 옵션에서 미리보기썸네일제거
-- 폴더선택후 터미널로 열기
-- 오토마타 사용으로 VSCode로 열기 서비스 만들기
-- 트랙패드 > 포인트 및 클릭 > 탭하여 클릭하기 체크
-- 트랙패드 > 추가 제스처 > 페이지 쓸어넘기기 체크
+- 키보드 단축키 > 서비스 > 파일 및 폴더 : 폴더에서 새로운 터미널 열기 단축키 추가
+- 오토마타 단축키: OpenVSCode, OpenTerminal, MakeNewFile 등
+- 트랙패드: 트랙패드 > 포인트 및 클릭 > 탭하여 클릭하기 체크
+- 트랙패드: 트랙패드 > 추가 제스처 > 페이지 쓸어넘기기 체크
+- Finder 설정(고급):
+[x] 모든 파일 확장자 보기
+[ ] 확장자를 변경하기 전 경고보기
+[x] 폴더 우선 정렬: 윈도우에서(이름순으로 정렬 시)
+[x] 폴더 우선 정렬: 데스크탑에서
+
 
 ###  6. 단축키
 
@@ -300,9 +306,13 @@ killall Finder
 ### macOS Sierra에서 원화(₩) 대신 백 쿼트(`) 입력하기
 
 ```bash
-~/Library 폴더로 이동해서 KeyBindings 폴더를 추가한다.
-~/Library/KeyBindings 폴더에 DefaultkeyBinding.dict 파일을 만든다.
-DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
+#~/Library 폴더로 이동해서 KeyBindings 폴더를 추가한다.
+#~/Library/KeyBindings 폴더에 DefaultkeyBinding.dict 파일을 만든다.
+#DefaultkeyBinding.dict 파일에 아래의 코드를 추가한다
+
+mkdir ~/Library/KeyBindings
+touch ~/Library/KeyBindings/DefaultkeyBinding.dict
+vi ~/Library/KeyBindings/DefaultkeyBinding.dict
 
 {
     "₩" = ("insertText:", "`");
@@ -684,6 +694,25 @@ convmv -f utf8 -t utf8 --nfc --notest 표준근무시가
 for i in "$@"; do
     convmv -f utf-8 -t utf-8 --nfc --notest "$i"
 done
+```
+
+### mac Finder 설정
+
+```bash
+# Finder는 최대한 기본값 사용으로 설정되도록 하기
+1. Finder > 보기 > 경로 막대 보기
+1. 목록보기
+2. 계층보기: 수정일, 크기, 종류
+3. 상대적 날짜 사용 체크해제
+```
+
+### mac .DS_Store
+
+```bash
+# 일괄삭제
+sudo find / -type f -name '\.DS_Store' -print -delete
+# .DS_Store 생성 막기
+defaults write com.apple.desktopservices DSDontWriteNetworkStores ture
 ```
 
 ### References

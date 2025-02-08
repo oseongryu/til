@@ -721,6 +721,74 @@ sudo find / -type f -name '\.DS_Store' -print -delete
 defaults write com.apple.desktopservices DSDontWriteNetworkStores ture
 ```
 
+
+### mac brew bundle, cask, mas
+
+```bash
+# brew : cask, mas, wget 등 개발 패키지
+# cask : atom, docker 등 웹사이트에서 다운 받아 설치하는 어플리케이션
+# mas : 카카오톡, wechat 등 앱스토어를 통해 설치하는 어플리케이션
+
+# brew search microsoft
+brew install microsoft-remote-desktop 
+brew install keka
+
+
+# cask (deprecated brew install --cask)
+brew install cask
+brew cask install <application>
+brew cask list 
+brew cask remove <application>
+
+
+# mas
+brew install mas
+# mas에서 Windows App 검색
+mas search "Windows App"
+mas install 1295203466
+
+# iRightMouse
+# Microsoft To Do
+# Magnet
+# 무비스트
+# Microsoft OneNote
+# 유니콘 HTTPS
+# RunCat
+# 올ㅋ사전
+# Friendly Streaming
+# Translate Tab
+# My Wonderful Days
+
+#brewfile리스트에는 다음 문구를 추가
+mas "Windows App", 1295203466
+mas list
+
+#brewfile 생성
+brew bundle dump
+
+
+
+#brewfile 내용 확인
+cat brewfile
+
+#brewfile 실행
+brew bundle
+
+# https://imch.dev/posts/lets-setup-team-development-environment-using-brewfile/
+brew install --cask docker
+# ‘Docker.app’은(는) 인터넷에서 다운로드된 앱입니다. 열겠습니까?
+echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/Docker.app
+
+
+```
+
+### mac direnv
+
+```bash
+# https://www.44bits.io/ko/post/direnv_for_managing_directory_environment
+폴더별 환경관리
+```
+
 ### References
 
 ```

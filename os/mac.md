@@ -766,8 +766,6 @@ mas list
 #brewfile 생성
 brew bundle dump
 
-
-
 #brewfile 내용 확인
 cat brewfile
 
@@ -778,8 +776,8 @@ brew bundle
 brew install --cask docker
 # ‘Docker.app’은(는) 인터넷에서 다운로드된 앱입니다. 열겠습니까?
 echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/Docker.app
-
-
+# Operation not permitted
+설정 > 개인정보 보호 및 보안 > 전체 디스크 접근권한 허용
 ```
 
 ### mac direnv

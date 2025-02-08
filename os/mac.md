@@ -344,7 +344,8 @@ sudo cat<<: >/Users/Shared/bin/userkeymapping.plist
 <plist version="1.0">
 <dict>
     <key>Label</key>
-    <string>userkeymapping</string>   <key>ProgramArguments</key>
+    <string>userkeymapping</string>
+    <key>ProgramArguments</key>
     <array>
         <string>/Users/Shared/bin/userkeymapping</string>
     </array>

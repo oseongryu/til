@@ -1,21 +1,4 @@
-### 2022.12.25.
-
-#### path
-
-```
-Windows Path:
-./data/user-data/User (Portable)
-%AppData%/Roaming/Code/User/settings.json (Excute)
-
-Mac Path:
-~/Library/Application Support/Code/User/settings.json (Excute)
-```
-
-https://code.visualstudio.com/docs/getstarted/settings
-
-#### vscode settings.json
-
-settings.json
+### settings.json
 
 ```json
 {
@@ -30,7 +13,7 @@ settings.json
   "extensions.autoCheckUpdates": false,
   "extensions.autoUpdate": false,
   "extensions.ignoreRecommendations": true,
-  // "files.trimTrailingWhitespace": true,
+  "files.trimTrailingWhitespace": true,
   "git.enableSmartCommit": true,
   "git.autofetch": true,
   "git.confirmSync": false,
@@ -88,17 +71,77 @@ settings.json
   "editor.defaultFormatter": "esbenp.prettier-vscode",
   "editor.accessibilitySupport": "off",
   "markdown-preview-enhanced.revealjsTheme": "black.css",
-  "workbench.layoutControl.enabled": false,
   "editor.fontFamily": "Consolas, Menlo, Monaco, 'Courier New', monospace",
   "git.ignoreRebaseWarning": true,
   "diffEditor.ignoreTrimWhitespace": false,
   "workbench.editorAssociations": {
     "*.strings": "default"
+  },
+  "workbench.colorCustomizations": {
+    // green
+    // vscdoe 전체 전경 색
+    "editor.background": "#2a2c2b",
+    // 맨 왼쪽 activityBar
+    "activityBar.background": "#1f242b",
+    // 사이드바(파일,폴더) 배경 색
+    "sideBar.background": "#333635",
+    // 그룹 헤더 전체 배경 색
+    "editorGroupHeader.tabsBackground": "#1f242b",
+    // 선택된 탭 배경색
+    "tab.activeBackground": "#225348",
+    "tab.activeForeground": "#06f7df",
+    "tab.inactiveForeground": "#ffffff",
+    // 비활성인 탭 배경색
+    "tab.inactiveBackground": "#1f242b",
+    // 상단 타이틀 배경색
+    "titleBar.activeBackground": "#0b856b",
+    "titleBar.inactiveBackground": "#086450",
+    // 상단 타이틀 글자색
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#ffffff",
+    // 하단 상태 배경색
+    "statusBar.background": "#0b856b",
+    // 사이드바 목록 선택 배경색 글자색
+    "list.hoverBackground": "#535353",
+    "list.activeSelectionBackground": "#1f242b",
+    "list.activeSelectionForeground": "#06f7df",
+    "list.inactiveSelectionBackground": "#1f242b",
+    "list.inactiveSelectionForeground": "#06f7df"
+
+    // // blue
+    // // vscdoe 전체 전경 색
+    // "editor.background": "#1f242b",
+    // // 맨 왼쪽 activityBar
+    // "activityBar.background": "#1f242b",
+    // // 사이드바(파일,폴더) 배경 색
+    // "sideBar.background": "#1f242b",
+    // // 그룹 헤더 전체 배경 색
+    // "editorGroupHeader.tabsBackground": "#1f242b",
+    // // 선택된 탭 배경색
+    // "tab.activeBackground": "#09569d",
+    // "tab.inactiveForeground": "#ffffff",
+    // // 비활성인 탭 배경색
+    // "tab.activeForeground": "#e7e8ed",
+    // "tab.inactiveBackground": "#1f242b",
+    // // 상단 타이틀 배경색
+    // "titleBar.activeBackground": "#0d3d95",
+    // "titleBar.inactiveBackground": "#0a2d6e",
+    // // 상단 타이틀 글자색
+    // "titleBar.activeForeground": "#ffffff",
+    // "titleBar.inactiveForeground": "#ffffff",
+    // // 하단 상태 배경색
+    // "statusBar.background": "#1558d4",
+    // // 사이드바 목록 선택 배경색 글자색
+    // "list.hoverBackground": "#535353",
+    // "list.activeSelectionBackground": "#1f242b",
+    // "list.activeSelectionForeground": "#1558d4",
+    // "list.inactiveSelectionBackground": "#1f242b",
+    // "list.inactiveSelectionForeground": "#4379dd"
   }
 }
 ```
 
-keybindings.json
+### keybindings.json
 
 ```json
 // Place your key bindings in this file to override the defaultsauto[]
@@ -152,81 +195,4 @@ keybindings.json
     "command": "editor.action.transformToSnakecase"
   }
 ]
-```
-
-setting.json
-
-```
-    "workbench.colorCustomizations": {
-      // 상단 타이틀 배경색
-      "titleBar.activeBackground": "#0d3d95",
-      "titleBar.inactiveBackground": "#0a2d6e",
-      // 상단 타이틀 글자색
-      "titleBar.activeForeground": "#fff",
-      "titleBar.inactiveForeground": "#fff",
-      // 하단 상태 배경색
-      "statusBar.background": "#1558d4"
-    },
-
-    "workbench.colorCustomizations": {
-      // green
-      // vscdoe 전체 전경 색
-      "editor.background": "#2a2c2b",
-      // 맨 왼쪽 activityBar
-      "activityBar.background": "#1f242b",
-      // 사이드바(파일,폴더) 배경 색
-      "sideBar.background": "#333635",
-      // 그룹 헤더 전체 배경 색
-      "editorGroupHeader.tabsBackground": "#1f242b",
-      // 선택된 탭 배경색
-      "tab.activeBackground": "#225348",
-      "tab.activeForeground": "#06f7df",
-      "tab.inactiveForeground": "#ffffff",
-      // 비활성인 탭 배경색
-      "tab.inactiveBackground": "#1f242b",
-      // 상단 타이틀 배경색
-      "titleBar.activeBackground": "#0b856b",
-      "titleBar.inactiveBackground": "#086450",
-      // 상단 타이틀 글자색
-      "titleBar.activeForeground": "#ffffff",
-      "titleBar.inactiveForeground": "#ffffff",
-      // 하단 상태 배경색
-      "statusBar.background": "#0b856b",
-      // 사이드바 목록 선택 배경색 글자색
-      "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#1f242b",
-      "list.activeSelectionForeground": "#06f7df",
-      "list.inactiveSelectionBackground": "#1f242b",
-      "list.inactiveSelectionForeground": "#06f7df"
-
-      // // blue
-      // // vscdoe 전체 전경 색
-      // "editor.background": "#1f242b",
-      // // 맨 왼쪽 activityBar
-      // "activityBar.background": "#1f242b",
-      // // 사이드바(파일,폴더) 배경 색
-      // "sideBar.background": "#1f242b",
-      // // 그룹 헤더 전체 배경 색
-      // "editorGroupHeader.tabsBackground": "#1f242b",
-      // // 선택된 탭 배경색
-      // "tab.activeBackground": "#09569d",
-      // "tab.inactiveForeground": "#ffffff",
-      // // 비활성인 탭 배경색
-      // "tab.activeForeground": "#e7e8ed",
-      // "tab.inactiveBackground": "#1f242b",
-      // // 상단 타이틀 배경색
-      // "titleBar.activeBackground": "#0d3d95",
-      // "titleBar.inactiveBackground": "#0a2d6e",
-      // // 상단 타이틀 글자색
-      // "titleBar.activeForeground": "#ffffff",
-      // "titleBar.inactiveForeground": "#ffffff",
-      // // 하단 상태 배경색
-      // "statusBar.background": "#1558d4",
-      // // 사이드바 목록 선택 배경색 글자색
-      // "list.hoverBackground": "#535353",
-      // "list.activeSelectionBackground": "#1f242b",
-      // "list.activeSelectionForeground": "#1558d4",
-      // "list.inactiveSelectionBackground": "#1f242b",
-      // "list.inactiveSelectionForeground": "#4379dd"
-    },
 ```

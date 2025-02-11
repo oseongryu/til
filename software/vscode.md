@@ -233,6 +233,19 @@ mkdir code-insiders-portable-data
 # make "data" folder in "vscode folder"
 ```
 
+### vscode path
+
+```bash
+# https://code.visualstudio.com/docs/getstarted/settings
+
+# Windows Path:
+./data/user-data/User (Portable)
+%AppData%/Roaming/Code/User/settings.json (Excute)
+
+# Mac Path:
+~/Library/Application Support/Code/User/settings.json (Excute)
+```
+
 ### vscode Remote-SSH (Windows 10)
 
 ```bash

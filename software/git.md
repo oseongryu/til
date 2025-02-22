@@ -636,6 +636,33 @@ git config --global alias.co checkout
 # *.scss linguist-detectable=false
 ```
 
+### git proxy (ssh, http)
+
+```bash
+# 1.ssh (git clone git@github.com:kubernetes/kubernetes.git)
+# add ProxyCommand in ~/.ssh/config
+ Host github.com
+    HostName github.com
+    Port 22
+    IdentityFile ~/.ssh/id_rsa
+    User oseongryu
+    ProxyCommand nc -x 192.0.0.4:8000 -X connect %h %p #mac
+    # ProxyCommand connect -S 192.0.0.4:8000 %h %p # ServerAliveInterval 10 #Windows
+
+# only cli
+git -c "http.proxy=192.0.0.4:8000" clone git@github.com:oseongryu/docker-composes.git
+
+
+
+# 2.http (git clone https://github.com/kubernetes/kubernetes.git)
+# add config in "~/.gitconfig"
+git config --global http.proxy http://192.0.0.4:8000
+git config --global https.proxy https://192.0.0.4:8000
+
+git config --global http.proxy 'socks5://192.0.0.4:8000'
+git config --global https.proxy 'socks5://192.0.0.4:8000'
+```
+
 #### References
 
 ```

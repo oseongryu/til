@@ -512,6 +512,11 @@ sudo visudo
 defaults write com.apple.screencapture name "shot"
 killall SystemUIServer
 defaults write com.apple.screencapture name "Screenshot"
+
+# 날짜제외
+defaults write com.apple.screencapture "include-date" 0;killall SystemUIServer
+# 날짜포함
+defaults write com.apple.screencapture "include-date" 1;killall SystemUIServer
 ```
 
 ### mac dock speed
@@ -722,7 +727,6 @@ sudo find / -type f -name '\.DS_Store' -print -delete
 defaults write com.apple.desktopservices DSDontWriteNetworkStores ture
 ```
 
-
 ### mac brew bundle, cask, mas
 
 ```bash
@@ -731,14 +735,14 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores ture
 # mas : 카카오톡, wechat 등 앱스토어를 통해 설치하는 어플리케이션
 
 # brew search microsoft
-brew install microsoft-remote-desktop 
+brew install microsoft-remote-desktop
 brew install keka
 
 
 # cask (deprecated brew install --cask)
 brew install cask
 brew cask install <application>
-brew cask list 
+brew cask list
 brew cask remove <application>
 
 

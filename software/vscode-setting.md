@@ -85,7 +85,7 @@
       "list.activeSelectionBackground": "#1f242b",
       "list.activeSelectionForeground": "#06f7df",
       "list.inactiveSelectionBackground": "#1f242b",
-      "list.inactiveSelectionForeground": "#06f7df"
+      "list.inactiveSelectionForeground": "#06f7df",
 
       // blue
       // vscdoe 전체 전경 색
@@ -112,10 +112,10 @@
       "statusBar.background": "#1558d4",
       // 사이드바 목록 선택 배경색 글자색
       "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#1f242b",
-      "list.activeSelectionForeground": "#1558d4",
-      "list.inactiveSelectionBackground": "#1f242b",
-      "list.inactiveSelectionForeground": "#4379dd"
+      "list.activeSelectionBackground": "#09569d",
+      "list.activeSelectionForeground": "#ffffff",
+      "list.inactiveSelectionBackground": "#3a6a97",
+      "list.inactiveSelectionForeground": "#ffffff"
     },
 ```
 

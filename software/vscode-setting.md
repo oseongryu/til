@@ -89,19 +89,28 @@
 
       // blue
       // vscdoe 전체 전경 색
-      "editor.background": "#1f242b",
+      "editor.background": "#000000",
       // 맨 왼쪽 activityBar
-      "activityBar.background": "#1f242b",
+      "activityBar.background": "#000000",
       // 사이드바(파일,폴더) 배경 색
-      "sideBar.background": "#1f242b",
+      "sideBar.background": "#25292f",
       // 그룹 헤더 전체 배경 색
       "editorGroupHeader.tabsBackground": "#1f242b",
+
+      // 사이드바 목록 선택 배경색 글자색
+      "list.hoverBackground": "#535353",
+      "list.activeSelectionBackground": "#09569d",
+      "list.activeSelectionForeground": "#ffffff",
+      "list.inactiveSelectionBackground": "#3a6a97",
+      "list.inactiveSelectionForeground": "#ffffff",
+
       // 선택된 탭 배경색
-      "tab.activeBackground": "#09569d",
-      "tab.inactiveForeground": "#ffffff",
+      "tab.activeBackground": "#044d91",
+      "tab.activeForeground": "#ffffff",
       // 비활성인 탭 배경색
-      "tab.activeForeground": "#e7e8ed",
       "tab.inactiveBackground": "#1f242b",
+      "tab.inactiveForeground": "#ffffff",
+
       // 상단 타이틀 배경색
       "titleBar.activeBackground": "#0d3d95",
       "titleBar.inactiveBackground": "#0a2d6e",
@@ -110,12 +119,6 @@
       "titleBar.inactiveForeground": "#ffffff",
       // 하단 상태 배경색
       "statusBar.background": "#1558d4",
-      // 사이드바 목록 선택 배경색 글자색
-      "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#09569d",
-      "list.activeSelectionForeground": "#ffffff",
-      "list.inactiveSelectionBackground": "#3a6a97",
-      "list.inactiveSelectionForeground": "#ffffff"
     },
 ```
 

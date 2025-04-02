@@ -46,7 +46,7 @@
       // vscdoe 전체 전경 색
       "editor.background": "#000000",
       // 맨 왼쪽 activityBar
-      "activityBar.background": "#000000",
+      "activityBar.background": "#14322c",
       // 사이드바(파일,폴더) 배경 색
       "sideBar.background": "#25292f",
       // 그룹 헤더 전체 배경 색
@@ -54,9 +54,9 @@
 
       // 사이드바 목록 선택 배경색 글자색
       "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#09569d",
+      "list.activeSelectionBackground": "#065458",
       "list.activeSelectionForeground": "#06f7df",
-      "list.inactiveSelectionBackground": "#3a6a97",
+      "list.inactiveSelectionBackground": "#225957",
       "list.inactiveSelectionForeground": "#ffffff",
 
       // 선택된 탭 배경색

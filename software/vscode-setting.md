@@ -59,19 +59,28 @@
     "workbench.colorCustomizations": {
       // green
       // vscdoe 전체 전경 색
-      "editor.background": "#2a2c2b",
+      "editor.background": "#000000",
       // 맨 왼쪽 activityBar
-      "activityBar.background": "#1f242b",
+      "activityBar.background": "#14322c",
       // 사이드바(파일,폴더) 배경 색
-      "sideBar.background": "#333635",
+      "sideBar.background": "#25292f",
       // 그룹 헤더 전체 배경 색
       "editorGroupHeader.tabsBackground": "#1f242b",
+
+      // 사이드바 목록 선택 배경색 글자색
+      "list.hoverBackground": "#535353",
+      "list.activeSelectionBackground": "#065458",
+      "list.activeSelectionForeground": "#06f7df",
+      "list.inactiveSelectionBackground": "#225957",
+      "list.inactiveSelectionForeground": "#ffffff",
+
       // 선택된 탭 배경색
       "tab.activeBackground": "#225348",
       "tab.activeForeground": "#06f7df",
-      "tab.inactiveForeground": "#ffffff",
       // 비활성인 탭 배경색
       "tab.inactiveBackground": "#1f242b",
+      "tab.inactiveForeground": "#ffffff",
+
       // 상단 타이틀 배경색
       "titleBar.activeBackground": "#0b856b",
       "titleBar.inactiveBackground": "#086450",
@@ -80,18 +89,14 @@
       "titleBar.inactiveForeground": "#ffffff",
       // 하단 상태 배경색
       "statusBar.background": "#0b856b",
-      // 사이드바 목록 선택 배경색 글자색
-      "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#1f242b",
-      "list.activeSelectionForeground": "#06f7df",
-      "list.inactiveSelectionBackground": "#1f242b",
-      "list.inactiveSelectionForeground": "#06f7df",
+      // 하단 Terminal, Problems 배경색
+      "panel.background": "#021e18",
 
       // blue
       // vscdoe 전체 전경 색
       "editor.background": "#000000",
       // 맨 왼쪽 activityBar
-      "activityBar.background": "#000000",
+      "activityBar.background": "#071f4a",
       // 사이드바(파일,폴더) 배경 색
       "sideBar.background": "#25292f",
       // 그룹 헤더 전체 배경 색
@@ -119,6 +124,8 @@
       "titleBar.inactiveForeground": "#ffffff",
       // 하단 상태 배경색
       "statusBar.background": "#1558d4",
+      // 하단 Terminal, Problems 배경색
+      "panel.background": "#06132c",
     },
 ```
 

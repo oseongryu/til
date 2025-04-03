@@ -42,7 +42,7 @@
       "editor.autoClosingQuotes": "never"
     },
     "workbench.colorCustomizations": {
-      // blue
+      // green
       // vscdoe 전체 전경 색
       "editor.background": "#000000",
       // 맨 왼쪽 activityBar
@@ -73,7 +73,9 @@
       "titleBar.activeForeground": "#ffffff",
       "titleBar.inactiveForeground": "#ffffff",
       // 하단 상태 배경색
-      "statusBar.background": "#0b856b"
+      "statusBar.background": "#0b856b",
+      // 하단 Terminal, Problems 배경색
+      "panel.background": "#021e18"
     },
     "liveServer.settings.multiRootWorkspaceName": "corp-script"
   }

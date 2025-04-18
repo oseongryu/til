@@ -626,6 +626,8 @@ systemctl enable xrdpCreated symlink from /etc/systemd/system/multi-user.target.
 ```bash
 # 로그의 비대화를 막기 위한 방법으로 로그 로테이션
 
+# 테스트방법
+/usr/sbin/logrotate /etc/logrotate.d/test-app -d
 
 # /etc/logrotate.conf
 weekly

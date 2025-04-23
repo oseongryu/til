@@ -625,7 +625,7 @@ systemctl enable xrdpCreated symlink from /etc/systemd/system/multi-user.target.
 
 ```bash
 # 로그의 비대화를 막기 위한 방법으로 로그 로테이션
-
+# size와 daily는 서로 상충하지만, maxsize와 daily는 동시에 적용가능
 # 테스트방법
 /usr/sbin/logrotate /etc/logrotate.d/test-app -d
 
@@ -656,7 +656,7 @@ include /etc/logrotate.d
     missingok
     dateext
     dateformat -%Y-%m-%d_%s
-    size 100M
+    maxsize 100M
     rotate 30
     notifempty
     create 644 tomcat tomcat

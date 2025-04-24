@@ -399,3 +399,11 @@ Use compiler: Javac => Eclipse
 # https://americanopeople.tistory.com/428
 View > Tool Windows > Profiler > Cpu and Memory Live Charts
 ```
+
+### intellij Project panel font size
+
+```
+File > Settings > Appearance & Behavior > Appearance
+1. Use custom font: Size를 수정시 전체 UI 적용됨
+2. UI Options > Use smaller indents in trees 체크
+```

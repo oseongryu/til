@@ -130,3 +130,24 @@ google, naver tab 등을 사용
 바로가기: perplexity.ai/search
 URL: https://www.perplexity.ai/search/?q=%s
 ```
+
+### chrome 개발자도구
+
+```js
+
+
+
+# https://tinytip.co/
+# https://www.youtube.com/shorts/brfNa-dHqRE
+document.querySelector('div')
+$('div')
+
+document.querySelectorAll('div')
+$$('div')
+
+$$('a').map(row => {console.log(row)})
+
+copy($$('a').map(a => a.href))
+
+// 개발자도구에서 선택한 값이 $0, $1 등으로 저장됨
+```

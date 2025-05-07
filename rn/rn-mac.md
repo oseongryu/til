@@ -1,3 +1,4 @@
+````
 ## Setting
 
 ```
@@ -148,10 +149,10 @@ code-insiders-portable-data
 code-portable-data
 
 sudo npm uninstall npm -g
-sudo rm -rf /usr/local/lib/node 
-sudo rm -rf /usr/local/lib/node_modules 
+sudo rm -rf /usr/local/lib/node
+sudo rm -rf /usr/local/lib/node_modules
 sudo rm -rf /var/db/receipts/org.nodejs.*
-sudo rm -rf /usr/local/include/node 
+sudo rm -rf /usr/local/include/node
 sudo rm -rf /Users/oseongryu/.npm
 sudo rm /usr/local/bin/node
 sudo rm /usr/local/share/man/man1/node.1
@@ -184,7 +185,7 @@ npx react-native init LearnReactNative
 
 # export NVM_DIR=~/.nvm
 # source $(brew --prefix nvm)/nvm.sh
-  
+
 # export ANDROID_HOME="/Users/oseongryu/Library/Android/sdk"
 # export PATH="$PATH:$ANDROID_HOME/platform-tools/"
 
@@ -243,20 +244,20 @@ sudo gem install cocoapods
   Run instructions for Android:
     • Have an Android emulator running (quickest way to get started), or a device connected.
     • cd "/Users/oseongryu/git/rnshorts" && npx react-native run-android
-  
+
   Run instructions for iOS:
     • cd "/Users/oseongryu/git/rnshorts/ios"
-    
+
     • Install Cocoapods
       • bundle install # you need to run this only once in your project.
       • bundle exec pod install
       • cd ..
-    
+
     • npx react-native run-ios
     - or -
     • Open rnshorts/ios/rnshorts.xcodeproj in Xcode or run "xed -b ios"
     • Hit the Run button
-    
+
   Run instructions for macOS:
     • See https://aka.ms/ReactNativeGuideMacOS for the latest up-to-date instructions.
 ```
@@ -275,3 +276,4 @@ Process terminated. Press <enter> to close the window
 
 
 error Failed to install the app. Looks like your Android environment is not properly set. Please go to https://reactnative.dev/docs/0.73/environment-setup?os=macos&platform=android&guide=native#jdk-studio and follow the React Native CLI QuickStart guide to install the compatible version of JDK.
+````

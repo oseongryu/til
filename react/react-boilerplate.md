@@ -1,3 +1,4 @@
+````
 # 따라하며 배우는 노드, 리액트 시리즈
 
 ## 강의 목록
@@ -30,14 +31,14 @@ ffmpeg로 비디오 썸네일 생성하기
 
 
 ### 전체적인 틀 만들고 Mongo DB 연결
-GIT REPOSITORY  - MERN STACK : 
+GIT REPOSITORY  - MERN STACK :
 https://github.com/jaewonhimnae/boilerplate-mern-stack
 
 이건 완성본 소스 입니다  ^ ^ ~
 https://github.com/jaewonhimnae/react-youtube-clone
 
 
-1. 소스 다운로드 
+1. 소스 다운로드
 git clone https://github.com/jaewonhimnae/boilerplate-mern-stack
 
 2. 개발환경 설정
@@ -61,8 +62,8 @@ npm install --global --production windows-build-tools
 * Windows 환경에서 Error(msvs_version not set from command line or npm config)
 npm config set msvs_version 2017
 
-5. mongodb.com에 접속해서 Cluster 
-클러스터 생성 
+5. mongodb.com에 접속해서 Cluster
+클러스터 생성
 
 Connect Your Application > Copy
 
@@ -126,7 +127,7 @@ pkill node 5000
 1. 빈 랜딩 페이지 생성
 2. 비디오 카드 Template 만들기
 3. 몽고 DB에서 모든 비디오 데이터 가져오기
-4. 가져온 비디오 데이터들을 스크린에 출력하기 
+4. 가져온 비디오 데이터들을 스크린에 출력하기
 
 ### 비디오 디테일 페이지 만들기
 1. 비어있는 비디오 디테일 페이지 생성
@@ -208,3 +209,5 @@ pkill node 5000
 
 
 ### 도표 자료
+
+````

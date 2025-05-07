@@ -1,3 +1,4 @@
+```
 ## GridControl MaskEdit
            this.repositoryItemTextEdit1.AutoHeight = false;
            this.repositoryItemTextEdit1.Mask.EditMask = "[0-9]{4}[ ].{5}";
@@ -107,7 +108,7 @@ https://www.devexpress.com/Support/Center/Question/Details/T723050/textedit-sele
            }
 
 
-## GridControl RepositoryAnyControl 애니컨트롤일 경우 
+## GridControl RepositoryAnyControl 애니컨트롤일 경우
 devexpress AllowBitmapCache
 
 https://www.devexpress.com/Support/Center/Question/Details/T559987/synchronizing-charts-in-cells
@@ -257,7 +258,7 @@ this.todate.Properties.AllowNullInput = DevExpress.Utils.DefaultBoolean.False;
 XtraReport 다시 사용  Save 하고 다시 사용  https://www.devexpress.com/Support/Center/Question/Details/T524253/report-shows-only-one-row
 
 
-## SpreadSheet 폰트  
+## SpreadSheet 폰트
 https://documentation.devexpress.com/OfficeFileAPI/12370/Spreadsheet-Document-API/Examples/Formatting-Cells/How-to-Configure-Cell-Font-Settings
 https://documentation.devexpress.com/OfficeFileAPI/DevExpress.Spreadsheet.SpreadsheetFont.FontStyle.property
 
@@ -274,11 +275,11 @@ https://www.cnblogs.com/chucklu/p/6093971.html
 ## GaugeControl Change Value  in Runtime
 https://documentation.devexpress.com/WindowsForms/115306/Controls-and-Libraries/Gauges/Examples/How-to-Move-Value-Indicators-at-Runtime
 
-## Rectangle 
+## Rectangle
  경계 색 그리기  https://docs.microsoft.com/ko-kr/dotnet/framework/winforms/advanced/how-to-set-pen-width-and-alignment
 
 
-## LayoutView 
+## LayoutView
 https://www.devexpress.com/Support/Center/Question/Details/Q352918/card-display-in-layoutview
 ### 레이아웃을 Vertical 모드, 카드가 적을 경우 정렬 방식
             layoutView.OptionsMultiRecordMode.MultiRowScrollBarOrientation = ScrollBarOrientation.Vertical;
@@ -331,13 +332,13 @@ if (e.Control && e.KeyCode == Keys.C)
 {
     if (view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn) != null && view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString() != String.Empty)
         Clipboard.SetText(view.GetRowCellValue(view.FocusedRowHandle, view.FocusedColumn).ToString());
-    
+
     e.Handled = true;
 }
 
 
 
-## WidgetView 
+## WidgetView
 ### devexpress widgetview change control https://www.devexpress.com/Support/Center/Question/Details/T121157/change-widgetview-document-s-control
 ### devexpress document add control https://www.devexpress.com/Support/Center/Question/Details/T262503/widgetview-document-how-to-add-a-control
 
@@ -346,20 +347,20 @@ if (e.Control && e.KeyCode == Keys.C)
 
 ## GridControl TileView Add Image https://stackoverflow.com/questions/39242119/devexpress-xtragrid-tileview
 
-## SplitContainerControl devexpress splitcontainercontrol arrow    
+## SplitContainerControl devexpress splitcontainercontrol arrow
 https://documentation.devexpress.com/WindowsForms/DevExpress.XtraEditors.SplitContainerControl.CollapsePanel.property
 this.splitContainerControl1.CollapsePanel = DevExpress.XtraEditors.SplitCollapsePanel.Panel1;
 
 
 
-## FlyoutPanel location change     
+## FlyoutPanel location change
 https://www.devexpress.com/Support/Center/Question/Details/T346612/flyout-panel-location-and-position
 this.flyoutPanel1.Options.AnchorType = DevExpress.Utils.Win.PopupToolWindowAnchor.Right;
 this.flyoutPanel2.OptionsBeakPanel.BeakLocation = DevExpress.Utils.BeakPanelBeakLocation.Left;
 
 ## PictureEdit
 
-Set Fit Image in PictureEdit     
+Set Fit Image in PictureEdit
 https://www.devexpress.com/Support/Center/Question/Details/Q413142/set-fit-image-in-pictureedit
 
 this.pictureEdit1.Properties.SizeMode = DevExpress.XtraEditors.Controls.PictureSizeMode.Stretch;
@@ -378,7 +379,7 @@ https://community.devexpress.com/Blogs/
 https://null486.tistory.com/1
 
 ## pdf c# webbrowser redirect page download
-https://www.codeproject.com/Questions/120365/Downloading-files-without-direct-address-through-C          
+https://www.codeproject.com/Questions/120365/Downloading-files-without-direct-address-through-C
 
 this.pdfViewer1.DetachStreamAfterLoadComplete = true;
 
@@ -427,3 +428,4 @@ catch (Exception ex)
 {
 MessageBox.Show(ex.Message);
 }
+```

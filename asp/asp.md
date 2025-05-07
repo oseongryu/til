@@ -1,3 +1,4 @@
+```
 [ASP.NET MVC] 1. ASP.NET 소개 - .net Framework, .net Core
 https://www.youtube.com/watch?v=Y_X4A0P06Os
 
@@ -139,7 +140,7 @@ MySQL 과 비교
 # MS SQL SA 비밀번호 설정 이유
 1) Web Server와 SQL Server가 다른 컴퓨터일 경우
 http://db.example.com:1433
- 
+
 
 
 Chapter 7
@@ -171,14 +172,14 @@ Note
 # 3. DBContext 생성 -> Table 생성할 수 있는 코드를 작성.
 
 (##DataContext만듦)
-1. 
+1.
     public class AspnetNoteDbContext : DbContext
     {
         public DbSet<User> Users { get; set; }
         public DbSet<Note> Notes { get; set; }
     }
 
-2. 
+2.
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             base.OnConfiguring(optionsBuilder);
@@ -186,15 +187,15 @@ Note
 
 3. connectionstring https://www.connectionstrings.com/sql-server/
 
-4. 비주얼스튜디오의 상단 보기 >Server Explorer 사용해서 
+4. 비주얼스튜디오의 상단 보기 >Server Explorer 사용해서
  Data Source=(localdb)\v11.0;Initial Catalog=master;Integrated Security=True;Connect Timeout=30;Encrypt=False;TrustServerCertificate=False;ApplicationIntent=ReadWrite;MultiSubnetFailover=False
-    
+
 5. 보기 > 다른 창 > 패키지 관리자 콘솔
 add-migration FirstMigration
 update-database
 
-            
-# 4. DBContext -> 실제 테이블을 생성 
+
+# 4. DBContext -> 실제 테이블을 생성
 
 
 
@@ -241,11 +242,11 @@ Session 이용한 로그인, 회원가입 구현
 -웹 서버의 부하가 낮아진다.(장점)
 -보안성이 낮아진다.(단점)
 
-# 결론: Cookie 
+# 결론: Cookie
 -Cookie를 암호화 -> 복호화 / 위변조의 위험
 -SSL인증서를 사용하여 위변조의 위험을 막음
 
-# SSL 
+# SSL
 - 유료 100만원 20만원 (매년), 무료
 
 
@@ -284,7 +285,7 @@ https://docs.microsoft.com/ko-kr/dotnet/csharp/linq/
 
 
 람다식에서 A Go to B
-u => u 
+u => u
 
 
 메모리 누수를 방지하기위해서 ==  사용하지 않기
@@ -341,7 +342,7 @@ Chapter 12
 
 
 
-알트+ 쉬프트 아래 
+알트+ 쉬프트 아래
 쉬프트 + delete
 
 
@@ -413,7 +414,7 @@ http://ko.cppreference.com/w/cpp/language/escape
 trumbowyg.upload.js의 파일 수정
 
 serverPath
-fileFieldName 
+fileFieldName
 
 
 https://alex-d.github.io/Trumbowyg/?utm_source=tool.lu
@@ -441,11 +442,11 @@ Enterprise Architecture c#
 # Enterprise Architecture
 1.  대형 솔루션, 프로그램 개발할 때 사용하는 프로젝트 구성 방식 - 큰 틀을 구성
         2. 다양한 플랫폼을 지원하는 재사용성이 높은 코드를 작성하는 방식
-3. 
+3.
 
 
 
-Presentation Layer :  WPF, WinForm 
+Presentation Layer :  WPF, WinForm
 
 Business Layer : Validation Check
 
@@ -554,13 +555,13 @@ appsettings.json을 통한 ConnecitionString 처리
 Microsoft.EntityFrameworkCore.SqlServer
 
 
-# connectionstring 
+# connectionstring
 https://www.connectionstrings.com/sql-server/
 
 
 # 패키지 매니저 콘솔에서 기본프로젝트는 Note.DAL로
 
-# 누겟 패키지 Microsoft.EntityFrameworkCore.Tools  
+# 누겟 패키지 Microsoft.EntityFrameworkCore.Tools
 
 add-migration NoteDb
 update-database
@@ -648,12 +649,12 @@ Ctrl + mm 누르면 최소화됨
 - 슈퍼 관리자, 관리자, 특별 사용자 , 일반 사용자
 
 3. dbo.AspNetUserRoles     =>
-    
+
 - 1번 사용자(PK 1) -> 관리자(1)
 - 2번 사용자(PK 2) -> 일반 사용자(4)
 
 4. dbo.AspNetClaims        => 5명의 사용자 -> 일반 사용자(Role)
-- 2명이 나이 20세 미만 -> 20세 미만은 특정 게시판 진입금지 Age 20    
+- 2명이 나이 20세 미만 -> 20세 미만은 특정 게시판 진입금지 Age 20
 [HttpGet, Authorize(Claims ... Age >20]
 
 5. dbo.AspNetRoleClaims    =>
@@ -674,20 +675,11 @@ Identity 생성 테이블 PK 타입 변경하기
 
 # ApplicationDbContext 설명
 
-# 
+#
 
 
 저같은 경우는 AccountController 랑 ManageController부분에 메일발송부분 user.Id 이게 숫자형으로 변경되어서 .ToString() 해서 해결하고 startup.cs. 는 services.AddIdentity<ApplicationUser, ApplicationRole>() .AddEntityFrameworkStores<ApplicationDbContext>() .AddDefaultTokenProviders();
 
 https://docs.microsoft.com/en-us/aspnet/core/security/authentication/identity-primary-key-configuration?tabs=aspnetcore2x&view=aspnetcore-2.1
 
-
-
-
-
-
-
-
-
-
-
+```

@@ -1,3 +1,4 @@
+```
 ##  C#  자바형태 줄 추가 나 c#형태 줄추가로 변경할 수 있음 (체크 전부 해제할경우 Java 형태 )
 
 
@@ -158,14 +159,14 @@ https://rongscodinghistory.tistory.com/113
 ## C# 에서 한글 찾기  https://m.blog.naver.com/PostView.nhn?blogId=nameisljk&logNo=110190791875&proxyReferer=https%3A%2F%2Fwww.google.com%2F
 ## 포터블 깃 사용
 https://rainlethe.tistory.com/entry/git-%EC%9D%84-%EC%9C%84%ED%95%9C-%EA%B8%B0%EB%B3%B8-%EC%84%A4%EC%A0%95
-C:  
-cd C:\Users\Administrator\abc  
+C:
+cd C:\Users\Administrator\abc
 C:\DEV\Downloads\PortableGit\git-cmd.exe git
 
 git pull
 git add *.*
 git status
-set timestamp=%DATE% %TIME%  
+set timestamp=%DATE% %TIME%
 git commit -m "%timestamp%"
 git status
 git push origin master
@@ -185,7 +186,7 @@ goto loop
 
 
 
-## 원격흔적없이 사용하기 
+## 원격흔적없이 사용하기
 https://stackoverflow.com/questions/14481882/login-to-remote-using-mstsc-admin-with-password
 cmd cmdkey /generic:"<server>" /user:"<user>" /pass:"<pass>"
 cmd mstsc /public /v:"<ip>"
@@ -198,10 +199,10 @@ ERR Cannot publish to a deleted Destination
 
 
 
-## 읽기(여자가봐도 이쁜여자) 
+## 읽기(여자가봐도 이쁜여자)
 https://brunch.co.kr/@jiteju/1
 
-## MongoDB관리툴 Robo 3T  
+## MongoDB관리툴 Robo 3T
 https://javacpro.tistory.com/65
 
 ## C#으로 서버를 만들면 느리다?!
@@ -214,13 +215,13 @@ https://www.infoworld.com/article/3192900/how-to-work-with-automapper-in-c.html
 
 ## 설계관련
 
-## c# data model DataModel  
+## c# data model DataModel
 https://docs.microsoft.com/ko-kr/aspnet/mvc/overview/older-versions/getting-started-with-aspnet-mvc3/cs/adding-a-model
 
-## Interface  
+## Interface
 http://blog.naver.com/PostView.nhn?blogId=knight50&logNo=80100555418&redirect=Dlog&widgetTypeCall=true
 
-## Git Student Pack  
+## Git Student Pack
 https://education.github.com/pack
 
 
@@ -310,7 +311,7 @@ namespace WpfApp1
     {
         string Path = @"C:\DEV\comment_20180627.ppt";
         Presentation PPT;
-       
+
         public MainWindow()
         {
             string codeBase = Assembly.GetExecutingAssembly().CodeBase;
@@ -541,7 +542,7 @@ GO
 https://www.geeksforgeeks.org/ref-in-c-sharp/
 
 
-### C# Mybatis.NET 
+### C# Mybatis.NET
 사용하는 노하우
 https://dever.tistory.com/237
 
@@ -552,7 +553,7 @@ https://dever.tistory.com/category/Visual%20Studio/C%23
 
 
 
-### C# 도구상자(ToolBox)에 Control 추가 2021.02.17. 
+### C# 도구상자(ToolBox)에 Control 추가 2021.02.17.
 
 1. 도구상자에 컨텍스트 메뉴에서 '항목선택' 클릭
 2. 도구상자 항목 선택에서 '찾아보기' 클릭
@@ -640,7 +641,7 @@ static void Main(string[] args)
 Form의 Localizable 속성을 True로 변경시 Form.resx에 다국어가 필요한 언어를 입력할 수 있도록 화면에 해당하는 text가 등록됨
 
 
-### C# WCF Binding관련 2021.03.30. 
+### C# WCF Binding관련 2021.03.30.
 
 ServiceHost에 nettcpBinding,  WebServiceHost에 WebHttpBinding 적절한 Binding 설정
 
@@ -689,6 +690,4 @@ class MyGeneratedClass {
 <# } #>
 }
 
-
-
-
+```

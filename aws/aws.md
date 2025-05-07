@@ -43,8 +43,8 @@ ssh testuser@000.000.000.000
 sh-4.2$ sudo su
 ```
 
-<img width="400" src="https://oseongryu.github.io/img/aws/001.png"/>
-<img width="700" src="https://oseongryu.github.io/img/aws/002.png"/>
+<img width="400" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/aws/001.png"/>
+<img width="700" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/aws/002.png"/>
 
 ### Access Key, Secret Key 생성
 

@@ -29,7 +29,7 @@ https://js.devexpress.com/Documentation/ApiReference/UI_Components/dxDataGrid/
 검색을 사용해서 찾기
 ```
 
-<img width="700" src="https://oseongryu.github.io/img/devextreme/001.png"/>
+<img width="700" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/devextreme/001.png"/>
 
 ## grid checkbox
 

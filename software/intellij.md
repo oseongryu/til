@@ -165,8 +165,8 @@ File > Settings > Editor > General > Smart Keys >
 Reformat on paste 설정 None 또는 Indent block로 변경
 ```
 
-<img width="800" src="https://oseongryu.github.io/img/intellij/setting/001.png"/>
-<img width="800" src="https://oseongryu.github.io/img/intellij/setting/002.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/intellij/setting/001.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/intellij/setting/002.png"/>
 
 ### jdbc drivers location
 
@@ -318,7 +318,7 @@ https://velog.io/@max9106/IntelliJ-Live-Template
     Context path: /
 ```
 
-<img width="800" src="https://oseongryu.github.io/img/intellij/001.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/intellij/001.png"/>
 
 #### intellij Could not initialize class oracle.jdbc.driver.OracleDriver
 
@@ -384,7 +384,7 @@ C:\Users\osryu\AppData\Roaming\JetBrains\IntelliJIdea2022.1\workspace
 java  -Xms2g -Xmx2g -agentlib:jdwp=transport=dt_socket,server=y,suspend=n,address=5005 -Dfile.encoding=UTF-8 -Dconsole=true -jar drawing-app.war --spring.profiles.active=prod
 ```
 
-<img width="800" src="https://oseongryu.github.io/img/intellij/remotedebugging/001.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/intellij/remotedebugging/001.png"/>
 
 ### [error] java: Compilation failed: internal java compiler error
 

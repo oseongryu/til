@@ -22,16 +22,16 @@ systemctl reset-failed jenkins.service
 sudo cat /var/lib/jenkins/secrets/initialAdminPassword
 ```
 
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/001.png"/>
-<img width="500" src="https://oseongryu.github.io/img/99_17_jenkins/002.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/003.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/004.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/005.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/006.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/007.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/008.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/009.png"/>
-<img width="800" src="https://oseongryu.github.io/img/99_17_jenkins/010.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/001.png"/>
+<img width="500" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/002.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/003.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/004.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/005.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/006.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/007.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/008.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/009.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/99_17_jenkins/010.png"/>
 
 ### jenkins 에러 (젠킨스 업데이트 이후 에러가 발생해서 실행이 안됨)
 

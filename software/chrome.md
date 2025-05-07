@@ -53,10 +53,10 @@ https://chrome.google.com/webstore/detail/set-character-encoding/bpojelgakakmcfm
     Network > Fetch/XHR
     Network > Fetch/XHR > Response (하단 {}클릭)
 
-<img width="800" src="https://oseongryu.github.io/img/chrome/001.png"/>
-<img width="800" src="https://oseongryu.github.io/img/chrome/002.png"/>
-<img width="800" src="https://oseongryu.github.io/img/chrome/003.png"/>
-<img width="800" src="https://oseongryu.github.io/img/chrome/004.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/chrome/001.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/chrome/002.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/chrome/003.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/chrome/004.png"/>
 
 ### chrome android debugger
 

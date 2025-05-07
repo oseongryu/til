@@ -128,9 +128,9 @@ apply plugin: 'com.android.library'
 Unrecognized Android Studio (or Android Support plugin for IntelliJ IDEA) version , please retry with version 20XX.X.X or newer.
 
 File > Help > Check for Updates
-<img width="800" src="https://oseongryu.github.io/img/android/001.png"/>
-<img width="400" src="https://oseongryu.github.io/img/android/002.png"/>
-<img width="600" src="https://oseongryu.github.io/img/android/003.png"/>
+<img width="800" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/android/001.png"/>
+<img width="400" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/android/002.png"/>
+<img width="600" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/android/003.png"/>
 
 ### android jetpack
 
@@ -156,11 +156,11 @@ https://m.blog.naver.com/PostView.nhn?blogId=coogi21c&logNo=220990437650&categor
 
 ### Clean Project
 
-<img width="400" src="https://oseongryu.github.io/img/android/build/001.png"/>
+<img width="400" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/android/build/001.png"/>
 
 ### Build Variants
 
-<img width="400" src="https://oseongryu.github.io/img/android/build/002.png"/>
+<img width="400" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/android/build/002.png"/>
 
 ### Android icon
 

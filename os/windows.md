@@ -295,7 +295,7 @@ C:\Windows\Fonts에 설치할 폰트 넣기
 이 드라이브의 파일 속성 및 내용 색인 허용 체크해제
 ```
 
-<img width="100" src="../public/img/windows/001.png"/>
+<img width="100" src="https://raw.githubusercontent.com/oseongryu/til/refs/heads/main/public/img/windows/001.png"/>
 
 ### windows 이미지 파일 우클릭 시 오른쪽으로 회전, 왼쪽으로 회전 삭제 및 복구
 

@@ -250,3 +250,14 @@ mkdir code-insiders-portable-data
 https://github.com/microsoft/vscode-remote-release/issues/5851
 https://github.com/PowerShell/Win32-OpenSSH/releases/
 ```
+
+### vscode in mac 앱 서명 오류
+
+```bash
+#오류내용: SecCodeCheckValidity: Error Domain=NSOSStatusErrorDomain Code=-67062 "(null)" (-67062)
+
+# vscode
+codesign --force --deep --sign - "/Applications/Visual Studio Code.app/Contents/MacOS/Electron"
+# vscode insider
+codesign --force --deep --sign - "/Applications/Visual Studio Code - Insiders.app/Contents/MacOS/Electron"
+```

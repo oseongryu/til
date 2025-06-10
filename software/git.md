@@ -663,6 +663,13 @@ git config --global http.proxy 'socks5://192.0.0.4:8000'
 git config --global https.proxy 'socks5://192.0.0.4:8000'
 ```
 
+### git patch
+
+```bash
+git patch
+
+```
+
 #### References
 
 ```

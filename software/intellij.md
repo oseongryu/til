@@ -407,3 +407,17 @@ File > Settings > Appearance & Behavior > Appearance
 1. Use custom font: Size를 수정시 전체 UI 적용됨
 2. UI Options > Use smaller indents in trees 체크
 ```
+
+### intellij Hot Swap , Hot Reload
+
+```bash
+# Spring Boot에는 live reload (페이지 수정없이 반영되는 것) Spring Legacy 5부터 가능함 (Live Reload 플러그인 설치)
+# Spring Boot에서 는 class 변경시 다시 로딩하는데 시간이 조금 걸림, Spring Framework는 class를 조금더 빠르게 반영됨
+# Mybatis의 xml은 처음 로드할때 적용되므로 수정시 반영이 안되나, RefreshableSqlSessionFactoryBean를 사용해서 Reload를 할수 있도록 할 수있음
+# Hot Swap (java=> class reload) ctrl + shift + F9
+# Hot Reload (resources reload)
+# Mybatis xml Reload (RefreshableSqlSessionFactoryBean)
+# https://hskhsmm.tistory.com/entry/spring-boot-devtools-hot-reload
+# CRM(Spring Framework): xml 리로드 가능, class리로드 (빠름) 가능
+# FO(Spring Boot): xml 리로드 (안해봄) 모름, class리로드 (재시작보단빠르나 느림) 가능
+```

@@ -573,18 +573,25 @@ git update-index --no-assume-unchanged [file path]
 git ls-files -v|grep '^h'
 ```
 
-### git lcoal에서만 적용
+### git 특정파일 lcoal에서만 적용
 
 ```bash
-# 1
+# 1. 로컬 .git에 .gitignore처럼 사용가능 (exclude > .gitignore > 전역 .gitignore 순서로 적용됨)
 vim .git/info/exclude
 
+
+# 2. git의 수정사항이있지만 스킵 (git pull 받을때 수정사항도 반영되고 충돌이 날경우는 확인)
 git update-index --skip-worktree .vscode/launch.json
 git update-index --no-skip-worktree .vscode/launch.json
 
-# 2
+# 목록 확인
+git ls-files -v . | grep ^S
+
+# 3. 해당파일이 수정되지 않았다고 가정하므로, (git pull 받았을때 수정사항이있으면 remote의 내용으로 덮어씌워짐)
 git update-index --assume-unchanged .vscode/launch.json
 git update-index --no-assume-unchanged .vscode/launch.json
+
+# 목록 확인
 git ls-files -v | grep '^[[:lower:]]'
 ```
 

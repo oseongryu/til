@@ -68,3 +68,38 @@ https://www.digicert.com/help/
 http://www.kunwi.co.kr/gunwi/board.php?bo_table=os&wr_id=184
 
 ```
+
+### aws S3 정적웹사이트 호스팅
+
+```
+1. bucket 생성 (bucket 생성시 모든 퍼블릭 엑세스 차단을 풀기)
+2. bucket 클릭 > 속성 > Amazon 리소스이름(ARN) 복사
+3. 권한 > 버킷 정책 > 편집 > (정책편지기로 생성후 등록)
+
+4. bucket > 속성 > 정적 웹 사이트 호스팅
+-활성화
+-정적 웹 사이트 호스팅
+
+```
+
+#### 버킷 정책
+
+```
+https://awspolicygen.s3.amazonaws.com/policygen.html
+#정책 생성기로 생성후 Resource의 "Resource": "arn:aws:s3:::oseongryu-bucket/*" 을 추가 하기
+```
+
+```json
+{
+  "Version": "2012-10-17",
+  "Statement": [
+    {
+      "Sid": "Statement1",
+      "Effect": "Allow",
+      "Principal": "*",
+      "Action": ["s3:GetObject"],
+      "Resource": "arn:aws:s3:::oseongryu-bucket/*"
+    }
+  ]
+}
+```

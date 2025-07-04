@@ -87,6 +87,9 @@ http://www.kunwi.co.kr/gunwi/board.php?bo_table=os&wr_id=184
 ```
 https://awspolicygen.s3.amazonaws.com/policygen.html
 #정책 생성기로 생성후 Resource의 "Resource": "arn:aws:s3:::oseongryu-bucket/*" 을 추가 하기
+# S3 정적페이지의 경우 DDos공격을 받을 가능성이 있으므로 필요시 CloudFlare의 서비스와 연동해야함)
+# 전체 오픈은 항상 주의하기 테스트 용은 허용 아이피 설정
+
 ```
 
 ```json
@@ -97,8 +100,13 @@ https://awspolicygen.s3.amazonaws.com/policygen.html
       "Sid": "Statement1",
       "Effect": "Allow",
       "Principal": "*",
-      "Action": ["s3:GetObject"],
-      "Resource": "arn:aws:s3:::oseongryu-bucket/*"
+      "Action": "s3:GetObject",
+      "Resource": "arn:aws:s3:::oseongryu-bucket/*",
+      "Condition": {
+        "IpAddress": {
+          "aws:SourceIp": "210.122.0.1/32"
+        }
+      }
     }
   ]
 }

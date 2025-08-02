@@ -327,6 +327,39 @@ Exec=env BAMF_DESKTOP_FILE_HINT=/var/lib/snapd/desktop/applications/chromium_chr
 
 ```
 
+### chromium-browser
+
+```bash
+apt install -y chromium-browser
+
+/usr/share/applications/chromium-browser.desktop
+
+# mac m1 (snap은 복사가 되지 않으므로 복제해서 사용)
+sudo vi /snap/chromium/current/bin/chromium.desktop
+
+```
+
+## pulseaudio
+
+```bash
+# mac
+# https://formulae.brew.sh/formula/pulseaudio 설치
+# brew install pulseaudio
+# 여서ㄴ됨
+# pulseaudio --start
+# pulseaudio -vvv
+# ls /run/user/$(id -u)/pulse/
+
+
+# 이건 됨
+# pulseaudio --load=module-native-protocol-tcp --exit-idle-time=-1 --daemon
+# pulseaudio --load="module-native-protocol-tcp" --exit-idle-time=-1 --daemon
+#docker run -it -e PULSE_SERVER=docker.for.mac.localhost -v ~/.config/pulse:/home/pulseaudio/.config/pulse --entrypoint speaker-test --rm jess/pulseaudio -c 2 -l 1 -t wav
+
+RUN apt-get update && apt-get install -y pulseaudio
+# paplay /usr/share/sounds/alsa/Front_Center.wav
+```
+
 ### chrome update
 
 ```bash

@@ -644,3 +644,26 @@ ResultActive=yes
 ```
 sudo apt-get install comizconfig-settings-manager
 ```
+
+
+### ubuntu chrome
+
+```bash
+
+# /usr/bin/google-chrome-stable  --headless --no-sandbox --single-process --disable-dev-shm-usage
+# https://study-grow.tistory.com/entry/DevToolsActivePort-file-doesnt-exist-error-%ED%95%B4%EA%B2%B0%EB%B2%95
+# chrome_options.add_argument('--headless')
+# chrome_options.add_argument('--no-sandbox')
+# chrome_options.add_argument("--single-process")
+# chrome_options.add_argument("--disable-dev-shm-usage")
+
+vi /opt/google/chrome/google-chrome
+
+which google-chrome
+cd /usr/bin/google-chrome
+
+# ubuntu desktop에 설치한한
+vi /usr/share/applications/com.google.Chrome.desktop
+
+Exec=/usr/bin/google-chrome-stable --no-sandbox --single-process --disable-dev-shm-usage %U
+```

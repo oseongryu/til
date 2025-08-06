@@ -8,6 +8,9 @@
     },
     {
       "path": "../vitepress-guide"
+    },
+    {
+      "path": "../docker-composes"
     }
   ],
   "settings": {
@@ -41,7 +44,7 @@
       "editor.formatOnPaste": true
     },
     "[markdown]": {
-      "editor.formatOnSave": true,
+      "editor.formatOnSave": false,
       "editor.autoClosingQuotes": "never"
     },
     "workbench.colorCustomizations": {

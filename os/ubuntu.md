@@ -667,3 +667,76 @@ vi /usr/share/applications/com.google.Chrome.desktop
 
 Exec=/usr/bin/google-chrome-stable --no-sandbox --single-process --disable-dev-shm-usage %U
 ```
+
+
+## rc.local 부팅시 스크립트 자동실행
+
+```bash
+# rc.local 파일은 리눅스 시스템에서 부팅 과정 중 마지막에 실행되는 스크립트 파일
+sudo vi /etc/rc.local
+sudo chmod +x /etc/rc.local
+
+# 동작하지 않도록 되어있는 설정을 실행하도록 수정
+sudo vi /lib/systemd/system/rc-local.service
+
+# 자동으로 시작
+sudo systemctl enable rc-local.service
+sudo systemctl start rc-local.service
+```
+
+### 1.1. rc.local (before)
+
+```
+#!/bin/bash
+
+
+exit 0
+```
+
+### 1.2. rc.local (수정내용)
+
+```
+#!/bin/bash
+
+# 부팅 시 실행하고 싶은 명령어 or 스크립트 작성 (스크립트의경우도 스크립트의 권한 chmod +x 실행하기)
+sh /home/root/app/start_script.sh
+
+exit 0
+```
+
+### 2.1. rc-local.service (before)
+
+```
+[Unit]
+Description=/etc/rc.local Compatibility
+Documentation=man:systemd-rc-local-generator(8)
+ConditionFileIsExecutable=/etc/rc.local
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+RemainAfterExit=yes
+GuessMainPID=no
+```
+
+### 2.2. rc-local.service (after)
+
+```
+[Unit]
+Description=/etc/rc.local Compatibility
+Documentation=man:systemd-rc-local-generator(8)
+ConditionFileIsExecutable=/etc/rc.local
+After=network.target
+
+[Service]
+Type=forking
+ExecStart=/etc/rc.local start
+TimeoutSec=0
+RemainAfterExit=yes
+GuessMainPID=no
+
+[Install]
+WantedBy=multi-user.target
+```

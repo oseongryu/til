@@ -13,6 +13,9 @@ TaskBar(윈도우같은 taskbar)
 Whale(hwp 문서 볼수 있음)
 UTM
 Rancher Desktop(Docker Desktop 대체)
+turbo boost switcher (발열 팬소음)
+Macfancontrol (팬속도조절)
+MenubarX (메뉴바 브라우저)
 ```
 
 ### 맥 사용법

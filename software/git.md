@@ -308,6 +308,15 @@ git merge --squash [branch]
 
 ```
 
+#### git merge branch delete
+
+```bash
+# release로 변경하고 merge된거 확인
+git branch --merged | grep -v -E '(release|main|develop|\*)'
+git branch --merged | grep -v -E '(release|main|develop|\*)'  | xargs git branch -d
+```
+
+
 #### git remove specific file on all commit
 
 ```bash

@@ -795,7 +795,7 @@ echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/Docker.app
 폴더별 환경관리
 ```
 
-### mac Keyboard (home, end)
+### mac Keyboard (home, end) with Karabier-elements
 
 ```
 Karabiner-elements 설치
@@ -806,6 +806,46 @@ End key to the end of the sentence (Command + Right) > Enable
 
 # Webbrowser에서 space (PageDown)와 shift + space (Page up)
 ```
+
+### mac Keyboard  (home end)
+
+```bash
+# https://gist.github.com/trusktr/1e5e516df4e8032cbc3d
+mkdir -p ~/Library/KeyBindings ; cd ~/Library/KeyBindings
+vim DefaultKeyBinding.dict
+
+{
+    /* Remap Home / End keys */
+    /* Home Button*/
+    "\UF729" = "moveToBeginningOfLine:"; 
+    /* End Button */
+    "\UF72B" = "moveToEndOfLine:"; 
+    /* Shift + Home Button */
+    "$\UF729" = "moveToBeginningOfLineAndModifySelection:"; 
+    /* Shift + End Button */
+    "$\UF72B" = "moveToEndOfLineAndModifySelection:"; 
+    /* Ctrl + Home Button */
+    "^\UF729" = "moveToBeginningOfDocument:"; 
+    /* Ctrl + End Button */
+    "^\UF72B" = "moveToEndOfDocument:"; 
+    /* Shift + Ctrl + Home Button */
+    "$^\UF729" = "moveToBeginningOfDocumentAndModifySelection:";
+    /* Shift + Ctrl + End Button*/
+    "$^\UF72B" = "moveToEndOfDocumentAndModifySelection:"; 
+}
+```
+
+### mac dbeaver (Keyboard)
+
+```
+home과 end를 변경하려는 이유중 하나가 맥의 DBeaver에서 home을 습관적으로 누르면 최상단으로 가는 문제
+Menu > Window > Preferences > User Interface > Keys > 
+행 시작 (Line Start) - Home 
+행 시작 선택 (Select Line Start) - Shift + Home
+행 끝 (Line End) - End
+행 끝 선택 (Select Line End) - Shift + End
+```
+
 
 ### References
 

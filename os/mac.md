@@ -795,6 +795,18 @@ echo "$pass" | sudo -S xattr -dr com.apple.quarantine /Applications/Docker.app
 폴더별 환경관리
 ```
 
+### mac Keyboard (home, end)
+
+```
+Karabiner-elements 설치
+Complex Modifications > Add predefined rule > Import more rules form th Internet > PC-Style Shortcuts 검색
+
+Home key to the beginning of the sentence (Command + Left)  > Enable
+End key to the end of the sentence (Command + Right) > Enable
+
+# Webbrowser에서 space (PageDown)와 shift + space (Page up)
+```
+
 ### References
 
 ```

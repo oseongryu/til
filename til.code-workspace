@@ -11,6 +11,9 @@
     },
     {
       "path": "../vitepress-guide"
+    },
+    {
+      "path": "../shorts-back"
     }
   ],
   "settings": {

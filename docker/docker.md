@@ -499,6 +499,29 @@ docker swarm leave
 docker swarm leave --force
 ```
 
+### docker logs(mac)
+
+```bash
+docker logs --tail 50 myContainerName
+# docker logs location (맥에서는 해당위치에 나오지 않음)
+docker inspect  myContainerName --format "{{.LogPath}}"
+docker inspect  vitepress-guide-api-1 --format "{{.LogPath}}"
+
+
+# 
+nc -U ~/Library/Containers/com.docker.docker/Data/debug-shell.sock
+
+# Rancher Desktop의 경우
+Extensions로 Logs Explorer 사용
+
+# docker-compose를 사용해서 생성한 경우 logging을 따로 만들어서 관리해야함
+
+
+
+
+```
+
+
 ### references
 
 ```

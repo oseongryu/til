@@ -187,6 +187,15 @@ python3 get-pip.py
 pip3 install --upgrade pip
 ```
 
+## python 미사용 라이브러리 정리
+
+```bash
+# python 관련 라이브러리 모두 삭제 (pip, setuptools, wheel 포함되어 위험)
+pip list --format=freeze | xargs pip uninstall -y
+# pip, setuptools, wheel 제외 제거
+pip list --format=freeze | grep -v "^pip==" | grep -v "^setuptools==" | grep -v "^wheel==" | xargs pip uninstall -y
+```
+
 ### python MQ (Windows 환경에서는 안됨 Unix환경가능)
 
 ```

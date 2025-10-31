@@ -47,7 +47,7 @@
       "editor.formatOnPaste": true
     },
     "[markdown]": {
-      "editor.formatOnSave": false,
+      "editor.formatOnSave": true,
       "editor.autoClosingQuotes": "never"
     },
     "liveServer.settings.multiRootWorkspaceName": "corp-script"

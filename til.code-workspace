@@ -7,13 +7,7 @@
       "path": "../corp-script"
     },
     {
-      "path": "../docker-composes"
-    },
-    {
       "path": "../vitepress-guide"
-    },
-    {
-      "path": "../shorts-back"
     }
   ],
   "settings": {

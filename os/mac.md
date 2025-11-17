@@ -590,6 +590,13 @@ sudo vi /etc/synthetic.conf
 
 ---
 data    /Users/doo/data
+app     /Users/oseongryu/app
+logs    /Users/oseongryu/app/logs
+tomcat  /Users/oseongryu/app/tools/tomcat
+java    /Users/oseongryu/app/tools/java
+maven   /Users/oseongryu/app/tools/maven
+hyp     /Users/oseongryu/hyp
+hy_fredit       /Users/oseongryu/hy_fredit
 ---
 
 ```

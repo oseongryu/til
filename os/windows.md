@@ -481,3 +481,19 @@ pushd \\192.168.0.1\outunion
 https://ko.gadget-info.com/90803-18-useful-command-prompt-tricks-you-might-not-know
 
 ```
+
+### OpenSSH server
+
+```
+- 설정 > 시스템 > 선택적기능에서 OpenSSH Server 설치
+- services.msc에서 OpenSSH SSH Server 검색 후 시작
+- C:\ProgramData\ssh로 이동 sshd_config의 Port 10022, ChrootDirectory C:\app 를 수정 후, OpenSSH SSH Server 서비스 재시작
+- 고급 보안이 포함된 Windows Defender 방화벽에서 인바운드 규칙 추가
+```
+
+```powershell
+# 삭제
+Remove-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+# 설치
+Add-WindowsCapability -Online -Name OpenSSH.Server~~~~0.0.1.0
+```

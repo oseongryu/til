@@ -316,7 +316,6 @@ git branch --merged | grep -v -E '(release|main|develop|\*)'
 git branch --merged | grep -v -E '(release|main|develop|\*)'  | xargs git branch -d
 ```
 
-
 #### git remove specific file on all commit
 
 ```bash
@@ -684,6 +683,16 @@ git config --global https.proxy 'socks5://192.0.0.4:8000'
 ```bash
 git patch
 
+```
+
+### git author change
+
+```bash
+ # 모두 변경
+ git rebase -i --root -x "git commit --amend --author='admin <admin@gmail.com>' --no-edit"
+
+ # 10개 변경
+ git rebase -i HEAD~10 -x "git commit --amend --author='admin <admin@gmail.com>' --no-edit"
 ```
 
 #### References

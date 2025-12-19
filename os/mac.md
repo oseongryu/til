@@ -856,6 +856,48 @@ Menu > Window > Preferences > User Interface > Keys >
 행 끝 선택 (Select Line End) - Shift + End
 ```
 
+### mac 80 port
+
+```bash
+# https://velog.io/@ssol_916/Mac-80-포트-사용하기
+cd /etc/pf.anchors
+sudo vi com.pow
+
+
+# 9552 포트를 80 포트로 포워딩
+rdr pass on lo0 inet proto tcp from any to any port 80 -> 127.0.0.1 port 9552
+
+
+sudo vi /etc/pf.conf
+
+# 기존
+rdr-anchor "com.apple/*"
+# 추가1
+rdr-anchor "pow"
+
+
+# 기존
+load anchor "com.apple" from "/etc/pf.anchors/com.apple"
+# 추가2
+load anchor "pow" from "/etc/pf.anchors/com.pow"
+
+# pf 규칙 적용 (경고 메시지는 정상이며 "pf enabled"가 나오면 성공)
+sudo pfctl -ef /etc/pf.conf
+
+# 규칙 확인
+sudo pfctl -s nat
+
+# pf 상태 확인
+sudo pfctl -s info
+
+# 재부팅 후에도 자동 활성화되도록 설정
+sudo pfctl -e
+
+# pf 비활성화 (필요시)
+# sudo pfctl -d
+
+```
+
 ### References
 
 ```

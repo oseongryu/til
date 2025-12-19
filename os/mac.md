@@ -898,6 +898,14 @@ sudo pfctl -e
 
 ```
 
+### mac ngrok
+
+```
+brew install ngrok
+ngrok config add-authtoken ~~~~
+ngrok http 80
+```
+
 ### References
 
 ```

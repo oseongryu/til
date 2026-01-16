@@ -146,7 +146,7 @@ Command+, 모든 앱에서 환경 설정 창을 열기
 ```bash
 # 등록한 서비스를 확인하는 위치는 ~/Library/services
 
-# 1. Open VSCode
+# 1. OpenVSCode
 Automator > 빠른 동작 > 셀스크립트 열기
 현재수신하는작업흐름:파일 또는 폴더
 선택항목위치: Finder.app
@@ -156,7 +156,20 @@ Automator > 빠른 동작 > 셀스크립트 열기
 open -n -b "com.microsoft.VSCode" --args "$*"
 ---
 
-# 2. Open Terminal
+# 1.2. OpenAntigravity
+
+Automator > 빠른 동작 > 셀스크립트 열기
+현재수신하는작업흐름:파일 또는 폴더
+선택항목위치: Finder.app
+(셀스크립트실행)통과입력: 변수
+
+---
+open -n -b "com.google.antigravity" --args "$*"
+---
+
+
+
+# 2. OpenTerminal
 Automator > 빠른 동작 > AppleScript 실행
 작업흐름수신: 입력없음
 선택항목위치: 모든 응용 프로그램
@@ -170,7 +183,7 @@ on run {input, parameters}
 	end tell
 end run
 
-# 3. Make NewFile
+# 3. MakeNewFile
 Automator > 빠른 동작 > AppleScript 실행
 작업흐름수신: 입력없음
 선택항목위치: Finder.app
@@ -179,7 +192,7 @@ Automator > 빠른 동작 > AppleScript 실행
 tell application "Finder" to make new file at (the target of the front window) as alias
 ---
 
-# 4. Make NewFile (Application 버전)
+# 4. MakeNewFile (Application 버전)
 
 Automator > 응용프로그램 > AppleScript 실행
 
@@ -217,7 +230,7 @@ cmd를 누른 상태에서 Finder 상단에 버튼을 Drag&drop으로 제외
 MakeNewFile.app > 우클릭 >  정보가져오기 > 최상단 왼족 이미지에 새로운이미지를 드래그해서 바꾸기
 
 
-# 5. Change Display
+# 5. ChangeDisplay
 빠른동작 > 셸 스크립트 실행
 현재 수신하는 작업흐름(작업흐름 수신): 입력없음
 
@@ -225,6 +238,26 @@ MakeNewFile.app > 우클릭 >  정보가져오기 > 최상단 왼족 이미지�
 /usr/local/bin/displayplacer  "id:A374115D-FB70-7BFF-E15E-ECCF3261834E res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(0,0) degree:0" "id:102B46B9-C736-BEA4-10D6-7B4924CB0C0B res:1920x1080 hz:60 color_depth:8 enabled:true scaling:off origin:(1920,0) degree:0"
 exit 0;
 ---
+
+# 6. ChangeFileKR
+
+현재 수신하는 작업흐름: 파일 또는 폴더
+선택항목위치: Finder.app
+
+1. 셀 스크립트 실행
+통과입력:인수
+---
+for i in "$@"; do
+    /usr/local/bin/convmv -f utf-8 -t utf-8 --nfc --notest "$i"
+done
+---
+
+2. 변수값설정
+변수: output
+
+3. 알림표시
+메시지: output
+
 ```
 
 ### mac brew

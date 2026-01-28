@@ -16,6 +16,7 @@ Rancher Desktop(Docker Desktop 대체)
 turbo boost switcher (발열 팬소음)
 Macfancontrol (팬속도조절)
 MenubarX (메뉴바 브라우저)
+LightsOut (맥북화면 연채로 화면끄기, https://github.com/AlonX2/LightsOut)
 ```
 
 ### 맥 사용법

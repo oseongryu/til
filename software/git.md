@@ -135,6 +135,8 @@ cd ~/.ssh or mkdir ~/.ssh
 ssh-keygen -t <암호화방식> -b <key크기 기본3072> -C '깃헙등록메일@메일.com'
 ssh-keygen -t rsa -b 4096 -C 'myuser@email.com'
 ssh-keygen -t rsa -b 4096 -C 'oseongryu@gmail.com'
+#.PutTTY 등을 위한 범용성 키 생성
+ssh-keygen -m PEM -t rsa -b 4096 -C 'oseongryu@gmail.com'
 
 Enter file in which to save the key (/Users/${USER}/.ssh/id_rsa): <id_rsa_이름지정>
 Enter file in which to save the key (/Users/${USER}/.ssh/id_rsa): id_rsa_myuser

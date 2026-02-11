@@ -35,7 +35,7 @@
   "update.mode": "none",
   "window.commandCenter": false,
   "window.title": "${dirty}${rootName}",
-  "window.zoomLevel": -1,
+  "window.zoomLevel": 1,
   "workbench.editor.enablePreview": false,
   "workbench.startupEditor": "none",
   "workbench.colorCustomizations": {

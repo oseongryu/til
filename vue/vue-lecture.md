@@ -94,7 +94,7 @@ https://www.mongodb.com/ko-kr/cloud
 ### MongoDB 연결 확인
 
 ```
-mongodb+srv://test:test@cluster0.reddd.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
+mongodb+srv://1234:<password>@cluster0.2l3sv.mongodb.net/myFirstDatabase?retryWrites=true&w=majority
 useUnifiedTopology: true,
 ```
 

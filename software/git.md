@@ -581,6 +581,12 @@ git update-index --assume-unchanged [file path]
 git update-index --no-assume-unchanged [file path]
 # 수정사항 무시 파일 조회
 git ls-files -v|grep '^h'
+
+
+# 설정 파일이나 터미널에 입력(alias로 편하게 사용)
+git config --global alias.ignore "update-index --skip-worktree"
+git config --global alias.unignore "update-index --no-skip-worktree"
+git config --global alias.ignored "!git ls-files -v | grep '^[hS]'"
 ```
 
 ### git 특정파일 lcoal에서만 적용

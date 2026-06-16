@@ -1,3 +1,5 @@
+# PowerShell
+
 ## 원격 실행
 
 ### 원격
@@ -21,7 +23,7 @@ https://m.blog.naver.com/PostView.nhn?blogId=sung487&logNo=221042683798&proxyRef
 
 ### 로컬 PowerShell:
 
-```
+```powershell
 1)winrm quickconfig --force
 
 2)winrm get winrm/config/client
@@ -67,7 +69,7 @@ f5074.koreacentral.cloudapp.azure.com:4200
 
 ### 보안 그룹 규칙에 의해 차단된 네트워크 연결: DefaultRule_DenyAllInBound
 
-```
+```powershell
 Install-Module -Name Az -Scope CurrentUser -Repository PSGallery -Force
 ```
 

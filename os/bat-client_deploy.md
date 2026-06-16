@@ -1,13 +1,15 @@
+# Bat Client Deploy
+
 ### 1. 상대경로 사용
 
-```
+```bat
 copy ..\bin\Release\lib\*.dll
 rename *.dll *.deploy
 ```
 
 ### 2. 절대경로 사용
 
-```
+```bat
 @echo off
 setlocal
 :: set location
@@ -60,6 +62,4 @@ set current_dttm=%year%%month%%day%%hour%%min%%secs%
 
 ### reference
 
-```
-https://stackoverflow.com/questions/774175/show-a-popup-message-box-from-a-windows-batch-file
-```
+- <https://stackoverflow.com/questions/774175/show-a-popup-message-box-from-a-windows-batch-file>

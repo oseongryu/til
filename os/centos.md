@@ -1,6 +1,8 @@
+# CentOS
+
 ### OS 확인
 
-```
+```bash
 uname -a
 
 cat /etc/issue
@@ -12,63 +14,63 @@ rpm --query centos-release
 
 ### OS bit 확인
 
-```
+```bash
 getconf LONG_BIT
 ```
 
 ### 설치된 패키지 확인
 
-```
+```bash
 rpm -qa
 ```
 
 ### 열린 포트 확인
 
-```
+```bash
 netstat -tnlp
 ```
 
 ### list open files
 
-```
+```bash
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 nmap localhost
 ```
 
 ### nginx 사용여부 확인
 
-```
+```bash
 systemctl status ngin bx
 ```
 
 ### chmod chown chcon
 
-```
+```bash
 ls -l 로 각 파일의 권한을 확인
 ```
 
 ### 파일에 권한설정
 
-```
+```bash
 chmod 777 test.txt
 ```
 
 ### 폴더에 권한설정
 
-```
+```bash
 chmode -R 777 folder
 drwxrwxrwx
 ```
 
 ### nginx
 
-```
+```bash
 cd /etc/nginx/conf.d
 ```
 
 ### 재시작
 
-```
+```bash
 sudo service nginx stop
 sudo service nginx start
 sudo service nginx reload
@@ -76,35 +78,35 @@ sudo service nginx reload
 
 ### 상태확인
 
-```
+```bash
 systemctl status nginx
 telnet -tnlp
 ```
 
 ### list open files
 
-```
+```bash
 lsof -i -nP | grep LISTEN | awk '{print $(NF-1)" "$1}' | sort -u
 nmap localhost
 ```
 
 ### 디렉토리 용량확인
 
-```
+```bash
 du -a directory
 ```
 
 ### 압축
 
-```
-zip -r test.zip ./\*
+```bash
+zip -r test.zip ./*
 unzip test.zip
 unzip test.zip -d /home/oseongryu
 ```
 
 ### 폴더 복제 cp
 
-```
+```bash
 cp -R repo backup_repo
 ```
 
@@ -203,7 +205,7 @@ date
 
 ### CMD History
 
-```
+```bash
 /home/.bash_history
 
 history
@@ -394,22 +396,22 @@ vi /etc/yum.repos.d/MariaDB.repo
 ---
 [mariadb]
 name = MariaDB
-baseurl = http://yum.mariadb.org/10.1/centos7-amd64
+baseurl = http://yum.mariadb.org/10.1/centos7-amd64
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ---
 
 # yum downloadonly의 경우 다운로드받을 프로그램이 설치되어있으면 다운로드 받아지지않음
-# 다운로드 받으려는 프로그램을 삭제하고나 다른환경에서 다운로드 받아야함
+# 다운로드 받으려는 프로그램을 삭제하고나 다른환경에서 다운로드 받아야함
 yum -y install [설치할 프로그램명] --downloadonly --downloaddir=/test
-yum -y install MariaDB-server --downloadonly --downloaddir=/test
+yum -y install MariaDB-server --downloadonly --downloaddir=/test
 
 # Repo MetaData를 생성한다
 createrepo /test
 ---
 [mariadb]
 name = MariaDB
-baseurl = file:///test/
+baseurl = file:///test/
 enabled=1
 gpgcheck=0
 ---
@@ -439,9 +441,9 @@ sudo groupadd sftpgroup
 
 3-2. 유저 생성
 -g : 그룹 sftpgroup 포함시킴
--d : 유저가  /upload 디렉터리에 있도록 설정, (/data/sftpgroup/upload)
+-d : 유저가  /upload 디렉터리에 있도록 설정, (/data/sftpgroup/upload)
 -s : 유저(sftpuser01)가 ssh 프로토콜이 아니고, sftp 프로토콜만 사용하도록 제한
- 
+ 
 useradd -g sftpgroup -s /sbin/nologin sftpuser01
 passwd sftpuser01
 

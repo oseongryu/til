@@ -1,8 +1,8 @@
-## Azure Windows Server 2016
+# Azure Windows Server 2016
 
-### 방화벽설정
+## 방화벽설정
 
-```bash
+```
 https://azure.microsoft.com/ko-kr/free/students/
 https://imagine.microsoft.com/ko-KR
 
@@ -16,7 +16,7 @@ net stop ftpsvc
 net start ftpsvc
 ```
 
-### 서버2016 한국어 설정
+## 서버2016 한국어 설정
 
 ```
 윈도우 Settings > Time & Language > Region & language > Add a language 버튼 클릭 > 한국어 추가 > Option > Download Language Pack > Set as default > 서버 재부팅 또는 로그아웃
@@ -30,9 +30,9 @@ net start ftpsvc
   확인까지 다음 클릭 후 설치 클릭
 ```
 
-### Windows Server 2016 업데이트 제외
+## Windows Server 2016 업데이트 제외
 
-```bash
+```
 #### 윈도우 업데이트 확인은하지만 하지않음. ( 보안업데이트가 있기에 주기적으로 해주면 좋지만, 사용자가 이용하는 시간에 서버업데이트가 되면 문제가 되기때문에)
 
 http://dosgame.yyartsworld.pe.kr/tip/35532
@@ -62,14 +62,11 @@ Range = 0|1
 1 = Disable Automatic Updates.
 ```
 
-## Microsoft Azure- CDN
-
-```bash
-https://asecurity.so/2016/04/2%EB%85%84%EA%B0%84%EC%9D%98-azure-%EB%AC%B4%EB%A3%8C-%EC%82%AC%EC%9A%A9%EA%B8%B0-msdn-subscription-100-%ED%99%9C%EC%9A%A9%ED%95%98%EA%B8%B0/
-http://mixedcode.com/Article/Index?aidx=1080
+# Microsoft Azure - CDN
 
 ### CDN
 
+```
 https://docs.microsoft.com/ko-kr/azure/cdn/cdn-custom-ssl?tabs=option-1-default-enable-https-with-a-cdn-managed-certificate
 https://si.mpli.st/dev/homemade-cdn-with-ns1-and-nginx.html
 
@@ -83,31 +80,41 @@ https://azure.microsoft.com/ko-kr/resources/samples/cdn-dotnet-manage-cdn/
 https://code.msdn.microsoft.com/Azure-CDN-Management-1f2fba2c
 
 https://docs.microsoft.com/ko-kr/azure/cdn/cdn-app-dev-net
+```
 
 ### WPF-Azure Client
 
+```
 https://github.com/Max-E-Ivanov/WeatherAzureClient
+```
 
 ### Azure-stream-analytics
 
+```
 https://github.com/Azure/azure-stream-analytics
+```
 
 ### Microsoft SmartHotel-Azure-backend
 
+```
 https://github.com/Microsoft/SmartHotel360-Azure-backend
 https://github.com/Microsoft/SmartHotel360-mobile-desktop-apps
+```
 
 ### AzureWebsitesSamples
 
+```
 https://github.com/davidebbo/AzureWebsitesSamples
 https://m.blog.naver.com/PostView.nhn?blogId=pcninc&logNo=60171809407&proxyReferer=https%3A%2F%2Fwww.google.co.kr%2F
+```
 
 ### azure app service ruby
 
+```
 https://learn.microsoft.com/ko-kr/azure/app-service/quickstart-ruby?tabs=cli
 ```
 
-## azure etc
+# Azure etc
 
 ### MS Imagine
 

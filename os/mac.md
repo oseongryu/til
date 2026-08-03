@@ -939,6 +939,17 @@ brew install ngrok
 ngrok config add-authtoken ~~~~
 ngrok http 80
 ```
+### mac 뚜껑닫아도 잠자기 차단
+
+
+```
+# 이 값이 1이면 뚜껑을 닫아도 잠자기에 절대 진입하지않음
+sudo mset -g → SleepDisabled 1
+# 잠자기 허용
+sudo pmset -a disablesleep 0
+```
+
+
 
 ### References
 

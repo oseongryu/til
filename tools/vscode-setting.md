@@ -57,78 +57,82 @@
 ## color
 
 ```json
-
-    "workbench.colorCustomizations": {
-      // green
-      // vscdoe 전체 전경 색
-      "editor.background": "#000000",
-      // 맨 왼쪽 activityBar
-      "activityBar.background": "#14322c",
-      // 사이드바(파일,폴더) 배경 색
-      "sideBar.background": "#25292f",
-      // 그룹 헤더 전체 배경 색
-      "editorGroupHeader.tabsBackground": "#1f242b",
-
-      // 사이드바 목록 선택 배경색 글자색
-      "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#065458",
-      "list.activeSelectionForeground": "#06f7df",
-      "list.inactiveSelectionBackground": "#225957",
-      "list.inactiveSelectionForeground": "#ffffff",
-
-      // 선택된 탭 배경색
-      "tab.activeBackground": "#225348",
-      "tab.activeForeground": "#06f7df",
-      // 비활성인 탭 배경색
-      "tab.inactiveBackground": "#1f242b",
-      "tab.inactiveForeground": "#ffffff",
-
-      // 상단 타이틀 배경색
-      "titleBar.activeBackground": "#0b856b",
-      "titleBar.inactiveBackground": "#086450",
-      // 상단 타이틀 글자색
-      "titleBar.activeForeground": "#ffffff",
-      "titleBar.inactiveForeground": "#ffffff",
-      // 하단 상태 배경색
-      "statusBar.background": "#0b856b",
-      // 하단 Terminal, Problems 배경색
-      "panel.background": "#021e18",
-
-      // blue
-      // vscdoe 전체 전경 색
-      "editor.background": "#000000",
-      // 맨 왼쪽 activityBar
-      "activityBar.background": "#071f4a",
-      // 사이드바(파일,폴더) 배경 색
-      "sideBar.background": "#25292f",
-      // 그룹 헤더 전체 배경 색
-      "editorGroupHeader.tabsBackground": "#1f242b",
-
-      // 사이드바 목록 선택 배경색 글자색
-      "list.hoverBackground": "#535353",
-      "list.activeSelectionBackground": "#09569d",
-      "list.activeSelectionForeground": "#ffffff",
-      "list.inactiveSelectionBackground": "#3a6a97",
-      "list.inactiveSelectionForeground": "#ffffff",
-
-      // 선택된 탭 배경색
-      "tab.activeBackground": "#044d91",
-      "tab.activeForeground": "#ffffff",
-      // 비활성인 탭 배경색
-      "tab.inactiveBackground": "#1f242b",
-      "tab.inactiveForeground": "#ffffff",
-
-      // 상단 타이틀 배경색
-      "titleBar.activeBackground": "#0d3d95",
-      "titleBar.inactiveBackground": "#0a2d6e",
-      // 상단 타이틀 글자색
-      "titleBar.activeForeground": "#ffffff",
-      "titleBar.inactiveForeground": "#ffffff",
-      // 하단 상태 배경색
-      "statusBar.background": "#1558d4",
-      // 하단 Terminal, Problems 배경색
-      "panel.background": "#06132c",
-    },
+  "workbench.colorCustomizations": {
+    // // green
+    // // vscode 전체 전경 색
+    // "editor.background": "#000000",
+    // // 맨 왼쪽 activityBar
+    // "activityBar.background": "#14322c",
+    // // 사이드바(파일,폴더) 배경 색
+    // "sideBar.background": "#25292f",
+    // // 그룹 헤더 전체 배경 색
+    // "editorGroupHeader.tabsBackground": "#1f242b",
+    // // 사이드바 목록 선택 배경색 글자색
+    // "list.hoverBackground": "#535353",
+    // "list.activeSelectionBackground": "#065458",
+    // "list.activeSelectionForeground": "#06f7df",
+    // "list.inactiveSelectionBackground": "#225957",
+    // "list.inactiveSelectionForeground": "#ffffff",
+    // // 선택된 탭 배경색
+    // "tab.activeBackground": "#225348",
+    // "tab.activeForeground": "#06f7df",
+    // // 비활성인 탭 배경색
+    // "tab.inactiveBackground": "#1f242b",
+    // "tab.inactiveForeground": "#ffffff",
+    // // 창 포커스 잃었을 때 선택된 탭
+    // "tab.unfocusedActiveBackground": "#15342d",
+    // "tab.unfocusedActiveForeground": "#a0d8cf",
+    // // 상단 타이틀 배경색
+    // "titleBar.activeBackground": "#0b856b",
+    // "titleBar.inactiveBackground": "#064a3c",
+    // // 상단 타이틀 글자색
+    // "titleBar.activeForeground": "#ffffff",
+    // "titleBar.inactiveForeground": "#ffffff",
+    // // 하단 상태 배경색
+    // "statusBar.background": "#065a48",
+    // // 하단 Terminal, Problems 배경색
+    // "panel.background": "#021e18",
+    // // 가운데 경계선
+    // "sash.hoverBorder": "#3ddbb8",
+    // "surface.border": "#000000",
+    // blue
+    // vscode 전체 전경 색
+    "editor.background": "#000000",
+    // 맨 왼쪽 activityBar
+    "activityBar.background": "#071f4a",
+    // 사이드바(파일,폴더) 배경 색
+    "sideBar.background": "#25292f",
+    // 그룹 헤더 전체 배경 색
+    "editorGroupHeader.tabsBackground": "#1f242b",
+    // 사이드바 목록 선택 배경색 글자색
+    "list.hoverBackground": "#535353",
+    "list.activeSelectionBackground": "#09569d",
+    "list.activeSelectionForeground": "#ffffff",
+    "list.inactiveSelectionBackground": "#3a6a97",
+    "list.inactiveSelectionForeground": "#ffffff",
+    // 선택된 탭 배경색
+    "tab.activeBackground": "#044d91",
+    "tab.activeForeground": "#ffffff",
+    // 비활성인 탭 배경색
+    "tab.inactiveBackground": "#1f242b",
+    "tab.inactiveForeground": "#ffffff",
+    // 창 포커스 잃었을 때 선택된 탭
+    "tab.unfocusedActiveBackground": "#032f59",
+    "tab.unfocusedActiveForeground": "#c0c8d8",
+    // 상단 타이틀 배경색
+    "titleBar.activeBackground": "#0d3d95",
+    "titleBar.inactiveBackground": "#082558",
+    // 상단 타이틀 글자색
+    "titleBar.activeForeground": "#ffffff",
+    "titleBar.inactiveForeground": "#ffffff",
+    // 하단 상태 배경색
+    "statusBar.background": "#0d3a8c",
+    // 하단 Terminal, Problems 배경색
+    "panel.background": "#06132c",
+    // 가운데 경계선
+    "sash.hoverBorder": "#4da3ff",
+    "surface.border": "#000000",
+  },
 ```
 
 ## keybindings.json

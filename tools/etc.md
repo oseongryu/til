@@ -480,6 +480,26 @@ launchctl setenv OLLAMA_HOST "0.0.0.0"
 
 [노션홈페이지](https://www.notion.so/product) > 회원가입
 
+## office.md
+
+# Office
+
+## mac PowerPoint 폰트(TTF) 설치
+
+1. 다운로드한 `.ttf` 파일을 두 번 클릭
+2. 서체 관리자(Font Book) 창에서 [설치] 클릭
+3. PowerPoint 를 완전히 종료(Cmd + Q) 후 다시 실행해야 새 폰트가 인식됨
+
+## mac PowerPoint 파일에 글꼴 포함 (임베딩)
+
+- Mac용 PowerPoint(Microsoft 365 / Office 2019 이상)에서 TTF 폰트에 한해 파일 내 포함 지원
+
+1. 메뉴 바 [PowerPoint] > [환경설정...] (Cmd + ,)
+2. '출력 및 공유' 섹션에서 [저장] 클릭
+3. 하단의 '파일에 글꼴 포함' 체크
+   - 프레젠테이션에 사용된 문자에만 포함: 발표 전용 (파일 용량 축소)
+   - 모든 문자 포함: 다른 PC에서 문구 수정이 필요한 경우
+
 ## pi.md
 
 # Raspberry Pi

@@ -16,15 +16,22 @@ Claude Code의 `~/.claude/CLAUDE.md`처럼 모든 프로젝트에 적용할 작�
 
 `CODEX_HOME`을 별도로 지정하면 전역 파일의 기준 경로가 달라진다. 현재 환경에는 별도 값이 없었다. [공식 지침 파일 문서](https://learn.chatgpt.com/docs/agent-configuration/agents-md), [공식 설정 문서](https://learn.chatgpt.com/docs/config-file/config-basic)
 
-## 준비한 전역 지침
+## 독립적인 Codex 설정
 
-[codex-global-instructions.md](./codex-global-instructions.md)를 `~/.codex/AGENTS.md`로 복사해서 사용한다. TIL의 원본은 설명용 템플릿이며, 해당 이름으로 저장된 것만으로 전역 적용되지는 않는다.
+Codex의 작업 규칙은 [codex-global-instructions.md](./codex-global-instructions.md)에 직접 작성했다. 설치 후 사용하는 파일은 `~/.codex/AGENTS.md`다. 작업할 때 다른 AI의 지침을 읽거나 다른 AI의 설정 변경을 자동 반영하지 않는다.
 
-전역 지침은 기존 **`~/.claude/CLAUDE.md`를 직접 읽고 전체 규칙을 따르는 연결 파일**이다. 사용자 요청에 따라 Git 자동화와 앱 알림까지 동일하게 적용하도록 변경했다. 별도 복사본으로 규칙을 관리하지 않으므로 이후 Claude 원본의 변경도 Codex가 다음 작업에서 읽을 때 반영된다.
+초기 규칙은 기존 사용 취향을 옮겼으며, 앞으로 Codex의 규칙은 Codex 지침에서 독립적으로 수정한다. 여러 AI가 공통 전역 설정을 사용하는 구조는 현재 구성에 포함하지 않았다.
 
-현재 원본의 동작은 다음과 같다. 이 표는 확인 시점의 기록이며 실제 실행 시에는 원본의 현재 값이 기준이다.
+| 파일 | 역할 | Git 관리 |
+| --- | --- | --- |
+| `~/.codex/AGENTS.md` | Codex 전역 작업 규칙 | TIL 템플릿으로 관리 |
+| `~/.codex/config.toml` | 모델과 실행 설정 | 필요한 항목만 문서화 |
+| `~/.config/codex/notifications.json` | Codex 알림 인증값과 수신 대상 | 로컬 전용, 권한 `600` |
+| `~/.local/bin/codex-notify` | Codex 알림 실행 도구 | [원본 코드](./codex-notify.py)로 관리 |
 
-| 항목 | 공통 동작 |
+### 전역 규칙
+
+| 항목 | 설정 |
 | --- | --- |
 | 응답·코드 스타일 | 한국어, 이모지 생략, 최소 주석, 짧은 로그 |
 | 테스트 파일 | 명시적 요청 시에만 생성 |
@@ -32,32 +39,64 @@ Claude Code의 `~/.claude/CLAUDE.md`처럼 모든 프로젝트에 적용할 작�
 | 기록 위치 | `~/git` 하위는 프로젝트 루트 `tasks/`, 그 외는 `~/tasks/` |
 | 완료 순서 | 작업 파일 완료·요약 → 앱 알림 → Git |
 | Slack | OFF |
-| Telegram | ON, 원본에 지정된 수신 대상 사용 |
+| Telegram | ON |
 | 알림 형식 | `mac-m1: [명사요약]` |
 | 기본 Git 모드 | `PUSH`: add + commit + push |
 | `~/git/fredit` | `COMMIT`: 커밋까지 |
 | `~/git/plan_prototype` | `NONE`: Git 자동화 제외 |
 | 커밋 메시지 | 알림과 동일한 명사요약, 트레일러 없음 |
 
-Codex에 없는 `TodoWrite`는 사용 가능한 계획 도구 또는 작업 파일 기록으로 대체한다. `@CLAUDE.PJT.md`는 명시적으로 해당 로컬 파일을 읽도록 연결했다. 코드 스타일과 자동화 설정 자체는 기존 원본을 따른다.
-
-알림 인증값은 TIL에 저장하지 않는다. 실행할 때 로컬 원본에서 읽어 사용한다. 원본을 읽을 수 없거나 실행 권한이 제한되면 그 사실을 보고하며 자동화 성공으로 처리하지 않는다.
+프로젝트별 규칙은 프로젝트 `AGENTS.md`에 작성한다. 여러 단계의 작업은 Codex에서 사용할 수 있는 계획 도구로 관리하고, 없으면 작업 파일에 기록한다.
 
 ### 적용
 
-이번 작업 세션은 `~/.codex`가 읽기 전용이므로 전역 파일은 아직 생성하지 않았다. 아래 명령은 **사용자 터미널**에서 실행한다. 기존 파일이 생긴 경우 덮어쓰기 전에 확인하도록 `cp -i`를 사용했다.
+이번 세션에서는 알림 도구와 Codex 전용 인증 파일을 생성했다. 기존 인증값은 초기 설정 과정에서 한 번만 이관했으며, 이후 알림 실행은 Codex 전용 파일만 사용한다. 기존 프로그램의 파일은 변경하지 않았다.
+
+`~/.codex`는 현재 세션에서 읽기 전용이다. 아래 명령은 **사용자 터미널**에서 실행해야 한다. 기존 연결 방식으로 설치했다면 같은 명령으로 새 독립 지침을 덮어쓴다.
 
 ```bash
 mkdir -p ~/.codex
 cp -i ~/git/til/tools/codex-global-instructions.md ~/.codex/AGENTS.md
 ```
 
-TIL의 연결 파일 자체를 수정하면 다시 복사해야 한다. 한국어 응답, 알림 ON/OFF, Git 모드 등 공통 규칙은 `~/.claude/CLAUDE.md`에서 수정하면 된다. 연결 파일은 이 로컬 원본을 읽으므로 인증값을 다른 파일에 복사할 필요가 없다.
+새 환경에서 알림 도구를 설치하거나 도구를 갱신할 때는 다음 명령을 사용한다.
+
+```bash
+mkdir -p ~/.local/bin
+cp -i ~/git/til/tools/codex-notify.py ~/.local/bin/codex-notify
+chmod 700 ~/.local/bin/codex-notify
+```
+
+인증 파일은 로컬에서 별도로 준비한다. 아래는 형식 예시이며 실제 인증값은 TIL에 저장하지 않는다. 이번 컴퓨터에는 이 파일을 이미 생성했다.
+
+```json
+{
+  "telegram": {"token": "TELEGRAM_BOT_TOKEN", "chat_id": "TELEGRAM_CHAT_ID"},
+  "slack": {"token": "SLACK_BOT_TOKEN", "channel": "SLACK_CHANNEL_ID"}
+}
+```
+
+파일 권한을 제한하고, 전송 없이 로컬 설정의 필수 항목을 확인할 수 있다. `--check`는 API 인증 성공이나 실제 수신을 검증하지 않는다.
+
+```bash
+chmod 600 ~/.config/codex/notifications.json
+python3 ~/.local/bin/codex-notify --telegram --check
+```
+
+완료 알림은 다음처럼 보낸다. 도구가 `mac-m1: ` 접두어를 붙인다. Slack을 ON으로 바꾸면 지침과 실행 명령에 `--slack`을 추가한다. 한 서비스가 실패해도 다른 서비스는 시도한다.
+
+```bash
+python3 ~/.local/bin/codex-notify --telegram "작업 명사요약"
+```
+
+도구는 인증값이 프로세스 명령행에 드러나지 않도록 `curl` 설정을 표준입력으로 전달한다. 성공 여부만 출력하며 API 응답 전체와 인증값을 출력하지 않는다. Python 3과 curl이 필요하다.
+
+TIL의 지침을 수정한 뒤 실제 전역 파일에 다시 복사한다. 알림 ON/OFF, Git 모드, 응답 방식은 이 지침에서 관리하며, 다른 AI의 파일과 동기화하지 않는다.
 
 새 Codex 세션을 열어 다음처럼 확인한다.
 
 ```text
-현재 적용된 전역 지침과 프로젝트 지침의 파일 경로를 알려주고,
+현재 적용된 전역 지침과 프로젝트 지침의 경로를 알려주고,
 응답 언어, 작업 기록, 앱 알림, Git 모드와 경로 예외를 요약해 줘.
 인증값은 출력하지 마. 이번 확인 요청에 한해 파일 변경·알림·Git은 실행하지 마.
 ```
@@ -104,18 +143,6 @@ sandbox_mode = "workspace-write"
 TOML에서 `[tui]` 아래에 키를 덧붙이면 전역 키가 아니라 `tui` 항목이 된다. 위 예시의 전역 키는 반드시 첫 번째 섹션 앞에 넣고 기존 키와 중복되지 않게 편집한다.
 
 지침 파일에 “허용한다”고 적는 것으로 실행 권한이 바뀌지는 않는다. 관리 정책이나 세션에서 정한 제한은 개인 설정으로 해제할 수 없다. 실행 시 옵션이나 신뢰한 프로젝트 설정이 개인 기본값보다 우선할 수 있다. [설정 기본 안내](https://learn.chatgpt.com/docs/config-file/config-basic), [설정 키 참고](https://learn.chatgpt.com/docs/config-file/config-reference)
-
-## 기존 프로젝트의 CLAUDE.md 재사용
-
-프로젝트에 `CLAUDE.md`만 있는 경우에는 아래 설정으로 대체 파일명을 지정할 수 있다. 전역 키이므로 첫 번째 TOML 섹션 앞에 넣는다.
-
-```toml
-project_doc_fallback_filenames = ["CLAUDE.md"]
-```
-
-이 설정은 프로젝트에서 `AGENTS.override.md`나 `AGENTS.md`가 없을 때 사용할 대체 이름이다. 두 파일의 내용을 항상 합치는 기능도, `~/.claude/CLAUDE.md`를 전역으로 불러오는 기능도 아니다.
-
-기존 파일에 Claude 전용 도구나 자동 푸시·외부 알림 지시가 있을 수 있으므로 내용을 검토한 뒤 선택한다. 이번에는 이 옵션을 적용하지 않았다. [대체 파일명 설정](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
 
 ## 프로젝트 지침 예시
 

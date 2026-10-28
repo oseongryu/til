@@ -1,132 +1,51 @@
-# Codex 전역 설정
+# Codex 전역 설정과 프로젝트 지침
 
-확인일: 2026-10-28 / 로컬 CLI: `codex-cli 0.165.0`
+Codex의 작업 지침은 `AGENTS.md`, 모델과 실행 환경 설정은 `config.toml`로 관리한다. 두 파일의 역할을 구분하면 개인 기본값과 프로젝트 규칙을 따로 유지할 수 있다.
 
-## 먼저 알아둘 파일
+## 설정 파일의 역할
 
-Claude Code의 `~/.claude/CLAUDE.md`처럼 모든 프로젝트에 적용할 작업 지침은 **`~/.codex/AGENTS.md`**에 작성한다. 모델과 실행 권한 같은 프로그램 설정은 **`~/.codex/config.toml`**로 분리한다.
-
-| 파일 | 용도 | 넣을 내용 |
+| 파일 | 적용 범위 | 작성할 내용 |
 | --- | --- | --- |
-| `~/.codex/AGENTS.md` | 개인 전역 지침 | 응답 언어, 코드 스타일, 작업 과정 |
-| `<프로젝트>/AGENTS.md` | 프로젝트 지침 | 실행·검증 명령, 구조, 프로젝트 규칙 |
-| `<하위 디렉터리>/AGENTS.md` | 세부 작업 지침 | 해당 디렉터리의 규칙 |
-| `~/.codex/config.toml` | 개인 실행 설정 | 모델, 추론 강도, 승인 정책, 샌드박스 |
-| `<프로젝트>/.codex/config.toml` | 프로젝트 실행 설정 | 신뢰한 프로젝트의 설정 재정의 |
+| `~/.codex/AGENTS.md` | 사용자 전역 | 응답 방식, 공통 작업 원칙 |
+| `<프로젝트>/AGENTS.md` | 프로젝트 | 구조, 개발·검증 명령, 팀 규칙 |
+| `<하위 디렉터리>/AGENTS.md` | 해당 범위 | 언어·모듈별 추가 규칙 |
+| `~/.codex/config.toml` | 사용자 기본 설정 | 모델, 추론 강도, 실행 권한 |
+| `<프로젝트>/.codex/config.toml` | 신뢰한 프로젝트 | 프로젝트별 실행 설정 |
 
-`CODEX_HOME`을 별도로 지정하면 전역 파일의 기준 경로가 달라진다. 현재 환경에는 별도 값이 없었다. [공식 지침 파일 문서](https://learn.chatgpt.com/docs/agent-configuration/agents-md), [공식 설정 문서](https://learn.chatgpt.com/docs/config-file/config-basic)
+`~`는 사용자의 홈 디렉터리다. `CODEX_HOME`을 설정하면 전역 파일의 기준 디렉터리가 바뀐다. [공식 지침 문서](https://learn.chatgpt.com/docs/agent-configuration/agents-md), [공식 설정 문서](https://learn.chatgpt.com/docs/config-file/config-basic)
 
-## Codex 설정을 한 폴더로 관리
+## 전역 지침 작성
 
-설정 원본은 `~/git/corp-script/config/.codex/`에 보관한다. `config/`가 홈 디렉터리에 대응하므로 **`.codex` 폴더 하나를 홈으로 복사**하면 된다.
-
-```text
-~/git/corp-script/config/.codex/  →  ~/.codex/
-├── AGENTS.md
-├── config.toml
-├── notify.py
-├── notifications.example.json
-├── .gitignore
-└── README.md
-```
-
-실제 인증 파일은 `~/.codex/notifications.json`에 로컬로만 보관하며 Git에서 제외한다. 알림 도구는 자신과 같은 디렉터리의 인증 파일을 읽는다. 실행 시 다른 AI의 지침이나 설정 파일에 의존하지 않는다.
-
-| 항목 | 설정 |
-| --- | --- |
-| 응답·코드 스타일 | 한국어, 이모지 생략, 최소 주석, 짧은 로그 |
-| 테스트 파일 | 명시적 요청 시에만 생성 |
-| 작업 기록 | 모든 요청을 KST 타임스탬프의 개별 파일로 먼저 등록 |
-| 기록 위치 | `~/git` 하위는 프로젝트 루트 `tasks/`, 그 외는 `~/tasks/` |
-| 완료 순서 | 작업 파일 완료·요약 → 앱 알림 → Git |
-| 알림 | Telegram ON, Slack OFF, `mac-m1: [명사요약]` |
-| 기본 Git 모드 | PUSH |
-| `~/git/fredit` | COMMIT |
-| `~/git/plan_prototype` | NONE |
-| 커밋 메시지 | 알림과 동일한 명사요약, 트레일러 없음 |
-
-### 적용
-
-사용자 터미널에서 실행한다. 기존 파일은 덮어쓰기 전에 확인한다. 기존 모델 설정에 별도 항목이 있다면 필요한 키만 병합한다.
+먼저 설정 디렉터리를 만들고 편집기로 `~/.codex/AGENTS.md`를 작성한다. 기존 파일이 있다면 필요한 규칙을 추가하거나 수정한다.
 
 ```bash
-cp -Ri ~/git/corp-script/config/.codex ~/
+mkdir -p ~/.codex
 ```
 
-새 환경에서는 `notifications.example.json`을 `notifications.json`으로 복사해 실제 인증값을 입력하고 파일 권한을 `600`으로 제한한다. 이미 준비된 인증 파일이 있으면 유지한다. 실제 인증값은 TIL에 넣지 않는다.
-
-이전 분산 경로에서 인증 파일을 옮기고 도구를 정리하는 명령은 `~/git/corp-script/config/.codex/README.md`에 정리했다. 현재 세션의 `~/.codex` 쓰기 제한으로 실제 홈 경로 이동은 사용자 터미널에서 수행해야 한다.
-
-```bash
-python3 ~/.codex/notify.py --telegram --check
-python3 ~/.codex/notify.py --telegram "작업 명사요약"
-```
-
-Python 3과 curl이 필요하다. `--check`는 로컬 필수 항목 확인이며 실제 인증 성공이나 알림 수신 검증은 아니다.
-
-새 Codex 세션에서 다음처럼 확인한다.
-
-```text
-현재 적용된 전역 지침 경로와 작업 기록·Git·알림 규칙을 요약해 줘.
-인증값은 출력하지 마. 이번 확인 요청에 한해 파일 변경·알림·Git은 실행하지 마.
-```
-
-TIL의 [지침 예시](./codex-global-instructions.md)와 [알림 도구 예시](./codex-notify.py)는 학습용 사본이다. 이후 설정 변경은 `corp-script/config/.codex/`에서 관리한다. 저장소 간 자동 동기화는 하지 않는다.
-
-## 지침 적용 순서
-
-전역 지침을 읽고, 프로젝트 루트부터 현재 작업 디렉터리까지의 지침을 이어서 읽는다. 충돌하는 내용은 더 가까운 디렉터리의 지침이 우선한다.
-
-같은 디렉터리에서는 다음 순서로 첫 번째 비어 있지 않은 파일 하나를 사용한다.
-
-1. `AGENTS.override.md`
-2. `AGENTS.md`
-3. 설정한 대체 파일명
-
-전역 `AGENTS.override.md`가 있으면 전역 `AGENTS.md` 대신 사용한다. 프로젝트 지침의 기본 크기 한도는 32 KiB이므로 반복되는 긴 설명보다 실제로 지켜야 할 규칙을 짧게 적는다. 변경 후에는 새 세션에서 확인한다. [공식 적용 순서](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
-
-## config.toml 초기 설정
-
-현재 로컬 파일은 다음과 같으며, 이번 작업에서 변경하지 않았다. 모델명은 현재 설정을 기록한 것이고 특정 모델을 새로 추천하는 의미는 아니다.
-
-```toml
-model = "gpt-6-astra"
-model_reasoning_effort = "high"
-
-[tui]
-screen_reader_detection_done = true
-```
-
-처음에는 모델을 그대로 사용하고 전역 지침부터 적용하면 된다. 실행 권한을 직접 설정할 필요가 있을 때 다음 항목을 검토한다.
-
-```toml
-# 선택 예시: 기존 config.toml의 첫 번째 [섹션] 위에 추가
-approval_policy = "on-request"
-sandbox_mode = "workspace-write"
-```
-
-| 항목 | 의미 |
-| --- | --- |
-| `model` | 기본 모델 |
-| `model_reasoning_effort` | 추론 강도. 지원 값은 모델에 따라 다름 |
-| `approval_policy = "on-request"` | 에이전트가 필요할 때 실행 승인을 요청 |
-| `sandbox_mode = "workspace-write"` | 작업 영역 중심의 파일 쓰기를 허용하는 실행 모드 |
-
-TOML에서 `[tui]` 아래에 키를 덧붙이면 전역 키가 아니라 `tui` 항목이 된다. 위 예시의 전역 키는 반드시 첫 번째 섹션 앞에 넣고 기존 키와 중복되지 않게 편집한다.
-
-지침 파일에 “허용한다”고 적는 것으로 실행 권한이 바뀌지는 않는다. 관리 정책이나 세션에서 정한 제한은 개인 설정으로 해제할 수 없다. 실행 시 옵션이나 신뢰한 프로젝트 설정이 개인 기본값보다 우선할 수 있다. [설정 기본 안내](https://learn.chatgpt.com/docs/config-file/config-basic), [설정 키 참고](https://learn.chatgpt.com/docs/config-file/config-reference)
-
-## 프로젝트 지침 예시
-
-전역에는 개인 취향을 두고 프로젝트에는 실제 명령과 구조를 적는다. 아래는 작성 틀이며, 대괄호 부분을 확인한 값으로 바꿔서 사용한다.
+다음은 작업 원칙 예시다. 응답 언어와 검증 정책 등은 사용자와 팀의 요구에 맞게 조정한다.
 
 ```markdown
-# 프로젝트 지침
+# 작업 원칙
 
-## 환경
-- 패키지 매니저: [저장소에서 사용하는 도구]
-- 개발 실행: [실제 명령]
-- 검증: [실제 lint, typecheck, test 명령]
+- 기존 프로젝트의 코드 스타일과 명명 규칙을 따른다.
+- 요청한 범위를 중심으로 변경하고 관계없는 사용자 변경을 보존한다.
+- 변경에 적합한 검증을 수행하고 결과를 설명한다.
+- 확인하지 못한 사항과 가정을 구분해서 설명한다.
+```
+
+전역 지침에는 여러 프로젝트에서 반복해서 사용하는 원칙을 적는다. 특정 저장소의 경로나 실행 명령은 프로젝트 지침에 두면 관리하기 쉽다.
+
+## 프로젝트 지침 작성
+
+프로젝트 루트의 `AGENTS.md`에는 개발에 필요한 정보를 적는다. 아래 대괄호 부분은 실제 저장소에서 확인한 내용으로 바꾼다.
+
+```markdown
+# 프로젝트 안내
+
+## 개발 환경
+- 패키지 매니저: [사용 도구]
+- 개발 실행: [실제 실행 명령]
+- 검증: [lint, typecheck, test 등 실제 명령]
 
 ## 구조
 - [소스 경로]: [역할]
@@ -134,11 +53,60 @@ TOML에서 `[tui]` 아래에 키를 덧붙이면 전역 키가 아니라 `tui` �
 
 ## 작업 규칙
 - 기존 구조와 명명 규칙을 따른다.
-- 변경 범위에 해당하는 검증을 실행하고 결과를 설명한다.
-- [프로젝트 설계 문서]는 관련 기능을 수정하기 전에 읽는다.
+- 관련 기능을 수정하기 전에 [설계 문서]를 읽는다.
 ```
 
-반복 작업이 생기면 스킬, 외부 서비스 연결이 필요해지면 MCP나 플러그인을 검토한다. 초기 설정 단계에서는 전역 지침과 프로젝트 지침만으로 시작해도 된다.
+## 지침 적용 순서
+
+Codex는 전역 지침을 읽고 프로젝트 루트에서 현재 작업 디렉터리까지의 지침을 결합한다. 충돌하는 내용은 현재 디렉터리에 더 가까운 지침이 우선한다.
+
+각 디렉터리에서는 다음 우선순위로 지침 파일을 선택한다.
+
+1. `AGENTS.override.md`
+2. `AGENTS.md`
+3. `project_doc_fallback_filenames`로 지정한 대체 파일명
+
+같은 디렉터리에서 여러 지침 파일을 모두 합치는 방식은 아니다. 전역 `AGENTS.override.md`도 전역 `AGENTS.md` 대신 사용된다. 기본 지침 크기 한도는 32 KiB이며, 변경 후에는 새 세션에서 확인한다. [공식 적용 순서](https://learn.chatgpt.com/docs/agent-configuration/agents-md)
+
+## 실행 설정 작성
+
+`~/.codex/config.toml`은 TOML 형식이다. 다음은 승인 정책과 작업 영역 접근 모드를 명시하는 예시다. 실제 사용 가능 여부는 클라이언트와 관리 정책에 따라 달라진다.
+
+```toml
+approval_policy = "on-request"
+sandbox_mode = "workspace-write"
+```
+
+| 키 | 역할 |
+| --- | --- |
+| `model` | 기본 모델 선택 |
+| `model_reasoning_effort` | 추론 강도 지정; 지원 값은 모델별로 다름 |
+| `approval_policy` | 실행 승인 요청 방식 |
+| `sandbox_mode` | 명령 실행 시 접근 범위 |
+| `project_doc_fallback_filenames` | 프로젝트 지침의 대체 파일명 목록 |
+
+모델명은 사용 환경에서 지원되는 값을 확인해 지정한다. 별도로 설정할 필요가 없는 항목은 기본값을 사용할 수 있다. [설정 키 참고](https://learn.chatgpt.com/docs/config-file/config-reference)
+
+TOML에서 `[섹션]` 아래의 키는 해당 섹션에 속한다. 전역 키는 첫 번째 섹션 앞에 넣고, 이미 있는 키를 중복해서 작성하지 않는다.
+
+실행 시 옵션과 신뢰한 프로젝트의 설정은 사용자 기본값을 재정의할 수 있다. 조직에서 강제하는 제한은 개인 설정으로 해제할 수 없으며, `AGENTS.md`에 허용 문구를 넣어도 실행 권한 자체가 바뀌지는 않는다. [설정 우선순위](https://learn.chatgpt.com/docs/config-file/config-basic)
+
+## 적용 확인
+
+설정을 수정한 뒤 대상 프로젝트에서 새 Codex 세션을 열고 다음처럼 요청한다.
+
+```text
+현재 적용된 전역 지침과 프로젝트 지침의 경로를 알려주고,
+주요 작업 규칙을 요약해 줘. 이번 확인에서는 파일 변경이나 외부 작업을 실행하지 마.
+```
+
+예상한 규칙이 적용되지 않으면 작업 디렉터리, `CODEX_HOME`, `AGENTS.override.md` 유무를 확인한다. 실행 설정 문제라면 프로젝트 신뢰 여부와 관리 정책도 확인한다.
+
+## 설정 공유 시 구분할 내용
+
+공유 문서에는 설정 원리와 재사용 가능한 예시를 적는다. 개인의 장비명, 저장소별 예외, 알림 수신 대상, 자동화 정책은 개인 설정 저장소에서 관리한다.
+
+API 키와 토큰 같은 인증값은 공유 문서와 Git에 넣지 않는다. 전역 설정 디렉터리에는 인증·세션 데이터도 있을 수 있으므로 공유할 파일을 명시적으로 선택한다.
 
 ## Reference
 

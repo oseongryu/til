@@ -36,11 +36,11 @@ python3 -c "from datetime import datetime,timezone,timedelta; print(datetime.now
 - Codex 전용 알림 도구를 사용한다. 이 도구는 UTF-8 JSON과 `curl`로 전송한다.
 
 ```bash
-python3 ~/.local/bin/codex-notify --telegram "작업 명사요약"
+python3 ~/.codex/notify.py --telegram "작업 명사요약"
 ```
 
 - Slack을 ON으로 바꾸면 위 명령에 `--slack`을 추가한다. OFF인 서비스는 명령에서 제외한다. 둘 다 OFF이면 알림을 생략한다.
-- 인증값과 수신 대상은 `~/.config/codex/notifications.json`에서 읽는다. 해당 파일은 로컬에만 보관하고 Git에 포함하지 않는다.
+- 인증값과 수신 대상은 `~/.codex/notifications.json`에서 읽는다. 해당 파일은 로컬에만 보관하고 Git에 포함하지 않는다.
 - 인증값을 응답, 로그, 작업 파일, TIL에 출력하거나 복사하지 않는다.
 - 도구나 설정 파일이 없으면 알림 미실행을 보고한다. 다른 프로그램의 설정을 찾아 대체하지 않는다.
 

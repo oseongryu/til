@@ -18,7 +18,7 @@ def main():
     channels = [name for name in ("telegram", "slack") if getattr(args, name)]
     if not channels or (not args.check and not args.summary):
         parser.error("서비스와 작업 요약을 지정하세요. 설정 확인은 --check를 사용하세요.")
-    path = Path.home() / ".config/codex/notifications.json"
+    path = Path(__file__).resolve().with_name("notifications.json")
     try:
         config = json.loads(path.read_text())
     except (OSError, ValueError):

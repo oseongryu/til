@@ -8,6 +8,10 @@
 1. 폴더와 파일명은 영문으로 작성한다.
 2. reference를 명시하고, 원작자가 참고를 허용하는 자료만 사용한다.
 
+## 도구 설정
+
+- [Codex 전역 설정](./tools/codex.md)
+
 ## Reference
 [NamjunKim](https://github.com/namjunemy) 님, [JayJin](https://github.com/milooy)님, [Lee HyunJoo](https://wayhome25.github.io/)님, [RingoPPA](https://github.com/ksu3101) 님
 

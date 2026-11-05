@@ -949,6 +949,34 @@ sudo mset -g → SleepDisabled 1
 sudo pmset -a disablesleep 0
 ```
 
+### mac utm install windows11
+
+```
+0. brew install qemu 로 최신 qemu-img 를 설치해 두는 편이 안전합니다.
+
+1. 변환 (1분 내외)
+터미널에서 아래를 실행합니다. -f 는 원본 형식, -O 는 출력 형식이고 -p 는 진행률 표시입니다.
+
+~/Library/Android/sdk/emulator/qemu-img convert -p -f vhdx -O qcow2 \
+  /Users/oseongryu/worklist/UTM/Windows11_InsiderPreview_Client_ARM64_en-us_29576_1000.VHDX \
+  /Users/oseongryu/worklist/UTM/win11_29576.qcow2
+ß
+2. 검사
+오류 없음과 함께 할당률이 출력되면 정상입니다.
+
+~/Library/Android/sdk/emulator/qemu-img check /Users/oseongryu/worklist/UTM/win11_29576.qcow2
+~/Library/Android/sdk/emulator/qemu-img info  /Users/oseongryu/worklist/UTM/win11_29576.qcow2
+
+3. UTM VM 에 넣기
+UTM 마법사로 Windows VM 을 만들어 두면(부팅 ISO 는 아무거나, 저장만 하고 실행은 안 함) 번들 안에 빈 디스크가 생깁니다. 그 파일 이름을 확인해서 변환본으로 덮어씁니다. cp -c 는 APFS 복제라 12GB 라도 즉시 끝납니다.
+
+ls ~/Library/Containers/com.utmapp.UTM/Data/Documents/Windows.utm/Data/
+cp -c /Users/oseongryu/worklist/UTM/win11_29576.qcow2 ~/Library/Containers/com.utmapp.UTM/Data/Documents/Windows.utm/Data/BF6E209E-DE82-4DFF-A30F-F6975A3F9D77.qcow2
+
+4. 변환본은 원본과 같은 64GB 가상 크기로 만들어집니다. 더 크게 쓰려면 교체 전에 아래처럼 늘리고 Windows 디스크 관리에서 파티션을 확장하면 됩니다.
+~/Library/Android/sdk/emulator/qemu-img resize /Users/oseongryu/worklist/UTM/win11_29576.qcow2 128G
+```
+
 
 
 ### References
